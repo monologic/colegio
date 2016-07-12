@@ -8,10 +8,10 @@
 		<meta name="description" content="A sidebar menu as seen on the Google Nexus 7 website" />
 		<meta name="keywords" content="google nexus 7 menu, css transitions, sidebar, side menu, slide out menu" />
 		<meta name="author" content="Codrops" />
-		<link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/component.css" />
-		<script src="assets/js/modernizr.custom.js"></script>
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/normalize.css') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/demo.css') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/component.css') }}" />
+		<script src="{{ asset('assets/js/modernizr.custom.js') }}"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -58,8 +58,8 @@
         	</div>
 		</div><!-- /container -->
 
-		<script src="js/classie.js"></script>
-		<script src="js/gnmenu.js"></script>
+		<script src="{{ asset('assets/js/classie.js') }}"></script>
+		<script src="{{ asset('assets/js/gnmenu.js') }}"></script>
 		<script>
 			new gnMenu( document.getElementById( 'gn-menu' ) );
 		</script>

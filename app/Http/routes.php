@@ -18,7 +18,15 @@ Route::get('/', function () {
 Route::group(['prefix'=> 'app', 'middleware' => [ 'auth' ]], function(){
 
 	Route::get('/', 'HomeController@index');
-	Route::get('usuarios', 'PanelController@index');
+
+	/*
+	|--------------------------------------------------------------------------
+	| Rutas Usuario
+	*/
+	Route::get('estudiantes', 'UserController@getEstudiantes');
+	Route::get('estudiantes/crear', 'UserController@getEstudiantes');
+
+	
 
 });
 
