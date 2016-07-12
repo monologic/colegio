@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::auth();
+Route::group(['prefix'=> 'app', 'middleware' => [ 'auth' ]], function(){
 
-Route::get('/home', 'HomeController@index');
+	Route::get('/', 'HomeController@index');
+	Route::get('usuarios', 'PanelController@index');
+
+});
+
+Route::auth();

@@ -11,7 +11,7 @@
 }
 
 body {
-	background: #34495e;
+	
 }
 
 .container > header,
@@ -24,6 +24,13 @@ body {
 	margin: 0 auto;
 	padding: 12em 2em;
 	padding-left: 370px;
+	background: rgba(0,0,0,0.05);
+}
+
+.container > .content {
+	
+	padding: 6em 2em;
+	
 	background: rgba(0,0,0,0.05);
 }
 
