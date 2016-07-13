@@ -4,7 +4,7 @@
 		<title>Colegio Robert Gagne</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -25,20 +25,26 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="#">Colegio Robert Gagne</a></h1>
+						<h1><a href="">Colegio Robert Gagne</a></h1>
 						<nav class="links">
 							<ul>
 								<li><a href="#">Inicio</a></li>
-								<li><a href="#">Biblioteca</a></li>
-								<li><a href="#">Novedades</a></li>
-								<li><a href="#">Articulos</a></li>
-								<li><a href="#">Comunicados</a></li>
+								<li><a href="#">Admisión</a></li>
+								<li><a href="#">Galeria</a></li>
+								<li><a href="#">Nosotros</a></li>
+								<li><a href="#">Contacto</a></li>
 							</ul>
 						</nav>
 						<nav class="main">
 							<ul>
 								<li class="search">
-									<a class="fa-search" href="/login">Login</a>
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="me">
+									<a href="/login" class="fa fa-user">login</a>
 								</li>
 								<li class="menu">
 									<a class="fa-bars" href="#menu">Menu</a>
@@ -99,19 +105,21 @@
 					
 				<!-- Main -->
 					<div id="main">
-						<section class="slid">
-							<div id="owl-demo" class="owl-carousel">
-						        <div class="item"><img src="assets/slider/fullimage4.jpg"></div>
-						        <div class="item"><img src="assets/slider/fullimage5.jpg"></div>
-						        <div class="item"><img src="assets/slider/fullimage6.jpg"></div>
-						       	<div class="item"><img src="assets/slider/fullimage7.jpg"></div>
-						        <div class="item"><img src="assets/slider/fullimage1.jpg" ></div>
-						        <div class="item"><img src="assets/slider/fullimage2.jpg"></div>
-						      	<div class="item"><img src="assets/slider/fullimage3.jpg"></div>
-						    </div>
-						</section>
-						<!-- Post -->
-							<article class="noticia">
+						<div class="col-md-12">
+							<section class="slid">
+								<div id="owl-demo" class="owl-carousel">
+							        <div class="item"><img src="assets/slider/fullimage4.jpg" class="elslider"></div>
+							        <div class="item"><img src="assets/slider/fullimage5.jpg" class="elslider"></div>
+							        <div class="item"><img src="assets/slider/fullimage6.jpg" class="elslider"></div>
+							       	<div class="item"><img src="assets/slider/fullimage7.jpg" class="elslider"></div>
+							        <div class="item"><img src="assets/slider/fullimage1.jpg" class="elslider" ></div>
+							        <div class="item"><img src="assets/slider/fullimage2.jpg" class="elslider"></div>
+							      	<div class="item"><img src="assets/slider/fullimage3.jpg" class="elslider"></div>
+							    </div>
+							</section>
+						</div>
+					<div class="col-md-8 con">
+						<article class="noticia">
 								<header>
 									<div class="title">
 										<h2><a href="#">Magna sed adipiscing</a></h2>
@@ -134,22 +142,20 @@
 										<li><a href="#" class="icon fa-comment">128</a></li>
 									</ul>
 								</footer>
-							</article>
-
-						<!-- Post -->
-							<article class="post">
+						</article>
+						<article class="noticia">
 								<header>
 									<div class="title">
-										<h2><a href="#">Ultricies sed magna euismod enim vitae gravida</a></h2>
+										<h2><a href="#">Magna sed adipiscing</a></h2>
 										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2015-10-25">October 25, 2015</time>
+										<time class="published" datetime="2015-11-01">November 1, 2015</time>
 										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
 									</div>
 								</header>
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper.</p>
+								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
 								<footer>
 									<ul class="actions">
 										<li><a href="#" class="button big">Continue Reading</a></li>
@@ -160,22 +166,20 @@
 										<li><a href="#" class="icon fa-comment">128</a></li>
 									</ul>
 								</footer>
-							</article>
-
-						<!-- Post -->
-							<article class="post">
+						</article>
+						<article class="noticia">
 								<header>
 									<div class="title">
-										<h2><a href="#">Euismod et accumsan</a></h2>
+										<h2><a href="#">Magna sed adipiscing</a></h2>
 										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2015-10-22">October 22, 2015</time>
+										<time class="published" datetime="2015-11-01">November 1, 2015</time>
 										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
 									</div>
 								</header>
-								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Cras vehicula tellus eu ligula viverra, ac fringilla turpis suscipit. Quisque vestibulum rhoncus ligula.</p>
+								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
 								<footer>
 									<ul class="actions">
 										<li><a href="#" class="button big">Continue Reading</a></li>
@@ -186,76 +190,17 @@
 										<li><a href="#" class="icon fa-comment">128</a></li>
 									</ul>
 								</footer>
-							</article>
-						<!-- Pagination -->
-							<ul class="actions pagination">
-								<li><a href="" class="disabled button big previous">Previous Page</a></li>
-								<li><a href="#" class="button big next">Next Page</a></li>
-							</ul>
-
+						</article>
 					</div>
-
-				<!-- Sidebar -->
-					<section id="sidebar">
-
-						<!-- Intro -->
-							<section id="intro">
-								<a href="#" class="logo"><img src="images/logo.jpg" alt="" /></a>
-								<header>
-									<h2>Future Imperfect</h2>
-									<p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
-								</header>
-							</section>
-
-						<!-- Mini Posts -->
-							<section>
-								<div class="mini-posts">
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="#">Vitae sed condimentum</a></h3>
-												<time class="published" datetime="2015-10-20">October 20, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-										</article>
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="#">Rutrum neque accumsan</a></h3>
-												<time class="published" datetime="2015-10-19">October 19, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-										</article>
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="#">Odio congue mattis</a></h3>
-												<time class="published" datetime="2015-10-18">October 18, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-										</article>
-
-									<!-- Mini Post -->
-										<article class="mini-post">
-											<header>
-												<h3><a href="#">Enim nisl veroeros</a></h3>
-												<time class="published" datetime="2015-10-17">October 17, 2015</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-										</article>
-
-								</div>
-							</section>
-
-						<!-- Posts List -->
-							<section>
+					<div class="col-md-4">
+						<section id="intro">
+							<a href="#" ><img src="images/logo.gif" alt="" class="insig" /></a>
+							<header class="text-center">
+								<h2>Robert Gagne</h2>
+								<p>Calidad y experiencia para la educación</a></p>
+							</header>
+						</section>
+						<section>
 								<ul class="posts">
 									<li>
 										<article>
@@ -303,32 +248,53 @@
 										</article>
 									</li>
 								</ul>
-							</section>
+						</section>
+						<div class="mini-posts">
 
-						<!-- About -->
-							<section class="blurb">
-								<h2>About</h2>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
-								<ul class="actions">
-									<li><a href="#" class="button">Learn More</a></li>
-								</ul>
-							</section>
+									<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="#">Vitae sed condimentum</a></h3>
+												<time class="published" datetime="2015-10-20">October 20, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+										</article>
 
-						<!-- Footer -->
-							<section id="footer">
-								<ul class="icons">
-									<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-									<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-								<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
-							</section>
+									<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="#">Rutrum neque accumsan</a></h3>
+												<time class="published" datetime="2015-10-19">October 19, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
+										</article>
 
-					</section>
+									<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="#">Odio congue mattis</a></h3>
+												<time class="published" datetime="2015-10-18">October 18, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
+										</article>
 
-			</div>
+									<!-- Mini Post -->
+										<article class="mini-post">
+											<header>
+												<h3><a href="#">Enim nisl veroeros</a></h3>
+												<time class="published" datetime="2015-10-17">October 17, 2015</time>
+												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+											</header>
+											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+										</article>
+						</div>
+						
+					</div>
+							
+				</div>
 			<script src="assets/js/jquery-1.9.1.min.js"></script> 
    			<script src="assets/js/owl.carousel.min.js"></script>  
 		<!-- Scripts -->
@@ -341,7 +307,7 @@
 				$(document).ready(function() {
 				 
 				  $("#owl-demo").owlCarousel({
-				    navigation : true,
+				    
 				    singleItem : true,
 				    transitionStyle : "fade"
 				  });

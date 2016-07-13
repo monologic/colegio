@@ -5,9 +5,28 @@
 	left: 0;
 	z-index: 10;
 }
+.con{
+	margin-top: 40px;
+}
+.elslider{
+	width: 100%;
+	height: auto;
+}
+.me{
+	padding-top: 20px;
+}
+.insig{
+	display: block;
+	position: relative;
+	width: 180px;
+	height: 150px;
+	margin: 0px auto 10px auto;
+
+}
 .noticia{
 	background-color: white;
 	padding: 60px;
+	margin-bottom: 20px;
 }
 .noticia > header {
 			display: -moz-flex;
