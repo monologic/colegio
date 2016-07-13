@@ -48,9 +48,9 @@
 							</div><!-- /gn-scroller -->
 						</nav>
 					</li>
-					<li><a href="http://tympanus.net/codrops">Codrops</a></li>
-					<li><a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/HeaderEffects/"><span>Previous Demo</span></a></li>
-					<li><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=16030"><span>Back to the Codrops Article</span></a></li>
+					<li><a class="codrops-icon codrops-icon-prev"> Colegio Robert Gagne</a></li>
+					<li><a><span>Yo</span></a></li>
+					<li><a class="codrops-icon codrops-icon-drop" ><span>Salir</span></a></li>
 				</ul>
 			</div><!-- /nav -->
 
