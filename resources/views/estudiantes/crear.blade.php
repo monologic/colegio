@@ -6,7 +6,7 @@
 	<div class="container">
 		<h1>Crear Estudiante</h1>
     	<div ng-controller="estudiantesController" ng-init="getEstudiantes()">
-    		<div class="col-md-6">
+    		<div class="formulariok">
     			<form ng-submit="enviar()">
     				<div class="form-group">
 					    <label for="exampleInputEmail1">Email address</label>
@@ -21,7 +21,7 @@
 					    <input type="file" id="exampleInputFile">
 					    <p class="help-block">Example block-level help text here.</p>
 					</div>
-					<div class="checkbox">
+					<div class="">
 					    <label>
 					      <input type="checkbox"> Check me out
 					    </label>

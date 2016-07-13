@@ -15,6 +15,7 @@
 		<script src="{{ asset('assets/angular/jquery.min.js') }}"></script>
 
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styleAdmin.css') }}" />
 		<script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
 	</head>
 	<body>
