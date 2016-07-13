@@ -5,28 +5,48 @@
 @section('content')
 	<div class="container">
 		<h1>Crear Estudiante</h1>
-    	<div ng-controller="estudiantesController" ng-init="getEstudiantes()">
+    	<div ng-controller="estudiantesController">
     		<div class="formulariok">
-    			<form ng-submit="enviar()">
+    			<form ng-submit="guardar()">
     				<div class="form-group">
-					    <label for="exampleInputEmail1">Email address</label>
-					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+					    <label for="nombres">Nombres</label>
+					    <input type="text" class="form-control" id="nombres" ng-model="nombres" placeholder="">
 					</div>
 					<div class="form-group">
-					    <label for="exampleInputPassword1">Password</label>
-					    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					    <label for="apellidos">Apellidos</label>
+					    <input type="text" class="form-control" id="apellidos" ng-model="apellidos" placeholder="">
 					</div>
 					<div class="form-group">
-					    <label for="exampleInputFile">File input</label>
-					    <input type="file" id="exampleInputFile">
-					    <p class="help-block">Example block-level help text here.</p>
+					    <label for="dni">DNI</label>
+					    <input type="text" class="form-control" id="dni" ng-model="dni" placeholder="">
 					</div>
-					<div class="">
-					    <label>
-					      <input type="checkbox"> Check me out
-					    </label>
+					<div class="form-group">
+					    <label for="nombres">NIvel</label>
+					    <select class="form-control" ng-model="nivel">
+					    	<option>Inicial</option>
+					    	<option>Primaria</option>
+					    	<option>Secundaria</option>
+					    </select>
 					</div>
-					<button type="submit" class="btn btn-default">Submit</button>
+					<div class="form-group">
+					    <label for="nombres">Grado</label>
+					    <select class="form-control" ng-model="grado">
+					    	<option>1er</option>
+					    	<option>2do</option>
+					    	<option>3ro</option>
+					    	<option>4to</option>
+					    	<option>5to</option>
+					    	<option>6to</option>
+					    </select>
+					</div>
+					<div class="form-group">
+					    <label for="nombres">Seccion</label>
+					    <select class="form-control" ng-model="seccion">
+					    	<option>1</option>
+					    	<option>2</option>
+					    </select>
+					</div>
+					<button type="submit" class="btn btn-default">Guardar</button>
     			</form>
     		</div>
     	</div>

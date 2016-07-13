@@ -19,13 +19,11 @@ Route::group(['prefix'=> 'app', 'middleware' => [  ]], function(){
 
 	Route::get('/', 'HomeController@index');
 
-	/*
-	|--------------------------------------------------------------------------
-	| Rutas Usuario
-	*/
-	Route::get('estudiantes', 'UserController@vistaEstudiantes');
-	Route::get('getEstudiantes', 'UserController@getEstudiantes');
-	Route::get('estudiantes/crear', 'UserController@vistaCrearEstudiante');
+    /*
+     * Rutas estudiantes
+     */
+	Route::get('getEstudiantes', 'EstudianteController@getEstudiantes');
+	Route::resource('estudiantes', 'EstudianteController');
 
 	
 
