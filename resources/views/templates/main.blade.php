@@ -13,9 +13,12 @@
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/component.css') }}" />
 		<script src="{{ asset('assets/js/modernizr.custom.js') }}"></script>
 		<script src="{{ asset('assets/angular/jquery.min.js') }}"></script>
+
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" />
+		<script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
 	</head>
 	<body>
-		<div class="container">
+		<div class="contenedor">
 			<div class="nav">
 				<ul id="gn-menu" class="gn-menu-main">
 					<li class="gn-trigger">

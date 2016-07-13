@@ -25,8 +25,8 @@ Route::group(['prefix'=> 'app', 'middleware' => [  ]], function(){
 	*/
 	Route::get('estudiantes', 'UserController@vistaEstudiantes');
 	Route::get('getEstudiantes', 'UserController@getEstudiantes');
-	Route::get('estudiantes/crear', 'UserController@getEstudiantes');
-	
+	Route::get('estudiantes/crear', 'UserController@vistaCrearEstudiante');
+
 	
 
 });

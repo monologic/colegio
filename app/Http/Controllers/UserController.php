@@ -18,4 +18,9 @@ class UserController extends Controller
 		$users = User::where('usuariotipo_id', 1)->get();
 		return response()->json( $users );
 	}
+	public function vistaCrearEstudiante()
+	{
+		return view('estudiantes.crear');
+	}
+	
 }

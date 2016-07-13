@@ -1,6 +1,6 @@
 @extends('templates.main')
 
-@section('title', 'Bienvenido')
+@section('title', 'Estudiantes')
 
 @section('content')
     <h1>Vista de Estudiantes</h1>
