@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix'=> 'app', 'middleware' => [ 'auth' ]], function(){
+Route::group(['prefix'=> 'app', 'middleware' => [  ]], function(){
 
 	Route::get('/', 'HomeController@index');
 
@@ -23,9 +23,10 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth' ]], function(){
 	|--------------------------------------------------------------------------
 	| Rutas Usuario
 	*/
-	Route::get('estudiantes', 'UserController@getEstudiantes');
+	Route::get('estudiantes', 'UserController@vistaEstudiantes');
+	Route::get('getEstudiantes', 'UserController@getEstudiantes');
 	Route::get('estudiantes/crear', 'UserController@getEstudiantes');
-
+	
 	
 
 });

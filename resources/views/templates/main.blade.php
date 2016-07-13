@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/demo.css') }}" />
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/component.css') }}" />
 		<script src="{{ asset('assets/js/modernizr.custom.js') }}"></script>
+		<script src="{{ asset('assets/angular/jquery.min.js') }}"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -53,11 +54,19 @@
 				</ul>
 			</div><!-- /nav -->
 
-			<div class="content">
-            	@yield('content')
-        	</div>
-		</div><!-- /container -->
+			
+			<div class="content" ng-app="robertApp">
+			
+				<script src="{{ asset('assets/angular/angular.min.js') }}"></script>
+				<script src="{{ asset('assets/js/ng-scripts/app.js') }}"></script>
 
+            	@yield('content')
+
+            	
+        	</div>
+
+		</div><!-- /container -->
+		
 		<script src="{{ asset('assets/js/classie.js') }}"></script>
 		<script src="{{ asset('assets/js/gnmenu.js') }}"></script>
 		<script>

@@ -9,10 +9,13 @@ use App\User;
 
 class UserController extends Controller
 {
+	public function vistaEstudiantes()
+	{
+		return view('estudiantes.ver');
+	}
 	public function getEstudiantes()
 	{
 		$users = User::where('usuariotipo_id', 1)->get();
-		
-		return view('estudiantes.ver')->with('users', $users);
+		return response()->json( $users );
 	}
 }
