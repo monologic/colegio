@@ -14,12 +14,13 @@
 		<script src="{{ asset('assets/js/modernizr.custom.js') }}"></script>
 		<script src="{{ asset('assets/angular/jquery.min.js') }}"></script>
 
-		<link rel="stylesheet" type="text/css" href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" />
+		
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styleAdmin.css') }}" />
 		<script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
 
 		<script src="{{ asset('assets/SweetAlert/sweetalert.min.js') }}"></script> 
     	<link rel="stylesheet" type="text/css" href="{{ asset('assets/SweetAlert/sweetalert.css') }}">
+    	<link rel="stylesheet" type="text/css" href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" />
 	</head>
 	<body>
 		<div class="contenedor">
@@ -30,34 +31,18 @@
 						<nav class="gn-menu-wrapper">
 							<div class="gn-scroller">
 								<ul class="gn-menu">
-									<li class="gn-search-item">
-										<input placeholder="Search" type="search" class="gn-search">
-										<a class="gn-icon gn-icon-search"><span>Search</span></a>
-									</li>
-									<li>
-										<a class="gn-icon gn-icon-download">Downloads</a>
-										<ul class="gn-submenu">
-											<li><a class="gn-icon gn-icon-illustrator">Vector Illustrations</a></li>
-											<li><a class="gn-icon gn-icon-photoshop">Photoshop files</a></li>
-										</ul>
-									</li>
-									<li><a class="gn-icon gn-icon-cog">Settings</a></li>
-									<li><a class="gn-icon gn-icon-help">Help</a></li>
-									<li>
-										<a class="gn-icon gn-icon-archive">Archives</a>
-										<ul class="gn-submenu">
-											<li><a class="gn-icon gn-icon-article">Articles</a></li>
-											<li><a class="gn-icon gn-icon-pictures">Images</a></li>
-											<li><a class="gn-icon gn-icon-videos">Videos</a></li>
-										</ul>
-									</li>
+									<li class="gn-search-item"><a href="/" class="gn-icon gn-icon-search"><span>Buscar</span></a></li>
+									<li><a class="gn-icon gn-icon-download">slider</a></li>
+									<li><a class="gn-icon gn-icon-cog">Noticias</a></li>
+									<li><a class="gn-icon gn-icon-help">Comunicados</a></li>
+									<li><a class="gn-icon gn-icon-archive">Novedades</a></li>
 								</ul>
 							</div><!-- /gn-scroller -->
 						</nav>
 					</li>
-					<li><a class="codrops-icon codrops-icon-prev"> Colegio Robert Gagne</a></li>
-					<li><a><span>Yo</span></a></li>
-					<li><a class="codrops-icon codrops-icon-drop" ><span>Salir</span></a></li>
+					<li><a class="codrops-icon codrops-icon-prev"> <span class="color">Colegio Robert Gagne</span></a></li>
+					<li><a><span class="color">Yo</span></a></li>
+					<li><a class="codrops-icon codrops-icon-drop " ><span class="color">Salir</span></a></li>
 				</ul>
 			</div><!-- /nav -->
 

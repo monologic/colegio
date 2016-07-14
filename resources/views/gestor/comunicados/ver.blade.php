@@ -1,12 +1,13 @@
 @extends('templates.main')
 
-@section('title', 'Estudiantes')
+@section('title', 'Comunicado')
 
 @section('content')
-    <h1>Vista de Estudiantes</h1>
+    <h1>Vista de Comunicado</h1>
     <div ng-controller="estudiantesController" ng-init="get()">
 
         <div>
+            <a href="{{ url('app/comunicados/create') }}" class="btn btn-colegio">Crear comunicado</a>
         	<table class="table table-hover">
         		<thead>
                     <tr>

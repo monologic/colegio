@@ -1,5 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 .formulariok{
 	max-width: 500px;
 	width: 90%;
 	margin:0px;
+}
+.color{
+	color: #96281B;
+}
+.btn-colegio{
+	display: block;
+	position: relative;
+	padding-top: 15px;
+	border-radius: 5px;
+	color: white;
+	background-color: #710301;
+	font-family: 'Raleway', sans-serif;
 }
