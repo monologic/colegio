@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Comunicado;
+use App\Comunicado;
 use App\Http\Requests;
 
 class ComunicadoController extends Controller
@@ -36,7 +36,18 @@ class ComunicadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->file('imagen'))
+        {
+            $file = $request -> file('imagen');
+            $name = 'comunicado_'. time() . '.' .$file->getClientOriginalExtension();
+            $path=public_path() . "/imagen/comunicados/";
+            $file -> move($path,$name);
+        }
+        $comunicado = new Comunicado($request->all());
+
+        $comunicado->imagen = $name;
+        $comunicado->save();
+        return redirect('app/comunicados');
     }
 
     /**
@@ -82,5 +93,13 @@ class ComunicadoController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function getComunicado(Request $request)
+    {
+        
+      $comuni = Comunicado::all();
+        return response()->json( $comuni );
+
+
     }
 }

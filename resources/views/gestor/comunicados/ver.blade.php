@@ -3,33 +3,27 @@
 @section('title', 'Comunicado')
 
 @section('content')
-    <h1>Vista de Comunicado</h1>
-    <div ng-controller="estudiantesController" ng-init="get()">
+    <h1 class="titulo">Lista de Comunicado</h1>
+    <div ng-controller="comunicadoController" ng-init="get()" class="tb-colegio">
 
         <div>
             <a href="{{ url('app/comunicados/create') }}" class="btn btn-colegio">Crear comunicado</a>
-        	<table class="table table-hover">
+        	<table class="table table-hover font">
         		<thead>
                     <tr>
-                        <th>#</th>
+                        <th>Fecha</th>
+                        <th>Asunto</th>
                         <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>DNI</th>      
-                        <th>Nivel</th>
-                        <th>Grado</th>
-                        <th>Sección</th>
-                        <th>Acción</th>
+                        <th>Destinatario</th> 
+                        <th>Acciones</th>      
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="x in estudiantes">
-                        <td>@{{ $index+1 }}</td>
-                        <td>@{{ x.nombres }}</td>
-                        <td>@{{ x.apellidos }}</td>
-                        <td>@{{ x.dni }}</td>
-                        <td>@{{ x.nivel }}</td>
-                        <td>@{{ x.grado }}</td>
-                        <td>@{{ x.seccion }}</td>
+                    <tr ng-repeat="x in comunicados">
+                        <td>@{{ x.fecha_pub }}</td>
+                        <td>@{{ x.asunto }}</td>
+                        <td>@{{ x.nombre }}</td>
+                        <td>@{{ x.destinatario }}</td>
                         <td>
                             <a href="" ng-click="dataEditar(x);" data-toggle="modal" data-target="#editar" class="btn btn-success"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
 
@@ -95,5 +89,5 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('assets/js/ng-scripts/controllers/estudiantesController.js') }}"></script>
+    <script src="{{ asset('assets/js/ng-scripts/controllers/comunicadoController.js') }}"></script>
 @endsection

@@ -34,7 +34,7 @@
 									<li class="gn-search-item"><a href="/" class="gn-icon gn-icon-search"><span>Buscar</span></a></li>
 									<li><a class="gn-icon gn-icon-download">slider</a></li>
 									<li><a class="gn-icon gn-icon-cog">Noticias</a></li>
-									<li><a class="gn-icon gn-icon-help">Comunicados</a></li>
+									<li><a class="gn-icon gn-icon-help" href="{{ url('app/comunicados') }}">Comunicados</a></li>
 									<li><a class="gn-icon gn-icon-archive">Novedades</a></li>
 								</ul>
 							</div><!-- /gn-scroller -->

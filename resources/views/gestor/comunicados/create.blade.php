@@ -4,54 +4,43 @@
 
 @section('content')
 	<div class="container">
-		<h1>Crear Estudiante</h1>
+		<h1>Crear Comunicado</h1>
     	<div ng-controller="estudiantesController">
     		<div class="formulariok">
-    			<form role="form" method="POST" action="{{ url('app/estudiantes') }}">
+    			<form role="form" method="POST" action="{{ url('app/comunicados') }}" accept-charset="UTF-8" enctype="multipart/form-data">
     				{{ csrf_field() }}
     				<div class="form-group">
-					    <label for="nombres">Nombres</label>
-					    <input type="text" class="form-control" id="nombres" ng-model="nombres" placeholder="" name="nombres" required>
+					    <label for="nombre">Nombres</label>
+					    <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" required>
 					</div>
 					<div class="form-group">
-					    <label for="apellidos">Apellidos</label>
-					    <input type="text" class="form-control" id="apellidos" ng-model="apellidos" placeholder="" name="apellidos" required>
+					    <label for="puesto_cargo">Cargo</label>
+					    <input type="text" class="form-control" id="puesto_cargo"  name="puesto_cargo" required>
 					</div>
 					<div class="form-group">
-					    <label for="dni">DNI</label>
-					    <input type="text" class="form-control" id="dni" ng-model="dni" placeholder="" name="dni" required>
+					    <label for="destinatario">Destinatario</label>
+					    <input type="text" class="form-control" id="destinatario" name="destinatario" required>
 					</div>
 					<div class="form-group">
-					    <label for="nombres">NIvel</label>
-					    <select class="form-control" ng-model="nivel" name="nivel" required>
-					    	<option>Inicial</option>
-					    	<option>Primaria</option>
-					    	<option>Secundaria</option>
-					    </select>
+					    <label for="asunto">Asunto</label>
+					    <input type="text" class="form-control" id="asunto" name="asunto" placeholder="" name="asunto" required>
+					</div>
+					
+					<div class="form-group">
+					    <b><p for="cuerpo">Cuerpo</p></b>
+					    <textarea name="cuerpo" id="cuerpo" class="form-control" cols="70" rows="10"></textarea>
 					</div>
 					<div class="form-group">
-					    <label for="nombres">Grado</label>
-					    <select class="form-control" ng-model="grado" name="grado" required>
-					    	<option>1er</option>
-					    	<option>2do</option>
-					    	<option>3ro</option>
-					    	<option>4to</option>
-					    	<option>5to</option>
-					    	<option>6to</option>
-					    </select>
+					    <label for="fecha_pub">Fecha de publicación</label>
+					    <input type="date" class="form-control" id="fecha_pub" placeholder="" name="fecha_pub" required>
 					</div>
 					<div class="form-group">
-					    <label for="nombres">Seccion</label>
-					    <select class="form-control" ng-model="seccion" name="seccion" required>
-					    	<option>1</option>
-					    	<option>2</option>
-					    </select>
+					    <b><p for="archivo">Archivo</p></b>
+					    <input type="file" name="imagen">
 					</div>
-					<button type="submit" class="btn btn-default">Guardar</button>
+					<button type="submit" class="btn btn-colegio">Guardar</button>
     			</form>
     		</div>
     	</div>
 	</div>
-    
-    <script src="{{ asset('assets/js/ng-scripts/controllers/estudiantesController.js') }}"></script>
 @endsection

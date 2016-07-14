@@ -41,6 +41,7 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'web' ]], function(){
     * Rutas para el gestor de contenido
     */
 	Route::resource('sliders', 'SliderController');
+	Route::get('getComunicados', 'ComunicadoController@getComunicado');
 	Route::resource('comunicados', 'ComunicadoController');
 
 	
