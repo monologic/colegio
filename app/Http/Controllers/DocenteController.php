@@ -49,7 +49,7 @@ class DocenteController extends Controller
     public function store(Request $request)
     {
         $docente = new User($request->all());
-        $docente->usuariotipo_id = 1;
+        $docente->usuariotipo_id = 2;
         $docente->usuario = $request->dni;
         $docente->password = bcrypt($request->dni);
 
@@ -93,7 +93,7 @@ class DocenteController extends Controller
         $docente->fill($request->all());
         $docente->save();
 
-        return $this->getEstudiantes();
+        return $this->get();
     }
 
     /**
@@ -106,6 +106,6 @@ class DocenteController extends Controller
     {
         User::destroy($id);
 
-        return $this->getEstudiantes();
+        return $this->get();
     }
 }

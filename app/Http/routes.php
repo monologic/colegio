@@ -22,14 +22,20 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'web' ]], function(){
     /*
      * Rutas estudiantes
      */
-	Route::get('getEstudiantes', 'EstudianteController@getEstudiantes');
+	Route::get('getEstudiantes', 'EstudianteController@get');
 	Route::resource('estudiantes', 'EstudianteController');
-	
+
 	/*
-     * Rutas docentes
+     * Rutas getDocentes
      */
-	Route::get('getDocentes', 'DocenteController@getDocentes');
+	Route::get('getDocentes', 'DocenteController@get');
 	Route::resource('docentes', 'DocenteController');
+
+	/*
+     * Rutas administrativos
+     */
+	Route::get('getAdministrativos', 'AdministrativoController@get');
+	Route::resource('administrativos', 'AdministrativoController');
 
 	/*
     * Rutas para el gestor de contenido

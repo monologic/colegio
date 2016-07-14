@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 
-class EstudianteController extends Controller
+class AdministrativoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,17 +16,17 @@ class EstudianteController extends Controller
      */
     public function index()
     {
-        return view('estudiantes.ver');
+        return view('administrativos.ver');
     }
 
     /**
-     * Listado de estudiantes
+     * Listado de administrativos
      *
      * @return \Illuminate\Http\Response
      */
     public function get()
     {
-        $users = User::where('usuariotipo_id', 1)->get();
+        $users = User::where('usuariotipo_id', 2)->get();
         return response()->json( $users );
     }
 
@@ -37,7 +37,7 @@ class EstudianteController extends Controller
      */
     public function create()
     {
-        return view('estudiantes.crear');
+        return view('administrativos.crear');
     }
 
     /**
@@ -48,13 +48,13 @@ class EstudianteController extends Controller
      */
     public function store(Request $request)
     {
-        $estudiante = new User($request->all());
-        $estudiante->usuariotipo_id = 1;
-        $estudiante->usuario = $request->dni;
-        $estudiante->password = bcrypt($request->dni);
+        $docente = new User($request->all());
+        $docente->usuariotipo_id = 2;
+        $docente->usuario = $request->dni;
+        $docente->password = bcrypt($request->dni);
 
-        $estudiante->save();
-        return redirect('app/estudiantes');
+        $docente->save();
+        return redirect('app/administrativos');
         
     }
 
@@ -89,9 +89,9 @@ class EstudianteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $estudiante = User::find($id);
-        $estudiante->fill($request->all());
-        $estudiante->save();
+        $docente = User::find($id);
+        $docente->fill($request->all());
+        $docente->save();
 
         return $this->get();
     }
