@@ -26,11 +26,18 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'web' ]], function(){
 	Route::resource('estudiantes', 'EstudianteController');
 	
 	/*
+     * Rutas docentes
+     */
+	Route::get('getDocentes', 'DocenteController@getDocentes');
+	Route::resource('docentes', 'DocenteController');
+
+	/*
     * Rutas para el gestor de contenido
     */
-
 	Route::resource('sliders', 'SliderController');
 	Route::resource('comunicados', 'ComunicadoController');
+
+	
 
 	
 
