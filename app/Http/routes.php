@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix'=> 'app', 'middleware' => [  ]], function(){
+Route::group(['prefix'=> 'app', 'middleware' => [ 'web' ]], function(){
 
 	Route::get('/', 'HomeController@index');
 

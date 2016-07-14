@@ -7,22 +7,23 @@
 		<h1>Crear Estudiante</h1>
     	<div ng-controller="estudiantesController">
     		<div class="formulariok">
-    			<form ng-submit="guardar()">
+    			<form role="form" method="POST" action="{{ url('app/estudiantes') }}">
+    				{{ csrf_field() }}
     				<div class="form-group">
 					    <label for="nombres">Nombres</label>
-					    <input type="text" class="form-control" id="nombres" ng-model="nombres" placeholder="">
+					    <input type="text" class="form-control" id="nombres" ng-model="nombres" placeholder="" name="nombres" required>
 					</div>
 					<div class="form-group">
 					    <label for="apellidos">Apellidos</label>
-					    <input type="text" class="form-control" id="apellidos" ng-model="apellidos" placeholder="">
+					    <input type="text" class="form-control" id="apellidos" ng-model="apellidos" placeholder="" name="apellidos" required>
 					</div>
 					<div class="form-group">
 					    <label for="dni">DNI</label>
-					    <input type="text" class="form-control" id="dni" ng-model="dni" placeholder="">
+					    <input type="text" class="form-control" id="dni" ng-model="dni" placeholder="" name="dni" required>
 					</div>
 					<div class="form-group">
 					    <label for="nombres">NIvel</label>
-					    <select class="form-control" ng-model="nivel">
+					    <select class="form-control" ng-model="nivel" name="nivel" required>
 					    	<option>Inicial</option>
 					    	<option>Primaria</option>
 					    	<option>Secundaria</option>
@@ -30,7 +31,7 @@
 					</div>
 					<div class="form-group">
 					    <label for="nombres">Grado</label>
-					    <select class="form-control" ng-model="grado">
+					    <select class="form-control" ng-model="grado" name="grado" required>
 					    	<option>1er</option>
 					    	<option>2do</option>
 					    	<option>3ro</option>
@@ -41,7 +42,7 @@
 					</div>
 					<div class="form-group">
 					    <label for="nombres">Seccion</label>
-					    <select class="form-control" ng-model="seccion">
+					    <select class="form-control" ng-model="seccion" name="seccion" required>
 					    	<option>1</option>
 					    	<option>2</option>
 					    </select>

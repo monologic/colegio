@@ -54,6 +54,7 @@ class EstudianteController extends Controller
         $estudiante->password = bcrypt($request->dni);
 
         $estudiante->save();
+        return redirect('app/estudiantes');
         
     }
 
