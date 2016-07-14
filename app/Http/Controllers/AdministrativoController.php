@@ -26,7 +26,7 @@ class AdministrativoController extends Controller
      */
     public function get()
     {
-        $users = User::where('usuariotipo_id', 2)->get();
+        $users = User::where('usuariotipo_id', 3)->get();
         return response()->json( $users );
     }
 
@@ -49,7 +49,7 @@ class AdministrativoController extends Controller
     public function store(Request $request)
     {
         $docente = new User($request->all());
-        $docente->usuariotipo_id = 2;
+        $docente->usuariotipo_id = 3;
         $docente->usuario = $request->dni;
         $docente->password = bcrypt($request->dni);
 
