@@ -15,27 +15,33 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix'=> 'app', 'middleware' => [ 'web' ]], function(){
+Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 
 	Route::get('/', 'HomeController@index');
 
     /*
      * Rutas Usuarios
      */
-	Route::get('getEstudiantes', 'EstudianteController@get');
-	Route::resource('estudiantes', 'EstudianteController');
+    Route::group(['middleware' => 'rol'], function () {
+    	Route::get('getEstudiantes', 'EstudianteController@get');
+		Route::resource('estudiantes', 'EstudianteController');
 
-	Route::get('getDocentes', 'DocenteController@get');
-	Route::resource('docentes', 'DocenteController');
+		Route::get('getDocentes', 'DocenteController@get');
+		Route::resource('docentes', 'DocenteController');
 
-	Route::get('getAdministrativos', 'AdministrativoController@get');
-	Route::resource('administrativos', 'AdministrativoController');
+		Route::get('getAdministrativos', 'AdministrativoController@get');
+		Route::resource('administrativos', 'AdministrativoController');
 
-	Route::get('getAdministrativos', 'AdministrativoController@get');
-	Route::resource('administrativos', 'AdministrativoController');
+		Route::get('getAdministrativos', 'AdministrativoController@get');
+		Route::resource('administrativos', 'AdministrativoController');
 
-	Route::get('getDirectivos', 'DirectivoController@get');
-	Route::resource('directivos', 'DirectivoController');
+		Route::get('getDirectivos', 'DirectivoController@get');
+		Route::resource('directivos', 'DirectivoController');
+
+		Route::get('getPadres', 'PadreController@get');
+		Route::resource('padres', 'PadreController');
+    });
+	
 
 	/*
     * Rutas para el gestor de contenido

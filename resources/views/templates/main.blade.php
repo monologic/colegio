@@ -42,51 +42,24 @@
 		                    <img src="{{asset('images/logo.png')}}" width="100" height="90">
 		                </a>
 		            </div>
-
-		            <ul class="nav">
-		                <li class="">
-		                    <a href="{{ url('app/comunicados') }}">
-		                        <i class="pe-7s-graph"></i>
-		                        <p>Comunicados</p>
-		                    </a>
-		                </li>
-		                <li>
-		                    <a  href="{{ url('app/estudiantes') }}">
-		                        <i class="pe-7s-user"></i>
-		                        <p>Estudiantes</p>
-		                    </a>
-		                </li>
-		                <li>
-		                    <a href="table.html">
-		                        <i class="pe-7s-note2"></i>
-		                        <p>Table List</p>
-		                    </a>
-		                </li>
-		                <li>
-		                    <a href="typography.html">
-		                        <i class="pe-7s-news-paper"></i>
-		                        <p>Typography</p>
-		                    </a>
-		                </li>
-		                <li>
-		                    <a href="icons.html">
-		                        <i class="pe-7s-science"></i>
-		                        <p>Icons</p>
-		                    </a>
-		                </li>
-		                <li>
-		                    <a href="maps.html">
-		                        <i class="pe-7s-map-marker"></i>
-		                        <p>Maps</p>
-		                    </a>
-		                </li>
-		                <li>
-		                    <a href="notifications.html">
-		                        <i class="pe-7s-bell"></i>
-		                        <p>Notifications</p>
-		                    </a>
-		                </li>
-		            </ul>
+					@if (Auth::user()->usuariotipo_id == "1")
+				        @include('templates.menu.estudiante')
+				    @endif
+				    @if (Auth::user()->usuariotipo_id == "2")
+				        @include('templates.menu.docente')
+				    @endif
+				    @if (Auth::user()->usuariotipo_id == "3")
+				        @include('templates.menu.administrativo')
+				    @endif
+				    @if (Auth::user()->usuariotipo_id == "4")
+				        @include('templates.menu.directivo')
+				    @endif
+				    @if (Auth::user()->usuariotipo_id == "5")
+				        @include('templates.menu.padre')
+				    @endif
+				    @if (Auth::user()->usuariotipo_id == "6")
+				        @include('templates.menu.admin')
+					@endif
 		    	</div>
 		    </div>
 
