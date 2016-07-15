@@ -10,12 +10,13 @@
 }
 .btn-colegio{
 	display: block;
-	position: relative;
+	position: absolute;
 	padding-top: 15px;
 	border-radius: 5px;
 	color: white;
 	background-color: #710301;
 	font-family: 'Raleway', sans-serif;
+
 }
 .tb-colegio{
 	max-width: 700px;
@@ -23,9 +24,14 @@
 .titulo{
 	color:  #710301;
 	font-family: 'Poiret One', cursive;
+	margin-bottom: 30px;
 }
 .font{
 	font-family: 'Poiret One', cursive;
 	font-weight: bold;
 	font-size: 1.6rem;
+}
+.contenido{
+	background-color: white;
+	padding: 40px;
 }

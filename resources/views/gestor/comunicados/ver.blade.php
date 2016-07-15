@@ -3,10 +3,11 @@
 @section('title', 'Comunicado')
 
 @section('content')
-    <h1 class="titulo">Lista de Comunicado</h1>
-    <div ng-controller="comunicadoController" ng-init="get()" class="tb-colegio">
+   
+    <div ng-controller="comunicadoController" ng-init="get()" class="tb-colegio" style="height: 100%">
 
-        <div>
+        <div class="contenido">
+            <h1 class="titulo">Lista de Comunicados</h1>
             <a href="{{ url('app/comunicados/create') }}" class="btn btn-colegio">Crear comunicado</a>
         	<table class="table table-hover font">
         		<thead>
