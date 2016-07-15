@@ -2,7 +2,14 @@ app.controller('comunicadoController', function($scope,$http) {
     
     $scope.get = function () {
         $http.get('getComunicados').then(function successCallback(response) {
-                $scope.comunicados = response.data;
+                data = response.data;
+                for(i in data){
+                    rs=data[i].fecha_pub;
+                    $scope.fe = rs.split(' ');
+                    data[i].solofe = $scope.fe[0];
+                }
+                $scope.comunicados = data;
+                console.log($scope.comunicados)
             }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.

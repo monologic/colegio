@@ -9,17 +9,12 @@
 	color: #96281B;
 }
 .btn-colegio{
-	display: block;
-	position: absolute;
+	
 	padding-top: 15px;
 	border-radius: 5px;
 	color: white;
 	background-color: #710301;
 	font-family: 'Raleway', sans-serif;
-
-}
-.tb-colegio{
-	max-width: 700px;
 }
 .titulo{
 	color:  #710301;
@@ -31,7 +26,17 @@
 	font-weight: bold;
 	font-size: 1.6rem;
 }
-.contenido{
+.contenidos{
+	width: 90%;
+	margin: 30px auto 30px auto;
+
+}
+.cart{
+	display: block;
+	position: relative;
+	width: 99%;
 	background-color: white;
-	padding: 40px;
+	margin: 10px auto 10px auto;
+	padding: 30px;
+	box-shadow: 5px 5px 5px #888888;
 }

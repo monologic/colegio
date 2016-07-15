@@ -4,9 +4,10 @@
 
 @section('content')
 	<div class="container">
-		<h1>Crear Estudiante</h1>
+		
     	<div ng-controller="estudiantesController">
-    		<div class="formulariok">
+    		<div class="cart" style="max-width: 600px">
+    			<h1 class="titulo">Crear Estudiante</h1>
     			<form role="form" method="POST" action="{{ url('app/estudiantes') }}">
     				{{ csrf_field() }}
     				<div class="form-group">
@@ -47,7 +48,7 @@
 					    	<option>2</option>
 					    </select>
 					</div>
-					<button type="submit" class="btn btn-default">Guardar</button>
+					<button type="submit" class="btn btn-colegio">Guardar</button>
     			</form>
     		</div>
     	</div>

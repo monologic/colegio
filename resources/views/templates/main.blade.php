@@ -44,16 +44,16 @@
 		            </div>
 
 		            <ul class="nav">
-		                <li class="active">
-		                    <a href="dashboard.html">
+		                <li class="">
+		                    <a href="{{ url('app/comunicados') }}">
 		                        <i class="pe-7s-graph"></i>
-		                        <p>Dashboard</p>
+		                        <p>Comunicados</p>
 		                    </a>
 		                </li>
 		                <li>
-		                    <a href="user.html">
+		                    <a  href="{{ url('app/estudiantes') }}">
 		                        <i class="pe-7s-user"></i>
-		                        <p>User Profile</p>
+		                        <p>Estudiantes</p>
 		                    </a>
 		                </li>
 		                <li>
@@ -111,7 +111,7 @@
 		                        </li>
 		                        <li>
 		                            <a href="#">
-		                                Log out
+		                                Salir
 		                            </a>
 		                        </li>
 		                    </ul>
