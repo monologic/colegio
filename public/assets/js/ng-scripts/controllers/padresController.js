@@ -73,5 +73,14 @@ app.controller('padresController', function($scope,$http) {
             }
         );
     }
+    $scope.buscarPadre = function (id) {
+        $http.get('getPadre/'+$scope.dni).then(function successCallback(response) {
+                $scope.padre = response.data;
+            }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            }
+        );
+    }
 
 });

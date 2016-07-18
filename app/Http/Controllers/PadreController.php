@@ -108,4 +108,16 @@ class PadreController extends Controller
 
         return $this->get();
     }
+
+    public function vistaAsignarHijos()
+    {
+        return view('padres.asignarHijos');
+    }
+
+    public function getPadre($dni)
+    {
+        $padre = User::where('dni', $dni)->get();
+
+        return response()->json( $padre );
+    }
 }

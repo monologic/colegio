@@ -6,7 +6,7 @@
 	<div class="contenidos">
 		<div class="cart" style="max-width: 600px">
 			<h1 class="titulo">Crear Noticia</h1>
-	    	<div ng-controller="estudiantesController">
+	    	<div>
 	    		<div class="formulariok">
 	    			<form role="form" method="POST" action="{{ url('app/noticias') }}" accept-charset="UTF-8" enctype="multipart/form-data">
 	    				{{ csrf_field() }}
@@ -46,5 +46,4 @@
 	    	</div>
 		</div>
 	</div>
-	
 @endsection

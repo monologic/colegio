@@ -39,7 +39,11 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 		Route::resource('directivos', 'DirectivoController');
 
 		Route::get('getPadres', 'PadreController@get');
+		Route::get('getPadre/{dni}', 'PadreController@getPadre');
 		Route::resource('padres', 'PadreController');
+		Route::get('asignarHijos', 'PadreController@vistaAsignarHijos');
+		Route::resource('padres', 'PadreController');	
+		
     });
 	
 

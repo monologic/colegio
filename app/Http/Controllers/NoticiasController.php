@@ -37,7 +37,7 @@ class NoticiasController extends Controller
      */
     public function store(Request $request)
     {
-         if($request->file('imagen'))
+        if($request->file('imagen'))
         {
             $file = $request -> file('imagen');
             $name = 'noticia_'. time() . '.' .$file->getClientOriginalExtension();
@@ -82,7 +82,18 @@ class NoticiasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $noticia = Noticia::find($id);
+        if($request->file('imagen'))
+        {
+            $file = $request -> file('imagen');
+            $name = 'noticia_'. time() . '.' .$file->getClientOriginalExtension();
+            $path=public_path() . "/imagen/noticia/";
+            $file -> move($path,$name);
+        }
+        $noticia->fill($request->all());
+        $noticia->foto = $name;
+        $noticia->save();
+        return redirect('app/noticias');
     }
 
     /**
