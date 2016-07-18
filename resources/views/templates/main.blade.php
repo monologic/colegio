@@ -79,11 +79,11 @@
 							 <ul class="nav navbar-nav navbar-right">
 							 	<li>
 		                            <a href="#">
-		                                Yo
+		                                {{Auth::user()->nombres}}
 		                            </a>
 		                        </li>
 		                        <li>
-		                            <a href="#">
+		                            <a href="/logout">
 		                                Salir
 		                            </a>
 		                        </li>
