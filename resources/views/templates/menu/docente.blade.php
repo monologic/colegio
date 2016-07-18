@@ -6,8 +6,8 @@
         </a>
     </li>
     <li>
-        <a href="">
-            <i class="pe-7s-user"></i>
+        <a href="app/noticias">
+            <i class="pe-7s-news-paper"></i>
             <p>Noticias</p>
         </a>
     </li>

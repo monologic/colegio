@@ -25,6 +25,20 @@ app.controller('noticiaController', function($scope,$http) {
         $scope.seccion = data.seccion;
 
     }
+    $scope.plus = function (data) {
+
+        $scope.id = data.id;
+        $scope.formUrl = ('app/noticias/' + data.id);
+        $scope.titulom = data.titulo;
+        $scope.autorm = data.autor;
+        $scope.copetem = data.copete;
+        $scope.cuerpom = data.cuerpo;
+        $scope.epigrafem = data.epigrafe;
+        $scope.fecham = data.fecha.split(" ");
+        $scope.solofec =  $scope.fecham[0];
+        $scope.fotom = data.foto;
+
+    }
     $scope.editar = function () {
         $http.put('estudiantes/' + $scope.id,
             {   'nombres':$scope.nombres,
@@ -56,8 +70,8 @@ app.controller('noticiaController', function($scope,$http) {
                     "El registro se ha eliminado.", 
                     "success"); 
 
-                $http.delete( 'estudiantes/'+id ).then(function successCallback(response) {
-                    $scope.estudiantes = response.data;
+                $http.delete( 'noticias/'+id ).then(function successCallback(response) {
+                    $scope.noticias = response.data;
                 }, function errorCallback(response) {
                     swal({   
                         title: "Ha ocurrido un error!",   

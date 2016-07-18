@@ -5,6 +5,24 @@
 	width: 90%;
 	margin:0px;
 }
+blockquote{
+	border-color: red;
+	border-radius: 5px;
+}
+.imgnot{
+	width: 80%;
+	margin: 10px auto 10px auto;
+	max-width: 250px;
+}
+.imgn{
+	max-width: 250px;
+}
+.bro{
+	border-color: #710301;
+	font-size: 1.5rem;
+	font-family: 'Raleway', sans-serif;
+	background-color: rgb(245,245,245);
+}
 .color{
 	color: #96281B;
 }
