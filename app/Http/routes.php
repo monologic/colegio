@@ -46,11 +46,18 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 	/*
     * Rutas para el gestor de contenido
     */
+    /*
+    * Comunicados
+    */
 	Route::resource('sliders', 'SliderController');
 	Route::get('getComunicados', 'ComunicadoController@getComunicado');
 	Route::resource('comunicados', 'ComunicadoController');
 
-	
+	/*
+    * Noticias
+    */
+    Route::get('getNoticia', 'NoticiasController@getNoticia');
+	Route::resource('noticias', 'NoticiasController');
 
 	
 
