@@ -64,6 +64,13 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
     Route::post('noticias/{id}', 'NoticiasController@update');
 	Route::resource('noticias', 'NoticiasController');
 
+	/*
+    * Noticias
+    */
+	Route::get('getArchivos', 'ArchivoController@get');
+    Route::post('archivos/{id}', 'ArchivoController@update');
+	Route::resource('archivos', 'ArchivoController');
+
 	
 
 });
