@@ -65,7 +65,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="formulariok">
-                                <form role="form" action="@{{formUrl}}" method="PUT" accept-charset="UTF-8" enctype="multipart/form-data">
+                                <form role="form" action="@{{formUrl}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" id="formEdit">
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label for="autor">Autor</label>
@@ -96,7 +96,7 @@
                                         <input type="date" class="form-control" id="fecha" placeholder="" name="fecha" ng-model="solofec"  required>
                                     </div>
                                     <input type="hidden" name="posteador" value="{{Auth::user()->dni}}">
-                                    <button type="submit" class="btn btn-colegio">Guardar</button>
+                                    <a ng-click='editarNoticia()' class="btn btn-colegio">Guardar</a>
                                 </form>
                             </div>
                         </div>
@@ -125,9 +125,6 @@
                                 <img ng-src="../imagen/noticia/@{{fotom}}" alt="noticia" class="imgn" />
                                 <figcaption ng-bind="copetem"></figcaption> 
                             </figure>
-                               
-                            
-
                             
                         </div>
                     </div>

@@ -28,7 +28,7 @@ app.controller('noticiaController', function($scope,$http) {
     $scope.plus = function (data) {
 
         $scope.id = data.id;
-        $scope.formUrl = ('app/noticias/' + data.id);
+        $scope.formUrl = 'noticias/' + data.id;
         $scope.titulom = data.titulo;
         $scope.autorm = data.autor;
         $scope.copetem = data.copete;
@@ -84,4 +84,7 @@ app.controller('noticiaController', function($scope,$http) {
         );
     }
 
+    $scope.editarNoticia = function () {
+        $( "#formEdit" ).submit();
+    }
 });

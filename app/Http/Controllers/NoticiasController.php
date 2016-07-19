@@ -83,15 +83,16 @@ class NoticiasController extends Controller
     public function update(Request $request, $id)
     {
         $noticia = Noticia::find($id);
+        $noticia->fill($request->all());
+
         if($request->file('imagen'))
         {
             $file = $request -> file('imagen');
             $name = 'noticia_'. time() . '.' .$file->getClientOriginalExtension();
             $path=public_path() . "/imagen/noticia/";
             $file -> move($path,$name);
+            $noticia->foto = $name;
         }
-        $noticia->fill($request->all());
-        $noticia->foto = $name;
         $noticia->save();
         return redirect('app/noticias');
     }
@@ -104,14 +105,15 @@ class NoticiasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Noticia::destroy($id);
+
+        $this->getNoticia();
     }
-    public function getNoticia(Request $request)
+    public function getNoticia()
     {
         
-      $not = Noticia::all();
+        $not = Noticia::all();
         return response()->json( $not );
-
 
     }
 }

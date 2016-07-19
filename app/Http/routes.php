@@ -61,6 +61,7 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
     * Noticias
     */
     Route::get('getNoticia', 'NoticiasController@getNoticia');
+    Route::post('noticias/{id}', 'NoticiasController@update');
 	Route::resource('noticias', 'NoticiasController');
 
 	

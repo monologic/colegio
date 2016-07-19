@@ -94,7 +94,7 @@ class ComunicadoController extends Controller
     {
         //
     }
-    public function getComunicado(Request $request)
+    public function getComunicado()
     {
         
         $comuni = Comunicado::all();
