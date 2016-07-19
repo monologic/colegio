@@ -72,7 +72,7 @@
                                         <input type="text" class="form-control" id="autor" name="autor" placeholder="" name="autor" ng-model="autorm"  required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="titulo">Titulo</label>
+                                        <label for="titulo">Título</label>
                                         <input type="text" class="form-control" id="nombre"  name="titulo" ng-model="titulom"  required>
                                     </div>
                                     <div class="form-group">
@@ -84,7 +84,7 @@
                                         <input type="file" name="imagen">
                                     </div>
                                     <div class="form-group">
-                                        <label for="epigrafe">Epigrafe</label>
+                                        <label for="epigrafe">Epígrafe</label>
                                         <input type="text" class="form-control" id="destinatario" name="epigrafe" ng-model="epigrafem"  required>
                                     </div>
                                     <div class="form-group">
