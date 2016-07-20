@@ -40,7 +40,18 @@ class ArchivoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->file('archivo'))
+        {
+            $file = $request -> file('archivo');
+            $name = 'noticia_'. time() . '.' .$file->getClientOriginalExtension();
+            $path=public_path() . "/archivos/";
+            $file -> move($path,$name);
+        }
+        $archivo = new Archivo($request->all());
+
+        $archivo->archivo = $name;
+        $archivo->save();
+        return redirect('app/archivos');
     }
 
     /**
@@ -74,7 +85,19 @@ class ArchivoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $archivo = Archivo::find($id);
+        $archivo->fill($request->all());
+
+        if($request->file('archivo'))
+        {
+            $file = $request -> file('archivo');
+            $name = 'archivo_'. time() . '.' .$file->getClientOriginalExtension();
+            $path=public_path() . "/archivos/";
+            $file -> move($path,$name);
+            $archivo->archivo = $name;
+        }
+        $archivo->save();
+        return redirect('app/archivos');
     }
 
     /**
@@ -85,14 +108,23 @@ class ArchivoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Archivo::destroy($id);
+
+        $this->get();
     }
 
-    public function getNoticia()
+    public function get()
     {
         
         $archivos = Archivo::all();
+
         return response()->json( $archivos );
 
+    }
+    public function getArchivoTipos()
+    {
+        $ats = Archivotipo::all();
+
+        return response()->json( $ats );
     }
 }
