@@ -53,19 +53,22 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
     /*
     * Comunicados
     */
-	Route::resource('sliders', 'SliderController');
+
 	Route::get('getComunicados', 'ComunicadoController@getComunicado');
+	Route::post('comunicados/{id}', 'ComunicadoController@update');
 	Route::resource('comunicados', 'ComunicadoController');
 
 	/*
     * Noticias
     */
+
     Route::get('getNoticia', 'NoticiasController@getNoticia');
     Route::post('noticias/{id}', 'NoticiasController@update');
 	Route::resource('noticias', 'NoticiasController');
-
 	
 
 });
 
 Route::auth();
+Route::get('getNoticiaIndex', 'NoticiasController@getNoticiaIndex');
+Route::get('getComunicadosIndex', 'ComunicadoController@getComunicadoIndex');

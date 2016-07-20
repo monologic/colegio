@@ -15,16 +15,29 @@ app.controller('comunicadoController', function($scope,$http) {
             // or server returns response with an error status.
             });
     }
+    $scope.getComuni = function () {
+        $http.get('getComunicadosIndex').then(function successCallback(response) {
+                data = response.data;
+                for(i in data){
+                    rs=data[i].fecha_pub;
+                    $scope.fe = rs.split(' ');
+                    data[i].solofe = $scope.fe[0];
+                }
+                $scope.comun = data;
+                console.log($scope.comunicados)
+            }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            });
+    }
     $scope.dataEditar = function (data) {
 
-        $scope.id = data.id;
-        $scope.nombres = data.nombres;
-        $scope.apellidos = data.apellidos;
-        $scope.dni = data.dni;
-        $scope.nivel = data.nivel;
-        $scope.grado = data.grado;
-        $scope.seccion = data.seccion;
-
+        $scope.formUrl = "comunicados/"+ data.id;
+        $scope.nom = data.nombre;
+        $scope.car = data.puesto_cargo;
+        $scope.destinatario = data.destinatario;
+        $scope.asunto = data.asunto;
+        $scope.cuerpo = data.cuerpo;
     }
     $scope.editar = function () {
         $http.put('estudiantes/' + $scope.id,
@@ -69,6 +82,9 @@ app.controller('comunicadoController', function($scope,$http) {
                 });
             }
         );
+    }
+    $scope.editarNoticia = function () {
+        $( "#formEdit" ).submit();
     }
 
 });

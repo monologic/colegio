@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Noticia;
+use DB;
 
 use App\Http\Requests;
 
@@ -114,6 +115,17 @@ class NoticiasController extends Controller
         
         $not = Noticia::all();
         return response()->json( $not );
+
+    }
+    public function getNoticiaIndex()
+    {
+        
+        $not = DB::table('noticias')
+                ->orderBy('fecha', 'desc')
+                ->take(3)
+                ->get();
+        return response()->json( $not );
+
 
     }
 }

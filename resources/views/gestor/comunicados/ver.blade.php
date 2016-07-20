@@ -61,49 +61,35 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Editar Estudiante</h4>
+                            <h4 class="modal-title" id="myModalLabel">Editar Comunicado</h4>
                         </div>
                         <div class="modal-body">
-                            <form ng-submit="editar()">
+                            <form  action="@{{formUrl}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" id="formEdit">
                                 <div class="form-group">
                                     <label for="nombres">Nombres</label>
-                                    <input type="text" class="form-control" id="nombres" ng-model="nombres" placeholder="">
+                                    <input type="text" class="form-control" id="nombres" name="nombre" ng-model="nom">
                                 </div>
                                 <div class="form-group">
-                                    <label for="apellidos">Apellidos</label>
-                                    <input type="text" class="form-control" id="apellidos" ng-model="apellidos" placeholder="">
+                                    <label for="cargo">Cargo</label>
+                                    <input type="text" class="form-control" id="cargo" name="puesto_cargo" ng-model="car">
                                 </div>
                                 <div class="form-group">
-                                    <label for="dni">DNI</label>
-                                    <input type="text" class="form-control" id="dni" ng-model="dni" placeholder="">
+                                    <label for="destinatario">Destinatario</label>
+                                    <input type="text" class="form-control" id="destinatario" name="destinatario" ng-model="destinatario">
                                 </div>
                                 <div class="form-group">
-                                    <label for="nombres">NIvel</label>
-                                    <select class="form-control" ng-model="nivel">
-                                        <option>Inicial</option>
-                                        <option>Primaria</option>
-                                        <option>Secundaria</option>
-                                    </select>
+                                    <label for="asunto">Asunto</label>
+                                    <input type="text" class="form-control" id="asunto" name="asunto" ng-model="asunto">
                                 </div>
                                 <div class="form-group">
-                                    <label for="nombres">Grado</label>
-                                    <select class="form-control" ng-model="grado">
-                                        <option>1er</option>
-                                        <option>2do</option>
-                                        <option>3ro</option>
-                                        <option>4to</option>
-                                        <option>5to</option>
-                                        <option>6to</option>
-                                    </select>
+                                    <b><p for="cuerpo">Cuerpo</p></b>
+                                    <textarea name="" id="" cols="30" rows="10" class="form-control" name="cuerpo" ng-model="cuerpo"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="nombres">Seccion</label>
-                                    <select class="form-control" ng-model="seccion">
-                                        <option>1</option>
-                                        <option>2</option>
-                                    </select>
+                                    <label for="archivo">Archivo</label>
+                                    <input type="file" name="imagen">
                                 </div>
-                                <button type="submit" class="btn btn-default">Guardar</button>
+                                <a ng-click='editarNoticia()' class="btn btn-colegio">Guardar Cambios</a>
                             </form>
                         </div>
                     </div>

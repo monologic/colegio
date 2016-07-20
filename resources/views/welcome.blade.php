@@ -19,7 +19,7 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	
-	<body>
+	<body ng-app="robertApp">
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -118,80 +118,6 @@
 							    </div>
 							</section>
 						</div>
-					<div class="col-md-8 con">
-						<article class="noticia">
-								<header>
-									<div class="title">
-										<h2><a href="#">Magna sed adipiscing</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-11-01">November 1, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>
-								</header>
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-								<footer>
-									<ul class="actions">
-										<li><a href="#" class="button big">Continue Reading</a></li>
-									</ul>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li>
-									</ul>
-								</footer>
-						</article>
-						<article class="noticia">
-								<header>
-									<div class="title">
-										<h2><a href="#">Magna sed adipiscing</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-11-01">November 1, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>
-								</header>
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-								<footer>
-									<ul class="actions">
-										<li><a href="#" class="button big">Continue Reading</a></li>
-									</ul>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li>
-									</ul>
-								</footer>
-						</article>
-						<article class="noticia">
-								<header>
-									<div class="title">
-										<h2><a href="#">Magna sed adipiscing</a></h2>
-										<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-11-01">November 1, 2015</time>
-										<a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>
-								</header>
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-								<footer>
-									<ul class="actions">
-										<li><a href="#" class="button big">Continue Reading</a></li>
-									</ul>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li>
-									</ul>
-								</footer>
-						</article>
-					</div>
 					<div class="col-md-4">
 						<section id="intro">
 							<a href="#" ><img src="images/logo.gif" alt="" class="insig" /></a>
@@ -200,57 +126,26 @@
 								<p>Calidad y experiencia para la educación</a></p>
 							</header>
 						</section>
-						<section>
+						<section ng-controller="comunicadoController" ng-init="getComuni()">
+							<br>
+							<h3 align="center">Comunicados</h3><br>
 								<ul class="posts">
-									<li>
+									<li ng-repeat="c in comun">
 										<article>
 											<header>
-												<h3><a href="#">Lorem ipsum fermentum ut nisl vitae</a></h3>
-												<time class="published" datetime="2015-10-20">October 20, 2015</time>
+												<h3><a href="#">@{{c.asunto}}</a></h3>
+												<time class="published">@{{c.solofe}}</time>
 											</header>
 											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
 										</article>
 									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Convallis maximus nisl mattis nunc id lorem</a></h3>
-												<time class="published" datetime="2015-10-15">October 15, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Euismod amet placerat vivamus porttitor</a></h3>
-												<time class="published" datetime="2015-10-10">October 10, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic10.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Magna enim accumsan tortor cursus ultricies</a></h3>
-												<time class="published" datetime="2015-10-08">October 8, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic11.jpg" alt="" /></a>
-										</article>
-									</li>
-									<li>
-										<article>
-											<header>
-												<h3><a href="#">Congue ullam corper lorem ipsum dolor</a></h3>
-												<time class="published" datetime="2015-10-06">October 7, 2015</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic12.jpg" alt="" /></a>
-										</article>
-									</li>
 								</ul>
 						</section>
-						<div class="mini-posts">
 
+
+						<div class="mini-posts">
+							<br>
+							<h3 align="center">Novendades</h3><br>
 									<!-- Mini Post -->
 										<article class="mini-post">
 											<header>
@@ -290,18 +185,57 @@
 											</header>
 											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
 										</article>
-						</div>
-						
+						</div>	
+					</div>	
+					<div class="col-md-8 con"  ng-controller="noticiaController" ng-init="firstNotice()">
+						<article class="noticia" ng-repeat="n in allnot">
+								<header>
+									<div class="title">
+										<h2><a>@{{n.titulo}}</a></h2>
+										
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2015-11-01">@{{n.solofe}}</time>
+										<a href="#" class="author"><span class="name">@{{n.autor}}</span><img src="images/avatar.jpg" alt="" /></a>
+									</div>
+								</header>
+								<a href="#" class="image featured"><img src="imagen/noticia/@{{n.foto}}" alt="" /></a>
+								<blockquote>@{{n.copete}}</blockquote>
+								<footer>
+									<ul class="actions">
+										<li><a href="#" class="button big">Noticia Completa</a></li>
+									</ul>
+									<ul class="stats">
+										<li><a href="#">General</a></li>
+										<li><a href="#" class="icon fa-heart">28</a></li>
+										<li><a href="#" class="icon fa-comment">128</a></li>
+									</ul>
+								</footer>
+						</article>	
 					</div>
+					
 							
 				</div>
-			<script src="assets/js/jquery-1.9.1.min.js"></script> 
-   			<script src="assets/js/owl.carousel.min.js"></script>  
+			<script src="assets/js/jquery-1.9.1.min.js"></script>
+			
+			<script src="{{ asset('assets/js/main.js') }}"></script>
+			<script src="{{ asset('assets/js/skel.min.js') }}"></script>
+			<script src="{{ asset('assets/js/util.js') }}"></script>
+
+			<script src="{{ asset('assets/angular/angular.min.js') }}"></script>
+			<script src="{{ asset('assets/js/ng-scripts/app.js') }}"></script>
+
+
+
+			<script src="{{ asset('assets/js/ng-scripts/controllers/noticiaController.js') }}"></script> 
+			<script src="{{ asset('assets/js/ng-scripts/controllers/comunicadoController.js') }}"></script> 
+
+
+
+   			<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>  
 		<!-- Scripts -->
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
+			
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
 
 			<script>
 				$(document).ready(function() {

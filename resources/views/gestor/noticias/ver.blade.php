@@ -111,20 +111,19 @@
                             <button type="button" class="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
                         </div>
                         <div class="modal-body" style="padding: 20px">
-                            <span ng-bind="epigrafem"></span>
+                            
                             <h2 class="modal-title" id="myModalLabel" ng-bind="titulom"></h2>
-                            <br>
+                            <br><span ng-bind="epigrafem"></span>
                             <blockquote class="bro">
                                 <div><b>Autor : </b><span ng-bind="autorm"></span></div>
-                                <div><b>Fecha : </b><span ng-bind="fecham"></span></div>
-                                   
+                                <div><b>Fecha : </b><span ng-bind="fecham"></span></div>     
                             </blockquote>
-                            
-                            <div ng-bind="cuerpom"></div>
                             <figure class="imgnot">
                                 <img ng-src="../imagen/noticia/@{{fotom}}" alt="noticia" class="imgn" />
                                 <figcaption ng-bind="copetem"></figcaption> 
                             </figure>
+                            <div ng-bind="cuerpom"></div>
+                            
                             
                         </div>
                     </div>
