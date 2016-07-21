@@ -12,15 +12,15 @@ app.controller('novedadesController', function($scope,$http) {
             // or server returns response with an error status.
             });
     }
-    $scope.firstNotice = function () {
-        $http.get('getNoticiaIndex').then(function successCallback(response) {
+    $scope.firstNovedades = function () {
+        $http.get('getNovedadesIndex').then(function successCallback(response) {
                 data = response.data;
                 for(i in data){
                     rs=data[i].fecha;
                     $scope.fe = rs.split(' ');
                     data[i].solofe = $scope.fe[0];
                 }
-                $scope.allnot = data;
+                $scope.allnovedades = data;
             }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.

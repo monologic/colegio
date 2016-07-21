@@ -8,5 +8,5 @@ class Comunicado extends Model
 {
     public $timestamps = false;
     
-    protected $fillable = ['fecha_pub', 'nombre', 'puesto_cargo','destinatario','asunto','cuerpo','imagen'];
+    protected $fillable = ['fecha_pub', 'nombre', 'puesto_cargo','destinatario','asunto','cuerpo','imagen','posteador'];
 }

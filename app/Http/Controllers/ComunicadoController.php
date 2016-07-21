@@ -43,11 +43,11 @@ class ComunicadoController extends Controller
             $name = 'comunicado_'. time() . '.' .$file->getClientOriginalExtension();
             $path=public_path() . "/imagen/comunicados/";
             $file -> move($path,$name);
+            $comunicado = new Comunicado($request->all());
+            $comunicado->imagen = $name;
+            $comunicado->save();
         }
-        $comunicado = new Comunicado($request->all());
-
-        $comunicado->imagen = $name;
-        $comunicado->save();
+        
         return redirect('app/comunicados');
     }
 
