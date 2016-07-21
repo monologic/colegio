@@ -12,7 +12,7 @@
         </a>
     </li>
     <li>
-        <a href="">
+        <a href="{{ url('app/novedades') }}">
             <i class="pe-7s-note2"></i>
             <p>Novedades</p>
         </a>

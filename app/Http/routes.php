@@ -65,22 +65,25 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
     Route::get('getNoticia', 'NoticiasController@getNoticia');
     Route::post('noticias/{id}', 'NoticiasController@update');
 	Route::resource('noticias', 'NoticiasController');
-<<<<<<< HEAD
-=======
-
 	/*
-    * Noticias
+    * Novedades
     */
+	Route::get('getNovedades', 'NovedadController@getNovedades');
+    Route::post('novedades/{id}', 'NovedadController@update');
+	Route::resource('novedades', 'NovedadController');
+
 	Route::get('getArchivos', 'ArchivoController@get');
 	Route::get('getArchivoTipos', 'ArchivoController@getArchivoTipos');
     Route::post('archivos/{id}', 'ArchivoController@update');
 	Route::resource('archivos', 'ArchivoController');
 
 
->>>>>>> 9e26558766f0dc6dd71bc281f6cb05c139217f0e
+
+
 	
 });
 
 Route::auth();
 Route::get('getNoticiaIndex', 'NoticiasController@getNoticiaIndex');
 Route::get('getComunicadosIndex', 'ComunicadoController@getComunicadoIndex');
+Route::get('getNovedadesIndex', 'NovedadController@getNovedadesIndex');

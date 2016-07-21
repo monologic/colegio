@@ -6,13 +6,13 @@
         </a>
     </li>
     <li>
-        <ahref="{{ url('app/noticias') }}">
+        <a href="{{ url('app/noticias') }}">
             <i class="pe-7s-news-paper"></i>
             <p>Noticias</p>
         </a>
     </li>
     <li>
-        <a href="">
+        <a href="{{ url('app/novedades') }}">
             <i class="pe-7s-note2"></i>
             <p>Novedades</p>
         </a>

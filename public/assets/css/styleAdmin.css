@@ -51,13 +51,13 @@ blockquote{
 	font-size: 1.6rem;
 }
 .contenidos{
-	width: 90%;
+	width: 95%;
 	margin: 30px auto 30px auto;
 }
 .cart{
 	display: block;
 	position: relative;
-	width: 99%;
+	width: 100%;
 	background-color: white;
 	margin: 10px auto 10px auto;
 	padding: 30px;
