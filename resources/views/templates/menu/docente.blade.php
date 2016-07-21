@@ -6,7 +6,7 @@
         </a>
     </li>
     <li>
-        <a href="app/noticias">
+        <a href="{{ url('app/noticias') }}">
             <i class="pe-7s-news-paper"></i>
             <p>Noticias</p>
         </a>

@@ -82,7 +82,7 @@ class ComunicadoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $comunicado = Noticia::find($id);
+        $comunicado = Comunicado::find($id);
         $comunicado->fill($request->all());
 
         if($request->file('imagen'))

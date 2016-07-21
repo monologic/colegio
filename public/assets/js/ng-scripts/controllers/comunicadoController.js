@@ -9,7 +9,6 @@ app.controller('comunicadoController', function($scope,$http) {
                     data[i].solofe = $scope.fe[0];
                 }
                 $scope.comunicados = data;
-                console.log($scope.comunicados)
             }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
@@ -54,7 +53,18 @@ app.controller('comunicadoController', function($scope,$http) {
             // or server returns response with an error status.
         });
     }
+    $scope.plus = function (data) {
 
+        $scope.id = data.id;
+        $scope.nombrem = data.nombre;
+        $scope.cargo = data.puesto_cargo;
+        $scope.cuerpom = data.cuerpo;
+        $scope.destinatariom = data.destinatario;
+        $scope.fechams = data.fecha_pub.split(" ");
+        $scope.solofe =  $scope.fechams[0];
+        $scope.asuntom = data.asunto;
+        $scope.archivo = data.imagen;       
+    }
     $scope.eliminar = function (id) {
         swal({   title: "",
             text: "Está seguro que desea eliminar este registro?",
