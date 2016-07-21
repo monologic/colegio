@@ -24,6 +24,7 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
      */
     Route::group(['middleware' => 'rol'], function () {
     	Route::get('getEstudiantes', 'EstudianteController@get');
+    	Route::get('getEstudiante/{dni}', 'EstudianteController@getEstudiante');
 		Route::resource('estudiantes', 'EstudianteController');
 
 		Route::get('getDocentes', 'DocenteController@get');
@@ -41,9 +42,10 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 		Route::get('getPadres', 'PadreController@get');
 		Route::get('getPadre/{dni}', 'PadreController@getPadre');
 		Route::resource('padres', 'PadreController');
+		Route::get('asignarHijo/{dni}', 'PadreController@asignarHijo');
 		Route::get('asignarHijos', 'PadreController@vistaAsignarHijos');
+
 		Route::resource('padres', 'PadreController');	
-		
     });
 	
 

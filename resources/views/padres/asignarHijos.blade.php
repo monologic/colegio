@@ -34,13 +34,26 @@
 	    			</div>
 	    			<div class="col-md-6">
 	    				<h1 class="titulo">Buscar Hijo</h1>
-	    				<form ng-submit="buscarPadre()" class="form-inline">
+	    				<form class="form-inline" ng-submit="buscarHijo(dniHijo);">
 							<div class="form-group">
-							    <label for="dni">DNI de padre</label>
-							    <input type="text" class="form-control" id="dni" placeholder="" ng-model="dni" required>
+							    <label for="dniHijo">DNI Hijo</label>
+							    <input type="text" class="form-control" id="dniHijo" placeholder="" ng-model="dniHijo" required>
 							</div>
 							<button type="submit" class="btn btn-colegio">Buscar</button>
 			    		</form>
+			    		<br>
+			    		<table class="table table-hover">
+				    		<thead>
+				    			<th>Nombres</th>
+				    			<th>DNI</th>
+				    			<th>Asignar</th>
+				    		</thead>
+			    			<tr ng-repeat="est in estudiantes">
+			    				<td>@{{est.nombres + " " + est.apellidos}}</td>
+			    				<td>@{{est.dni}}</td>
+			    				<td><button class="btn btn-success" ng-click="asignarHijo(est.id)">+</button></td>
+			    			</tr>
+			    		</table>
 	    			</div>
 	    		</div>
 			</div>

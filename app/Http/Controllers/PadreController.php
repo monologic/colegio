@@ -120,4 +120,11 @@ class PadreController extends Controller
 
         return response()->json( $padre );
     }
+    public function asignarHijo($dni)
+    {
+        dd($dni);
+        $padre = User::where('dni', $dni)->get();
+
+        return response()->json( $padre );
+    }
 }

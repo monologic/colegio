@@ -108,4 +108,10 @@ class EstudianteController extends Controller
 
         return $this->get();
     }
+    public function getEstudiante($dni)
+    {
+        $Estudiante = User::where('dni', $dni)->get();
+
+        return response()->json( $Estudiante );
+    }
 }

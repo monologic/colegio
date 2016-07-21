@@ -76,11 +76,29 @@ app.controller('padresController', function($scope,$http) {
     $scope.buscarPadre = function (id) {
         $http.get('getPadre/'+$scope.dni).then(function successCallback(response) {
                 $scope.padre = response.data;
+                
+                    
             }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
             }
         );
+    }
+    $scope.buscarHijo = function (dni) {
+        $http.get('getEstudiante/'+dni).then(function successCallback(response) {
+            $scope.estudiantes = response.data;
+        }, function errorCallback(response) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+        });
+    }
+    $scope.asignarHijo = function (dni) {
+        $http.get('asignarHijo/'+dni).then(function successCallback(response) {
+            
+        }, function errorCallback(response) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+        });
     }
 
 });
