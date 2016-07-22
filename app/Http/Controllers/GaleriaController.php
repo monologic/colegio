@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Galeria;
 use App\Http\Requests;
 
 class GaleriaController extends Controller
@@ -25,7 +25,7 @@ class GaleriaController extends Controller
      */
     public function create()
     {
-        return view('gestor.galeria.ver');
+        return view('gestor.galeria.create');
     }
 
     /**
@@ -36,7 +36,18 @@ class GaleriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->file('imagen'))
+        {
+            $file = $request -> file('imagen');
+            $name = 'galeria_'. time() . '.' .$file->getClientOriginalExtension();
+            $path=public_path() . "/imagen/galeria/";
+            $file -> move($path,$name);
+        }
+        $galeria = new Galeria($request->all());
+
+        $galeria->imagen = $name;
+        $galeria->save();
+        return redirect('app/galeria');
     }
 
     /**
@@ -70,7 +81,19 @@ class GaleriaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $noticia = Galeria::find($id);
+        $noticia->fill($request->all());
+
+        if($request->file('imagen'))
+        {
+            $file = $request -> file('imagen');
+            $name = 'galeria_'. time() . '.' .$file->getClientOriginalExtension();
+            $path=public_path() . "/imagen/galeria/";
+            $file -> move($path,$name);
+            $noticia->imagen = $name;
+        }
+        $noticia->save();
+        return redirect('app/galeria');
     }
 
     /**
@@ -81,6 +104,21 @@ class GaleriaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Galeria::destroy($id);
+
+        $this->getGaleria();
+    }
+    public function getGaleria()
+    {
+        
+        $not = Galeria::all();
+        return response()->json( $not );
+
+    }
+    public function getGaleriaIndex()
+    {
+        
+        $not = Galeria::all();
+        return response()->json( $not );
     }
 }

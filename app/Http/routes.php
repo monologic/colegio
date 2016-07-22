@@ -87,10 +87,18 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 	Route::get('getEnlaces', 'EnlaceController@getEnlaces');
     Route::post('enlaces/{id}', 'EnlaceController@update');
 	Route::resource('enlaces', 'EnlaceController');
-
-
-
-
+	/*
+    * Galeria
+    */
+	Route::get('getGaleria', 'GaleriaController@getGaleria');
+    Route::post('galeria/{id}', 'GaleriaController@update');
+	Route::resource('galeria', 'GaleriaController');
+	/*
+    * Slider
+    */
+	Route::get('getSlider', 'SliderController@getSlider');
+    Route::post('slider/{id}', 'SliderController@update');
+	Route::resource('slider', 'SliderController');
 	
 });
 
@@ -99,3 +107,5 @@ Route::get('getNoticiaIndex', 'NoticiasController@getNoticiaIndex');
 Route::get('getComunicadosIndex', 'ComunicadoController@getComunicadoIndex');
 Route::get('getNovedadesIndex', 'NovedadController@getNovedadesIndex');
 Route::get('getEnlacesIndex', 'EnlaceController@getEnlacesIndex');
+Route::get('getGaleriaIndex', 'GaleriaController@getGaleriaIndex');
+Route::get('getSliderIndex', 'SliderController@getSliderIndex');

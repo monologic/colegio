@@ -1,6 +1,6 @@
 <ul class="nav">
     <li class="">
-        <a href="">
+        <a href="{{ url('app/slider') }}">
             <i class="pe-7s-graph"></i>
             <p>Sliders</p>
         </a>
@@ -12,7 +12,7 @@
         </a>
     </li>
     <li>
-        <a href="">
+        <a href="{{ url('app/galeria') }}">
             <i class="pe-7s-note2"></i>
             <p>Galería</p>
         </a>

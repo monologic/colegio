@@ -3,11 +3,11 @@
 @section('title', 'Galeria')
 
 @section('content')
-    <div ng-controller="galeriaController" ng-init="get()">
+    <div ng-controller="sliderController" ng-init="get()">
         <div class="contenidos">
             <div class="col-md-12">
                 <div class="cart" style="max-width: 650px">
-                    <h1 class="titulo">Galeria de fotos</h1>
+                    <h1 class="titulo">Sliders</h1>
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -19,11 +19,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="x in galeria">
+                            <tr ng-repeat="x in slider">
                                <td>@{{$index+1}}</td>
-                                <td>@{{ x.nombre }}</td>
+                                <td>@{{ x.titulo }}</td>
                                 <td>@{{ x.estado }}</td>
-                                <td><img src="../imagen/galeria/@{{ x.imagen }}" width="80" height="50"></td>
+                                <td><img src="../imagen/slider/@{{ x.imagen }}" width="80" height="50"></td>
                                 <td>
                                     <a ng-click="dataEditar(x);" data-toggle="modal" data-target="#editar"><i class="glyphicon glyphicon-pencil" style="color:black"></i></a>
 
@@ -32,7 +32,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <a href="{{ url('app/galeria/create') }}" class="btn btn-colegio">Añadir fotos</a>
+                    <a href="{{ url('app/slider/create') }}" class="btn btn-colegio">Añadir Slider</a>
                 </div>
             </div>
         </div>
@@ -48,11 +48,16 @@
                             {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="nombres">Nombres</label>
-                                    <input type="text" class="form-control" id="nombres" name="nombre" ng-model="nombre">
+                                    <input type="text" class="form-control" id="nombres" name="titulo" ng-model="titulo">
                                 </div>
+
                                 <div class="form-group">
                                     <label for="asunto">Descripcion</label>
                                     <textarea class="form-control" id="asunto" name="url" ng-model="descripcion"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nombres">Orden</label>
+                                    <input type="text" class="form-control" id="nombres" name="orden" ng-model="orden">
                                 </div>
                                 <div class="form-group">
                                     <label for="nombres">Estado</label>
@@ -98,5 +103,5 @@
         </div>
    </div>
      <!-- Modal de Edición -->
-    <script src="{{ asset('assets/js/ng-scripts/controllers/galeriaController.js') }}"></script>
+    <script src="{{ asset('assets/js/ng-scripts/controllers/sliderController.js') }}"></script>
 @endsection
