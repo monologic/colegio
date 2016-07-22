@@ -149,7 +149,7 @@
 										<article class="mini-post" ng-repeat="k in allnovedades">
 											<header>
 												<h3><a href="#">@{{k.titulo}}</a></h3>
-												<time class="published" datetime="2015-10-20">October 20, 2015</time>
+												<time class="published">@{{k.fecha}}</time>
 												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
 											</header>
 											<a href="#" class="image"><img src="imagen/novedades/@{{k.foto}}" alt="" /></a>
@@ -181,10 +181,20 @@
 									</ul>
 								</footer>
 						</article>	
-					</div>
-					
-							
+					</div>		
 				</div>
+			</div>
+			<section class="enlaces">
+				<div class="conten">
+					<h4 class="text-center">Enlaces</h4>	
+				</div>
+				
+			</section>
+			<footer class="foot">
+				<div class=" conten">
+					Mi footer
+				</div>
+			</footer>
 			<script src="assets/js/jquery-1.9.1.min.js"></script>
 			
 			<script src="{{ asset('assets/js/main.js') }}"></script>
