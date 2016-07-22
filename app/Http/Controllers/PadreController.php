@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use App\Tutor;
 
 class PadreController extends Controller
 {
@@ -120,12 +121,16 @@ class PadreController extends Controller
 
         return response()->json( $padre );
     }
-    public function asignarHijo($dni)
+    public function asignarHijo($dni, $id)
     {
-        dd($dni);
-        $padre = User::where('dni', $dni)->get();
+        $tutor = new Tutor();
+        $tutor->dni_hijo = $dni;
+        $tutor->user_id = $id;
 
-        return response()->json( $padre );
+        $tutor->save();
+
+        return $this->getHijosPadre($id);
+        
     }
     public function getHijosPadre($id)
     {

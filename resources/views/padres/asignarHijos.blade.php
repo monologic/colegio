@@ -28,9 +28,16 @@
 		    				</tr>
 		    			</table>
 		    			<h1 class="titulo2"><strong>Hijos</strong></h1>
-		    			<table>
-		    				
-		    			</table>
+		    			<table class="table table-hover">
+				    		<thead>
+				    			<th>Nombre</th>
+				    			<th>DNI</th>
+				    		</thead>
+			    			<tr ng-repeat="hp in padreHijos">
+			    				<td>@{{hp.nombres + " " + hp.apellidos}}</td>
+			    				<td>@{{hp.dni}}</td>
+			    			</tr>
+			    		</table>
 	    			</div>
 	    			<div class="col-md-6">
 	    				<h1 class="titulo">Buscar Hijo</h1>
@@ -44,14 +51,14 @@
 			    		<br>
 			    		<table class="table table-hover">
 				    		<thead>
-				    			<th>Nombres</th>
+				    			<th>Nombre</th>
 				    			<th>DNI</th>
 				    			<th>Asignar</th>
 				    		</thead>
 			    			<tr ng-repeat="est in estudiantes">
 			    				<td>@{{est.nombres + " " + est.apellidos}}</td>
 			    				<td>@{{est.dni}}</td>
-			    				<td><button class="btn btn-success" ng-click="asignarHijo(est.id)">+</button></td>
+			    				<td><button class="btn btn-success" ng-click="asignarHijo(est.dni)">+</button></td>
 			    			</tr>
 			    		</table>
 	    			</div>

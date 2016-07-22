@@ -76,8 +76,19 @@ app.controller('padresController', function($scope,$http) {
     $scope.buscarPadre = function (id) {
         $http.get('getPadre/'+$scope.dni).then(function successCallback(response) {
                 $scope.padre = response.data;
-                if (($scope.padre).length) {}
+                if (($scope.padre).length == 1) {
+                    $scope.buscarHijos(response.data[0].id);
+                }
                     
+            }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            }
+        );
+    }
+    $scope.buscarHijos = function (idPadre) {
+         $http.get('getHijosPadre/'+idPadre).then(function successCallback(response) {
+                $scope.padreHijos = response.data;   
             }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
@@ -93,12 +104,29 @@ app.controller('padresController', function($scope,$http) {
         });
     }
     $scope.asignarHijo = function (dni) {
-        $http.get('asignarHijo/'+dni).then(function successCallback(response) {
-            
-        }, function errorCallback(response) {
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
-        });
+        swal({   title: "",
+            text: "Desea asignar este estudiante a Padre?",
+            type: "warning",   
+            showCancelButton: true,   
+            confirmButtonColor: "#DD6B55",   
+            confirmButtonText: "Sí",
+            closeOnConfirm: false,
+            cancelButtonText:"Cancelar", }, 
+            function(){
+
+                $http.get('asignarHijo/'+dni+'/'+$scope.padre[0].id).then(function successCallback(response) {
+                    $scope.padreHijos = response.data;
+                }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                });
+
+                swal("", 
+                    "Se ha asignado correctamente!", 
+                    "success"); 
+            }
+        );
+        
     }
 
 });

@@ -42,7 +42,7 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 		Route::get('getPadres', 'PadreController@get');
 		Route::get('getPadre/{dni}', 'PadreController@getPadre');
 		Route::resource('padres', 'PadreController');
-		Route::get('asignarHijo/{dni}', 'PadreController@asignarHijo');
+		Route::get('asignarHijo/{dni}/{id}', 'PadreController@asignarHijo');
 		Route::get('asignarHijos', 'PadreController@vistaAsignarHijos');
 		Route::get('getHijosPadre/{id}', 'PadreController@getHijosPadre');
 
