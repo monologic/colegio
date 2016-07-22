@@ -1,19 +1,20 @@
 @extends('templates.main')
 
-@section('title', 'Comunicado')
+@section('title', 'Enlaces')
 
 @section('content')
     <div ng-controller="comunicadoController" ng-init="get()">
         <div class="contenidos">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="cart">
-                    <h1 class="titulo">Mis Comunicados</h1>
+                    <h1 class="titulo">Adminstrador de enlaces</h1>
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Fecha</th>
-                                <th>Asunto</th>
-                                <th>Destinatario</th>       
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Imgen</th> 
+                                <th>Dirección</th>       
                             </tr>
                         </thead>
                         <tbody>
@@ -30,29 +31,6 @@
                         </tbody>
                     </table>
                     <a href="{{ url('app/comunicados/create') }}" class="btn btn-colegio">Crear comunicado</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="cart">
-                    <h2 class="titulo">Todos los Comunicados</h2>
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Asunto</th>
-                                <th>Destinatario</th>       
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="y in comunicados">
-
-                                <td>@{{ y.asunto }}</td>
-                                <td>@{{ y.destinatario }}</td>
-                                <td>
-                                    <a ng-click="plus(y);" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-plus" style="color:black"></i></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>

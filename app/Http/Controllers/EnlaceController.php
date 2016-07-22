@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Enlace;
+
 use App\Http\Requests;
 
 class EnlaceController extends Controller
@@ -15,7 +16,7 @@ class EnlaceController extends Controller
      */
     public function index()
     {
-        
+        return view('gestor.enlaces.ver');
     }
 
     /**
@@ -25,7 +26,7 @@ class EnlaceController extends Controller
      */
     public function create()
     {
-        //
+        return view('gestor.enlaces.create');
     }
 
     /**

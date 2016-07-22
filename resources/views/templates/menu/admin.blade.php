@@ -6,7 +6,7 @@
         </a>
     </li>
     <li>
-        <a href="">
+        <a  href="{{ url('app/enlaces') }}">
             <i class="pe-7s-user"></i>
             <p>Enlaces</p>
         </a>
