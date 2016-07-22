@@ -37,7 +37,18 @@ class EnlaceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->file('imagen'))
+        {
+            $file = $request -> file('imagen');
+            $name = 'enlace_'. time() . '.' .$file->getClientOriginalExtension();
+            $path=public_path() . "/imagen/enlace/";
+            $file -> move($path,$name);
+        }
+        $nelace = new Enlace($request->all());
+
+        $nelace->imagen = $name;
+        $nelace->save();
+        return redirect('app/enlace');
     }
 
     /**
@@ -71,7 +82,20 @@ class EnlaceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $enlace = Enlace::find($id);
+        $enlace->fill($request->all());
+
+        if($request->file('imagen'))
+        {
+            $file = $request -> file('imagen');
+            $name = 'enlace_'. time() . '.' .$file->getClientOriginalExtension();
+            $path=public_path() . "/imagen/enlace/";
+            $file -> move($path,$name);
+            $enlace->imagen = $name;
+        }
+        $enlace->save();
+        return redirect('app/enlace');
+
     }
 
     /**
@@ -82,6 +106,20 @@ class EnlaceController extends Controller
      */
     public function destroy($id)
     {
-        //
+         Enlace::destroy($id);
+
+        $this->getNoticia();
+    }
+    public function getEnlaces()
+    {
+        
+        $not = Enlace::all();
+        return response()->json( $not );
+
+    }
+    public function getNoticiaIndex()
+    { 
+        $not = Enlace::all();
+        return response()->json( $not );
     }
 }

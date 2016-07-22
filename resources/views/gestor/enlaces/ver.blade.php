@@ -30,7 +30,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <a href="{{ url('app/comunicados/create') }}" class="btn btn-colegio">Crear comunicado</a>
+                    <a href="{{ url('app/enlaces/create') }}" class="btn btn-colegio">Crear enlaces</a>
                 </div>
             </div>
         </div>

@@ -1,14 +1,13 @@
 @extends('templates.main')
 
-@section('title', 'Crear Comunicado')
+@section('title', 'Crear Enlace')
 
 @section('content')
 	<div class="contenidos">
 		<div class="cart" style="max-width: 600px">
-			<h1 class="titulo">Crear Comunicado</h1>
-	    	<div ng-controller="estudiantesController">
+			<h1 class="titulo">Crear Enlace</h1>
 	    		<div class="formulariok">
-	    			<form role="form" method="POST" action="{{ url('app/enalces') }}" accept-charset="UTF-8" enctype="multipart/form-data">
+	    			<form  method="POST" action="{{ url('app/enlaces') }}" accept-charset="UTF-8" enctype="multipart/form-data">
 	    				{{ csrf_field() }}
 	    				<div class="form-group">
 						    <label for="nombre">Nombres</label>

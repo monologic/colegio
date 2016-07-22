@@ -117,15 +117,10 @@ class NoticiasController extends Controller
         return response()->json( $not );
 
     }
-    public function getNoticiaIndex()
+    public function getEnlacesIndex()
     {
         
-        $not = DB::table('noticias')
-                ->orderBy('fecha', 'desc')
-                ->take(3)
-                ->get();
+        $not = Noticia::all();
         return response()->json( $not );
-
-
     }
 }
