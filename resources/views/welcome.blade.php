@@ -208,7 +208,8 @@
 
 			<script src="{{ asset('assets/js/ng-scripts/controllers/noticiaController.js') }}"></script> 
 			<script src="{{ asset('assets/js/ng-scripts/controllers/comunicadoController.js') }}"></script>
-			<script src="{{ asset('assets/js/ng-scripts/controllers/novedadesController.js') }}"></script>  
+			<script src="{{ asset('assets/js/ng-scripts/controllers/novedadesController.js') }}"></script>
+			<script src="{{ asset('assets/js/ng-scripts/controllers/enlaceController.js') }}"></script>  
 
 
 

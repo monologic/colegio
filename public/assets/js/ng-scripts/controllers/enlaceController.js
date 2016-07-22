@@ -9,7 +9,7 @@ app.controller('enlaceController', function($scope,$http) {
             // or server returns response with an error status.
             });
     }
-    $scope.firstNotice = function () {
+    $scope.firstEnalce = function () {
         $http.get('getEnlacesIndex').then(function successCallback(response) {
                 data = response.data;
                 $scope.allenlaces = data;
@@ -21,12 +21,9 @@ app.controller('enlaceController', function($scope,$http) {
     $scope.dataEditar = function (data) {
 
         $scope.id = data.id;
-        $scope.nombres = data.nombres;
-        $scope.apellidos = data.apellidos;
-        $scope.dni = data.dni;
-        $scope.nivel = data.nivel;
-        $scope.grado = data.grado;
-        $scope.seccion = data.seccion;
+        $scope.formUrl2 = 'enlaces/' + data.id;
+        $scope.nombre = data.nombre;
+        $scope.direccion = data.url;
 
     }
     $scope.plus = function (data) {
