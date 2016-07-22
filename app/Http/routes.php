@@ -44,6 +44,7 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 		Route::resource('padres', 'PadreController');
 		Route::get('asignarHijo/{dni}', 'PadreController@asignarHijo');
 		Route::get('asignarHijos', 'PadreController@vistaAsignarHijos');
+		Route::get('getHijosPadre/{id}', 'PadreController@getHijosPadre');
 
 		Route::resource('padres', 'PadreController');	
     });

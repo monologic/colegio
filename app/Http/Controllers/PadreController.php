@@ -127,4 +127,14 @@ class PadreController extends Controller
 
         return response()->json( $padre );
     }
+    public function getHijosPadre($id)
+    {
+        $hijos = \DB::table('tutors')
+            ->join('users', 'users.dni', '=', 'tutors.dni_hijo')
+            ->select('users.*')
+            ->where('user_id', $id)
+            ->get();
+
+        return response()->json( $hijos );
+    }
 }

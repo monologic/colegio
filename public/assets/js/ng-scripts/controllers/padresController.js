@@ -76,7 +76,7 @@ app.controller('padresController', function($scope,$http) {
     $scope.buscarPadre = function (id) {
         $http.get('getPadre/'+$scope.dni).then(function successCallback(response) {
                 $scope.padre = response.data;
-                
+                if (($scope.padre).length) {}
                     
             }, function errorCallback(response) {
             // called asynchronously if an error occurs
