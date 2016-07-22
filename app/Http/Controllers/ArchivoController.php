@@ -110,7 +110,7 @@ class ArchivoController extends Controller
     {
         Archivo::destroy($id);
 
-        $this->get();
+        return $this->get();
     }
 
     public function get()

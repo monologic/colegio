@@ -42,7 +42,6 @@
 							<label for="edicion">Tipo de Archivo</label>
 							<select class="form-control" name="archivotipo_id" required>
 	  							@foreach ($archivoTipos as $at)
-	 						    	<option id="{{$at->id}}">{{ $at->tipo }}</option>
 	 						    	<option value="{{$at->id}}">{{ $at->tipo }}</option>
 	  							@endforeach
   							</select>
