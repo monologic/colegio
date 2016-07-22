@@ -3,7 +3,7 @@
 @section('title', 'Biblioteca')
 
 @section('content')
-    <div ng-controller="archivoController" ng-init="get()">
+    <div ng-controller="archivoController" ng-init="get();getTipos();">
         <div class="contenidos">
             <div class="col-md-8">
                 <div class="cart">
@@ -11,20 +11,18 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Fecha</th>
-                                <th>Titulo</th>
-                                <th>Copete</th>       
+                                <th>Título</th>
+                                <th>Autor</th>
+                                <th>Publicación</th>      
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="x in archivos" ng-if="{{Auth::user()->dni}} ==  x.posteador ">
-                                <td>@{{ x.solofe }}</td>
                                 <td>@{{ x.titulo }}</td>
-                                <td>@{{ x.copete }}</td>
+                                <td>@{{ x.autor }}</td>
+                                <td>@{{ x.pub_lugar + ", " + x.pub_editorial + ", " + x.pub_year}}</td>
                                 <td>
-                                    <a ng-click="plus(x);" data-toggle="modal" data-target="#editar"><i class="glyphicon glyphicon-pencil" style="color:black"></i></a>
-
-                                    <a ng-click="eliminar(x.id);"> <i class="glyphicon glyphicon-trash" style="color:black;margin-left: 10px"></i></a>
+                                    <a ng-click="plus(x);" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-plus" style="color:black"></i></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -48,7 +46,8 @@
                                 <td>@{{ y.titulo }}</td>
                                 <td>@{{ y.autor }}</td>
                                 <td>
-                                    <a ng-click="plus(y);" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-plus" style="color:black"></i></a>
+                                    <a ng-click="plus(y);" data-toggle="modal" data-target="#editar"><i class="glyphicon glyphicon-pencil" style="color:black"></i></a>
+                                    <a ng-click="eliminar(y.id);"> <i class="glyphicon glyphicon-trash" style="color:black;margin-left: 10px"></i></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -69,33 +68,40 @@
                                 <form role="form" action="@{{formUrl}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" id="formEdit">
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <label for="autor">Autor</label>
-                                        <input type="text" class="form-control" id="autor" name="autor" placeholder="" name="autor" ng-model="autorm"  required>
-                                    </div>
-                                    <div class="form-group">
                                         <label for="titulo">Título</label>
-                                        <input type="text" class="form-control" id="nombre"  name="titulo" ng-model="titulom"  required>
+                                        <input type="text" class="form-control" id="titulo" name="titulo" required ng-model="titulom">
                                     </div>
                                     <div class="form-group">
-                                        <label for="copete">Copete</label>
-                                        <input type="text" class="form-control" id="copete"  name="copete" ng-model="copetem"  required>
+                                        <label for="autor">Autor</label>
+                                        <input type="text" class="form-control" id="autor" name="autor" placeholder="" name="autor" required ng-model="autorm">
                                     </div>
                                     <div class="form-group">
-                                        <b for="archivo">Foto</b>
-                                        <input type="file" name="imagen">
+                                        <label for="pub_lugar">Lugar de Publicación</label>
+                                        <input type="text" class="form-control" id="pub_lugar"  name="pub_lugar" required ng-model="pub_lugar">
                                     </div>
                                     <div class="form-group">
-                                        <label for="epigrafe">Epígrafe</label>
-                                        <input type="text" class="form-control" id="destinatario" name="epigrafe" ng-model="epigrafem"  required>
+                                        <label for="pub_editorial">Editorial</label>
+                                        <input type="text" class="form-control" id="pub_editorial"  name="pub_editorial" required ng-model="pub_editorial">
                                     </div>
                                     <div class="form-group">
-                                        <b for="cuerpo">Cuerpo</b>
-                                        <textarea  id="" cols="50" rows="10" name="cuerpo" class="form-control" ng-model="cuerpom" ></textarea>
+                                        <label for="pub_year">Año de Publicación</label>
+                                        <input type="text" class="form-control" id="pub_year"  name="pub_year" required ng-model="pub_year">
                                     </div>
                                     <div class="form-group">
-                                        <label for="fecha">Fecha de publicación</label>
-                                        <input type="date" class="form-control" id="fecha" placeholder="" name="fecha" ng-model="solofec"  required>
+                                        <label for="edicion">Edición</label>
+                                        <input type="text" class="form-control" id="edicion"  name="edicion" required ng-model="edicion">
                                     </div>
+                                    <div class="form-group">
+                                        <b for="archivo">Archivo</b>
+                                        <input type="file" name="archivo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="edicion">Tipo de archivo</label>
+                                        <select class="form-control" name="archivotipo_id" required ng-model="archivotipo_id" ng-options="at.tipo for at in ats track by at.id">
+                                            <option value="">Seleccione...</option>
+                                        </select>
+                                    </div>
+
                                     <input type="hidden" name="posteador" value="{{Auth::user()->dni}}">
                                     <a ng-click='editarArchivo()' class="btn btn-colegio">Guardar</a>
                                 </form>
@@ -123,8 +129,7 @@
                             
                             <div ng-bind="cuerpom"></div>
                             <figure class="imgnot">
-                                <img ng-src="../imagen/archivo/@{{fotom}}" alt="archivo" class="imgn" />
-                                <figcaption ng-bind="copetem"></figcaption> 
+                                <a href="../archivos/@{{archivo}}" alt="archivo" class="imgn" />Descargar</a> 
                             </figure>
                             
                         </div>
