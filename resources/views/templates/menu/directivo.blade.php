@@ -24,7 +24,7 @@
         </a>
     </li>
     <li>
-        <a href="">
+        <a href="{{ url('app/archivos') }}">>
             <i class="pe-7s-science"></i>
             <p>Biblioteca</p>
         </a>

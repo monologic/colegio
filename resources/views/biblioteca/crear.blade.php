@@ -35,7 +35,9 @@
 						    <input type="text" class="form-control" id="edicion"  name="edicion" required>
 						</div>
 						<div class="form-group">
+							<br>
 						    <b for="archivo">Archivo</b>
+						    <br>
 						    <input type="file" name="archivo">
 						
 						<div class="form-group">
@@ -45,6 +47,11 @@
 	 						    	<option value="{{$at->id}}">{{ $at->tipo }}</option>
 	  							@endforeach
   							</select>
+						</div>
+						<div class="form-group">
+						    <label for="des">Descripción</label>
+						    <textarea class="form-control"  id="decripcion" name="decripcion" cols="30" rows="5"></textarea>
+						    
 						</div>
 						<input type="hidden" name="posteador" value="{{Auth::user()->dni}}">
 						<button type="submit" class="btn btn-colegio">Guardar</button>

@@ -3,8 +3,29 @@
 @section('title', 'Biblioteca')
 
 @section('content')
-    <div ng-controller="archivoController" ng-init="get();getTipos();">
-        <div class="contenidos">
+    <div ng-controller="archivoController">
+        <div class="contenidosa">
+            @if ( Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 6)
+                <div class="">
+                    <h1 class="titulo text-center">Biblioteca Virtual</h1>
+                    @foreach ($archivos as $archivo)
+                        <div class="cartA">
+                            <div class="ta">{{ $archivo->titulo }}</div>
+                           <blockquote class="bro">
+                                
+                                <div> <b>Autor :</b>  {{ $archivo->autor }}</div>
+                                <div> <b>Publicacion :</b>  {{ $archivo->created_at }}</div>
+                                <div> <b>Tipo :</b>  {{ $archivo->archivotipo->tipo }}</div>
+                           </blockquote>
+                           <div> <b>Descripción :</b></div>
+                            <div> {{ $archivo->decripcion }}</div>
+                            <button class="btn-colegio2" ng-click="plus({{ $archivo }});" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-plus"></i> Información</button>
+                        </div>
+                    @endforeach 
+                    {!! $archivos->render() !!} 
+                </div>  
+            @endif
+            @if ( Auth::user()->usuariotipo_id == 2 || Auth::user()->usuariotipo_id == 3 || Auth::user()->usuariotipo_id == 4)
             <div class="col-md-8">
                 <div class="cart">
                     <h1 class="titulo">Biblioteca</h1>
@@ -55,6 +76,7 @@
                     <a href="{{ url('app/archivos/create') }}" class="btn btn-colegio">Añadir Archivo</a>
                 </div>
             </div>
+            @endif
         </div>
         <div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">

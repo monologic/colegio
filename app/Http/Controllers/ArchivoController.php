@@ -18,7 +18,11 @@ class ArchivoController extends Controller
      */
     public function index()
     {
-        return view('biblioteca.ver');
+        $archivos = Archivo::orderBy('created_at','DESC')->paginate(3);
+        $archivos->each(function($archivos){
+            $archivos->archivotipo;
+        });
+        return view('biblioteca.ver')->with('archivos', $archivos);
     }
 
     /**
