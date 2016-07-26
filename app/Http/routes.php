@@ -49,6 +49,9 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 		Route::resource('padres', 'PadreController');	
     });
 	
+	Route::get('getActividades', 'ActividadController@get');
+    Route::get('getActividad/{id}', 'ActividadController@getActividad');
+	Route::resource('actividades', 'ActividadController');
 
 	/*
     * Rutas para el gestor de contenido
