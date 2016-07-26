@@ -12,7 +12,6 @@
 		<script src="{{ asset('assets/angular/jquery.min.js') }}"></script>
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/dashboard.css') }}" />
 		<!-- Libreria inmovibles-->
-		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styleAdmin.css') }}" />
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/demo.css') }}" />
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') }}" />
 		<link href="{{asset('assets/css/pe-icon-7-stroke.css')}}" rel="stylesheet" />
@@ -21,6 +20,7 @@
 
 		<script src="{{ asset('assets/SweetAlert/sweetalert.min.js') }}"></script> 
     	<link rel="stylesheet" type="text/css" href="{{ asset('assets/SweetAlert/sweetalert.css') }}">
+    	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styleAdmin.css') }}" />
     	
 
 	</head>
