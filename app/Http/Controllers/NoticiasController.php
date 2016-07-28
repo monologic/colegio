@@ -117,7 +117,7 @@ class NoticiasController extends Controller
         return response()->json( $not );
 
     }
-    public function getEnlacesIndex()
+    public function getNoticiaIndex()
     {
         
         $not = Noticia::all();

@@ -21,21 +21,21 @@
 	
 	<body ng-app="robertApp">
 		<!-- Wrapper -->
-			<div id="wrapper">
+			<div id="wrapper" style="" >
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="">Colegio Robert Gagne</a></h1>
+						<h1><a href="">Robert Gagne</a></h1>
 						<nav class="links">
 							<ul>
 								<li><a href="#">Inicio</a></li>
 								<li><a href="#">Admisión</a></li>
-								<li><a href="#">Galeria</a></li>
+								<li><a href="{{ url('/galeria') }}">Galeria</a></li>
 								<li><a href="#">Nosotros</a></li>
 								<li><a href="#">Contacto</a></li>
 							</ul>
 						</nav>
-						<nav class="main">
+						<nav class="main" >
 							<ul>
 								<li class="search">
 									<a class="fa-search" href="#search">Search</a>
@@ -104,97 +104,13 @@
 				<!-- Slider-->
 					
 				<!-- Main -->
-					<div id="main">
-						<div class="col-md-12">
-							<section class="slid">
-								<div id="owl-demo" class="owl-carousel">
-							        <div class="item"><img src="assets/slider/fullimage4.jpg" class="elslider"></div>
-							        <div class="item"><img src="assets/slider/fullimage5.jpg" class="elslider"></div>
-							        <div class="item"><img src="assets/slider/fullimage6.jpg" class="elslider"></div>
-							       	<div class="item"><img src="assets/slider/fullimage7.jpg" class="elslider"></div>
-							        <div class="item"><img src="assets/slider/fullimage1.jpg" class="elslider" ></div>
-							        <div class="item"><img src="assets/slider/fullimage2.jpg" class="elslider"></div>
-							      	<div class="item"><img src="assets/slider/fullimage3.jpg" class="elslider"></div>
-							    </div>
-							</section>
-						</div>
-					<div class="col-md-4">
-						<section id="intro">
-							<a href="#" ><img src="images/logo.gif" alt="" class="insig" /></a>
-							<header class="text-center">
-								<h2>Robert Gagne</h2>
-								<p>Calidad y experiencia para la educación</a></p>
-							</header>
-						</section>
-						<section ng-controller="comunicadoController" ng-init="getComuni()">
-							<br>
-							<h3 align="center">Comunicados</h3><br>
-								<ul class="posts">
-									<li ng-repeat="c in comun">
-										<article>
-											<header>
-												<h3><a href="#">@{{c.asunto}}</a></h3>
-												<time class="published">@{{c.solofe}}</time>
-											</header>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-										</article>
-									</li>
-								</ul>
-						</section>
-
-						<br><h3 align="center">Novendades</h3><br>
-						<div class="mini-posts" ng-controller="novedadesController" ng-init="firstNovedades()">
-							
-									<!-- Mini Post -->
-										<article class="mini-post" ng-repeat="k in allnovedades">
-											<header>
-												<h3><a href="#">@{{k.titulo}}</a></h3>
-												<time class="published">@{{k.fecha}}</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-											</header>
-											<a href="#" class="image"><img src="imagen/novedades/@{{k.foto}}" alt="" /></a>
-										</article>
-						</div>	
-					</div>	
-					<div class="col-md-8 con"  ng-controller="noticiaController" ng-init="firstNotice()">
-						<article class="noticia" ng-repeat="n in allnot">
-								<header>
-									<div class="title">
-										<h2><a>@{{n.titulo}}</a></h2>
-										
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2015-11-01">@{{n.solofe}}</time>
-										<a href="#" class="author"><span class="name">@{{n.autor}}</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>
-								</header>
-								<a href="#" class="image featured"><img src="imagen/noticia/@{{n.foto}}" alt="" /></a>
-								<blockquote>@{{n.copete}}</blockquote>
-								<footer>
-									<ul class="actions">
-										<li><a href="#" class="button big">Noticia Completa</a></li>
-									</ul>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon fa-heart">28</a></li>
-										<li><a href="#" class="icon fa-comment">128</a></li>
-									</ul>
-								</footer>
-						</article>	
-					</div>		
-				</div>
-			</div>
-			<section class="enlaces">
-				<div class="conten">
-					<h4 class="text-center">Enlaces</h4>	
-				</div>
 				
-			</section>
-			<footer class="foot">
-				<div class=" conten">
-					Mi footer
-				</div>
-			</footer>
+					@yield('content')
+		
+
+			
+			</div>
+
 			<script src="assets/js/jquery-1.9.1.min.js"></script>
 			
 			<script src="{{ asset('assets/js/main.js') }}"></script>
@@ -209,26 +125,20 @@
 			<script src="{{ asset('assets/js/ng-scripts/controllers/noticiaController.js') }}"></script> 
 			<script src="{{ asset('assets/js/ng-scripts/controllers/comunicadoController.js') }}"></script>
 			<script src="{{ asset('assets/js/ng-scripts/controllers/novedadesController.js') }}"></script>
-			<script src="{{ asset('assets/js/ng-scripts/controllers/enlaceController.js') }}"></script>  
+			<script src="{{ asset('assets/js/ng-scripts/controllers/enlaceController.js') }}"></script> 
+			<script src="{{ asset('assets/js/ng-scripts/controllers/sliderController.js') }}"></script>
+			<script src="{{ asset('assets/js/ng-scripts/directivas/onFinishRender.js') }}"></script>  
 
 
 
-   			<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>  
+   			<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+   			<script>
+			   var cw = $('#owl-demo').width();
+			   var res= cw/2.4;
+			      $('.elslider').css({'height':res+'px'});
+			</script>  
 		<!-- Scripts -->
 			
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-
-			<script>
-				$(document).ready(function() {
-				 
-				  $("#owl-demo").owlCarousel({
-				    
-				    singleItem : true,
-				    transitionStyle : "fade"
-				  });
-				 
-				});
-			</script>
-
 	</body>
 </html>

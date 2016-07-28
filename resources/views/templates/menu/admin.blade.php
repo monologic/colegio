@@ -18,7 +18,7 @@
         </a>
     </li>
     <li>
-        <a href="{{ url('app/archivos') }}">>
+        <a href="{{ url('app/archivos') }}">
             <i class="pe-7s-news-paper"></i>
             <p>Biblioteca</p>
         </a>

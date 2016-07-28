@@ -1,7 +1,7 @@
 app.controller('sliderController', function($scope,$http) {
     
-    $scope.get = function () {
-        $http.get('getSlider').then(function successCallback(response) {
+    $scope.gets = function () {
+        $http.get('getSliderIndex').then(function successCallback(response) {
                 data = response.data;
                 $scope.slider = data;
             }, function errorCallback(response) {
@@ -9,6 +9,12 @@ app.controller('sliderController', function($scope,$http) {
             // or server returns response with an error status.
             });
     }
+    $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+        $("#owl-demo").owlCarousel({
+            singleItem : true,
+            transitionStyle : "fade"
+        });
+    }); 
     $scope.firstEnalce = function () {
         $http.get('getEnlacesIndex').then(function successCallback(response) {
                 data = response.data;

@@ -12,7 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index.home');
+});
+Route::get('/galeria', function () {
+    return view('index.galeria');
 });
 
 Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
@@ -111,4 +114,5 @@ Route::get('getComunicadosIndex', 'ComunicadoController@getComunicadoIndex');
 Route::get('getNovedadesIndex', 'NovedadController@getNovedadesIndex');
 Route::get('getEnlacesIndex', 'EnlaceController@getEnlacesIndex');
 Route::get('getGaleriaIndex', 'GaleriaController@getGaleriaIndex');
+Route::get('getSliderIndex', 'SliderController@getSliderIndex');
 Route::get('getSliderIndex', 'SliderController@getSliderIndex');
