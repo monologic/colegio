@@ -14,9 +14,18 @@
 Route::get('/', function () {
     return view('index.home');
 });
-Route::get('/galeria', function () {
-    return view('index.galeria');
+Route::get('/institucional', function () {
+    return view('index.institucional');
 });
+Route::get('/galeria', 'GaleriaController@grid');
+
+Route::get('/nosotros', function () {
+    return view('index.nosotros');
+});
+Route::get('/contacto', function () {
+    return view('index.contacto');
+});
+
 
 Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 

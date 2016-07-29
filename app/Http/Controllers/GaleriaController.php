@@ -121,4 +121,8 @@ class GaleriaController extends Controller
         $not = Galeria::all();
         return response()->json( $not );
     }
+     public function grid(){
+        $galerias = Galeria::orderBy('id','DESC')->paginate(20);
+        return view('index.galeria')->with('galerias', $galerias);
+    }
 }

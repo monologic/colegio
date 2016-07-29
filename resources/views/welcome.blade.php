@@ -17,6 +17,13 @@
 
     	<link rel="stylesheet" href="assets/css/kira.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	
+		
+		<link rel="stylesheet" type="text/css" href="assets/GridGallery/css/component.css" />
+		<script src="assets/GridGallery/js/modernizr.custom.js"></script>
+
+
+
 	</head>
 	
 	<body ng-app="robertApp">
@@ -25,14 +32,14 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="">Robert Gagne</a></h1>
+						<h1><a href="/">Robert Gagne</a></h1>
 						<nav class="links">
 							<ul>
-								<li><a href="#">Inicio</a></li>
-								<li><a href="#">Admisión</a></li>
+								
+								<li><a href="{{ url('/institucional') }}">Institucional</a></li>
 								<li><a href="{{ url('/galeria') }}">Galeria</a></li>
-								<li><a href="#">Nosotros</a></li>
-								<li><a href="#">Contacto</a></li>
+								<li><a href="{{ url('/nosotros') }}">Nosotros</a></li>
+								<li><a href="{{ url('/contacto') }}">Contacto</a></li>
 							</ul>
 						</nav>
 						<nav class="main" >
@@ -104,6 +111,7 @@
 				<!-- Slider-->
 					
 				<!-- Main -->
+				<script src="assets/js/jquery-1.9.1.min.js"></script>
 				
 					@yield('content')
 		
@@ -111,7 +119,6 @@
 			
 			</div>
 
-			<script src="assets/js/jquery-1.9.1.min.js"></script>
 			
 			<script src="{{ asset('assets/js/main.js') }}"></script>
 			<script src="{{ asset('assets/js/skel.min.js') }}"></script>

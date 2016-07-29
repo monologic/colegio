@@ -24,13 +24,13 @@
         </a>
     </li>
     <li>
-        <a href="{{ url('app/archivos') }}">>
+        <a href="{{ url('app/archivos') }}">
             <i class="pe-7s-science"></i>
             <p>Biblioteca</p>
         </a>
     </li>
     <li>
-        <a href="">
+        <ahref="{{ url('app/galeria') }}">
             <i class="pe-7s-science"></i>
             <p>Galería</p>
         </a>

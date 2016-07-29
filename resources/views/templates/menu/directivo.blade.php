@@ -30,7 +30,7 @@
         </a>
     </li>
     <li>
-        <a href="">
+        <a href="{{ url('app/galeria') }}">
             <i class="pe-7s-science"></i>
             <p>Galería</p>
         </a>
