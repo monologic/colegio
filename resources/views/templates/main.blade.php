@@ -21,7 +21,16 @@
 		<script src="{{ asset('assets/SweetAlert/sweetalert.min.js') }}"></script> 
     	<link rel="stylesheet" type="text/css" href="{{ asset('assets/SweetAlert/sweetalert.css') }}">
     	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styleAdmin.css') }}" />
-    	
+
+    	<!--floata -->
+    	<link rel="stylesheet" href="{{ asset('assets/froala/css/froala_editor.css')}}">
+		<link rel="stylesheet" href="{{ asset('assets/froala/css/froala_style.css')}}">
+		<link rel="stylesheet" href="{{ asset('assets/froala/css/plugins/code_view.css')}}">
+		<link rel="stylesheet" href="{{ asset('assets/froala/css/plugins/image_manager.css')}}">
+		<link rel="stylesheet" href="{{ asset('assets/froala/css/plugins/image.css')}}">
+		<link rel="stylesheet" href="{{ asset('assets/froala/css/plugins/table.css')}}">
+		<link rel="stylesheet" href="{{ asset('assets/froala/css/plugins/video.css')}}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
 
 	</head>
 	<body>

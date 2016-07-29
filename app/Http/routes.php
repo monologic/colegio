@@ -17,11 +17,10 @@ Route::get('/', function () {
 Route::get('/institucional', function () {
     return view('index.institucional');
 });
-Route::get('/galeria', 'GaleriaController@grid');
 
-Route::get('/nosotros', function () {
-    return view('index.nosotros');
-});
+Route::get('/galeria', 'GaleriaController@grid');
+Route::get('/nosotros', 'NosotroController@grid');
+
 Route::get('/contacto', function () {
     return view('index.contacto');
 });
@@ -114,6 +113,11 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 	Route::get('getSlider', 'SliderController@getSlider');
     Route::post('slider/{id}', 'SliderController@update');
 	Route::resource('slider', 'SliderController');
+	/*
+    * nosotros
+    */
+    Route::post('nosotros/{id}', 'NosotroController@update');
+	Route::resource('nosotros', 'NosotroController');
 	
 });
 

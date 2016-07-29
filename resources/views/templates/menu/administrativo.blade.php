@@ -30,7 +30,7 @@
         </a>
     </li>
     <li>
-        <ahref="{{ url('app/galeria') }}">
+        <a href="{{ url('app/galeria') }}">
             <i class="pe-7s-science"></i>
             <p>Galería</p>
         </a>
@@ -38,7 +38,7 @@
     <li>
         <a href="">
             <i class="pe-7s-science"></i>
-            <p>Información Institucional</p>
+            <p>Institucional</p>
         </a>
     </li>
     <li>
