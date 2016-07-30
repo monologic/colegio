@@ -1,10 +1,10 @@
 @extends('welcome')
 
-@section('title', 'Home')
+@section('title', 'Colegio Rober Gagne')
 
 @section('content')
 	<div id="main">
-		<div class="col-md-12">
+		<div class="col-md-12" style="z-index: 1;margin-bottom: 50px">
 							<section class="slid" ng-controller="sliderController" ng-init="gets()">
 								<div id="owl-demo" class="owl-carousel">
 							        <div class="item" ng-repeat="f in slider" on-finish-render="ngRepeatFinished"><img class="elslider"  src="imagen/slider/@{{f.imagen}}" ></div>
@@ -36,7 +36,7 @@
 								</ul>
 						</section>
 
-						<br><h3 align="center">Novendades</h3><br>
+						<br><h3 align="center">Novedades</h3><br>
 						<div class="mini-posts" ng-controller="novedadesController" ng-init="firstNovedades()">
 							
 									<!-- Mini Post -->
@@ -71,7 +71,7 @@
 				</footer>
 			</article>	
 		</div>		
-		<section >
+		<section class="col-md-12">
 			<div class="conten">
 				<h4 class="text-center">Enlaces</h4>	
 			</div>

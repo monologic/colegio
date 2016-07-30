@@ -15,12 +15,13 @@
     	<link href="assets/css/owl.theme.css" rel="stylesheet">
     	<link href="assets/css/owl.transitions.css" rel="stylesheet">
 
-    	<link rel="stylesheet" href="assets/css/kira.css" />
+    	
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	
 		
 		<link rel="stylesheet" type="text/css" href="assets/GridGallery/css/component.css" />
 		<script src="assets/GridGallery/js/modernizr.custom.js"></script>
+		<link rel="stylesheet" href="assets/css/kira.css" />
 
 
 
@@ -116,9 +117,25 @@
 					@yield('content')
 		
 
-			
 			</div>
+			<footer class="foot" ng-controller="colegioController" ng-init="get()">
+				<section class="cont-foot row" ng-repeat="o in colegio">
+					<div class="col-md-6 rs">
+						<h4 style="color: white;font-size: 1rem">Redes Socales</h4>
+						<a href="@{{o.facebook}}" target="_bank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+						<a href="@{{o.twiter}}" target="_bank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+						<a href="@{{o.youtube}}" target="_bank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
 
+					</div>
+					<div class="col-md-6 ft" >
+						<h4 style="color: white;font-size: 1rem">Información</h4>
+						<stong>Dirección : @{{o.direccion}}</stong><br>
+						<stong>Email : @{{o.email}}</stong><br>
+						<stong>Teléfono : @{{o.telefono}}</stong><br>
+					</div>
+				</section>
+			</footer>
+			
 			
 			<script src="{{ asset('assets/js/main.js') }}"></script>
 			<script src="{{ asset('assets/js/skel.min.js') }}"></script>
@@ -134,6 +151,7 @@
 			<script src="{{ asset('assets/js/ng-scripts/controllers/novedadesController.js') }}"></script>
 			<script src="{{ asset('assets/js/ng-scripts/controllers/enlaceController.js') }}"></script> 
 			<script src="{{ asset('assets/js/ng-scripts/controllers/sliderController.js') }}"></script>
+			<script src="{{ asset('assets/js/ng-scripts/controllers/colegioController.js') }}"></script>
 			<script src="{{ asset('assets/js/ng-scripts/directivas/onFinishRender.js') }}"></script>  
 
 

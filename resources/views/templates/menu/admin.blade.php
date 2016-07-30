@@ -23,4 +23,10 @@
             <p>Biblioteca</p>
         </a>
     </li>
+    <li>
+        <a href="{{ url('app/nosotros') }}">
+            <i class="pe-7s-note2"></i>
+            <p>Nosotros</p>
+        </a>
+    </li>
 </ul>

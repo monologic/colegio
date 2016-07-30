@@ -118,6 +118,11 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
     */
     Route::post('nosotros/{id}', 'NosotroController@update');
 	Route::resource('nosotros', 'NosotroController');
+	/*
+    * nosotros
+    */
+    Route::post('general/{id}', 'ColegioController@update');
+	Route::resource('general', 'ColegioController');
 	
 });
 
@@ -129,3 +134,4 @@ Route::get('getEnlacesIndex', 'EnlaceController@getEnlacesIndex');
 Route::get('getGaleriaIndex', 'GaleriaController@getGaleriaIndex');
 Route::get('getSliderIndex', 'SliderController@getSliderIndex');
 Route::get('getSliderIndex', 'SliderController@getSliderIndex');
+Route::get('getColegio', 'ColegioController@get');
