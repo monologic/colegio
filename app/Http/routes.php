@@ -119,6 +119,12 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
     Route::post('nosotros/{id}', 'NosotroController@update');
 	Route::resource('nosotros', 'NosotroController');
 	/*
+    * institucional
+    */
+    Route::post('institucional/{id}', 'InstitucionalController@update');
+	Route::resource('institucional', 'InstitucionalController');
+
+	/*
     * nosotros
     */
     Route::post('general/{id}', 'ColegioController@update');

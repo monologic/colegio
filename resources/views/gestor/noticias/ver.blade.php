@@ -131,5 +131,5 @@
         </div>
    </div>
      <!-- Modal de Edición -->
-    <script src="{{ asset('assets/js/ng-scripts/controllers/noticiaController.js') }}"></script>
+    <script src="{{ asset('assets/js/ng-scripts/controllers/institucionalController.js') }}"></script>
 @endsection
