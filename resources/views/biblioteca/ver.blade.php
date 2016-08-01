@@ -38,14 +38,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="x in archivos" ng-if="{{Auth::user()->dni}} ==  x.posteador ">
-                                <td>@{{ x.titulo }}</td>
-                                <td>@{{ x.autor }}</td>
-                                <td>@{{ x.pub_lugar + ", " + x.pub_editorial + ", " + x.pub_year}}</td>
+                             @foreach ($archivos as $x)
+                            <tr>
+                                <td>{{ $x->titulo }}</td>
+                                <td>{{ $x->autor }}</td>
+                                <td>{{ $x->pub_lugar . ", " . $x->pub_editorial + ", " . $x->pub_year}}</td>
                                 <td>
                                     <a ng-click="plus(x);" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-plus" style="color:black"></i></a>
                                 </td>
                             </tr>
+                            @endforeach
+
                         </tbody>
                     </table>
                     
@@ -62,15 +65,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="y in archivos">
+                        
+                            @foreach ($archivos as $y)
+                            @if ($y->posteador == Auth::user()->dni)
+                            <tr>
 
-                                <td>@{{ y.titulo }}</td>
-                                <td>@{{ y.autor }}</td>
+                                <td>{{ $y->titulo }}</td>
+                                <td>{{ $y->autor }}</td>
                                 <td>
-                                    <a ng-click="plus(y);" data-toggle="modal" data-target="#editar"><i class="glyphicon glyphicon-pencil" style="color:black"></i></a>
+                                    <a ng-click="plus({{$y}});" data-toggle="modal" data-target="#editar"><i class="glyphicon glyphicon-pencil" style="color:black"></i></a>
                                     <a ng-click="eliminar(y.id);"> <i class="glyphicon glyphicon-trash" style="color:black;margin-left: 10px"></i></a>
                                 </td>
                             </tr>
+                            @endif
+                            @endforeach
+                        
                         </tbody>
                     </table>
                     <a href="{{ url('app/archivos/create') }}" class="btn btn-colegio">Añadir Archivo</a>

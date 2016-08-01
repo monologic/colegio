@@ -120,7 +120,23 @@ class NoticiasController extends Controller
     public function getNoticiaIndex()
     {
         
-        $not = Noticia::all();
+       $not = DB::table('noticias')
+                ->orderBy('fecha', 'desc')
+                ->take(3)
+                ->get();
         return response()->json( $not );
+    }
+    
+    public function getNoticiaIndexAll()
+    {
+        $noticias = Noticia::orderBy('fecha','DESC')->paginate(2);
+        return view('gestor.noticias.all')->with('noticias', $noticias);
+    }
+    public function detalle($id)
+    {
+        $registros = Noticia::where('id', $id)
+                             ->orderBy('fecha', 'desc')
+                             ->get();
+        return view('index.noticia')->with('noticias', $registros);
     }
 }

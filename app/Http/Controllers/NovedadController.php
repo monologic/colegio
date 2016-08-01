@@ -121,10 +121,22 @@ class NovedadController extends Controller
         
         $not = DB::table('novedads')
                 ->orderBy('fecha', 'desc')
-                ->take(3)
+                ->take(4)
                 ->get();
         return response()->json( $not );
 
 
     }
+    public function detalle($id)
+    {
+        $registros = Novedad::where('id', $id)
+                             ->get();
+        return view('index.novedad')->with('novedades', $registros);
+    }
+    public function getNovedadesIndexAll()
+    {
+        $noticias = Novedad::orderBy('fecha','DESC')->paginate(2);
+        return view('gestor.novedades.all')->with('novedades', $noticias);
+    }
+
 }

@@ -8,6 +8,10 @@
 	bottom: 0;
 	padding: 30px 0px 30px 0px;
 }
+.ve{
+	width: 80%;
+	margin:40px auto 40px auto ;
+}
 .info h4{
 	font-size: 1.2rem;
 }

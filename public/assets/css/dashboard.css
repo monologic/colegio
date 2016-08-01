@@ -224,9 +224,8 @@ input:focus {
 }
 .sidebar .sidebar-wrapper {
   position: relative;
-  max-height: none;
-  min-height: 100%;
-  overflow: hidden;
+  height: 100%;
+  overflow: auto;
   width: 260px;
   z-index: 4;
 }
@@ -278,6 +277,7 @@ input:focus {
 }
 .sidebar .nav {
   margin-top: 20px;
+  padding-bottom: 20px;
 }
 .sidebar .nav li > a {
   color: #FFFFFF;
@@ -2867,6 +2867,7 @@ body > .navbar-collapse[data-color="purple"]:after {
     float: none;
     position: relative;
     display: block;
+    width: 100%;
   }
 
   body > .navbar-collapse {
@@ -2878,7 +2879,7 @@ body > .navbar-collapse[data-color="purple"]:after {
     right: 0;
     z-index: 1032;
     visibility: visible;
-    background-color: #999;
+    background-color: #7D1424;
     overflow-y: visible;
     border-top: none;
     text-align: left;
@@ -2910,7 +2911,7 @@ body > .navbar-collapse[data-color="purple"]:after {
     height: 100%;
     width: 100%;
     position: absolute;
-    background-color: #282828;
+    background-color: #7D1424;
     display: block;
     content: "";
     z-index: 1;
@@ -2944,7 +2945,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   .navbar-toggle .icon-bar {
     display: block;
     position: relative;
-    background: #fff;
+    background: #7D1424;
     width: 24px;
     height: 2px;
     border-radius: 1px;
@@ -3347,6 +3348,8 @@ body > .navbar-collapse[data-color="purple"]:after {
 
   .navbar-collapse.collapse {
     height: 100% !important;
+    background-color: #7D1424;
+
   }
 
   .navbar-collapse.collapse.in {

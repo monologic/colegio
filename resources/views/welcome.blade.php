@@ -4,24 +4,24 @@
 		<title>@yield('title')</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
+		<link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}">
 		
 		<!--Carrusel-->
-		<link href="assets/css/owl.carousel.css" rel="stylesheet">
-		<link href="assets/css/owl.carousel.css" rel="stylesheet">
-    	<link href="assets/css/owl.theme.css" rel="stylesheet">
-    	<link href="assets/css/owl.transitions.css" rel="stylesheet">
+		<link href="{{asset('assets/css/owl.carousel.css')}}" rel="stylesheet">
+		<link href="{{asset('assets/css/owl.carousel.css')}}" rel="stylesheet">
+    	<link href="{{asset('assets/css/owl.theme.css')}}" rel="stylesheet">
+    	<link href="{{asset('assets/css/owl.transitions.css')}}" rel="stylesheet">
 
     	
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	
 		
-		<link rel="stylesheet" type="text/css" href="assets/GridGallery/css/component.css" />
-		<script src="assets/GridGallery/js/modernizr.custom.js"></script>
-		<link rel="stylesheet" href="assets/css/kira.css" />
+		<link rel="stylesheet" type="text/css" href="{{asset('assets/GridGallery/css/component.css')}}" />
+		<script src="{{asset('assets/GridGallery/js/modernizr.custom.js')}}"></script>
+		<link rel="stylesheet" href="{{asset('assets/css/kira.css')}}" />
 
 
 
@@ -38,8 +38,8 @@
 							<ul>
 								
 								<li><a href="{{ url('/institucional') }}">Institucional</a></li>
+								<li><a href="{{ url('/comunidad') }}">Comunidad</a></li>
 								<li><a href="{{ url('/galeria') }}">Galeria</a></li>
-								<li><a href="{{ url('/nosotros') }}">Nosotros</a></li>
 								<li><a href="{{ url('/contacto') }}">Contacto</a></li>
 							</ul>
 						</nav>
@@ -112,7 +112,7 @@
 				<!-- Slider-->
 					
 				<!-- Main -->
-				<script src="assets/js/jquery-1.9.1.min.js"></script>
+				<script src="{{asset('assets/js/jquery-1.9.1.min.js')}}"></script>
 				
 					@yield('content')
 		

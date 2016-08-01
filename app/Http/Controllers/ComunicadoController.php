@@ -123,4 +123,17 @@ class ComunicadoController extends Controller
                 ->get();
         return response()->json( $not );
     }
+    public function detalle($id)
+    {
+        $registros = Comunicado::where('id', $id)
+                             ->get();
+        return view('index.comunicado')->with('comunicados', $registros);
+    }
+    public function getComunicadoIndexAll()
+    {
+        $noticias = Comunicado::orderBy('fecha_pub','DESC')->paginate(2);
+        return view('gestor.comunicados.all')->with('comunicados', $noticias);
+    }
+
+
 }

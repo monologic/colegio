@@ -27,13 +27,14 @@
 									<li ng-repeat="c in comun">
 										<article>
 											<header>
-												<h3><a href="#">@{{c.asunto}}</a></h3>
+												<h3><a href="/comunicado/@{{c.id}}">@{{c.asunto}}</a></h3>
 												<time class="published">@{{c.solofe}}</time>
 											</header>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+											<a href="/comunicado/@{{c.id}}" class="image"><img src="images/pic08.jpg" alt="" /></a>
 										</article>
 									</li>
 								</ul>
+								<a href="/comunicados">Ver todos los comunciados</a>
 						</section>
 
 						<br><h3 align="center">Novedades</h3><br>
@@ -42,12 +43,13 @@
 									<!-- Mini Post -->
 										<article class="mini-post" ng-repeat="k in allnovedades">
 											<header>
-												<h3><a href="#">@{{k.titulo}}</a></h3>
+												<h3><a href="/novedad/@{{k.id}}">@{{k.titulo}}</a></h3>
 												<time class="published">@{{k.fecha}}</time>
-												<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
+												<a href="" class="author"><img src="images/avatar.jpg" alt="" /></a>
 											</header>
 											<a href="#" class="image"><img src="imagen/novedades/@{{k.foto}}" alt="" /></a>
 										</article>
+										<a href="/novedades">Ver todas la novedades</a>
 						</div>	
 		</div>	
 		<div class="col-md-8 col-xs-10"  ng-controller="noticiaController" ng-init="firstNotice()">
@@ -66,10 +68,11 @@
 				<blockquote>@{{n.copete}}</blockquote>
 				<footer>
 					<ul class="actions">
-						<li><a href="#" class="button big">Noticia Completa</a></li>
+						<li><a href="noticias/@{{n.id}}" class="button big">Noticia Completa</a></li>
 					</ul>
 				</footer>
 			</article>	
+			<a href="/noticiasall">Ver todas la noticias</a>
 		</div>		
 		<section class="col-md-12">
 			<div class="conten">

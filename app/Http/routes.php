@@ -14,12 +14,14 @@
 Route::get('/', function () {
     return view('index.home');
 });
-Route::get('/institucional', function () {
-    return view('index.institucional');
-});
+
+Route::get('noticias/{id}', 'NoticiasController@detalle');
+Route::get('comunicado/{id}', 'ComunicadoController@detalle');
+Route::get('novedad/{id}', 'NovedadController@detalle');
 
 Route::get('/galeria', 'GaleriaController@grid');
-Route::get('/nosotros', 'NosotroController@grid');
+Route::get('/institucional', 'NosotroController@grid');
+Route::get('/comunidad', 'ComunidadController@grid');
 
 Route::get('/contacto', function () {
     return view('index.contacto');
@@ -119,6 +121,12 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
     Route::post('nosotros/{id}', 'NosotroController@update');
 	Route::resource('nosotros', 'NosotroController');
 	/*
+	/*
+    * comunidad
+    */
+    Route::post('comunidad/{id}', 'ComunidadController@update');
+	Route::resource('comunidad', 'ComunidadController');
+	/*
     * institucional
     */
     Route::post('institucional/{id}', 'InstitucionalController@update');
@@ -134,6 +142,12 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 
 Route::auth();
 Route::get('getNoticiaIndex', 'NoticiasController@getNoticiaIndex');
+Route::get('noticiasall', 'NoticiasController@getNoticiaIndexAll');
+
+Route::get('comunicados', 'ComunicadoController@getComunicadoIndexAll');
+
+Route::get('novedades', 'NovedadController@getNovedadesIndexAll');
+
 Route::get('getComunicadosIndex', 'ComunicadoController@getComunicadoIndex');
 Route::get('getNovedadesIndex', 'NovedadController@getNovedadesIndex');
 Route::get('getEnlacesIndex', 'EnlaceController@getEnlacesIndex');
