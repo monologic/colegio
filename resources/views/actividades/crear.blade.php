@@ -31,6 +31,14 @@
 					    <input type="text" class="form-control" id="lugar" ng-model="lugar" placeholder="" name="lugar" required>
 					</div>
 					<div class="form-group">
+					    <label for="nombres">NIvel</label>
+					    <select class="form-control" ng-model="nivel" name="nivel" required>
+					    	<option>Inicial</option>
+					    	<option>Primaria</option>
+					    	<option>Secundaria</option>
+					    </select>
+					</div>
+					<div class="form-group">
 					    <label for="nombres">Grado</label>
 					    <select class="form-control" ng-model="grado" name="grado" required>
 					    	<option>1er</option>

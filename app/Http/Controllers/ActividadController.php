@@ -21,7 +21,11 @@ class ActividadController extends Controller
 
     public function get()
     {
-        $acts = User::all();
+        $acts = Actividad::all();
+        $acts->each(function($acts){
+            $acts->usuario;
+        });
+        //dd($acts);
         return response()->json( $acts );
     }
 
@@ -46,6 +50,8 @@ class ActividadController extends Controller
         $actividad = new Actividad($request->all());
         $actividad->fecha_creacion = date('Y-m-d H:i:s');
         $actividad->save();
+
+        return redirect('app/actividades');
     }
 
     /**
@@ -79,7 +85,7 @@ class ActividadController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $actividad = Actividad::find($id);
+        $actividad = Actividad::find($id);
         $actividad->fill($request->all());
         $actividad->save();
 

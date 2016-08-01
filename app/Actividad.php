@@ -9,7 +9,7 @@ class Actividad extends Model
     public $timestamps = false;
 	protected $fillable = ['titulo', 'fecha_creacion', 'fecha_inicio','fecha_fin','descripcion','lugar', 'nivel', 'grado','seccion','usuario_id'];
 
-    public function user()
+    public function usuario()
   	{
   		return $this->belongsTo('App\User');
   	}
