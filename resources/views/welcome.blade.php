@@ -136,9 +136,8 @@
 				</section>
 			</footer>
 			
-			
-			<script src="{{ asset('assets/js/main.js') }}"></script>
 			<script src="{{ asset('assets/js/skel.min.js') }}"></script>
+			<script src="{{ asset('assets/js/main.js') }}"></script>
 			<script src="{{ asset('assets/js/util.js') }}"></script>
 
 			<script src="{{ asset('assets/angular/angular.min.js') }}"></script>
