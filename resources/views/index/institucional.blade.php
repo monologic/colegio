@@ -9,6 +9,7 @@
 		        <div class="col-lg-5 col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container">
 		            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
 		              <div class="list-group">
+
 		                <a href="#" class="list-group-item active text-center">
 		                  <h4 class="glyphicon glyphicon-star-empty"></h4> Nivel Inicial
 		                </a>
@@ -32,7 +33,7 @@
 		            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
 					@foreach ($nosotros as $nosotro)
 		                <!-- train section -->
-		                <div class="bhoechie-tab-content">
+		                <div class="bhoechie-tab-content active">
 		                      <p class="texts" style="padding: 7%">{!! $nosotro->inicial !!}</p>
 		                </div>
 		                <div class="bhoechie-tab-content">
@@ -50,17 +51,20 @@
 		                <div class="bhoechie-tab-content">
 		                      <p style="padding: 7%">{!! $nosotro->convivencia !!}</p>
 		                </div>
+		                
 		    		@endforeach 
-		            
+		            	
 		            </div>
 		        </div>
 		  	</div>
 		</div>
 	</div>
-	<script src="{{ asset('assets/bootstrap/js/bootstrap.js') }}"></script>
+	
 	<script>
 		$(document).ready(function() {
+
 		    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+
 		        e.preventDefault();
 		        $(this).siblings('a.active').removeClass("active");
 		        $(this).addClass("active");
