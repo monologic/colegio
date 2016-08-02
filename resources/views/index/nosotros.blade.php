@@ -31,19 +31,19 @@
 		                <!-- train section -->
 		                <div class="bhoechie-tab-content">
 		                      <h1 class="text-center" style="font-size:1.4em;color:#96281B;margin-top: 30px">Bienvenida</h1>
-		                      <p class="texts" style="padding: 7%">{{$nosotro->bienvenida}}</p>
+		                      <p class="texts">{!! $nosotro->bienvenida !!}</p>
 		                </div>
 		                <div class="bhoechie-tab-content">
 		                      <h1 class="text-center" style="font-size:1.4em;color:#96281B;margin-top: 30px">Visión</h1>
-		                      <p style="padding: 7%">{{$nosotro->vision}}</p>
+		                      <p>{!!$nosotro->vision!!}</p>
 		                </div>
 		                <div class="bhoechie-tab-content">
 		                      <h1 class="text-center" style="font-size:1.4em;color:#96281B;margin-top: 30px">Misión</h1>
-		                      <p style="padding: 7%">{{$nosotro->mision}}</p>
+		                      <p>{!!$nosotro->mision!!}</p>
 		                </div>
 		                <div class="bhoechie-tab-content">
 		                      <h1 class="text-center" style="font-size:1.4em;color:#96281B;margin-top: 30px">Historia</h1>
-		                      <p style="padding: 7%">{{$nosotro->historia}}</p>
+		                      <p>{!!$nosotro->historia!!}</p>
 		                </div>
 		    		@endforeach 
 		            
