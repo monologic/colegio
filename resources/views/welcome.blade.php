@@ -5,7 +5,6 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" />
-		
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
 		<link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}">
@@ -114,7 +113,7 @@
 					
 				<!-- Main -->
 				<script src="{{asset('assets/js/jquery-1.9.1.min.js')}}"></script>
-				<script src="{{ asset('assets/bootstrap/js/bootstrap.js') }}"></script>
+				
 					@yield('content')
 		
 
@@ -140,7 +139,7 @@
 			<script src="{{ asset('assets/js/skel.min.js') }}"></script>
 			<script src="{{ asset('assets/js/main.js') }}"></script>
 			<script src="{{ asset('assets/js/util.js') }}"></script>
-			
+
 			<script src="{{ asset('assets/angular/angular.min.js') }}"></script>
 			<script src="{{ asset('assets/js/ng-scripts/app.js') }}"></script>
 

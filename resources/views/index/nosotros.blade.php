@@ -29,7 +29,7 @@
 		            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
 					@foreach ($nosotros as $nosotro)
 		                <!-- train section -->
-		                <div class="bhoechie-tab-content active">
+		                <div class="bhoechie-tab-content">
 		                      <h1 class="text-center" style="font-size:1.4em;color:#96281B;margin-top: 30px">Bienvenida</h1>
 		                      <p class="texts">{!! $nosotro->bienvenida !!}</p>
 		                </div>
