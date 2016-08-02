@@ -65,6 +65,7 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 	Route::get('getActividades', 'ActividadController@get');
     Route::get('getActividad/{id}', 'ActividadController@getActividad');
 	Route::resource('actividades', 'ActividadController');
+	Route::get('acti/{id}', 'ActividadController@getdia');
 
 	/*
     * Rutas para el gestor de contenido

@@ -86,6 +86,12 @@ Monthly 2.0.7 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 			$('#' + uniqueId + ' .monthly-day, #' + uniqueId + ' .monthly-day-blank').remove();
 			$('#'+uniqueId+' .monthly-event-list').empty();
 			$('#'+uniqueId+' .monthly-day-wrap').empty();
+			// Set Today
+			var setMonth = $('#' + uniqueId).data('setMonth'),
+				setYear = $('#' + uniqueId).data('setYear');
+			if (setMonth == currentMonth && setYear == currentYear) {
+				$('#' + uniqueId + ' *[data-number="'+currentDay+'"]').addClass('monthly-today');
+			}
 			// Print out the days
 			if (options.mode == 'event') {
 				for(var i = 0; i < dayQty; i++) {
@@ -103,20 +109,15 @@ Monthly 2.0.7 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 
 					// Check if it's a day in the past
 					if(((day < currentDay && m === currentMonth) || y < currentYear || (m < currentMonth && y == currentYear)) && options.stylePast == true){
-							$('#' + uniqueId + ' .monthly-day-wrap').append('<a href="#" onclick="alert()" class="m-d monthly-day monthly-day-pick monthly-past-day" data-number="'+day+'"><div class="monthly-day-number">'+day+'</div><div class="monthly-indicator-wrap"></div></a>');
+							$('#' + uniqueId + ' .monthly-day-wrap').append('<a href="#" onclick="buscar('+day+','+monthNames+','+setYear+')" class="m-d monthly-day monthly-day-pick monthly-past-day" data-number="'+day+'"><div class="monthly-day-number">'+day+'</div><div class="monthly-indicator-wrap"></div></a>');
 					} else {
-						$('#' + uniqueId + ' .monthly-day-wrap').append('<a href="#"  onclick="alert()" class="m-d monthly-day monthly-day-pick" data-number="'+day+'"><div class="monthly-day-number">'+day+'</div><div class="monthly-indicator-wrap"></div></a>');
+						$('#' + uniqueId + ' .monthly-day-wrap').append('<a href="#"  onclick="buscar('+day+','+setMonth+','+setYear+')" class="m-d monthly-day monthly-day-pick" data-number="'+day+'"><div class="monthly-day-number">'+day+'</div><div class="monthly-indicator-wrap"></div></a>');
 					}
 				}
 			}
 
 
-			// Set Today
-			var setMonth = $('#' + uniqueId).data('setMonth'),
-				setYear = $('#' + uniqueId).data('setYear');
-			if (setMonth == currentMonth && setYear == currentYear) {
-				$('#' + uniqueId + ' *[data-number="'+currentDay+'"]').addClass('monthly-today');
-			}
+			
 
 			// Reset button
 			if (setMonth == currentMonth && setYear == currentYear) {

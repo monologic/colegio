@@ -73,4 +73,16 @@ app.controller('actividadController', function($scope,$http) {
             // or server returns response with an error status.
         });
     }
+    $scope.buscar = function (fecha){
+        alert('emtre');
+        $scope.get = function () {
+        $http.get('getActividades/'+fecha).then(function successCallback(response) {
+                data = response.data;
+                $scope.actividades = data;
+            }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            });
+    }
+    }
 });
