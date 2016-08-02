@@ -5,27 +5,6 @@
 @section('content')
     <div ng-controller="actividadController" ng-init="get();">
         <div class="contenidos">
-        @if ( Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 6)
-            <div class="col-md-6">
-                <div class="monthly" id="mycalendar" style="width: 80%;margin:20px auto 20px auto;max-width: 400px;box-shadow: 5px 5px 5px #888888;"></div>
-            </div>
-            <div class="col-md-6">
-                <div class="actividades">
-                    <div class="hed">
-                        Lista de actividades
-                    </div>
-                    <section style="padding: 15px">
-                        Mi actividad 1
-                    </section>
-                </div>
-            </div>
-            
-    
-        @endif
-
-
-         @if ( Auth::user()->usuariotipo_id == 2 || Auth::user()->usuariotipo_id == 3 || Auth::user()->usuariotipo_id == 4)
-
             <div class="col-md-8">
                 <div class="cart">
                     <h1 class="titulo">Actividades</h1>
@@ -83,8 +62,6 @@
                     <a href="{{ url('app/actividades/create') }}" class="btn btn-colegio">Añadir Actividad</a>
                 </div>
             </div>
-         @endif
-            
         </div>
         <div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -179,32 +156,4 @@
    </div>
      <!-- Modal de Edición -->
     <script src="{{ asset('assets/js/ng-scripts/controllers/actividadController.js') }}"></script>
-    <script src="{{ asset('assets/calendar/js/monthly.js') }}"></script>
-    <script type="text/javascript">
-    $(window).load( function() {
-            $('#mycalendar').monthly({
-                
-            });
-
-            $('#mycalendar2').monthly({
-                mode: 'picker',
-                target: '#mytarget',
-                setWidth: '250px',
-                startHidden: true,
-                showTrigger: '#mytarget',
-                stylePast: true,
-                disablePast: true
-            });
-
-        switch(window.location.protocol) {
-        case 'http:':
-        case 'https:':
-        // running on a server, should be good.
-        break;
-        case 'file:':
-        alert('Just a heads-up, events will not work when run locally.');
-        }
-
-        });
-    </script>
 @endsection
