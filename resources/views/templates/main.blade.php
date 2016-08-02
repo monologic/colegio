@@ -32,6 +32,8 @@
 		<link rel="stylesheet" href="{{ asset('assets/froala/css/plugins/video.css')}}">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
 
+		<link rel="stylesheet" href="{{ asset('assets/calendar/css/monthly.css')}}">
+
 	</head>
 	<body>
 	
