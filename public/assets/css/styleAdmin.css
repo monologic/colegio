@@ -11,6 +11,29 @@
 	color: white;
 	padding: 5px 15px 5px 15px;
 }
+.cla{
+	font-family: 'Raleway', sans-serif;
+}
+.listas{
+	right: left;
+	padding: 0;
+}
+.listas li{
+	list-style: none;
+	font-family: 'Raleway', sans-serif;
+}
+.pes{
+	list-style: none;
+	font-family: 'Raleway', sans-serif;
+}
+.activity{
+	background-color: white;
+	width: 100%;
+	border: solid;
+	border-width: 1px;
+	padding: 5px;
+	border-radius: 5px;
+}
 .actividades{
 	margin-top: 20px;
 	display: block;

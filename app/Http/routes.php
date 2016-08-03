@@ -78,6 +78,7 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 	Route::get('getComunicados', 'ComunicadoController@getComunicado');
 	Route::post('comunicados/{id}', 'ComunicadoController@update');
 	Route::resource('comunicados', 'ComunicadoController');
+	Route::get('acti/{id}', 'ActividadController@getdia');
 
 	/*
     * Noticias
