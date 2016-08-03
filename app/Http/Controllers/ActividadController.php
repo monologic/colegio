@@ -106,9 +106,12 @@ class ActividadController extends Controller
     }
      public function getdia($fecha)
     {  
+
         $ats = Actividad::whereBetween('fecha_inicio', array($fecha .' 00:00:00', $fecha .' 23:59:59'))
                         ->get();
-
+        $ats->each(function($ats){
+            $ats->usuario;
+        });
         return response()->json( $ats );
     }
 }

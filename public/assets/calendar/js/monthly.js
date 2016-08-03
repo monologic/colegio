@@ -27,8 +27,8 @@ Monthly 2.0.7 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 				currentMonth = d.getMonth() + 1,
 				currentYear = d.getFullYear(),
 				currentDay = d.getDate(),
-				monthNames = options.monthNames || ["Jan", "Feb", "Mar", "Apr", "May", "June", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-				dayNames = options.dayNames || ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+				monthNames = options.monthNames || ["Enero ", "Febrero ", "Marzo ", "Abril", "Mayo ", "Junio ", "Julio ", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+				dayNames = options.dayNames || ['DOM','LUN','MAR','MIE','JUE','VIE','SAB'];
 
 		if (options.maxWidth != false){
 			$('#'+uniqueId).css('maxWidth',options.maxWidth);
@@ -109,15 +109,12 @@ Monthly 2.0.7 by Kevin Thornbloom is licensed under a Creative Commons Attributi
 
 					// Check if it's a day in the past
 					if(((day < currentDay && m === currentMonth) || y < currentYear || (m < currentMonth && y == currentYear)) && options.stylePast == true){
-							$('#' + uniqueId + ' .monthly-day-wrap').append('<a href="#" onclick="buscar('+day+','+monthNames+','+setYear+')" class="m-d monthly-day monthly-day-pick monthly-past-day" data-number="'+day+'"><div class="monthly-day-number">'+day+'</div><div class="monthly-indicator-wrap"></div></a>');
+							$('#' + uniqueId + ' .monthly-day-wrap').append('<a href="#" onclick="buscar('+day+','+monthNames+','+setYear+')" id='+day+'-'+setYear+' class="m-d monthly-day monthly-day-pick monthly-past-day" data-number="'+day+'"><div class="monthly-day-number">'+day+'</div><div class="monthly-indicator-wrap"></div></a>');
 					} else {
-						$('#' + uniqueId + ' .monthly-day-wrap').append('<a href="#"  onclick="buscar('+day+','+setMonth+','+setYear+')" class="m-d monthly-day monthly-day-pick" data-number="'+day+'"><div class="monthly-day-number">'+day+'</div><div class="monthly-indicator-wrap"></div></a>');
+						$('#' + uniqueId + ' .monthly-day-wrap').append('<a href="#"  onclick="buscar('+day+','+setMonth+','+setYear+')" id='+day+'-'+setMonth+'-'+setYear+' class="m-d monthly-day monthly-day-pick" data-number="'+day+'"><div class="monthly-day-number">'+day+'</div><div class="monthly-indicator-wrap"></div></a>');
 					}
 				}
 			}
-
-
-			
 
 			// Reset button
 			if (setMonth == currentMonth && setYear == currentYear) {
