@@ -4,9 +4,9 @@
 
 @section('content')
 	<div class="container">
-		<h1>Crear Docente</h1>
-    	<div>
-    		<div class="formulariok">
+		<div class="cart"  style="max-width: 600px">
+		<h1 class="titulo">Crear Docente</h1>
+    		<div>
     			<form role="form" method="POST" action="{{ url('app/docentes') }}">
     				{{ csrf_field() }}
     				<div class="form-group">
@@ -21,7 +21,7 @@
 					    <label for="dni">DNI</label>
 					    <input type="text" class="form-control" id="dni" placeholder="" name="dni" required>
 					</div>
-					<button type="submit" class="btn btn-default">Guardar</button>
+					<button type="submit" class="btn btn-colegio">Guardar</button>
     			</form>
     		</div>
     	</div>

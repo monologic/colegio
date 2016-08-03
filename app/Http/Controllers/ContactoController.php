@@ -14,14 +14,14 @@ class ContactoController extends Controller
 
    		$data = $request->all();
    		$nombre = $request->nombre;
-   		$from = $request->email;
-   		$subject = $request->contenido;
+   		$email = $request->email;
+   		$subject = 'Contacto por Mail';
    		$colegio = Colegio::all();
-        $to = $colegio[0]->correo;
-   		Mail::send('contacto.contacto', $data, function ($message) use ($nombre, $from, $subject, $to){
-		    $message->from($nombre, $from);
+      $to = $colegio[0]->correo;
+   		Mail::send('contacto.contactoMail', $data, function ($message) use($email, $nombre, $subject, $to){
+		    $message->from('redlein7@gmail.com', $nombre);
 		    $message->subject($subject);
-		    $message->to( $to);
+		    $message->to($to);
 		});
 
 		dd('Mensaje Enviado');

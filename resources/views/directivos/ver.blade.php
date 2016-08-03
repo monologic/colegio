@@ -3,34 +3,37 @@
 @section('title', 'Directivos')
 
 @section('content')
-    <h1>Vista de Directivos</h1>
-    <div ng-controller="directivosController" ng-init="get()">
+    
+    <div class="contenidos" ng-controller="directivosController" ng-init="get()">
+        <div class="cart">
+            <h1 class="titulo">Vista de Directivos</h1>
+            <a href="{{ url('app/directivos/create') }}" class="btn btn-colegio">Añadir Directivo</a>
+            <div style="margin-top: 20px">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>DNI</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="x in directivos">
+                            <td>@{{ $index+1 }}</td>
+                            <td>@{{ x.nombres }}</td>
+                            <td>@{{ x.apellidos }}</td>
+                            <td>@{{ x.dni }}</td>
+                            <td>
+                                <a href="" ng-click="dataEditar(x);" data-toggle="modal" data-target="#editar" class="btn btn-success"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
 
-        <div>
-        	<table class="table table-hover">
-        		<thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>DNI</th>
-                        <th>Acción</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="x in directivos">
-                        <td>@{{ $index+1 }}</td>
-                        <td>@{{ x.nombres }}</td>
-                        <td>@{{ x.apellidos }}</td>
-                        <td>@{{ x.dni }}</td>
-                        <td>
-                            <a href="" ng-click="dataEditar(x);" data-toggle="modal" data-target="#editar" class="btn btn-success"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-
-                            <button ng-click="eliminar(x.id);" class="btn btn-danger"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                        </td>
-                    </tr>
-                </tbody>
-        	</table>
+                                <button ng-click="eliminar(x.id);" class="btn btn-danger"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
+            </div>	
         </div>
     	
         <!-- Modal de Edición -->
