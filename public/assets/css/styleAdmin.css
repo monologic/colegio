@@ -18,6 +18,33 @@
 	right: left;
 	padding: 0;
 }
+.menux{
+	min-height: 170px;
+}
+.headuser{
+	background-color: #7D1424;
+	padding: 10px;
+	color: white;
+	border-radius: 5px 5px 0px 0px;
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+
+}
+.bodyuser a{
+	display: block;
+	width: 100%;
+	color: black;
+	padding: 15px;
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	background-color: white;
+	border: 1px solid rgb(200,200,200);	
+}
+.bodyuser a:hover{
+	text-decoration: none;
+	background-color:#EEEEEE;
+	color: black;
+}
 .listas li{
 	list-style: none;
 	font-family: 'Raleway', sans-serif;

@@ -25,13 +25,20 @@
     </li>
     <li>
         <a href="{{ url('app/nosotros') }}">
-            <i class="pe-7s-note2"></i>
+            <i class="pe-7s-science"></i>
             <p>Institucional</p>
         </a>
     </li>
     <li>
-        <a href="">
-            <i class="pe-7s-news-paper"></i>
+        <a href="{{ url('app/comunidad') }}">
+            <i class="pe-7s-note2"></i>
+            <p>Comunidad</p>
+        </a>
+    </li>
+
+    <li>
+        <a href="{{ url('app/actividades') }}">
+            <i class="pe-7s-science"></i>
             <p>Actividades</p>
         </a>
     </li>
@@ -45,12 +52,6 @@
         <a href="{{ url('app/galeria') }}">
             <i class="pe-7s-science"></i>
             <p>Galería</p>
-        </a>
-    </li>
-    <li>
-        <a href="">
-            <i class="pe-7s-science"></i>
-            <p>Institucional</p>
         </a>
     </li>
     <li>

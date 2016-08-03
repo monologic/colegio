@@ -64,6 +64,9 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 		Route::resource('padres', 'PadreController');	
     });
 	
+	Route::get('/usuarios', function () {
+	    return view('templates.menu.usuario');
+	});
 	Route::get('getActividades', 'ActividadController@get');
     Route::get('getActividad/{id}', 'ActividadController@getActividad');
 	Route::resource('actividades', 'ActividadController');
