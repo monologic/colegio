@@ -19,46 +19,24 @@
                     </section>
                 </div>
             </div>
-            
-    
         @endif
 
 
          @if ( Auth::user()->usuariotipo_id == 2 || Auth::user()->usuariotipo_id == 3 || Auth::user()->usuariotipo_id == 4)
-
-            <div class="col-md-8">
-                <div class="cart">
-                    <h1 class="titulo">Actividades</h1>
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Título</th>
-                                <th>Fecha y hora (Inicio)</th>
-                                <th>Fecha y hora (Fin)</th>    
-                                <th>Lugar</th>
-                                <th>Nivel, Grado y Sección</th>
-                                <th>Acción</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="x in actividades">
-                                <td>@{{ $index+1 }}</td>
-                                <td>@{{ x.titulo }}</td>
-                                <td>@{{ x.fecha_inicio }}</td>
-                                <td>@{{ x.fecha_fin }}</td>
-                                <td>@{{ x.lugar }}</td>
-                                <td>@{{ x.nivel + ", " + x.grado + " " + x.seccion}}</td>
-                                <td>
-                                    <a ng-click="plus(x);" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-plus" style="color:black"></i></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
+            <div class="col-md-6">
+                <div class="monthly" id="mycalendar" style="width: 80%;margin:20px auto 20px auto;max-width: 400px;box-shadow: 5px 5px 5px #888888;"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="actividades">
+                    <div class="hed">
+                        Lista de actividades
+                    </div>
+                    <section style="padding: 15px">
+                        <div id="results"></div>
+                    </section>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="cart">
                     <h2 class="titulo">Mis Actividades</h2>
                     <table class="table table-hover">

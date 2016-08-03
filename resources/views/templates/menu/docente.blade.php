@@ -18,8 +18,8 @@
         </a>
     </li>
     <li>
-        <a href="">
-            <i class="pe-7s-news-paper"></i>
+        <a href="{{ url('app/actividades') }}">
+            <i class="pe-7s-science"></i>
             <p>Actividades</p>
         </a>
     </li>
