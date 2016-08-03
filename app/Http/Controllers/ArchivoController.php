@@ -16,9 +16,9 @@ class ArchivoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $archivos = Archivo::orderBy('created_at','DESC')->paginate(2);
+        $archivos = Archivo::search($request->valor, $request->archivotipo_id)->orderBy('created_at','DESC')->paginate(2);
         $archivos->each(function($archivos){
             $archivos->archivotipo;
         });

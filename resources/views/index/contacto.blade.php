@@ -7,8 +7,9 @@
 		<section class="row">
 			<div class="ctn col-md-6">
 				<div class="card">
-					<h3 class="tituloadd">Contactenos</h3>
-					<form action="">
+					<h3 class="tituloadd">Contáctenos</h3>
+					<form  method="POST" action="{{ url('send') }}" enctype="multipart/form-data">
+						{{ csrf_field() }}
 						<div class="form-group">
 							<label for="nombre">Nombre</label>
 							<input type="text" id="nombre" name="nombre" class="form-control">

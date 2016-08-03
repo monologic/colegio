@@ -13,4 +13,16 @@ class Archivo extends Model
   	{
   		return $this->belongsTo('App\Archivotipo');
   	}
+  	public function scopeSearch($query, $titulo, $tipo)
+  	{
+  		if ($tipo == "?")
+  			return $query->where('titulo', 'LIKE', "%$titulo%");
+  		else{
+  			return $query->where([
+			    ['titulo', 'LIKE', "%$titulo%"],
+			    ['archivotipo_id', '=', $tipo]
+			]);
+  		}
+  		
+  	}
 }

@@ -27,6 +27,8 @@ Route::get('/contacto', function () {
     return view('index.contacto');
 });
 
+Route::post('send',  'ContactoController@send');
+
 
 Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 
@@ -137,6 +139,7 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
     */
     Route::post('general/{id}', 'ColegioController@update');
 	Route::resource('general', 'ColegioController');
+	
 	
 });
 
