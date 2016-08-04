@@ -8,11 +8,15 @@
             <div class="cart">
                 <h1 class="titulo">Vista de Docentes</h1>
                 <a href="{{ url('app/docentes/create') }}" class="btn btn-colegio">Añadir Docente</a>
-                <div style="margin-top: 20px">
                     <table class="table table-hover">
                         <thead>
+                            
+                                    <div style="width: 310px;float: right" id="bsq">
+                                         <input type="text" class="form-control" ng-model="buscar" style="width: 320px"><i class="glyphicon glyphicon-search" style="top:-25px;float: right;color: black"></i>
+                                    </div>
+                            
+                            
                             <tr>
-                                <th>#</th>
                                 <th>Nombre</th>
                                 <th>Apellidos</th>
                                 <th>DNI</th>
@@ -20,8 +24,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="x in docentes">
-                                <td>@{{ $index+1 }}</td>
+                            <tr ng-repeat="x in docentes | filter:buscar ">
+
                                 <td>@{{ x.nombres }}</td>
                                 <td>@{{ x.apellidos }}</td>
                                 <td>@{{ x.dni }}</td>

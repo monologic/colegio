@@ -12,6 +12,9 @@
             <div style="margin-top: 20px"1`>
                 <table class="table table-hover">
                     <thead>
+                        <div style="width: 310px;float: right" id="bsq">
+                            <input type="text" class="form-control" ng-model="buscar" style="width: 320px"><i class="glyphicon glyphicon-search" style="top:-25px;float: right;color: black"></i>
+                        </div>
                         <tr>
                             <th>#</th>
                             <th>Nombre</th>
@@ -21,7 +24,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="x in administrativos">
+                        <tr ng-repeat="x in administrativos | filter:buscar ">
                             <td>@{{ $index+1 }}</td>
                             <td>@{{ x.nombres }}</td>
                             <td>@{{ x.apellidos }}</td>
