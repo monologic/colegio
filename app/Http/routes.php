@@ -36,13 +36,15 @@ Route::post('send',  'ContactoController@send');
 Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 
 	Route::get('/', 'HomeController@index');
+	Route::get('getPadre/{dni}', 'PadreController@getPadre');
+	Route::get('getEstudiante/{dni}', 'EstudianteController@getEstudiante');
 
-    /*
-     * Rutas Usuarios
-     */
-    Route::group(['middleware' => 'rol'], function () {
+	Route::get('/usuarios', function () {
+	    return view('templates.menu.usuario');
+	});
+	
+	Route::group(['middleware' => 'rol:grupo1'], function () {
     	Route::get('getEstudiantes', 'EstudianteController@get');
-    	Route::get('getEstudiante/{dni}', 'EstudianteController@getEstudiante');
 		Route::resource('estudiantes', 'EstudianteController');
 
 		Route::get('getDocentes', 'DocenteController@get');
@@ -58,96 +60,98 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 		Route::resource('directivos', 'DirectivoController');
 
 		Route::get('getPadres', 'PadreController@get');
-		Route::get('getPadre/{dni}', 'PadreController@getPadre');
 		Route::resource('padres', 'PadreController');
+
+		Route::get('getGaleria', 'GaleriaController@getGaleria');
+	    Route::post('galeria/{id}', 'GaleriaController@update');
+		Route::resource('galeria', 'GaleriaController');
+		});	
+
+	Route::group(['middleware' => 'rol:grupo2'], function () {
+
+		Route::get('getActividades', 'ActividadController@get');
+	    Route::get('getActividad/{id}', 'ActividadController@getActividad');
+		Route::resource('actividades', 'ActividadController');
+		/*
+	    * Rutas para el gestor de contenido
+	    */
+	    /*
+	    * Comunicados
+	    */
+		Route::get('getComunicados', 'ComunicadoController@getComunicado');
+		Route::post('comunicados/{id}', 'ComunicadoController@update');
+		Route::resource('comunicados', 'ComunicadoController');
+		Route::get('acti/{id}', 'ActividadController@getdia');
+
+		/*
+	    * Noticias
+	    */
+	    Route::get('getNoticia', 'NoticiasController@getNoticia');
+	    Route::post('noticias/{id}', 'NoticiasController@update');
+		Route::resource('noticias', 'NoticiasController');
+		/*
+	    * Novedades
+	    */
+		Route::get('getNovedades', 'NovedadController@getNovedades');
+	    Route::post('novedades/{id}', 'NovedadController@update');
+		Route::resource('novedades', 'NovedadController');
+	});
+
+	
+    Route::group(['middleware' => 'rol:grupo3'], function () {
+    	/*
+	    * Bibilioteca
+	    */
+		Route::get('getArchivos', 'ArchivoController@get');
+		Route::get('getArchivoTipos', 'ArchivoController@getArchivoTipos');
+	    Route::post('archivos/{id}', 'ArchivoController@update');
+		Route::resource('archivos', 'ArchivoController');
+	});
+
+	Route::group(['middleware' => 'rol:grupo4'], function () {
+		/*
+	    * Enlaces
+	    */
+		Route::get('getEnlaces', 'EnlaceController@getEnlaces');
+	    Route::post('enlaces/{id}', 'EnlaceController@update');
+		Route::resource('enlaces', 'EnlaceController');
+
+		/*
+	    * Slider
+	    */
+		Route::get('getSlider', 'SliderController@getSlider');
+	    Route::post('slider/{id}', 'SliderController@update');
+		Route::resource('slider', 'SliderController');
+	});
+
+
+	Route::group(['middleware' => 'rol:grupo5'], function () {
+		/*
+	    * Institucional
+	    */
+	    Route::post('nosotros/{id}', 'NosotroController@update');
+		Route::resource('nosotros', 'NosotroController');
+
+		Route::post('institucional/{id}', 'InstitucionalController@update');
+		Route::resource('institucional', 'InstitucionalController');
+		
+		/*
+	    * comunidad
+	    */
+	    Route::post('comunidad/{id}', 'ComunidadController@update');
+		Route::resource('comunidad', 'ComunidadController');
+
+		/*
+	    * Colegio General
+	    */
+	    Route::post('general/{id}', 'ColegioController@update');
+		Route::resource('general', 'ColegioController');
+		
 		Route::get('asignarHijo/{dni}/{id}', 'PadreController@asignarHijo');
 		Route::get('asignarHijos', 'PadreController@vistaAsignarHijos');
 		Route::get('getHijosPadre/{id}', 'PadreController@getHijosPadre');
 
-		Route::resource('padres', 'PadreController');	
-    });
-	
-	Route::get('/usuarios', function () {
-	    return view('templates.menu.usuario');
 	});
-	Route::get('getActividades', 'ActividadController@get');
-    Route::get('getActividad/{id}', 'ActividadController@getActividad');
-	Route::resource('actividades', 'ActividadController');
-
-	/*
-    * Rutas para el gestor de contenido
-    */
-    /*
-    * Comunicados
-    */
-
-	Route::get('getComunicados', 'ComunicadoController@getComunicado');
-	Route::post('comunicados/{id}', 'ComunicadoController@update');
-	Route::resource('comunicados', 'ComunicadoController');
-	Route::get('acti/{id}', 'ActividadController@getdia');
-
-	/*
-    * Noticias
-    */
-
-    Route::get('getNoticia', 'NoticiasController@getNoticia');
-    Route::post('noticias/{id}', 'NoticiasController@update');
-	Route::resource('noticias', 'NoticiasController');
-	/*
-    * Novedades
-    */
-	Route::get('getNovedades', 'NovedadController@getNovedades');
-    Route::post('novedades/{id}', 'NovedadController@update');
-	Route::resource('novedades', 'NovedadController');
-	/*
-    * Bibilioteca
-    */
-	Route::get('getArchivos', 'ArchivoController@get');
-	Route::get('getArchivoTipos', 'ArchivoController@getArchivoTipos');
-    Route::post('archivos/{id}', 'ArchivoController@update');
-	Route::resource('archivos', 'ArchivoController');
-	/*
-    * Novedades
-    */
-	Route::get('getEnlaces', 'EnlaceController@getEnlaces');
-    Route::post('enlaces/{id}', 'EnlaceController@update');
-	Route::resource('enlaces', 'EnlaceController');
-	/*
-    * Galeria
-    */
-	Route::get('getGaleria', 'GaleriaController@getGaleria');
-    Route::post('galeria/{id}', 'GaleriaController@update');
-	Route::resource('galeria', 'GaleriaController');
-	/*
-    * Slider
-    */
-	Route::get('getSlider', 'SliderController@getSlider');
-    Route::post('slider/{id}', 'SliderController@update');
-	Route::resource('slider', 'SliderController');
-	/*
-    * nosotros
-    */
-    Route::post('nosotros/{id}', 'NosotroController@update');
-	Route::resource('nosotros', 'NosotroController');
-	/*
-	/*
-    * comunidad
-    */
-    Route::post('comunidad/{id}', 'ComunidadController@update');
-	Route::resource('comunidad', 'ComunidadController');
-	/*
-    * institucional
-    */
-    Route::post('institucional/{id}', 'InstitucionalController@update');
-	Route::resource('institucional', 'InstitucionalController');
-
-	/*
-    * nosotros
-    */
-    Route::post('general/{id}', 'ColegioController@update');
-	Route::resource('general', 'ColegioController');
-	
-	
 });
 
 Route::auth();

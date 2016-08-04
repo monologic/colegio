@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class Roles
 {
@@ -13,8 +14,13 @@ class Roles
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $grupo)
     {
+        if ($grupo == 'grupo1') {
+            if (Auth::user()->usuariotipo_id == ) {
+                # code...
+            }
+        }
         return $next($request);
     }
 }
