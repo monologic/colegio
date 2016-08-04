@@ -34,32 +34,21 @@
             @endif
             @if ( Auth::user()->usuariotipo_id == 2 || Auth::user()->usuariotipo_id == 3 || Auth::user()->usuariotipo_id == 4)
             <div class="col-md-8">
-                <div class="cart">
-                    <h1 class="titulo">Biblioteca</h1>
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Título</th>
-                                <th>Autor</th>
-                                <th>Publicación</th>      
-                            </tr>
-                        </thead>
-                        <tbody>
-                             @foreach ($archivos as $x)
-                            <tr>
-                                <td>{{ $x->titulo }}</td>
-                                <td>{{ $x->autor }}</td>
-                                <td>{{ $x->pub_lugar . ", " . $x->pub_editorial + ", " . $x->pub_year}}</td>
-                                <td>
-                                    <a ng-click="plus(x);" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-plus" style="color:black"></i></a>
-                                </td>
-                            </tr>
-                            @endforeach
-
-                        </tbody>
-                    </table>
-                    
-                </div>
+                @foreach ($archivos as $archivo)
+                        <div class="cartA">
+                            <div class="ta">{{ $archivo->titulo }}</div>
+                           <blockquote class="bro">
+                                
+                                <div> <b>Autor :</b>  {{ $archivo->autor }}</div>
+                                <div> <b>Publicacion :</b>  {{ $archivo->created_at }}</div>
+                                <div> <b>Tipo :</b>  {{ $archivo->archivotipo->tipo }}</div>
+                           </blockquote>
+                           <div> <b>Descripción :</b></div>
+                            <div> {{ $archivo->decripcion }}</div>
+                            <button class="btn-colegio2" ng-click="plus({{ $archivo }});" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-plus"></i> Información</button>
+                        </div>
+                    @endforeach 
+                    {!! $archivos->render() !!} 
             </div>
             <div class="col-md-4">
                 <div class="cart">

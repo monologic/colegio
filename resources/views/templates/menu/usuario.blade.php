@@ -10,8 +10,8 @@
                 ESTUDIANTES
             </div>
             <div class="bodyuser">
-                <a href="">Ver estudiantes</a>
-                <a href="">Agregar estudiantes</a>
+                <a href="{{ url('app/estudiantes') }}">Lista de estudiantes</a>
+                <a href="{{ url('app/estudiantes/create') }}">Agregar estudiantes</a>
             </div>
         </div>
         <div class="col-md-3 menux">
@@ -19,8 +19,8 @@
                 DOCENTES
             </div>
             <div class="bodyuser">
-                <a href="">Ver padres</a>
-                <a href="">Agregar padres</a>
+                <a href="{{ url('app/docentes') }}">Lista de docentes</a>
+                <a href="{{ url('app/docentes/create') }}">Agregar docente</a>
             </div>
         </div>
         <div class="col-md-3 menux">
@@ -28,8 +28,8 @@
                 ADMINSTRATIVOS
             </div>
             <div class="bodyuser">
-                <a href="">Ver padres</a>
-                <a href="">Agregar padres</a>
+                <a href="{{ url('app/administrativos') }}">Lista de adminstrativos</a>
+                <a href="{{ url('app/administrativos/create') }}">Agregar adminstrativo</a>
             </div>
         </div>
         <div class="col-md-3 menux">
@@ -37,8 +37,8 @@
                 DIRECTIVOS
             </div>
             <div class="bodyuser">
-                <a href="">Ver padres</a>
-                <a href="">Agregar padres</a>
+                <a href="{{ url('app/directivos') }}">Ver padres</a>
+                <a href="{{ url('app/directivos/create') }}">Agregar padres</a>
             </div>
         </div>
         <div class="col-md-3 menux">
@@ -46,9 +46,9 @@
                 PADRES
             </div>
             <div class="bodyuser">
-                <a href="">Ver padres</a>
-                <a href="">Agregar padres</a>
-                <a href="">Asignar hijos</a>
+                <a href="{{ url('app/padres') }}">Ver padres</a>
+                <a href="{{ url('app/padres/create') }}">Agregar padres</a>
+                <a href="{{ url('app/asignarHijos') }}">Asignar hijos</a>
             </div>
         </div>
     </div>
