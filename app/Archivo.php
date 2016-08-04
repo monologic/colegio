@@ -18,11 +18,12 @@ class Archivo extends Model
   		if ($tipo == "?")
   			return $query->where('titulo', 'LIKE', "%$titulo%");
   		else{
-  			return $query->where([
-			    ['titulo', 'LIKE', "%$titulo%"],
-			    ['archivotipo_id', '=', $tipo]
-			]);
+        if ($titulo != null) {
+          return $query->where([
+              ['titulo', 'LIKE', "%$titulo%"],
+              ['archivotipo_id', '=', $tipo]
+          ]);
+        }
   		}
-  		
   	}
 }

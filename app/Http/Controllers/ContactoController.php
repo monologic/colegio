@@ -17,15 +17,13 @@ class ContactoController extends Controller
    		$email = $request->email;
    		$subject = 'Contacto por Mail';
    		$colegio = Colegio::all();
-      $to = $colegio[0]->correo;
+      $to = $colegio[0]->email;
    		Mail::send('contacto.contactoMail', $data, function ($message) use($email, $nombre, $subject, $to){
-		    $message->from('redlein7@gmail.com', $nombre);
+		    $message->from($email, $nombre);
 		    $message->subject($subject);
 		    $message->to($to);
 		});
-
-		dd('Mensaje Enviado');
-		//return redirect('/#/mensajeenviado');
+		return redirect('mensajeenviado');
 
    }
 }

@@ -27,6 +27,9 @@ Route::get('/contacto', function () {
     return view('index.contacto');
 });
 
+Route::get('mensajeenviado', function () {
+    return view('contacto.mensajeenviado');
+});
 Route::post('send',  'ContactoController@send');
 
 
