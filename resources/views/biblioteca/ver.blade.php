@@ -149,14 +149,20 @@
                             <h2 class="modal-title" id="myModalLabel" ng-bind="titulom"></h2>
                             <br>
                             <blockquote class="bro">
+                                <div><b>Título : </b><span ng-bind="titulom"></span></div>
                                 <div><b>Autor : </b><span ng-bind="autorm"></span></div>
                                 <div><b>Fecha : </b><span ng-bind="fecham"></span></div>
-                                   
+                                
+                                <div><b>Lugar de publicación : </b><span ng-bind="pub_lugar"></span></div>
+                                <div><b>Editorial : </b><span ng-bind="pub_editorial"></span></div>
+                                <div><b>Año : </b><span ng-bind="pub_year"></span></div>
+                                <div><b>Fecha : </b><span ng-bind="fecham"></span></div>
+                                <div><b>Edición : </b><span ng-bind="edicion"></span></div>
                             </blockquote>
                             
                             <div ng-bind="cuerpom"></div>
                             <figure class="imgnot">
-                                <a href="../archivos/@{{archivo}}" alt="archivo" class="imgn" />Descargar</a> 
+                                <a href="../archivos/@{{archivo}}" alt="archivo" class="imgn btn-colegio" /><i class="fa fa-eye" aria-hidden="true"></i> Ver archivo</a> 
                             </figure>
                             
                         </div>

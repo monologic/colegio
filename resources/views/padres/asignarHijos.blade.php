@@ -4,7 +4,7 @@
 
 @section('content')
 	<div class="container">
-		<div class="cart">
+		<div class="cart" style="width: 80%">
 			<div ng-controller="padresController">
 				<h1 class="titulo">Asignar hijos a padre</h1>
 				<form ng-submit="buscarPadre()" class="form-inline">
