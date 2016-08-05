@@ -8,5 +8,5 @@ class Albun extends Model
 {
     public $timestamps = false;
     
-    protected $fillable = ['nombre', 'nombre', 'epigrafe'];
+    protected $fillable = ['nombre', 'nombre','descripcion', 'epigrafe'];
 }

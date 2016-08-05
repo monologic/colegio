@@ -19,10 +19,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="x in galeria">
-                               <td>@{{$index+1}}</td>
-                                <td>@{{ x.nombre }}</td>
-                                <td>@{{ x.estado }}</td>
+                            @foreach ($galeria as $foto)
+                            <tr>
+                                <td>{{ $foto->nombre }}</td>
+                                <td>{{ $foto->estado }}</td>
                                 <td><img src="../imagen/galeria/@{{ x.imagen }}" width="80" height="50"></td>
                                 <td>
                                     <a ng-click="dataEditar(x);" data-toggle="modal" data-target="#editar"><i class="glyphicon glyphicon-pencil" style="color:black"></i></a>
@@ -30,43 +30,48 @@
                                     <a ng-click="eliminar(x.id);"> <i class="glyphicon glyphicon-trash" style="color:black;margin-left: 10px"></i></a>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
-                    <a href="{{ url('app/galeria/create') }}" class="btn btn-colegio">Añadir fotos</a>
+                    <a href="" data-toggle="modal" data-target="#mas" class="btn btn-colegio">Añadir fotos</a>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="mas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Editar Comunicado</h4>
+                            <h3>Añadiendo foto</h3>
                         </div>
-                        <div class="modal-body">
-                            <form  action="@{{formUrl2}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" id="formEdit">
-                            {{ csrf_field() }}
-                                <div class="form-group">
-                                    <label for="nombres">Nombres</label>
-                                    <input type="text" class="form-control" id="nombres" name="nombre" ng-model="nombre">
-                                </div>
-                                <div class="form-group">
-                                    <label for="asunto">Descripcion</label>
-                                    <textarea class="form-control" id="asunto" name="url" ng-model="descripcion"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="nombres">Estado</label>
-                                    <select class="form-control" name="estado" ng-model="estado">
-                                        <option value="Activo">Activo</option>
-                                        <option value="Inactico">Inactico</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="archivo">Imagen</label>
-                                    <input type="file" name="imagen">
-                                </div>
-                                <a ng-click='editarNoticia()' class="btn btn-colegio">Guardar Cambios</a>
-                            </form>
+                        <div class="modal-body" style="padding: 20px">
+                            <div class="formulariok">
+                                <form  method="POST" action="{{ url('app/galeria') }}" accept-charset="UTF-8" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <label for="nombre">Nombres</label>
+                                        <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="direccion">Descripción</label>
+                                        <textarea class="form-control" id="direccion"  name="descripcion" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="estado">Estado</label>
+                                        <select name="estado" class="form-control">
+                                            <option value="Activo">Activo</option>
+                                            <option value="Inactico">Inactico</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <b><p for="imagen">Imagen</p></b>
+                                        <input type="file" name="imagen">
+                                    </div>
+                                    <input type="hidden" name="albun_id" value="{{$idalbum}}">
+                                    
+                                    <button type="submit" class="btn btn-colegio">Guardar</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
             </div>

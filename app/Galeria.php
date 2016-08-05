@@ -8,7 +8,7 @@ class Galeria extends Model
 {
     public $timestamps = false;
     
-    protected $fillable = ['nombre', 'descripcion', 'estado','imagen'];
+    protected $fillable = ['nombre', 'descripcion', 'estado','imagen','albun_id'];
 
     public function albun()
   	{

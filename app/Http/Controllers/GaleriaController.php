@@ -36,6 +36,7 @@ class GaleriaController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         if($request->file('imagen'))
         {
             $file = $request -> file('imagen');
@@ -46,6 +47,7 @@ class GaleriaController extends Controller
         $galeria = new Galeria($request->all());
 
         $galeria->imagen = $name;
+        //$galeria->tosql();
         $galeria->save();
         return redirect('app/galeria');
     }

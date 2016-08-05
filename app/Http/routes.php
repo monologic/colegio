@@ -65,6 +65,11 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 		Route::get('getGaleria', 'GaleriaController@getGaleria');
 	    Route::post('galeria/{id}', 'GaleriaController@update');
 		Route::resource('galeria', 'GaleriaController');
+
+		Route::get('getAlbum', 'AlbumController@getAlbum');
+		Route::get('getAlbum/{id}', 'AlbumController@galeria');
+	    Route::post('album/{id}', 'AlbumController@update');
+		Route::resource('album', 'AlbumController');
 		});	
 
 	Route::group(['middleware' => 'rol:grupo2'], function () {

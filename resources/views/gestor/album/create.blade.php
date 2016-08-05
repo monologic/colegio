@@ -1,13 +1,13 @@
 @extends('templates.main')
 
-@section('title', 'Crear Enlace')
+@section('title', 'Crear Album')
 
 @section('content')
 	<div class="contenidos">
 		<div class="cart" style="max-width: 600px">
-			<h1 class="titulo">Añandiendo imagen</h1>
+			<h1 class="titulo">Creando Album</h1>
 	    		<div class="formulariok">
-	    			<form  method="POST" action="{{ url('app/galeria') }}" accept-charset="UTF-8" enctype="multipart/form-data">
+	    			<form  method="POST" action="{{ url('app/album') }}" accept-charset="UTF-8" enctype="multipart/form-data">
 	    				{{ csrf_field() }}
 	    				<div class="form-group">
 						    <label for="nombre">Nombres</label>
@@ -18,17 +18,9 @@
 						    <textarea class="form-control" id="direccion"  name="descripcion" required></textarea>
 						</div>
 						<div class="form-group">
-						    <label for="estado">Estado</label>
-						    <select name="estado" class="form-control">
-						    	<option value="Activo">Activo</option>
-						    	<option value="Inactico">Inactico</option>
-						    </select>
+						    <label for="estado">Epigrafe</label>
+						     <textarea class="form-control" id="direccion"  name="epigrafe" required></textarea>
 						</div>
-						<div class="form-group">
-						    <b><p for="imagen">Imagen</p></b>
-						    <input type="file" name="imagen">
-						</div>
-						<input type="text" name="albun_id" value="1">
 						<button type="submit" class="btn btn-colegio">Guardar</button>
 	    			</form>
 	    		</div>
