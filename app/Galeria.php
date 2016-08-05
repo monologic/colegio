@@ -9,4 +9,9 @@ class Galeria extends Model
     public $timestamps = false;
     
     protected $fillable = ['nombre', 'descripcion', 'estado','imagen'];
+
+    public function albun()
+  	{
+  		return $this->belongsTo('App\Albun');
+  	}
 }
