@@ -24,12 +24,12 @@ class Roles
             }
         }
         if ($grupo == 'grupo2') {
-            if (Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 2 || Auth::user()->usuariotipo_id == 5) {
+            if (Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 5) {
                 dd("No estas autorizado");
             }
         }
         if ($grupo == 'grupo3') {
-            if (Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 2 || Auth::user()->usuariotipo_id == 5 || Auth::user()->usuariotipo_id == 6) {
+            if (Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 5 || Auth::user()->usuariotipo_id == 6) {
                 dd("No estas autorizado");
             }
         }
