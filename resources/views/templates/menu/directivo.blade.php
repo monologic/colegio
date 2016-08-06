@@ -35,8 +35,8 @@
             <p>Biblioteca</p>
         </a>
     </li>
-    <li>
-        <a href="{{ url('app/galeria') }}">
+   <li>
+        <a href="{{ url('app/album') }}">
             <i class="pe-7s-science"></i>
             <p>Galería</p>
         </a>

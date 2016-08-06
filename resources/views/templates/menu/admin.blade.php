@@ -11,9 +11,9 @@
             <p>Enlaces</p>
         </a>
     </li>
-    <li>
-        <a href="{{ url('app/galeria') }}">
-            <i class="pe-7s-note2"></i>
+   <li>
+        <a href="{{ url('app/album') }}">
+            <i class="pe-7s-science"></i>
             <p>Galería</p>
         </a>
     </li>

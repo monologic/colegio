@@ -70,6 +70,10 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 		Route::get('getAlbum/{id}', 'AlbumController@galeria');
 	    Route::post('album/{id}', 'AlbumController@update');
 		Route::resource('album', 'AlbumController');
+
+
+	    Route::post('album/{id}', 'AlbumController@update');
+		Route::resource('video', 'VideoController');
 		});	
 
 	Route::group(['middleware' => 'rol:grupo2'], function () {

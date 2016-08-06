@@ -53,7 +53,7 @@
 									</form>
 								</li>
 								<li class="me">
-									<a href="/login" class="fa fa-user">login</a>
+									<a href="/app" class="fa fa-user">login</a>
 								</li>
 								<li class="menu">
 									<a class="fa-bars" href="#menu">Menu</a>
@@ -76,27 +76,33 @@
 							<section>
 								<ul class="links">
 									<li>
-										<a href="#">
-											<h3>Lorem ipsum</h3>
-											<p>Feugiat tempus veroeros dolor</p>
+										<a href="{{ url('/') }}>
+											<h3>Inicio</h3>
+											
 										</a>
 									</li>
 									<li>
-										<a href="#">
-											<h3>Dolor sit amet</h3>
-											<p>Sed vitae justo condimentum</p>
+										<a href="{{ url('/institucional') }}>
+											<h3>Institucionail</h3>
+											
 										</a>
 									</li>
 									<li>
-										<a href="#">
-											<h3>Feugiat veroeros</h3>
-											<p>Phasellus sed ultricies mi congue</p>
+										<a href="{{ url('/comunidad') }}">
+											<h3>Comunidad</h3>
+											
 										</a>
 									</li>
 									<li>
-										<a href="#">
-											<h3>Etiam sed consequat</h3>
-											<p>Porta lectus amet ultricies</p>
+										<a href="{{ url('/galeria') }}">
+											<h3>Galeria</h3>
+											
+										</a>
+									</li>
+									<li>
+										<a href="{{ url('/contacto') }}">
+											<h3>Contacto</h3>
+											
 										</a>
 									</li>
 								</ul>
@@ -105,7 +111,7 @@
 						<!-- Actions -->
 							<section>
 								<ul class="actions vertical">
-									<li><a href="#" class="button big fit">Log In</a></li>
+									<li><a href="{{ url('/app') }}"class="button big fit">Log In</a></li>
 								</ul>
 							</section>
 

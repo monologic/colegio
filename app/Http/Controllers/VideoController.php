@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Albun;
-use App\Galeria;
 use App\Video;
 use App\Http\Requests;
 
-class AlbumController extends Controller
+class VideoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +15,7 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $galerias = Albun::orderBy('id','DESC')->paginate(20);
-        return view('gestor.album.ver')->with('albuns', $galerias);
+        
     }
 
     /**
@@ -28,7 +25,7 @@ class AlbumController extends Controller
      */
     public function create()
     {
-        return view('gestor.album.create');
+        return view('gestor.video.create');
     }
 
     /**
@@ -39,8 +36,12 @@ class AlbumController extends Controller
      */
     public function store(Request $request)
     {
-        $galeria = new Albun($request->all());
-        $galeria->save();
+        $video = new Video($request->all());
+        $es1 = $video->url;
+        $porciones = explode("=", $es1);
+        $fn ='https://www.youtube.com/embed/'.$porciones[1].'?autoplay=0';
+        $video->url = $fn ;
+        $video->save();
         return redirect('app/album');
     }
 
@@ -87,20 +88,5 @@ class AlbumController extends Controller
     public function destroy($id)
     {
         //
-    }
-     public function galeria($id)
-    {
-        $galerias = Galeria::where('albun_id',$id)->orderBy('id','DESC')->paginate(20);
-        return view('gestor.galeria.ver')->with('galeria', $galerias)->with('idalbum',$id);
-    }
-     public function grid(){
-        $galerias = Albun::orderBy('id','DESC')->paginate(20);
-        $galerias->each(function($galerias){
-            $galerias->album;
-        });
-        $videos = Video::all();
-        $todo[]=$galerias ;
-        $todo[]=$videos ;
-        return view('index.galeria')->with('todo', $todo);
     }
 }
