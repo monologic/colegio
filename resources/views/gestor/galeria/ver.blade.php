@@ -11,7 +11,6 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>#</th>
                                 <th>Nombre</th>
                                 <th>Estado</th>
                                 <th>Imagen</th> 
@@ -23,7 +22,7 @@
                             <tr>
                                 <td>{{ $foto->nombre }}</td>
                                 <td>{{ $foto->estado }}</td>
-                                <td><img src="../imagen/galeria/@{{ x.imagen }}" width="80" height="50"></td>
+                                <td><img src="../../imagen/galeria/{{ $foto->imagen }}" width="80" height="50"></td>
                                 <td>
                                     <a ng-click="dataEditar(x);" data-toggle="modal" data-target="#editar"><i class="glyphicon glyphicon-pencil" style="color:black"></i></a>
 

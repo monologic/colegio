@@ -9,4 +9,9 @@ class Albun extends Model
     public $timestamps = false;
     
     protected $fillable = ['nombre', 'nombre','descripcion', 'epigrafe'];
+
+    public function album()
+    {
+        return $this->hasMany('App\Galeria');
+    }
 }

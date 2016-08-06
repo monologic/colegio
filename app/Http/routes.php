@@ -19,7 +19,7 @@ Route::get('noticias/{id}', 'NoticiasController@detalle');
 Route::get('comunicado/{id}', 'ComunicadoController@detalle');
 Route::get('novedad/{id}', 'NovedadController@detalle');
 
-Route::get('/galeria', 'GaleriaController@grid');
+Route::get('/galeria', 'AlbumController@grid');
 Route::get('/institucional', 'NosotroController@grid');
 Route::get('/comunidad', 'ComunidadController@grid');
 

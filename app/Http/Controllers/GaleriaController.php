@@ -36,7 +36,7 @@ class GaleriaController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+      
         if($request->file('imagen'))
         {
             $file = $request -> file('imagen');
@@ -47,9 +47,8 @@ class GaleriaController extends Controller
         $galeria = new Galeria($request->all());
 
         $galeria->imagen = $name;
-        //$galeria->tosql();
         $galeria->save();
-        return redirect('app/galeria');
+        return redirect('app/album');
     }
 
     /**
@@ -123,8 +122,5 @@ class GaleriaController extends Controller
         $not = Galeria::all();
         return response()->json( $not );
     }
-     public function grid(){
-        $galerias = Galeria::orderBy('id','DESC')->paginate(20);
-        return view('index.galeria')->with('galerias', $galerias);
-    }
+    
 }

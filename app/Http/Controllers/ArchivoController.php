@@ -19,7 +19,7 @@ class ArchivoController extends Controller
     public function index(Request $request)
     {
         //dd($request);
-        $archivos = Archivo::search($request->valor, $request->archivotipo_id)->orderBy('created_at','DESC')->paginate(2);
+        $archivos = Archivo::search($request->valor, $request->archivotipo_id)->orderBy('created_at','DESC')->paginate(10);
         $archivos->each(function($archivos){
             $archivos->archivotipo;
         });
