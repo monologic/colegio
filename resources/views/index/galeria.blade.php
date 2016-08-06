@@ -54,7 +54,7 @@
 	<script src="assets/GridGallery/js/cbpGridGallery.js"></script>
 	<script>
 
-		for (var i = 0; i < 1000; i++) {
+		for (var i = 1; i < 100; i++) {
 			new CBPGridGallery( document.getElementById( 'grid-gallery'+i ) );
 		}
 		
