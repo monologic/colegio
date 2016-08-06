@@ -19,6 +19,7 @@ class ArchivoController extends Controller
     public function index(Request $request)
     {
         //dd($request);
+        
         $archivos = Archivo::search($request->valor, $request->archivotipo_id)->orderBy('created_at','DESC')->paginate(10);
         $archivos->each(function($archivos){
             $archivos->archivotipo;
@@ -47,10 +48,17 @@ class ArchivoController extends Controller
     {
         if($request->file('archivo'))
         {
+
             $file = $request -> file('archivo');
-            $name = 'noticia_'. time() . '.' .$file->getClientOriginalExtension();
-            $path=public_path() . "/archivos/";
-            $file -> move($path,$name);
+            $tipo = $file->getClientOriginalExtension();
+            if ($tipo == 'pdf' || $tipo == 'mp3') {
+                $name = 'archivo_'. time() . '.' .$file->getClientOriginalExtension();
+                $path=public_path() . "/archivos/";
+                $file -> move($path,$name);
+            }
+            else
+                dd('Tipo de Archivo no permitido, Solo se permiten archivos PDF y audio en mp3');
+            
         }
         $archivo = new Archivo($request->all());
 
@@ -91,16 +99,21 @@ class ArchivoController extends Controller
     public function update(Request $request, $id)
     {
         $archivo = Archivo::find($id);
-        $archivo->fill($request->all());
-
         if($request->file('archivo'))
         {
+
             $file = $request -> file('archivo');
-            $name = 'archivo_'. time() . '.' .$file->getClientOriginalExtension();
-            $path=public_path() . "/archivos/";
-            $file -> move($path,$name);
-            $archivo->archivo = $name;
+            $tipo = $file->getClientOriginalExtension();
+            if ($tipo == 'pdf' || $tipo == 'mp3') {
+                $name = 'noticia_'. time() . '.' .$file->getClientOriginalExtension();
+                $path=public_path() . "/archivos/";
+                $file -> move($path,$name);
+            }
+            else
+                dd('Tipo de Archivo no permitido, Solo se permiten archivos PDF y audio en mp3');
+            
         }
+        $archivo->fill($request->all());
         $archivo->save();
         return redirect('app/archivos');
     }

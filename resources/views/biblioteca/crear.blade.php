@@ -8,6 +8,17 @@
 			<h1 class="titulo">Añadir archivo a biblioteca</h1>
 	    	<div>
 	    		<div class="formulariok">
+
+	    			@if (count($errors) > 0)
+	    			{{ dd($errors) }}
+					    <div class="alert alert-danger">
+					        <ul>
+					            @foreach ($errors->all() as $error)
+					                <li>{{ $error }}</li>
+					            @endforeach
+					        </ul>
+					    </div>
+					@endif
 	    			<form role="form" method="POST" action="{{ url('app/archivos') }}" accept-charset="UTF-8" enctype="multipart/form-data">
 	    				{{ csrf_field() }}
 	    				<div class="form-group">
