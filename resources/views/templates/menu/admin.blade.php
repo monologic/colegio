@@ -23,4 +23,10 @@
             <p>Biblioteca</p>
         </a>
     </li>
+    <li>
+        <a  href="{{ url('app/usuarios') }}">
+            <i class="pe-7s-science"></i>
+            <p>Usuarios</p>
+        </a>
+    </li>
 </ul>
