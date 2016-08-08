@@ -37,17 +37,16 @@ class ComunicadoController extends Controller
      */
     public function store(Request $request)
     {
+        $comunicado = new Comunicado($request->all());
         if($request->file('imagen'))
         {
             $file = $request -> file('imagen');
             $name = 'comunicado_'. time() . '.' .$file->getClientOriginalExtension();
             $path=public_path() . "/imagen/comunicados/";
             $file -> move($path,$name);
-            $comunicado = new Comunicado($request->all());
             $comunicado->imagen = $name;
-            $comunicado->save();
         }
-        
+        $comunicado->save();
         return redirect('app/comunicados');
     }
 
