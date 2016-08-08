@@ -144,7 +144,7 @@
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
                         </div>
-                        <div class="modal-body" style="padding: 20px">
+                        <div class="modal-body" style="padding: 20px" onload="ver()">
                             <span ng-bind="epigrafem"></span>
                             <h2 class="modal-title" id="myModalLabel" ng-bind="titulom"></h2>
                             <br>
@@ -174,4 +174,10 @@
    </div>
      <!-- Modal de Edición -->
     <script src="{{ asset('assets/js/ng-scripts/controllers/archivoController.js') }}"></script>
+    <script>
+        function ver()
+        {
+            alert('nuevo')
+        }
+    </script>
 @endsection

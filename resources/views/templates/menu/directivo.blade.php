@@ -1,5 +1,11 @@
 <ul class="nav">
     <li class="">
+        <a href="{{ url('app/general') }}">
+            <i class="pe-7s-graph"></i>
+            <p>General</p>
+        </a>
+    </li>
+    <li class="">
         <a href="{{ url('app/comunicados') }}">
             <i class="pe-7s-graph"></i>
             <p>Comunicados</p>
@@ -17,15 +23,9 @@
             <p>Novedades</p>
         </a>
     </li>
-    <li>
-        <a href="{{ url('app/nosotros') }}">
-            <i class="pe-7s-note2"></i>
-            <p>Nosotros</p>
-        </a>
-    </li>
-    <li>
-        <a href="">
-            <i class="pe-7s-news-paper"></i>
+     <li>
+        <a href="{{ url('app/actividades') }}">
+            <i class="pe-7s-science"></i>
             <p>Actividades</p>
         </a>
     </li>
@@ -42,13 +42,19 @@
         </a>
     </li>
     <li>
-        <a href="">
+        <a href="{{ url('app/nosotros') }}">
             <i class="pe-7s-science"></i>
-            <p>Información Institucional</p>
+            <p>Institucional</p>
         </a>
     </li>
     <li>
-        <a href="">
+        <a href="{{ url('app/comunidad') }}">
+            <i class="pe-7s-science"></i>
+            <p>Comunidad</p>
+        </a>
+    </li>
+    <li>
+        <a href="{{ url('app/comunidad') }}">
             <i class="pe-7s-science"></i>
             <p>Usuarios</p>
         </a>

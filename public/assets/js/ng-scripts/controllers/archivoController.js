@@ -32,6 +32,7 @@ app.controller('archivoController', function($scope,$http) {
         $scope.solofec =  $scope.fecham[0];
         $scope.archivo = data.archivo;
         $scope.edicion = data.edicion;
+        
 
     }
 
