@@ -19,7 +19,7 @@
                     </div>
                 </header>
                 <a href="#" class="image featured"><img src="../imagen/novedades/{{ $novededa->foto }}" alt="" /></a>
-                <p>{{ $novededa->epigrafe }}</p>
+                <p class="text-center" style="margin-top: -10px">{{ $novededa->epigrafe }}</p>
                 <p>{{ $novededa->cuerpo }}</p>
             </article>
         </div>

@@ -76,16 +76,16 @@
 				<a href="/noticiasall">Ver todas la noticias</a>
 			</div>		
 
-			
-		</div>
-		<section class="col-md-12"  ng-controller="enlaceController" ng-init="getindexe()">
+			<section class="col-md-12"  ng-controller="enlaceController" ng-init="getindexe()">
 				<div class="conten">
 					<h4 class="text-center">Enlaces</h4>
 					<div ng-repeat="en in enlaces" style="margin-top: 70px">
-						<div class="col-md-3"><img class="child" src="imagen/enlace/@{{en.imagen}}" style="width:80%;margin: 0px auto 0px auto" alt="" /></div>
+						<div class="col-md-3 col-sm-4 col-xs-6"><img class="child" src="imagen/enlace/@{{en.imagen}}" style="width:90%;margin: 0px auto 0px auto" alt="" /></div>
 					</div>	
 				</div>
 			</section>
+		</div>
+		
 		<script src="{{ asset('assets/js/ng-scripts/controllers/noticiaController.js') }}"></script> 
 		<script src="{{ asset('assets/js/ng-scripts/controllers/comunicadoController.js') }}"></script>
 		<script src="{{ asset('assets/js/ng-scripts/controllers/novedadesController.js') }}"></script>
