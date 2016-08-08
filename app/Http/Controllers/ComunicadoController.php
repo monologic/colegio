@@ -104,7 +104,9 @@ class ComunicadoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Comunicado::destroy($id);
+
+        return $this->getComunicado();
     }
     public function getComunicado()
     {

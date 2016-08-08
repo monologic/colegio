@@ -84,12 +84,9 @@
                                 </div>
                                 <div class="form-group">
                                     <b><p for="cuerpo">Cuerpo</p></b>
-                                    <textarea name="" id="" cols="30" rows="10" class="form-control" name="cuerpo" ng-model="cuerpo"></textarea>
+                                    <textarea id="" cols="30" rows="10" class="form-control" name="cuerpo" ng-model="cuerpo"></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label for="archivo">Archivo</label>
-                                    <input type="file" name="imagen">
-                                </div>
+                                
                                 <a ng-click='editarNoticia()' class="btn btn-colegio">Guardar Cambios</a>
                             </form>
                         </div>
@@ -110,10 +107,7 @@
                                 <div><b>Destinatario : </b><span ng-bind="destinatariom"></span></div>
                                 <div><b>Fecha de publicacion: </b><span ng-bind="solofe"></span></div>     
                             </blockquote>
-                            <figure class="imgnot">
-                                <iframe src="http://docs.google.com/gview?url=http://localhost:8000/imagen/comunicados/as.pdf&embedded=true" style="width:500px; height:375px;" frameborder="0"></iframe>
-                                <figcaption ng-bind="copetem"></figcaption> 
-                            </figure>
+                            
                             <div ng-bind="cuerpom"></div>
                             
                             

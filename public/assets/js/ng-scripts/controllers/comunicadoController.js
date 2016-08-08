@@ -39,7 +39,7 @@ app.controller('comunicadoController', function($scope,$http) {
         $scope.cuerpo = data.cuerpo;
     }
     $scope.editar = function () {
-        $http.put('estudiantes/' + $scope.id,
+        $http.put('comunicados/' + $scope.id,
             {   'nombres':$scope.nombres,
                 'apellidos':$scope.apellidos,
                 'dni':$scope.dni,
@@ -48,6 +48,7 @@ app.controller('comunicadoController', function($scope,$http) {
                 'seccion':$scope.seccion
             }).then(function successCallback(response) {
                 $scope.estudiantes = response.data;
+                $('#editar').modal('toggle')
             }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
@@ -63,7 +64,7 @@ app.controller('comunicadoController', function($scope,$http) {
         $scope.fechams = data.fecha_pub.split(" ");
         $scope.solofe =  $scope.fechams[0];
         $scope.asuntom = data.asunto;
-        $scope.archivo = data.imagen;       
+        
     }
     $scope.eliminar = function (id) {
         swal({   title: "",
@@ -80,8 +81,14 @@ app.controller('comunicadoController', function($scope,$http) {
                     "El registro se ha eliminado.", 
                     "success"); 
 
-                $http.delete( 'estudiantes/'+id ).then(function successCallback(response) {
-                    $scope.estudiantes = response.data;
+                $http.delete( 'comunicados/'+id ).then(function successCallback(response) {
+                    data = response.data;
+                    for(i in data){
+                        rs=data[i].fecha_pub;
+                        $scope.fe = rs.split(' ');
+                        data[i].solofe = $scope.fe[0];
+                    }
+                    $scope.comunicados = data;
                 }, function errorCallback(response) {
                     swal({   
                         title: "Ha ocurrido un error!",   

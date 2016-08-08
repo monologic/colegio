@@ -39,6 +39,7 @@ app.controller('directivosController', function($scope,$http) {
                 'seccion':$scope.seccion
             }).then(function successCallback(response) {
                 $scope.directivos = response.data;
+                $('#editar').modal('toggle')
             }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
