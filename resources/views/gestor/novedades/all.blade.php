@@ -1,6 +1,6 @@
 @extends('welcome')
 
-@section('title', 'Todas los comunicados')
+@section('title', 'Todas las novedades')
 
 @section('content')
     
@@ -11,7 +11,7 @@
                 <header>
                     <div class="title">
                         <h2><a>{{ $novededa->titulo }}</a></h2>
-                        <blockquote>Para : {{ $novededa->copete }}</blockquote>                      
+                        <blockquote>{{ $novededa->copete }}</blockquote>                      
                     </div>
                     <div class="meta">
 
@@ -20,8 +20,8 @@
                     </div>
                 </header>
                 <a href="#" class="image featured"><img src="../imagen/novedades/{{ $novededa->foto }}" alt="" /></a>
-                <p>{{ $novededa->epigrafe }}</p>
-                <p>{{ $novededa->cuerpo }}</p>
+                <p class="text-center" style="margin-top: -45px">{{ $novededa->epigrafe }}</p>
+                <p>{!! $novededa->cuerpo !!}</p>
             </article>
         </div>
         @endforeach

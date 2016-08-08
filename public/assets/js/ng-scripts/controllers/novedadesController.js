@@ -45,6 +45,7 @@ app.controller('novedadesController', function($scope,$http) {
         $scope.autorm = data.autor;
         $scope.copetem = data.copete;
         $scope.cuerpom = data.cuerpo;
+        $('.fr-element').html($scope.cuerpom);
         $scope.epigrafem = data.epigrafe;
         $scope.fecham = data.fecha.split(" ");
         $scope.solofec =  $scope.fecham[0];

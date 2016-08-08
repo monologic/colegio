@@ -19,8 +19,8 @@
                     </div>
                 </header>
                 <a href="#" class="image featured"><img src="../imagen/novedades/{{ $novededa->foto }}" alt="" /></a>
-                <p class="text-center" style="margin-top: -10px">{{ $novededa->epigrafe }}</p>
-                <p>{{ $novededa->cuerpo }}</p>
+                <p class="text-center" style="margin-top: -45px">{{ $novededa->epigrafe }}</p>
+                <p>{!! $novededa->cuerpo !!}</p>
             </article>
         </div>
         @endforeach
