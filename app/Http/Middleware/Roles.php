@@ -18,8 +18,7 @@ class Roles
     {
         if ($grupo == 'grupo1') {
             
-            if (Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 2 || Auth::user()->usuariotipo_id == 4 || Auth::user()->usuariotipo_id == 5) {
-                dd(Auth::user()->usuariotipo_id);
+            if (Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 2 || Auth::user()->usuariotipo_id == 5) {
                 dd("No estas autorizado");
             }
         }
