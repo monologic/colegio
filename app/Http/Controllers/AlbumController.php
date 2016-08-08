@@ -17,8 +17,14 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $galerias = Albun::orderBy('id','DESC')->paginate(20);
-        return view('gestor.album.ver')->with('albuns', $galerias);
+         $galerias = Albun::orderBy('id','DESC');
+        $galerias->each(function($galerias){
+            $galerias->album;
+        });
+        $videos = Video::all();
+        $todo[]=$galerias ;
+        $todo[]=$videos ;
+        return view('gestor.album.ver')->with('todo', $todo);
     }
 
     /**

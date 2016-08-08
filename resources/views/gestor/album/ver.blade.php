@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($albuns as $albun)
+                @foreach ($todo[0] as $albun)
                 <tr>
                     <td>{{$albun->nombre}}</td>
                     <td>{{$albun->epigrafe}}</td>
@@ -26,4 +26,28 @@
             </tbody>
         </table>
     </div>
+    <!-- videos -->
+
+    <div class="cart" style="max-width: 600px">
+        <h1 class="titulo text-center">Videos</h1>
+        <a href="{{ url('app/video/create') }}" class="btn-colegio2" style="display: block;position:relative;padding: 7px;max-width: 100px;right: 0"> Añadir Video</a>
+        <table class="table">
+            <thead>
+
+                <tr>
+                    <th>Nombre</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($todo[1]  as $videos)
+                <tr>
+                    <td>{{$videos->nombre}}</td>
+                    <td><a href="" class="btn"><i class="glyphicon glyphicon-edit"></i></a></td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+
 @endsection
