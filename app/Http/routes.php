@@ -42,6 +42,11 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 	Route::get('/usuarios', function () {
 	    return view('templates.menu.usuario');
 	});
+
+	Route::get('perfil', function () {
+	    return view('usuarios.perfil');
+	});
+	Route::post('perfil', 'UserController@editarUsuario');
 	
 	Route::group(['middleware' => 'rol:grupo1'], function () {
     	Route::get('getEstudiantes', 'EstudianteController@get');
