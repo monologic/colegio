@@ -22,5 +22,29 @@ class UserController extends Controller
 	{
 		return view('estudiantes.crear');
 	}
+	public function editarUsuario(Request $request)
+	{
+		$ct = 0;
+		if(\Auth::user()->usuario != $request->usuario){
+			$ct = User::where('usuario', $request->usuario)->get();
+			$ct = count($ct);
+		}
+		if ($ct == 0) {
+			$user = User::find(\Auth::user()->id);
+			$user->usuario = $request->usuario;
+			if ($request->password) {
+				$user->password = bcrypt($request->password);
+			}    	
+			$user->save();
+			return response()->json([
+	            "error" => '0'
+	        ]);
+		}
+		else{
+			return response()->json([
+	            "error" => '1'
+	        ]);
+		}
+	}
 	
 }
