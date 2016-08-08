@@ -5,7 +5,7 @@
 @section('content')
 	<div class="contenidos">
 		<div class="cart" style="max-width: 600px">
-			<h1 class="titulo">Añandiendo Slider</h1>
+			<h1 class="titulo">Añandir Slider</h1>
 	    		<div class="formulariok">
 	    			<form  method="POST" action="{{ url('app/slider') }}" accept-charset="UTF-8" enctype="multipart/form-data">
 	    				{{ csrf_field() }}

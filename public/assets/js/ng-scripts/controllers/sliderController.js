@@ -9,6 +9,15 @@ app.controller('sliderController', function($scope,$http) {
             // or server returns response with an error status.
             });
     }
+    $scope.get = function () {
+        $http.get('getSlider').then(function successCallback(response) {
+                data = response.data;
+                $scope.slider = data;
+            }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            });
+    }
     $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
         $("#owl-demo").owlCarousel({
             singleItem : true,
@@ -79,15 +88,10 @@ app.controller('sliderController', function($scope,$http) {
                     "El registro se ha eliminado.", 
                     "success"); 
 
-                $http.delete( 'galeria/'+id ).then(function successCallback(response) {
+                $http.delete( 'slider/'+id ).then(function successCallback(response) {
                     $scope.noticias = response.data;
                 }, function errorCallback(response) {
-                    swal({   
-                        title: "Ha ocurrido un error!",   
-                        text: "No se puede borrar datos utilizados para otros registros.",   
-                        timer: 3000,   
-                        showConfirmButton: false 
-                    });
+                   javascript:location.reload()
                 });
             }
         );
