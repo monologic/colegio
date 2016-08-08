@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Directorio;
 use App\Http\Requests;
 
 class DirectorioController extends Controller
@@ -26,7 +26,7 @@ class DirectorioController extends Controller
      */
     public function create()
     {
-        //
+        return view('gestor.directivo.create');
     }
 
     /**
@@ -83,5 +83,10 @@ class DirectorioController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function all()
+    {
+        $not = Directorio::all();
+        return response()->json( $not );
     }
 }

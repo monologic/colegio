@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Nosotro;
+use App\Directorio;
 use App\Http\Requests;
 
 class NosotroController extends Controller
@@ -16,7 +17,10 @@ class NosotroController extends Controller
     public function index()
     {
         $nosotros = Nosotro::all();
-        return view('gestor.nosotros.nosotros')->with('nosotros', $nosotros);
+        $docentes = Directorio::all();
+        $all[]=$nosotros;
+        $all[]=$docentes;
+        return view('gestor.nosotros.nosotros')->with('nosotros', $all);
     }
 
     /**

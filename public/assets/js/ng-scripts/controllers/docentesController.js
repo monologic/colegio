@@ -8,6 +8,14 @@ app.controller('docentesController', function($scope,$http) {
             // or server returns response with an error status.
             });
     }
+     $scope.todos = function () {
+        $http.get('getDirec').then(function successCallback(response) {
+                $scope.doc = response.data;
+            }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            });
+    }
     $scope.guardar = function () {
 
         $http.post('../docentes',
@@ -23,7 +31,14 @@ app.controller('docentesController', function($scope,$http) {
             // or server returns response with an error status.
         });
     }
-
+     $scope.plus = function (data) {
+        $scope.id = data.id;
+        $scope.formUrl = 'directoorio/' + data.id;
+         $('.fr-element').html(data.mas);
+         $scope.titulo = data.titulo;
+        $scope.nombre = data.nombre;
+        $scope.cargo = data.cargo;
+    }
     $scope.dataEditar = function (data) {
 
         $scope.id = data.id;

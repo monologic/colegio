@@ -140,6 +140,7 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 	    */
 	    Route::post('nosotros/{id}', 'NosotroController@update');
 		Route::resource('nosotros', 'NosotroController');
+		Route::get('getDirec', 'DirectorioController@all');
 
 		Route::post('institucional/{id}', 'InstitucionalController@update');
 		Route::resource('institucional', 'InstitucionalController');

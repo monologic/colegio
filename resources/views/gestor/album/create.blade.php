@@ -14,10 +14,6 @@
 						    <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" required>
 						</div>
 						<div class="form-group">
-						    <label for="direccion">Descripción</label>
-						    <textarea class="form-control" id="direccion"  name="descripcion" required></textarea>
-						</div>
-						<div class="form-group">
 						    <label for="estado">Epigrafe</label>
 						     <textarea class="form-control" id="direccion"  name="epigrafe" required></textarea>
 						</div>
