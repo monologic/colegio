@@ -117,7 +117,7 @@ class EnlaceController extends Controller
         return response()->json( $not );
 
     }
-    public function getNoticiaIndex()
+    public function getEnlacesIndex()
     { 
         $not = Enlace::all();
         return response()->json( $not );

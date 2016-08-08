@@ -10,7 +10,7 @@
                 <header>
                     <div class="title">
                         <h2><a>{{ $novededa->titulo }}</a></h2>
-                        <blockquote>Para : {{ $novededa->copete }}</blockquote>                      
+                        <blockquote>{{ $novededa->copete }}</blockquote>                      
                     </div>
                     <div class="meta">
 

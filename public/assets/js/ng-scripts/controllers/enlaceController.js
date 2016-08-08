@@ -9,6 +9,15 @@ app.controller('enlaceController', function($scope,$http) {
             // or server returns response with an error status.
             });
     }
+    $scope.getindexe = function () {
+        $http.get('getEnlacesIndex').then(function successCallback(response) {
+                data = response.data;
+                $scope.enlaces = data;
+            }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            });
+    }
     $scope.firstEnalce = function () {
         $http.get('getEnlacesIndex').then(function successCallback(response) {
                 data = response.data;
