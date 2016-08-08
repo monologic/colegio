@@ -62,6 +62,7 @@ app.controller('noticiaController', function($scope,$http) {
         $scope.autorm = data.autor;
         $scope.copetem = data.copete;
         $scope.cuerpom = data.cuerpo;
+        $('.fr-element').html($scope.cuerpom);
         $scope.epigrafem = data.epigrafe;
         $scope.fecham = data.fecha.split(" ");
         $scope.solofec =  $scope.fecham[0];
@@ -100,7 +101,13 @@ app.controller('noticiaController', function($scope,$http) {
                     "success"); 
 
                 $http.delete( 'noticias/'+id ).then(function successCallback(response) {
-                    $scope.noticias = response.data;
+                    data = response.data;
+                    for(i in data){
+                        rs=data[i].fecha;
+                        $scope.fe = rs.split(' ');
+                        data[i].solofe = $scope.fe[0];
+                    }
+                    $scope.noticias = data;
                 }, function errorCallback(response) {
                     swal({   
                         title: "Ha ocurrido un error!",   

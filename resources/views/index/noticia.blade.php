@@ -19,7 +19,7 @@
                 </header>
                 <a href="#" class="image featured"><img src="../imagen/noticia/{{ $noticia->foto }}" alt="" /></a>
                 <p class="text-center">{{ $noticia->epigrafe }}</p>
-                <p>{{ $noticia->cuerpo }}</p>
+                <p>{!! $noticia->cuerpo !!}</p>
             </article>
         </div>
         @endforeach
