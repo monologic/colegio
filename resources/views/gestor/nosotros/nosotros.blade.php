@@ -12,6 +12,7 @@
 			<li><a href="#2" data-toggle="tab">Visión</a></li>
 			<li><a href="#3" data-toggle="tab">Misión</a></li>
 			<li><a href="#4" data-toggle="tab">Historia</a></li>
+			<li><a href="#5" data-toggle="tab">Directivos</a></li>
 		</ul>
 		@foreach ($nosotros as $nosotro)
 		<div class="tab-content ">
@@ -42,6 +43,27 @@
 					{{$nosotro->historia}}
 					</textarea>
 				</div>
+			</div>
+			<div class="tab-pane" id="5">
+				<div style=" width: 80%; margin:40px auto 20px auto; max-width: 600px">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Título</th>
+								<th>Nombre</th>
+								<th>Acción</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td><a href="" class="btn"></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			    
 			</div>
 		</div>
 		@endforeach 

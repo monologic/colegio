@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Directorio;
-use App\Http\Requests;
-use App\User;
 
-class DirectivoController extends Controller
+use App\Http\Requests;
+
+class DirectorioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,18 +15,8 @@ class DirectivoController extends Controller
      */
     public function index()
     {
-        return view('directivos.ver');
-    }
-
-    /**
-     * Listado de directivos
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function get()
-    {
-        $users = User::where('usuariotipo_id', 4)->get();
-        return response()->json( $users );
+        $directivos = Directorio::all();
+        return view('gestor.directivo.ver')->with('directivos', $directivos);
     }
 
     /**
@@ -37,7 +26,7 @@ class DirectivoController extends Controller
      */
     public function create()
     {
-        return view('directivos.crear');
+        //
     }
 
     /**
@@ -48,14 +37,7 @@ class DirectivoController extends Controller
      */
     public function store(Request $request)
     {
-        $docente = new User($request->all());
-        $docente->usuariotipo_id = 4;
-        $docente->usuario = $request->dni;
-        $docente->password = bcrypt($request->dni);
-
-        $docente->save();
-        return redirect('app/directivos');
-        
+        //
     }
 
     /**
@@ -89,11 +71,7 @@ class DirectivoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $docente = User::find($id);
-        $docente->fill($request->all());
-        $docente->save();
-
-        return $this->get();
+        //
     }
 
     /**
@@ -104,8 +82,6 @@ class DirectivoController extends Controller
      */
     public function destroy($id)
     {
-        User::destroy($id);
-
-        return $this->get();
+        //
     }
 }

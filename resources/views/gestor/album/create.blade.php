@@ -10,7 +10,7 @@
 	    			<form  method="POST" action="{{ url('app/album') }}" accept-charset="UTF-8" enctype="multipart/form-data">
 	    				{{ csrf_field() }}
 	    				<div class="form-group">
-						    <label for="nombre">Nombres</label>
+						    <label for="nombre">Nombre</label>
 						    <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" required>
 						</div>
 						<div class="form-group">

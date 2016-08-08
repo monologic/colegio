@@ -25,11 +25,11 @@
         </div>
         <div class="col-md-3 menux">
             <div class="headuser">
-                ADMINSTRATIVOS
+                ADMINISTRATIVOS
             </div>
             <div class="bodyuser">
-                <a href="{{ url('app/administrativos') }}">Lista de adminstrativos</a>
-                <a href="{{ url('app/administrativos/create') }}">Agregar adminstrativo</a>
+                <a href="{{ url('app/administrativos') }}">Lista de administrativos</a>
+                <a href="{{ url('app/administrativos/create') }}">Agregar administrativo</a>
             </div>
         </div>
         <div class="col-md-3 menux">
@@ -37,8 +37,8 @@
                 DIRECTIVOS
             </div>
             <div class="bodyuser">
-                <a href="{{ url('app/directivos') }}">Ver padres</a>
-                <a href="{{ url('app/directivos/create') }}">Agregar padres</a>
+                <a href="{{ url('app/directivos') }}">Lista directivos</a>
+                <a href="{{ url('app/directivos/create') }}">Agregar directivo</a>
             </div>
         </div>
         <div class="col-md-3 menux">
@@ -46,7 +46,7 @@
                 PADRES
             </div>
             <div class="bodyuser">
-                <a href="{{ url('app/padres') }}">Ver padres</a>
+                <a href="{{ url('app/padres') }}">Lista padres</a>
                 <a href="{{ url('app/padres/create') }}">Agregar padres</a>
                 <a href="{{ url('app/asignarHijos') }}">Asignar hijos</a>
             </div>

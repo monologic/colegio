@@ -17,7 +17,7 @@ class AlbumController extends Controller
      */
     public function index()
     {
-         $galerias = Albun::orderBy('id','DESC');
+        $galerias = Albun::orderBy('id','DESC')->get();
         $galerias->each(function($galerias){
             $galerias->album;
         });
