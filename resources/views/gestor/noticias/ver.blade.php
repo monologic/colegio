@@ -3,7 +3,7 @@
 @section('title', 'Noticias')
 
 @section('content')
-    <div ng-controller="noticiaController" ng-init="get()">
+    <div ng-controller="noticiaController" ng-init="getss()">
         <div class="contenidos">
             <div class="col-md-8">
                 <div class="cart">
@@ -131,5 +131,5 @@
         </div>
    </div>
      <!-- Modal de Edición -->
-    <script src="{{ asset('assets/js/ng-scripts/controllers/institucionalController.js') }}"></script>
+    <script src="{{ asset('assets/js/ng-scripts/controllers/noticiaController.js') }}"></script>
 @endsection
