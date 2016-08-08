@@ -35,7 +35,7 @@
 						    <label for="fecha_pub">Fecha de publicación</label>
 						    <input type="date" class="form-control" id="fecha_pub" placeholder="" name="fecha_pub" required>
 						</div>
-						<input type="text" name="posteador" value="{{Auth::user()->dni}}">
+						<input type="hidden" name="posteador" value="{{Auth::user()->dni}}">
 						<div class="form-group">
 						    <b><p for="archivo">Archivo</p></b>
 						    <input type="file" name="imagen">
