@@ -17,7 +17,7 @@ app.controller('actividadController', function($scope,$http) {
         $scope.titulo = data.titulo;
         $scope.fecha_inicio = data.fecha_inicio;
         $scope.fecha_fin = data.fecha_fin;
-        $scope.descripcion = data.descripcion;
+        $('.fr-element').html(data.descripcion);
         $scope.lugar = data.lugar;
         $scope.nivel = data.nivel;
         $scope.grado = data.grado;
