@@ -34,22 +34,22 @@
 					@foreach ($nosotros as $nosotro)
 		                <!-- train section -->
 		                <div class="bhoechie-tab-content active">
-		                      <p class="texts" style="padding: 7%">{!! $nosotro->inicial !!}</p>
+		                      <p class="texts" style="padding-top:0">{!! $nosotro->inicial !!}</p>
 		                </div>
 		                <div class="bhoechie-tab-content">
-		                      <p style="padding: 7%">{!! $nosotro->primaria !!}</p>
+		                      <p style="padding-top:0">{!! $nosotro->primaria !!}</p>
 		                </div>
 		                <div class="bhoechie-tab-content">
-		                      <p style="padding: 7%">{!! $nosotro->secundaria !!}</p>
+		                      <p style="padding-top:0">{!! $nosotro->secundaria !!}</p>
 		                </div>
 		                <div class="bhoechie-tab-content">
-		                      <p style="padding: 7%">{!! $nosotro->valores !!}</p>
+		                      <p style="padding-top:0">{!! $nosotro->valores !!}</p>
 		                </div>
 		                <div class="bhoechie-tab-content">
-		                      <p style="padding: 7%">{!! $nosotro->reglamento !!}</p>
+		                      <p style="padding-top:0">{!! $nosotro->reglamento !!}</p>
 		                </div>
 		                <div class="bhoechie-tab-content">
-		                      <p style="padding: 7%">{!! $nosotro->convivencia !!}</p>
+		                      <p style="padding-top:0">{!! $nosotro->convivencia !!}</p>
 		                </div>
 		                
 		    		@endforeach 

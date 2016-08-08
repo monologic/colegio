@@ -45,7 +45,7 @@
 				</div>	
 			</div>
 		</section>
-		<section class="col-md-12 card" style="margin-top: 50px;padding-top: 50px">
+		<section class="card " style="margin-top: 50px;padding-top: 50px">
 			<h3 class="tituloadd">Ubicación</h3>
 			<map id="map" style="display: block;width: 90%;height: 400px;margin:50px auto 30px auto"></map>
 		</section>
