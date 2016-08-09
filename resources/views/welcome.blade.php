@@ -127,7 +127,7 @@
 		
 
 			</div>
-			<footer class="foot" ng-controller="colegioController" ng-init="get()">
+			<footer class="foot" ng-controller="colegioController" ng-init="get2()">
 				<section class="cont-foot row" ng-repeat="o in colegio">
 					<div class="col-md-6 rs">
 						<h4 style="color: white;font-size: 1rem">Redes Socales</h4>
@@ -145,6 +145,7 @@
 				</section>
 			</footer>
 			<script src="{{ asset('assets/js/ng-scripts/controllers/colegioController.js') }}"></script>
+			
 			<script src="{{ asset('assets/js/skel.min.js') }}"></script>
 			<script src="{{ asset('assets/js/main.js') }}"></script>
 			<script src="{{ asset('assets/js/util.js') }}"></script>
