@@ -22,13 +22,9 @@
 						    <input type="text" class="form-control" id="cargo" placeholder="" name="cargo" required>
 						</div>
 						<div class="form-group">
-                                        <b for="mas">Información</b>
-                                        <textarea  cols="50" rows="10" id="mas" name="mas" class="edit"></textarea>
-                                    </div>
-						<div class="form-group">
-                                        <b for="archivo">Foto</b>
-                                        <input type="file" name="foto">
-                                    </div>
+                <b for="archivo">Foto</b>
+                <input type="file" name="foto">
+            </div>
 						<button type="submit" class="btn btn-colegio">Guardar</button>
 	    			</form>
 	    		</div>

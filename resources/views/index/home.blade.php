@@ -57,21 +57,15 @@
 				<article class="noticia" ng-repeat="n in allnot">
 					<header>
 										<div class="title">
-											<h2><a>@{{n.titulo}}</a></h2>
-											
+											<h2><a href="noticias/@{{n.id}}">@{{n.titulo}}</a></h2>
+											<blockquote>@{{n.copete}}</blockquote>
 										</div>
 										<div class="meta">
 											<time class="published" datetime="2015-11-01">@{{n.solofe}}</time>
 											<a href="#" class="author"><span class="name">@{{n.autor}}</span><img src="images/avatar.jpg" alt="" /></a>
 										</div>
 					</header>
-					<a href="#" class="image featured"><img src="imagen/noticia/@{{n.foto}}" alt="" /></a>
-					<blockquote>@{{n.copete}}</blockquote>
-					<footer>
-						<ul class="actions">
-							<li><a href="noticias/@{{n.id}}" class="button big">Noticia Completa</a></li>
-						</ul>
-					</footer>
+					<a href="noticias/@{{n.id}}" class="image featured"><img src="imagen/noticia/@{{n.foto}}" alt="" /></a>
 				</article>	
 				<a href="/noticiasall">Ver todas la noticias</a>
 			</div>		
