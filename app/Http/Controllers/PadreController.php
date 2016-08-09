@@ -142,4 +142,11 @@ class PadreController extends Controller
 
         return response()->json( $hijos );
     }
+    public function eliminar($id)
+    {
+        Tutor::destroy($id);
+
+        return $this->getHijosPadre($id);
+    }
+
 }

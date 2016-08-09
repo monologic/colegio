@@ -106,7 +106,6 @@ class GaleriaController extends Controller
     public function destroy($id)
     {
         Galeria::destroy($id);
-
         $this->getGaleria();
     }
     public function getGaleria()

@@ -74,7 +74,7 @@ app.controller('galeriaController', function($scope,$http) {
                     "success"); 
 
                 $http.delete( 'galeria/'+id ).then(function successCallback(response) {
-                    $scope.noticias = response.data;
+                    
                 }, function errorCallback(response) {
                     swal({   
                         title: "Ha ocurrido un error!",   

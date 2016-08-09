@@ -48,12 +48,13 @@
 			</div>
 			@endforeach 
 			<div class="tab-pane" id="5" >
-				<div style=" width: 80%; margin:40px auto 20px auto; max-width: 600px">
+				<div  style=" width: 80%; margin:40px auto 20px auto; max-width: 600px">
 					<table class="table">
-						<a href="" class="btn btn-primary" style="margin-bottom: 30px"> + Agregar</a>
+						<a href="{{ url('app/directorio/create') }}" class="btn btn-primary" style="margin-bottom: 30px"> + Agregar</a>
 						<thead>
 							<tr>
 								<th>Título</th>
+								<th>Cargo</th>
 								<th>Nombre</th>
 								<th>Acción</th>
 							</tr>
@@ -62,8 +63,12 @@
 						
 							<tr ng-repeat="x in doc">
 								<td>@{{x.titulo}} </td>
+								<td>@{{x.cargo}}</td>
 								<td>@{{x.nombre}}</td>
-								<td><a ng-click="plus(x);" data-toggle="modal" data-target="#editar" class="btn"><i class="glyphicon glyphicon-pencil"></i></a></td>
+								<td>
+								<a ng-click="plus(x);" data-toggle="modal" data-target="#editar" class="btn"><i class="glyphicon glyphicon-pencil" style="color:black"></i></a>
+								 <a ng-click="eliminarD(x);" class="btn"> <i class="glyphicon glyphicon-trash" style="color:black"></i></a>
+								</td>
 							</tr>
 						</tbody>
 						
@@ -102,14 +107,11 @@
                                         <b for="mas">Mas</b>
                                         <textarea  cols="50" rows="10" id="mas" name="mas" class="edit"></textarea>
                                     </div>
-                                    
-									
-
                                     <div class="form-group">
                                         <b for="archivo">Foto</b>
-                                        <input type="file" name="imagen">
+                                        <input type="file" name="foto">
                                     </div>
-                                    <a ng-click='editarNoticia()' class="btn btn-colegio">Guardar</a>
+                                    <button type="submit" class="btn btn-colegio">Guardar</button>
                                 </form>
                             </div>
                         </div>

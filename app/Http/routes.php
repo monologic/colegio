@@ -42,11 +42,6 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 	Route::get('/usuarios', function () {
 	    return view('templates.menu.usuario');
 	});
-
-	Route::get('perfil', function () {
-	    return view('usuarios.perfil');
-	});
-	Route::post('perfil', 'UserController@editarUsuario');
 	
 	Route::group(['middleware' => 'rol:grupo1'], function () {
     	Route::get('getEstudiantes', 'EstudianteController@get');
@@ -109,6 +104,9 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 		Route::get('getNovedades', 'NovedadController@getNovedades');
 	    Route::post('novedades/{id}', 'NovedadController@update');
 		Route::resource('novedades', 'NovedadController');
+
+		Route::post('noticias/{id}', 'NoticiasController@update');
+		Route::resource('noticias', 'NoticiasController');
 	});
 
 	
@@ -145,7 +143,10 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 	    */
 	    Route::post('nosotros/{id}', 'NosotroController@update');
 		Route::resource('nosotros', 'NosotroController');
+
 		Route::get('getDirec', 'DirectorioController@all');
+		Route::post('directorio/{id}', 'DirectorioController@update');
+		Route::resource('directorio', 'DirectorioController');
 
 		Route::post('institucional/{id}', 'InstitucionalController@update');
 		Route::resource('institucional', 'InstitucionalController');
@@ -161,6 +162,7 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 	    */
 	    Route::post('general/{id}', 'ColegioController@update');
 		Route::resource('general', 'ColegioController');
+		
 		
 		Route::get('asignarHijo/{dni}/{id}', 'PadreController@asignarHijo');
 		Route::get('asignarHijos', 'PadreController@vistaAsignarHijos');

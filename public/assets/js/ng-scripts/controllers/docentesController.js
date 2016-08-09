@@ -33,7 +33,7 @@ app.controller('docentesController', function($scope,$http) {
     }
      $scope.plus = function (data) {
         $scope.id = data.id;
-        $scope.formUrl = 'directoorio/' + data.id;
+        $scope.formUrl = 'directorio/' + data.id;
          $('.fr-element').html(data.mas);
          $scope.titulo = data.titulo;
         $scope.nombre = data.nombre;
@@ -81,6 +81,34 @@ app.controller('docentesController', function($scope,$http) {
 
                 $http.delete( 'docentes/'+id ).then(function successCallback(response) {
                     $scope.docentes = response.data;
+                }, function errorCallback(response) {
+                    swal({   
+                        title: "Ha ocurrido un error!",   
+                        text: "No se puede borrar datos utilizados para otros registros.",   
+                        timer: 3000,   
+                        showConfirmButton: false 
+                    });
+                });
+            }
+        );
+    }
+    $scope.eliminarD = function (id) {
+        swal({   title: "",
+            text: "Está seguro que desea eliminar este registro?",
+            type: "warning",   
+            showCancelButton: true,   
+            confirmButtonColor: "#DD6B55",   
+            confirmButtonText: "Sí, estoy seguro!",
+            closeOnConfirm: false,
+            cancelButtonText:"Cancelar", }, 
+            function(){
+
+                swal("Eliminado!", 
+                    "El registro se ha eliminado.", 
+                    "success"); 
+
+                $http.delete( 'directorio/'+id ).then(function successCallback(response) {
+                    javascript:location.reload()
                 }, function errorCallback(response) {
                     swal({   
                         title: "Ha ocurrido un error!",   

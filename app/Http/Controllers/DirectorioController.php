@@ -26,7 +26,7 @@ class DirectorioController extends Controller
      */
     public function create()
     {
-        return view('gestor.directivo.create');
+        return view('gestor.directorio.create');
     }
 
     /**
@@ -37,7 +37,19 @@ class DirectorioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->file('foto'))
+        {
+            $file = $request -> file('foto');
+            $name = 'docente_'. time() . '.' .$file->getClientOriginalExtension();
+            $path=public_path() . "/imagen/docentes/";
+            $file -> move($path,$name);
+            $slider = new Directorio($request->all());
+
+            $slider->foto = $name;
+        }
+        
+        $slider->save();
+        return redirect('app/nosotros');
     }
 
     /**
@@ -48,7 +60,7 @@ class DirectorioController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -71,7 +83,19 @@ class DirectorioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $noticia = Directorio::find($id);
+        $noticia->fill($request->all());
+
+        if($request->file('imagen'))
+        {
+            $file = $request -> file('imagen');
+            $name = 'direc'. time() . '.' .$file->getClientOriginalExtension();
+            $path=public_path() . "/imagen/docentes/";
+            $file -> move($path,$name);
+            $noticia->foto = $name;
+        }
+        $noticia->save();
+        return redirect('app/noticias');
     }
 
     /**
@@ -82,11 +106,13 @@ class DirectorioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Directorio::destroy($id);
+        
     }
     public function all()
     {
         $not = Directorio::all();
         return response()->json( $not );
     }
+
 }
