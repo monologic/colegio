@@ -144,20 +144,12 @@
 					</div>
 				</section>
 			</footer>
-			
+			<script src="{{ asset('assets/js/ng-scripts/controllers/colegioController.js') }}"></script>
 			<script src="{{ asset('assets/js/skel.min.js') }}"></script>
 			<script src="{{ asset('assets/js/main.js') }}"></script>
 			<script src="{{ asset('assets/js/util.js') }}"></script>
 			
-			
-
-
-
-			
-			<script src="{{ asset('assets/js/ng-scripts/controllers/colegioController.js') }}"></script>
 			<script src="{{ asset('assets/js/ng-scripts/directivas/onFinishRender.js') }}"></script>  
-
-
 
    			<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
    			<script>

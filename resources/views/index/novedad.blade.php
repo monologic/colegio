@@ -6,7 +6,7 @@
     <div class="" style="width: 100%">
     @foreach ($novedades as $novededa)
         <div class="col-md-12">
-             <article class="noticia ve"  >
+             <article class="noticia ve">
                 <header>
                     <div class="title">
                         <h2><a>{{ $novededa->titulo }}</a></h2>
