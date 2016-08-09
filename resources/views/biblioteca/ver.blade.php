@@ -26,7 +26,7 @@
                            </blockquote>
                            <div> <b>Descripción :</b></div>
                             <div> {{ $archivo->decripcion }}</div>
-                            <button class="btn-colegio2" ng-click="plus({{ $archivo }});" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-plus"></i> Información</button>
+                            <button class="btn-colegio2" ng-click="plus({{ $archivo }});" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-eye-open"></i> Ver documento</button>
                         </div>
                     @endforeach 
                     {!! $archivos->render() !!} 
@@ -45,7 +45,7 @@
                            </blockquote>
                            <div> <b>Descripción :</b></div>
                             <div> {{ $archivo->decripcion }}</div>
-                            <button class="btn-colegio2" ng-click="plus({{ $archivo }});" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-plus"></i> Información</button>
+                            <button class="btn-colegio2" ng-click="plus({{ $archivo }});" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-eye-open"></i> Ver documento</button>
                         </div>
                     @endforeach 
                     {!! $archivos->render() !!} 

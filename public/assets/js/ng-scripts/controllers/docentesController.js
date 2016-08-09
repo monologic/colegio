@@ -31,6 +31,10 @@ app.controller('docentesController', function($scope,$http) {
             // or server returns response with an error status.
         });
     }
+    $scope.send = function (){
+        alert('enviando');
+        
+    }
      $scope.plus = function (data) {
         $scope.id = data.id;
         $scope.formUrl = 'directorio/' + data.id;

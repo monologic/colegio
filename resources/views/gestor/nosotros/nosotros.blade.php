@@ -111,7 +111,7 @@
                                         <b for="archivo">Foto</b>
                                         <input type="file" name="foto">
                                     </div>
-                                    <button type="submit" class="btn btn-colegio">Guardar</button>
+                                    <button ng-click="send()" class="btn btn-colegio">Guardar</button>
                                 </form>
                             </div>
                         </div>
