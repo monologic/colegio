@@ -31,7 +31,7 @@
 													<h3><a href="/comunicado/@{{c.id}}">@{{c.asunto}}</a></h3>
 													<time class="published">@{{c.solofe}}</time>
 												</header>
-												<a href="/comunicado/@{{c.id}}" class="image"><img src="images/pic08.jpg" alt="" /></a>
+												
 											</article>
 										</li>
 									</ul>
@@ -48,7 +48,7 @@
 													<time class="published">@{{k.fecha}}</time>
 													<a href="" class="author"><img src="images/avatar.jpg" alt="" /></a>
 												</header>
-												<a href="#" class="image"><img src="imagen/novedades/@{{k.foto}}" alt="" /></a>
+												<a href="/novedad/@{{k.id}}" class="image"><img src="imagen/novedades/@{{k.foto}}" alt="" /></a>
 											</article>
 											<a href="/novedades">Ver todas la novedades</a>
 							</div>	
