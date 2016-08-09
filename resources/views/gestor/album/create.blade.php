@@ -14,7 +14,7 @@
 						    <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" required>
 						</div>
 						<div class="form-group">
-						    <label for="descripcion">Descripcion</label>
+						    <label for="descripcion">Descripción</label>
 						     <textarea class="form-control" id="descripcion"  name="descripcion" required></textarea>
 						</div>
 						<button type="submit" class="btn btn-colegio">Guardar</button>
