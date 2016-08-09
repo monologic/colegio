@@ -32,9 +32,11 @@ app.controller('archivoController', function($scope,$http) {
         $scope.solofec =  $scope.fecham[0];
         $scope.edicion = data.edicion;
         $scope.archivo = data.archivo;
+        /*
         $scope.archivoUrl = 'https://drive.google.com/viewerng/viewer?url=http://robert.runait.com/archivos/' + $scope.archivo + '?pid=explorer&efh=false&a=v&chrome=false&embedded=true';
         html = "<iframe src=" + $scope.archivoUrl + " width='90%' height='500px'></iframe>";
         $('#frameVer').html(html);
+        */
         
 
     }

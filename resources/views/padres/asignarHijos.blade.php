@@ -36,7 +36,7 @@
 			    			<tr ng-repeat="hp in padreHijos">
 			    				<td>@{{hp.nombres + " " + hp.apellidos}}</td>
 			    				<td>@{{hp.dni}}</td>
-			    				<td><a ng-click="eliminar();"> <i class="glyphicon glyphicon-trash" style="color:black;margin-left: 10px"></i></a></td>
+			    				<td><a ng-click="eliminarAsignacion(hp.idTutor);"> <i class="glyphicon glyphicon-trash" style="color:black;margin-left: 10px"></i></a></td>
 			    			</tr>
 			    		</table>
 	    			</div>

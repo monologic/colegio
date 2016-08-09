@@ -77,6 +77,34 @@ app.controller('padresController', function($scope,$http) {
             }
         );
     }
+    $scope.eliminarAsignacion = function (id) {
+        swal({   title: "",
+            text: "Está seguro que desea eliminar este registro?",
+            type: "warning",   
+            showCancelButton: true,   
+            confirmButtonColor: "#DD6B55",   
+            confirmButtonText: "Sí, estoy seguro!",
+            closeOnConfirm: false,
+            cancelButtonText:"Cancelar", }, 
+            function(){
+
+                swal("Eliminado!", 
+                    "El registro se ha eliminado.", 
+                    "success"); 
+
+                $http.delete( 'deleteAsignacion/'+id ).then(function successCallback(response) {
+                    $scope.padreHijos = response.data;
+                }, function errorCallback(response) {
+                    swal({   
+                        title: "Ha ocurrido un error!",   
+                        text: "No se puede borrar datos utilizados para otros registros.",   
+                        timer: 3000,   
+                        showConfirmButton: false 
+                    });
+                });
+            }
+        );
+    }
     $scope.buscarPadre = function (id) {
         $http.get('getPadre/'+$scope.dni).then(function successCallback(response) {
                 $scope.padre = response.data;

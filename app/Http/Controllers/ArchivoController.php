@@ -144,4 +144,10 @@ class ArchivoController extends Controller
 
         return response()->json( $ats );
     }
+
+    public function visualizar($id)
+    {
+        $archivo = Archivo::find($id);
+        return view('biblioteca.visualizar')->with('archivo', $archivo);
+    }
 }

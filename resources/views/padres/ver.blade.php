@@ -6,7 +6,7 @@
     <div class="contenidos">
         <div ng-controller="padresController" ng-init="get()">
             <div class="cart">
-                <h1 class="titulo">Vista de Padres</h1>
+                <h1 class="titulo">Lista de Padres</h1>
                 <a href="{{ url('app/padres/create') }}" class="btn btn-colegio">Añadir Padre</a>
                 <div style="margin-top: 20px">
                 	<table class="table table-hover">

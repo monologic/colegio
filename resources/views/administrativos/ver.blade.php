@@ -7,7 +7,7 @@
     <div class="contenidos" ng-controller="administrativosController" ng-init="get()">
 
         <div class="cart">
-            <h1 class="titulo">Vista de Administrativos</h1>
+            <h1 class="titulo">Lista de Administrativos</h1>
             <a href="{{ url('app/administrativos/create') }}" class="btn btn-colegio">Añadir Administrativo</a>
             <div style="margin-top: 20px"1`>
                 <table class="table table-hover">

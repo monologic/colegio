@@ -164,7 +164,7 @@
                             <div ng-bind="cuerpom"></div>
                             
                             <figure class="imgnot">
-                                <a href="../archivos/@{{archivo}}" alt="archivo" class="imgn btn-colegio" /><i class="fa fa-eye" aria-hidden="true"></i> Ver archivo</a> 
+                                <a href="@{{formUrl}}" alt="archivo" class="imgn btn-colegio" /><i class="fa fa-eye" aria-hidden="true"></i> Ver archivo</a> 
                             </figure>
                             <div id='frameVer'></div>
                             

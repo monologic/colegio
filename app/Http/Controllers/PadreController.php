@@ -136,7 +136,7 @@ class PadreController extends Controller
     {
         $hijos = \DB::table('tutors')
             ->join('users', 'users.dni', '=', 'tutors.dni_hijo')
-            ->select('users.*')
+            ->select('tutors.id as idTutor', 'users.*')
             ->where('user_id', $id)
             ->get();
 
@@ -144,9 +144,12 @@ class PadreController extends Controller
     }
     public function eliminar($id)
     {
+        $tut = Tutor::find($id);
+        $padreID = $tut->user_id;
+
         Tutor::destroy($id);
 
-        return $this->getHijosPadre($id);
+        return $this->getHijosPadre($padreID);
     }
 
 }

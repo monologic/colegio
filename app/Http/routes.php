@@ -83,9 +83,7 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 
 	Route::group(['middleware' => 'rol:grupo2'], function () {
 
-		Route::get('getActividades', 'ActividadController@get');
-	    Route::get('getActividad/{id}', 'ActividadController@getActividad');
-		Route::resource('actividades', 'ActividadController');
+		
 		/*
 	    * Rutas para el gestor de contenido
 	    */
@@ -122,7 +120,13 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 		Route::get('getArchivos', 'ArchivoController@get');
 		Route::get('getArchivoTipos', 'ArchivoController@getArchivoTipos');
 	    Route::post('archivos/{id}', 'ArchivoController@update');
+	    Route::get('archivos/{id}', 'ArchivoController@visualizar');
 		Route::resource('archivos', 'ArchivoController');
+
+		Route::get('getActividades', 'ActividadController@get');
+	    Route::get('getActividad/{id}', 'ActividadController@getActividad');
+		Route::resource('actividades', 'ActividadController');
+
 	});
 
 	Route::group(['middleware' => 'rol:grupo4'], function () {
@@ -172,6 +176,7 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 		Route::get('asignarHijo/{dni}/{id}', 'PadreController@asignarHijo');
 		Route::get('asignarHijos', 'PadreController@vistaAsignarHijos');
 		Route::get('getHijosPadre/{id}', 'PadreController@getHijosPadre');
+		Route::delete('deleteAsignacion/{id}', 'PadreController@eliminar');
 
 	});
 });
