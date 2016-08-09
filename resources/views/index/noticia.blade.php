@@ -3,7 +3,7 @@
 @section('title', 'Noticias')
 
 @section('content')
-    <div class="row" style="width: 100%;margin: 10px auto 10px auto">
+    <div style="width: 100%;margin: 10px auto 10px auto">
     @foreach ($noticias as $noticia)
         <div class="col-md-12">
              <article class="noticia ve" >
