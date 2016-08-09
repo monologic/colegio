@@ -99,7 +99,7 @@ class AlbumController extends Controller
         $galerias = Galeria::where('albun_id',$id)->orderBy('id','DESC')->paginate(20);
         return view('gestor.galeria.ver')->with('galeria', $galerias)->with('idalbum',$id);
     }
-     public function grid(){
+    public function grid(){
         $galerias = Albun::orderBy('id','DESC')->paginate(20);
         $galerias->each(function($galerias){
             $galerias->album;

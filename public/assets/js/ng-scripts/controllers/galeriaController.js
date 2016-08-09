@@ -21,7 +21,7 @@ app.controller('galeriaController', function($scope,$http) {
     $scope.dataEditar = function (data) {
 
         $scope.id = data.id;
-        $scope.formUrl2 = 'galeria/' + data.id;
+        $scope.formUrl2 = '../galeria/' + data.id;
         $scope.nombre = data.nombre;
         $scope.estado = data.estado;
         $scope.descripcion = data.descripcion;
@@ -30,7 +30,7 @@ app.controller('galeriaController', function($scope,$http) {
     $scope.plus = function (data) {
 
         $scope.id = data.id;
-        $scope.formUrl = 'noticias/' + data.id;
+        $scope.formUrl = '../galeria/' + data.id;
         $scope.titulom = data.titulo;
         $scope.autorm = data.autor;
         $scope.copetem = data.copete;
@@ -73,8 +73,8 @@ app.controller('galeriaController', function($scope,$http) {
                     "El registro se ha eliminado.", 
                     "success"); 
 
-                $http.delete( 'galeria/'+id ).then(function successCallback(response) {
-                    
+                $http.delete( '../galeria/'+id ).then(function successCallback(response) {
+                    window.location.reload();
                 }, function errorCallback(response) {
                     swal({   
                         title: "Ha ocurrido un error!",   
@@ -82,6 +82,7 @@ app.controller('galeriaController', function($scope,$http) {
                         timer: 3000,   
                         showConfirmButton: false 
                     });
+                    
                 });
             }
         );

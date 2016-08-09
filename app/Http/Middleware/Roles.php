@@ -16,6 +16,7 @@ class Roles
      */
     public function handle($request, Closure $next, $grupo)
     {
+        
         if ($grupo == 'grupo1') {
             
             if (Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 2 || Auth::user()->usuariotipo_id == 5) {

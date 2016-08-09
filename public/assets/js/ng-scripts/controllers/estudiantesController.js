@@ -45,6 +45,10 @@ app.controller('estudiantesController', function($scope,$http) {
                 'seccion':$scope.seccion
             }).then(function successCallback(response) {
                 $scope.estudiantes = response.data;
+                $('#editar').modal('toggle');
+                swal("Editado!", 
+                    "El registro se ha editado.", 
+                    "success"); 
             }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.

@@ -39,6 +39,10 @@ app.controller('padresController', function($scope,$http) {
                 'seccion':$scope.seccion
             }).then(function successCallback(response) {
                 $scope.padres = response.data;
+                $('#editar').modal('toggle');
+                swal("Editado!", 
+                    "El registro se ha editado.", 
+                    "success"); 
             }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
@@ -79,7 +83,6 @@ app.controller('padresController', function($scope,$http) {
                 if (($scope.padre).length == 1) {
                     $scope.buscarHijos(response.data[0].id);
                 }
-                    
             }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.

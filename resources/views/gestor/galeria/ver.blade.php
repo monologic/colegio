@@ -45,7 +45,7 @@
                         </div>
                         <div class="modal-body" style="padding: 20px">
                             <div class="formulariok">
-                                <form  method="POST" action="@{{formUrl2}}" accept-charset="UTF-8" enctype="multipart/form-data">
+                                <form id="EditarForm" method="POST" action="@{{formUrl2}}" accept-charset="UTF-8" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label for="nombre">Nombres</label>
@@ -59,7 +59,7 @@
                                         <label for="estado">Estado</label>
                                         <select name="estado" class="form-control" ng-model="estado">
                                             <option value="Activo">Activo</option>
-                                            <option value="Inactico">Inactico</option>
+                                            <option value="Inactico">Inactivo</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -68,14 +68,14 @@
                                     </div>
                                     <input type="hidden" name="albun_id" value="{{$idalbum}}">
                                     
-                                    <button type="submit" class="btn btn-colegio">Guardar</button>
+                                    <button class="btn btn-colegio" id="editarBtn">Guardar</button>
                                 </form>
                             </div>
                         </div>
                     </div>
             </div>
         </div>
-        <div class="modal fade" id="mas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="mas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
             <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -98,7 +98,7 @@
                                         <label for="estado">Estado</label>
                                         <select name="estado" class="form-control" ng-model="estado">
                                             <option value="Activo">Activo</option>
-                                            <option value="Inactico">Inactico</option>
+                                            <option value="Inactico">Inactivo</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -106,7 +106,6 @@
                                         <input type="file" name="imagen">
                                     </div>
                                     <input type="hidden" name="albun_id" value="{{$idalbum}}">
-                                    
                                     <button type="submit" class="btn btn-colegio">Guardar</button>
                                 </form>
                             </div>
@@ -115,6 +114,11 @@
             </div>
         </div>
    </div>
+    <script type="text/javascript">
+        $( "#editarBtn" ).click(function() {
+            $( "#EditarForm" ).submit();
+        });
+    </script>
      <!-- Modal de Edición -->
     <script src="{{ asset('assets/js/ng-scripts/controllers/galeriaController.js') }}"></script>
 @endsection

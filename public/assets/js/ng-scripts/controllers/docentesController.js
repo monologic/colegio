@@ -60,7 +60,10 @@ app.controller('docentesController', function($scope,$http) {
                 'seccion':$scope.seccion
             }).then(function successCallback(response) {
                 $scope.docentes = response.data;
-                $('#editar').modal('toggle')
+                $('#editar').modal('toggle');
+                swal("Editado!", 
+                    "El registro se ha editado.", 
+                    "success"); 
             }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.

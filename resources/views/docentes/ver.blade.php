@@ -37,11 +37,7 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
             </div>
-            
-        	
-            <!-- Modal de Edición -->
             <div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -53,15 +49,15 @@
                             <form ng-submit="editar()">
                                 <div class="form-group">
                                     <label for="nombres">Nombres</label>
-                                    <input type="text" class="form-control" id="nombres" ng-model="nombres" placeholder="">
+                                    <input type="text" class="form-control" ng-model="nombres">
                                 </div>
                                 <div class="form-group">
                                     <label for="apellidos">Apellidos</label>
-                                    <input type="text" class="form-control" id="apellidos" ng-model="apellidos" placeholder="">
+                                    <input type="text" class="form-control" ng-model="apellidos">
                                 </div>
                                 <div class="form-group">
                                     <label for="dni">DNI</label>
-                                    <input type="text" class="form-control" id="dni" ng-model="dni" placeholder="">
+                                    <input type="text" class="form-control" ng-model="dni"">
                                 </div>
                                 <button type="submit" class="btn btn-colegio">Guardar</button>
                             </form>
@@ -69,6 +65,10 @@
                     </div>
                 </div>
             </div>
+            
+        	
+            <!-- Modal de Edición -->
+            
         </div>
     </div>
     <script src="{{ asset('assets/js/ng-scripts/controllers/docentesController.js') }}"></script>

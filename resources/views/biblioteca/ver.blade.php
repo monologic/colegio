@@ -166,7 +166,7 @@
                             <figure class="imgnot">
                                 <a href="../archivos/@{{archivo}}" alt="archivo" class="imgn btn-colegio" /><i class="fa fa-eye" aria-hidden="true"></i> Ver archivo</a> 
                             </figure>
-                            <iframe src="https://drive.google.com/viewerng/viewer?url=http://robert.runait.com/archivos/archivo_1470502747.pdf?pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="90%" height="500px"></iframe>
+                            <div id='frameVer'></div>
                             
                         </div>
                     </div>

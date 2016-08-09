@@ -48,7 +48,7 @@ class GaleriaController extends Controller
 
         $galeria->imagen = $name;
         $galeria->save();
-        return redirect('app/album');
+        return redirect('app/getAlbum/'.$galeria->albun_id);
     }
 
     /**
@@ -94,7 +94,7 @@ class GaleriaController extends Controller
             $noticia->imagen = $name;
         }
         $noticia->save();
-        return redirect('app/galeria');
+        return redirect('app/getAlbum/'.$noticia->albun_id);
     }
 
     /**
