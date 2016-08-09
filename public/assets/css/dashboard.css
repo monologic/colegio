@@ -353,7 +353,7 @@ body > .navbar-collapse .logo-tim img {
 .sidebar:after, .sidebar:before,
 body > .navbar-collapse:after,
 body > .navbar-collapse:before {
-  display: block;
+  /*display: block;*/
   content: "";
   position: absolute;
   width: 100%;
@@ -2812,7 +2812,7 @@ body > .navbar-collapse[data-color="purple"]:after {
     padding-right: 15px;
   }
 }
-/*          Changes for small display      */
+/*          Changes for small display      
 @media (max-width: 991px) {
   .sidebar {
     display: none;
@@ -3384,7 +3384,7 @@ body > .navbar-collapse[data-color="purple"]:after {
     font-size: 20px;
     margin-right: 10px;
   }
-}
+}*/
 @media (min-width: 992px) {
   .table-full-width {
     margin-left: -15px;
