@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Actividad extends Model
 {
     public $timestamps = false;
-	protected $fillable = ['titulo', 'fecha_creacion', 'fecha_inicio','fecha_fin','descripcion','lugar', 'nivel', 'grado','seccion','usuario_id'];
+	protected $fillable = ['responsable','titulo', 'fecha_creacion', 'fecha_inicio','fecha_fin','descripcion','lugar', 'participantes','usuario_id'];
 
     public function usuario()
   	{

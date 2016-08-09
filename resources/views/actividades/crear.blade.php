@@ -10,6 +10,10 @@
     			<h1 class="titulo">Crear Actividad</h1>
     			<form role="form" method="POST" action="{{ url('app/actividades') }}">
     				{{ csrf_field() }}
+                    <div class="form-group">
+                        <label for="responsable">Responsable, Nro contacto</label>
+                        <input type="text" class="form-control" id="responsable" ng-model="responsable" placeholder="Escriba su nombre , y su número" name="responsable" required>
+                    </div>
     				<div class="form-group">
 					    <label for="titulo">Título</label>
 					    <input type="text" class="form-control" id="titulo" ng-model="titulo" placeholder="" name="titulo" required>
@@ -31,31 +35,10 @@
 					    <input type="text" class="form-control" id="lugar" ng-model="lugar" placeholder="" name="lugar" required>
 					</div>
 					<div class="form-group">
-					    <label for="nombres">NIvel</label>
-					    <select class="form-control" ng-model="nivel" name="nivel" required>
-					    	<option>Inicial</option>
-					    	<option>Primaria</option>
-					    	<option>Secundaria</option>
-					    </select>
+					    <label for="participantes">Participantes</label>
+					    <input type="text" class="form-control" id="participantes" ng-model="participantes" placeholder="" name="participantes" required>
 					</div>
-					<div class="form-group">
-					    <label for="nombres">Grado</label>
-					    <select class="form-control" ng-model="grado" name="grado" required>
-					    	<option>1er</option>
-					    	<option>2do</option>
-					    	<option>3ro</option>
-					    	<option>4to</option>
-					    	<option>5to</option>
-					    	<option>6to</option>
-					    </select>
-					</div>
-					<div class="form-group">
-					    <label for="nombres">Seccion</label>
-					    <select class="form-control" ng-model="seccion" name="seccion" required>
-					    	<option>1</option>
-					    	<option>2</option>
-					    </select>
-					</div>
+					
 					<input type="hidden" name="usuario_id" value="{{Auth::user()->id}}">
 					<button type="submit" class="btn btn-colegio">Guardar</button>
     			</form>

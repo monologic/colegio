@@ -29,7 +29,7 @@
             <div class="col-md-6">
                 <div class="actividades">
                     <div class="hed">
-                        Lista de actividades
+                        <span id="fec">Lista de actividades </span>
                     </div>
                     <section style="padding: 15px">
                         <div id="results"></div>
@@ -42,14 +42,14 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Titulo</th>
-                                <th>Nivel, Grado y Sección</th>       
+                                <th>Fecha</th>
+                                <th>Titulo</th>       
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="y in actividades" ng-if="{{Auth::user()->id}} ==  y.usuario_id ">
 
-                                <td>@{{ y.fecha }}</td>
+                                <td>@{{ y.fecha_inicio }}</td>
                                 <td>@{{ y.titulo }}</td>
                                 <td>
                                     <a ng-click="plus(y);" data-toggle="modal" data-target="#editar"><i class="glyphicon glyphicon-pencil" style="color:black"></i></a>
@@ -75,6 +75,10 @@
                             <div class="formulariok">
                                 <form role="form" ng-submit='editar()'>
                                     {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <label for="responsable">Responsable , Nro contacto</label>
+                                        <input type="text" class="form-control" id="titulo" ng-model="responsable" placeholder="" name="responsable" required>
+                                    </div>
                                     <div class="form-group">
                                         <label for="titulo">Título</label>
                                         <input type="text" class="form-control" id="titulo" ng-model="titulo" placeholder="" name="titulo" required>
@@ -192,6 +196,8 @@
             $('.monthly-day-pick').removeClass("activs");
             var fecha2 = año +'-' + (mes) +'-'+dia;
             var fecha = dia +'-' + (mes) +'-'+año;
+            var titulo = "Actividades para el "+ fecha;
+            $('#fec').html(titulo);
             $('#'+fecha).addClass("activs");
             $.ajax({
                 type:'get',
@@ -208,15 +214,22 @@
         function tablaBusqueda()
         {   nm=m.length;
             c=1;
-            html="<div class='ac'>"
-            for(i=0;i<nm;i++)
-            {   
-                var hora= m[i]['fecha_inicio'].split(" ");
-
-                html+="<button class='activity cla' type='button' data-toggle='collapse' data-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'><div class='col-md-6'><i class='fa fa-clock-o'></i> "+hora[1]+"</div> <div class='col-md-6'><i class='fa fa-flag' aria-hidden='true'></i> "+m[i]['titulo']+"</div>    </button><div class='collapse' id='collapseExample'><div class='well'><ul class='listas'><li><i class='fa fa-clock-o' aria-hidden='true'></i> &nbsp <b>Responsable :</b> "+m[i]['usuario']['nombres']+" "+m[i]['usuario']['apellidos']+"</li><li><i class='fa fa-clock-o' aria-hidden='true'></i> &nbsp <b>Fecha inicio :</b> "+m[i]['fecha_inicio']+"</li><li><i class='fa fa-clock-o' aria-hidden='true'></i> &nbsp <b>Fecha término :</b> "+m[i]['fecha_fin']+"</li><li><i class='fa fa-map-marker' aria-hidden='true'></i> &nbsp <b>Lugar :</b> "+m[i]['lugar']+"</li><li><i class='fa fa-bars' aria-hidden='true'></i> &nbsp <b>Nivel :</b> "+m[i]['nivel']+"</li><li><i class='fa fa-tachometer' aria-hidden='true'></i> &nbsp <b>Grado :</b> "+m[i]['grado']+"</li><li><i class='fa fa-leaf' aria-hidden='true'></i> &nbsp <b>Sección :</b> "+m[i]['seccion']+"</li></ul><p class='pes'>"+m[i]['descripcion']+"</p></div></div>";
-                c++;
+            if (nm==0) {
+                html="<h2 class='text-center nc'>No se encontro actividades</h2>"
             }
-            html+="</div>"
+            else
+            {
+              html="<div class='ac'>"
+                for(i=0;i<nm;i++)
+                {   
+                    var hora= m[i]['fecha_inicio'].split(" ");
+
+                    html+="<button class='activity cla' type='button' data-toggle='collapse' data-target='#cont"+i+"' aria-expanded='false' aria-controls='collapseExample'><div class='col-md-6'><i class='fa fa-clock-o'></i> "+hora[1]+"</div> <div class='col-md-6'><i class='fa fa-flag' aria-hidden='true'></i> "+m[i]['titulo']+"</div>    </button><div class='collapse' id='cont"+i+"'><div class='well'><ul class='listas'><li><i class='fa fa-user' aria-hidden='true'></i> &nbsp <b>Responsable :</b> "+m[i]['responsable']+"</li><li><i class='fa fa-clock-o' aria-hidden='true'></i> &nbsp <b>Fecha inicio :</b> "+m[i]['fecha_inicio']+"</li><li><i class='fa fa-clock-o' aria-hidden='true'></i> &nbsp <b>Fecha término :</b> "+m[i]['fecha_fin']+"</li><li><i class='fa fa-map-marker' aria-hidden='true'></i> &nbsp <b>Lugar :</b> "+m[i]['lugar']+"</li><li><i class='fa fa-users' aria-hidden='true'></i> &nbsp <b>Participantes :</b> "+m[i]['participantes']+"</li></ul><p class='pes'>"+m[i]['descripcion']+"</p></div></div>";
+                    c++;
+                }
+                html+="</div>"   
+            }
+           
             $('#results').html(html);
         }
     </script>

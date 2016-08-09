@@ -11,7 +11,7 @@
 
                 <tr>
                     <th>Nombre</th>
-                    <th>Epigrafe</th>
+                    <th>Descripcion</th>
                     <th>Fotos</th>
                 </tr>
             </thead>
@@ -19,7 +19,7 @@
                 @foreach ($todo[0] as $albun)
                 <tr>
                     <td>{{$albun->nombre}}</td>
-                    <td>{{$albun->epigrafe}}</td>
+                    <td>{{$albun->descripcion}}</td>
                     <td><a href="getAlbum/{{$albun->id}}" class="btn"><i class="glyphicon glyphicon-picture"></i></a></td>
                 </tr>
                 @endforeach
