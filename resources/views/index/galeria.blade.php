@@ -8,6 +8,7 @@
 		<div style="width: 90% ;margin:30px auto 30px auto">
 			@foreach ($todo[0] as $info)
 		 	<h3>{{ $info->nombre }}</h3>
+		 	<p>{{ $info->descripcion }}</p>
 			<div id="grid-gallery{{ $info->id }}" class="grid-gallery">
 						<section class="grid-wrap">
 							<ul class="grid">

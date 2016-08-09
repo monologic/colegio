@@ -5,8 +5,7 @@
 @section('content')
     <div ng-controller="archivoController" ng-init="getTipos();">
         <div class="contenidosa">
-            @if ( Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 6)
-                <div class="">
+            <div class="">
                     <h1 class="titulo text-center">Biblioteca Virtual</h1>
                     <form class="form-inline" action="{{ url('app/archivos') }}" method="GET">
                         <label for="edicion">Tipo de archivo</label>
@@ -15,6 +14,8 @@
                         <input type="text" class="form-control" id="valor" name="valor" >
                         <button type="submit" class="btn btn-colegio">Buscar</button>
                     </form>
+            @if ( Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 6)
+                
                     @foreach ($archivos as $archivo)
                         <div class="cartA">
                             <div class="ta">{{ $archivo->titulo }}</div>

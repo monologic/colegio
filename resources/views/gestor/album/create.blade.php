@@ -14,8 +14,8 @@
 						    <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" required>
 						</div>
 						<div class="form-group">
-						    <label for="estado">Epigrafe</label>
-						     <textarea class="form-control" id="direccion"  name="epigrafe" required></textarea>
+						    <label for="descripcion">Descripcion</label>
+						     <textarea class="form-control" id="descripcion"  name="descripcion" required></textarea>
 						</div>
 						<button type="submit" class="btn btn-colegio">Guardar</button>
 	    			</form>

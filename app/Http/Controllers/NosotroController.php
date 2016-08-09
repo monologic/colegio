@@ -93,6 +93,9 @@ class NosotroController extends Controller
     }
     public function grid(){
         $nosotros = Nosotro::all();
-        return view('index.nosotros')->with('nosotros', $nosotros);
+        $docentes = Directorio::all();
+        $all[]=$nosotros;
+        $all[]=$docentes;
+        return view('index.nosotros')->with('nosotros', $all);
     }
 }

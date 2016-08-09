@@ -49,8 +49,8 @@
                         <tbody>
                             <tr ng-repeat="y in actividades" ng-if="{{Auth::user()->id}} ==  y.usuario_id ">
 
+                                <td>@{{ y.fecha }}</td>
                                 <td>@{{ y.titulo }}</td>
-                                <td>@{{ y.nivel + ", " + x.grado + " " + x.seccion }}</td>
                                 <td>
                                     <a ng-click="plus(y);" data-toggle="modal" data-target="#editar"><i class="glyphicon glyphicon-pencil" style="color:black"></i></a>
                                     <a ng-click="eliminar(y.id);"> <i class="glyphicon glyphicon-trash" style="color:black;margin-left: 10px"></i></a>
@@ -213,7 +213,7 @@
             {   
                 var hora= m[i]['fecha_inicio'].split(" ");
 
-                html+="<button class='activity cla' type='button' data-toggle='collapse' data-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'><div class='col-md-6'><i class='fa fa-clock-o'></i> "+hora[1]+"</div> <div class='col-md-6'><i class='fa fa-flag' aria-hidden='true'></i> "+m[i]['titulo']+"</div>    </button><div class='collapse' id='collapseExample'><div class='well'><ul class='listas'><li><i class='fa fa-clock-o' aria-hidden='true'></i> &nbsp <b>Responsable :</b> "+m[i]['usuario']['nombres']+" "+m[i]['usuario']['apellidos']+"</li><li><i class='fa fa-clock-o' aria-hidden='true'></i> &nbsp <b>Fecha inicio :</b> "+m[i]['fecha_inicio']+"</li><li><i class='fa fa-clock-o' aria-hidden='true'></i> &nbsp <b>Fecha termino :</b> "+m[i]['fecha_fin']+"</li><li><i class='fa fa-map-marker' aria-hidden='true'></i> &nbsp <b>Lugar :</b> "+m[i]['lugar']+"</li><li><i class='fa fa-bars' aria-hidden='true'></i> &nbsp <b>Nivel :</b> "+m[i]['nivel']+"</li><li><i class='fa fa-tachometer' aria-hidden='true'></i> &nbsp <b>Grado :</b> "+m[i]['grado']+"</li><li><i class='fa fa-leaf' aria-hidden='true'></i> &nbsp <b>Sección :</b> "+m[i]['seccion']+"</li></ul><p class='pes'>"+m[i]['descripcion']+"</p></div></div>";
+                html+="<button class='activity cla' type='button' data-toggle='collapse' data-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'><div class='col-md-6'><i class='fa fa-clock-o'></i> "+hora[1]+"</div> <div class='col-md-6'><i class='fa fa-flag' aria-hidden='true'></i> "+m[i]['titulo']+"</div>    </button><div class='collapse' id='collapseExample'><div class='well'><ul class='listas'><li><i class='fa fa-clock-o' aria-hidden='true'></i> &nbsp <b>Responsable :</b> "+m[i]['usuario']['nombres']+" "+m[i]['usuario']['apellidos']+"</li><li><i class='fa fa-clock-o' aria-hidden='true'></i> &nbsp <b>Fecha inicio :</b> "+m[i]['fecha_inicio']+"</li><li><i class='fa fa-clock-o' aria-hidden='true'></i> &nbsp <b>Fecha término :</b> "+m[i]['fecha_fin']+"</li><li><i class='fa fa-map-marker' aria-hidden='true'></i> &nbsp <b>Lugar :</b> "+m[i]['lugar']+"</li><li><i class='fa fa-bars' aria-hidden='true'></i> &nbsp <b>Nivel :</b> "+m[i]['nivel']+"</li><li><i class='fa fa-tachometer' aria-hidden='true'></i> &nbsp <b>Grado :</b> "+m[i]['grado']+"</li><li><i class='fa fa-leaf' aria-hidden='true'></i> &nbsp <b>Sección :</b> "+m[i]['seccion']+"</li></ul><p class='pes'>"+m[i]['descripcion']+"</p></div></div>";
                 c++;
             }
             html+="</div>"
