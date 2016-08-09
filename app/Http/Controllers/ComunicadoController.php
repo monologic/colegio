@@ -132,7 +132,7 @@ class ComunicadoController extends Controller
     }
     public function getComunicadoIndexAll()
     {
-        $noticias = Comunicado::orderBy('fecha_pub','DESC')->paginate(2);
+        $noticias = Comunicado::orderBy('fecha_pub','DESC')->paginate(5);
         return view('gestor.comunicados.all')->with('comunicados', $noticias);
     }
 

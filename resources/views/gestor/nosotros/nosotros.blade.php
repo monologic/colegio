@@ -56,6 +56,7 @@
 								<th>Título</th>
 								<th>Cargo</th>
 								<th>Nombre</th>
+								<th>Foto</th>
 								<th>Acción</th>
 							</tr>
 						</thead>
@@ -65,9 +66,10 @@
 								<td>@{{x.titulo}} </td>
 								<td>@{{x.cargo}}</td>
 								<td>@{{x.nombre}}</td>
+								<td><img src="../imagen/docentes/@{{x.foto}}" width="60" height="60" alt="" style="border-radius: 50%"></td>
 								<td>
 								<a ng-click="plus(x);" data-toggle="modal" data-target="#editar" class="btn"><i class="glyphicon glyphicon-pencil" style="color:black"></i></a>
-								 <a ng-click="eliminarD(x);" class="btn"> <i class="glyphicon glyphicon-trash" style="color:black"></i></a>
+								 <a ng-click="eliminarD(x.id);" class="btn"> <i class="glyphicon glyphicon-trash" style="color:black"></i></a>
 								</td>
 							</tr>
 						</tbody>
@@ -88,7 +90,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="formulariok">
-                                <form role="form" action="@{{formUrl}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" id="formEdit">
+                                <form role="form" action="@{{formUrl}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" id="ed">
                                     {{ csrf_field() }}
                                     
                                     <div class="form-group">

@@ -86,16 +86,16 @@ class DirectorioController extends Controller
         $noticia = Directorio::find($id);
         $noticia->fill($request->all());
 
-        if($request->file('imagen'))
+        if($request->file('foto'))
         {
-            $file = $request -> file('imagen');
+            $file = $request -> file('foto');
             $name = 'direc'. time() . '.' .$file->getClientOriginalExtension();
             $path=public_path() . "/imagen/docentes/";
             $file -> move($path,$name);
             $noticia->foto = $name;
         }
         $noticia->save();
-        return redirect('app/noticias');
+        return redirect('app/nosotros');
     }
 
     /**
@@ -107,7 +107,7 @@ class DirectorioController extends Controller
     public function destroy($id)
     {
         Directorio::destroy($id);
-        
+        $this->index();
     }
     public function all()
     {

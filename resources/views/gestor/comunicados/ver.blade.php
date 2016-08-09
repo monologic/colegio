@@ -5,7 +5,7 @@
 @section('content')
     <div ng-controller="comunicadoController" ng-init="get()">
         <div class="contenidos">
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <div class="cart">
                     <h1 class="titulo">Mis Comunicados</h1>
                     <table class="table table-hover">
@@ -32,12 +32,13 @@
                     <a href="{{ url('app/comunicados/create') }}" class="btn btn-colegio">Crear comunicado</a>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div class="cart">
                     <h2 class="titulo">Todos los Comunicados</h2>
                     <table class="table table-hover">
                         <thead>
                             <tr>
+                                <th>Fecha</th>
                                 <th>Asunto</th>
                                 <th>Destinatario</th>       
                             </tr>
@@ -45,6 +46,7 @@
                         <tbody>
                             <tr ng-repeat="y in comunicados">
 
+                                <td>@{{ y.solofe }}</td>
                                 <td>@{{ y.asunto }}</td>
                                 <td>@{{ y.destinatario }}</td>
                                 <td>
@@ -85,6 +87,10 @@
                                 <div class="form-group">
                                     <b><p for="cuerpo">Cuerpo</p></b>
                                     <textarea id="" cols="30" rows="10" class="form-control" name="cuerpo" ng-model="cuerpo"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fecha_pub">Fecha de publicación</label>
+                                    <input type="date" class="form-control" id="fecha_pub" placeholder="" name="fecha_pub" ng-model="fecha_pub" required>
                                 </div>
                                 
                                 <a ng-click='editarNoticia()' class="btn btn-colegio">Guardar Cambios</a>

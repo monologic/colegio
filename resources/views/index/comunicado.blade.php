@@ -1,6 +1,6 @@
 @extends('welcome')
 
-@section('title', 'Noticias')
+@section('title', 'Comunicado')
 
 @section('content')
     <div class="" style="width: 100%">

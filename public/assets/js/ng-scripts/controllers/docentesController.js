@@ -32,8 +32,7 @@ app.controller('docentesController', function($scope,$http) {
         });
     }
     $scope.send = function (){
-        alert('enviando');
-        
+        document.getElementById("ed").submit();
     }
      $scope.plus = function (data) {
         $scope.id = data.id;
@@ -114,12 +113,7 @@ app.controller('docentesController', function($scope,$http) {
                 $http.delete( 'directorio/'+id ).then(function successCallback(response) {
                     javascript:location.reload()
                 }, function errorCallback(response) {
-                    swal({   
-                        title: "Ha ocurrido un error!",   
-                        text: "No se puede borrar datos utilizados para otros registros.",   
-                        timer: 3000,   
-                        showConfirmButton: false 
-                    });
+                    javascript:location.reload()
                 });
             }
         );
