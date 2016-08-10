@@ -78,7 +78,7 @@
 		        <nav class="navbar navbar-default navbar-fixed">
 		            <div class="container-fluid">
 		                <div class="navbar-header">
-		                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+		                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2" onclick="menu()">
 		                        <span class="sr-only">Toggle navigation</span>
 		                        <span class="icon-bar"></span>
 		                        <span class="icon-bar"></span>
@@ -102,7 +102,7 @@
 		                </div>
 		            </div>
 		        </nav>
-		        <div class="content">
+		        <div class="content" onclick="cerrar()">
 					<div class="" ng-app="robertApp">
 					
 						<script src="{{ asset('assets/angular/angular.min.js') }}"></script>
@@ -113,7 +113,16 @@
 				</div><!-- /container -->
 		    </div>
 		</div>
-
+	<script>
+		function menu()
+		{
+			$('.sidebar').css('margin-left','0px');
+		}
+		function cerrar()
+		{
+			$('.sidebar').css('margin-left','-500px');
+		}
+	</script>
 		
 	</body>
 </html>

@@ -1,5 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@media (max-width: 768px) {
+	.sidebar{
+
+		margin-left: -500px;
+		transition: all 1.5s;
+	}
+	.main-panel{
+		width: 100%;
+		left: 0;
+	}
+}
 .gr{
 	display: block;
 	position: absolute;
