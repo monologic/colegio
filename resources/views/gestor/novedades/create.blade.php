@@ -25,7 +25,7 @@
 						
 						<div class="form-group">
 						    <b for="archivo">Foto</b>
-						    <input type="file" name="imagen">
+						    <input type="file" name="imagen" required>
 						</div>
 						<div class="form-group">
 						    <label for="epigrafe">Epígrafe</label>
@@ -33,7 +33,7 @@
 						</div>
 						<div class="form-group">
 						    <b for="cuerpo">Cuerpo</b>
-						    <textarea  id="" cols="50" rows="10" name="cuerpo" class="edit"></textarea>
+						    <textarea  id="" cols="50" rows="10" name="cuerpo" class="edit" required></textarea>
 						</div>
 						<div class="form-group">
 						    <label for="fecha">Fecha de publicación</label>

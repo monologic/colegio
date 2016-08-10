@@ -66,7 +66,7 @@
                             <h4 class="modal-title" id="myModalLabel">Editar Comunicado</h4>
                         </div>
                         <div class="modal-body">
-                            <form  action="@{{formUrl}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" id="formEdit">
+                            <form  action="@{{formUrl}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" id="formEdit" ng-submit="editarNoticia()">
                             {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="nombres">Nombres</label>
@@ -86,14 +86,14 @@
                                 </div>
                                 <div class="form-group">
                                     <b><p for="cuerpo">Cuerpo</p></b>
-                                    <textarea id="" cols="30" rows="10" class="form-control" name="cuerpo" ng-model="cuerpo"></textarea>
+                                    <textarea id="" cols="30" rows="10" class="form-control" name="cuerpo" ng-model="cuerpo" required></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="fecha_pub">Fecha de publicación</label>
                                     <input type="date" class="form-control" id="fecha_pub" placeholder="" name="fecha_pub" ng-model="fecha_pub" required>
                                 </div>
+                                <button type="submit" class="btn btn-colegio">Guardar Cambios</button>
                                 
-                                <a ng-click='editarNoticia()' class="btn btn-colegio">Guardar Cambios</a>
                             </form>
                         </div>
                     </div>

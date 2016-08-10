@@ -25,7 +25,7 @@
 						
 						<div class="form-group">
 						    <b for="archivo">Foto</b>
-						    <input type="file" name="imagen">
+						    <input type="file" name="imagen" required>
 						</div>
 						<div class="form-group">
 						    <label for="epigrafe">Epígrafe</label>

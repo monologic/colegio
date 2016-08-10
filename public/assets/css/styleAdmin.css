@@ -4,11 +4,18 @@
 	.sidebar{
 
 		margin-left: -500px;
-		transition: all 1.5s;
+		transition: all .5s;
 	}
 	.main-panel{
 		width: 100%;
 		left: 0;
+	}
+}
+@media (min-width: 768px) {
+	.sidebar{
+
+		margin-left: 0px;
+		transition: all .5s;
 	}
 }
 .gr{

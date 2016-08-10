@@ -23,14 +23,14 @@
 						</div>
 						<div class="form-group">
 						    <label for="estado">Estado</label>
-						    <select name="estado" class="form-control">
+						    <select name="estado" class="form-control" required>
 						    	<option value="Activo">Activo</option>
 						    	<option value="Inactico">Inactico</option>
 						    </select>
 						</div>
 						<div class="form-group">
 						    <b><p for="imagen">Imagen</p></b>
-						    <input type="file" name="imagen">
+						    <input type="file" name="imagen" required>
 						</div>
 						
 						<button type="submit" class="btn btn-colegio">Guardar</button>

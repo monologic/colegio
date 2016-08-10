@@ -1,6 +1,6 @@
 @extends('welcome')
 
-@section('title', 'Colegio Rober Gagne')
+@section('title', 'Colegio Robert Gagne')
 
 @section('content')
 	<div id="main">

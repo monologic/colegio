@@ -19,7 +19,7 @@
 						</div>
 						<div class="form-group">
 						    <b><p for="imagen">Imagen</p></b>
-						    <input type="file" name="imagen">
+						    <input type="file" name="imagen" required>
 						</div>
 						
 						<button type="submit" class="btn btn-colegio">Guardar</button>

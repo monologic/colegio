@@ -29,7 +29,7 @@
 						
 						<div class="form-group">
 						    <b><p for="cuerpo">Cuerpo</p></b>
-						    <textarea name="cuerpo" id="cuerpo" class="form-control" cols="70" rows="10"></textarea>
+						    <textarea name="cuerpo" id="cuerpo" class="form-control" cols="70" rows="10" required></textarea>
 						</div>
 						<div class="form-group">
 						    <label for="fecha_pub">Fecha de publicación</label>

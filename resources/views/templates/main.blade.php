@@ -35,7 +35,7 @@
 		<link rel="stylesheet" href="{{ asset('assets/calendar/css/monthly.css')}}">
 
 	</head>
-	<body>
+	<body class="body">
 	
 		<div class="wrapper">
 		    <div class="sidebar" data-color="robert" data-image="{{asset('assets/img/sidebar-5.jpg')}}">
@@ -120,7 +120,16 @@
 		}
 		function cerrar()
 		{
-			$('.sidebar').css('margin-left','-500px');
+			var cr = $('.body').width();
+			if (cr < 839) {
+				
+				$('.sidebar').css('margin-left','-500px');
+			}
+			else
+			{
+				$('.sidebar').css('margin-left','0px');
+			}
+			
 		}
 	</script>
 		
