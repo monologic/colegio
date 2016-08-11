@@ -33,10 +33,9 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
 
 		<link rel="stylesheet" href="{{ asset('assets/calendar/css/monthly.css')}}">
-
+		
 	</head>
 	<body class="body">
-	
 		<div class="wrapper">
 		    <div class="sidebar" data-color="robert" data-image="{{asset('assets/img/sidebar-5.jpg')}}">
 
@@ -102,7 +101,7 @@
 		                </div>
 		            </div>
 		        </nav>
-		        <div class="content" onclick="cerrar()">
+		        <div class="content" onclick="ff()">
 					<div class="" ng-app="robertApp">
 					
 						<script src="{{ asset('assets/angular/angular.min.js') }}"></script>
@@ -114,22 +113,35 @@
 		    </div>
 		</div>
 	<script>
+		a=$( window ).width()
+				if( a < 768 ){
+					$('.sidebar').addClass('moviles');
+					$('.main-panel').addClass('movilpanel');
+				} 
+		$(window).resize(function(){
+		   // Código de respuesta
+		   		a=$( window ).width()
+				if( a < 768 ){
+					$('.sidebar').addClass('moviles');
+					$('.main-panel').addClass('movilpanel');
+				} else {
+					$('.sidebar').removeClass('moviles');
+					$('.main-panel').removeClass('movilpanel');
+				}
+		});
 		function menu()
 		{
-			$('.sidebar').css('margin-left','0px');
-		}
-		function cerrar()
-		{
-			var cr = $('.body').width();
-			if (cr < 839) {
-				
-				$('.sidebar').css('margin-left','-500px');
-			}
-			else
-			{
-				$('.sidebar').css('margin-left','0px');
-			}
+			$('.sidebar').removeClass('moviles');
+			$('.main-panel').removeClass('movilpanel');
 			
+		}
+		function ff()
+		{
+			a=$( window ).width()
+				if( a < 768 ){
+					$('.sidebar').addClass('moviles');
+					$('.main-panel').addClass('movilpanel');
+				} 
 		}
 	</script>
 		
