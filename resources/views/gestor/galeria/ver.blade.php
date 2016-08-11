@@ -25,7 +25,6 @@
                                 <td><img src="../../imagen/galeria/{{ $foto->imagen }}" width="80" height="50"></td>
                                 <td>
                                     <a ng-click="dataEditar({{ $foto }});" data-toggle="modal" data-target="#editar"><i class="glyphicon glyphicon-pencil" style="color:black"></i></a>
-
                                     <a ng-click="eliminar({{ $foto->id }});"> <i class="glyphicon glyphicon-trash" style="color:black;margin-left: 10px"></i></a>
                                 </td>
                             </tr>

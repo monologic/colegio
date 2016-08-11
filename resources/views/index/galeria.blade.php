@@ -66,13 +66,13 @@
 							@endforeach 
 						</ul>
 					</section><!-- // grid-wrap -->
-					<section class="slideshow">
+					<section class="slideshow vid">
 						<ul>
 						 @foreach ($todo[1]as $video)
 							<li>
 								<figure>
 									<figcaption>
-										<h3>{{ $video->nombre }}</h3>
+										<h4 style="font-size:1.1em;">{{ $video->nombre }}</h4>
 										<p>{{ $video->descripcion }}</p>
 									</figcaption>
 									<div class="vdo">

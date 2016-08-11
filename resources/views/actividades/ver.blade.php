@@ -85,11 +85,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="fecha_inicio">Fecha y hora (Inicio)</label>
-                                        <input type="datetime-local" class="form-control" id="fecha_inicio" ng-model="fecha_inicio" placeholder="" name="fecha_inicio" required>
+                                        <input type="datetime-local" class="form-control" id="fecha_inicio" ng-model="fecha_inicio" placeholder="2016-01-01 12:002016-01-01 12:00" name="fecha_inicio" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="fecha_fin">Fecha y hora (Fin)</label>
-                                        <input type="datetime-local" class="form-control" id="fecha_fin" ng-model="fecha_fin" placeholder="" name="fecha_fin" required>
+                                        <input type="datetime-local" class="form-control" id="fecha_fin" ng-model="fecha_fin" placeholder="2016-01-01 12:00" name="fecha_fin" required>
                                     </div>
                                     <div class="form-group">
                                             <b for="descripcion">Descripción</b>

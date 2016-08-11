@@ -121,7 +121,9 @@
 	margin: -280px 0 0 -330px;
 	visibility: hidden;
 }
-
+.slideshow.vid li {
+	height: 600px;	
+}
 .slideshow li.show {
 	visibility: visible;
 }
@@ -154,7 +156,7 @@
 }
 
 .slideshow figcaption {
-	padding-bottom: 20px;
+	/*padding-bottom: 20px;*/
 }
 
 .slideshow figcaption h3 {

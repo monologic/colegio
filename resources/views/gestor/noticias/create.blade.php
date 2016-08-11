@@ -37,7 +37,7 @@
 						</div>
 						<div class="form-group">
 						    <label for="fecha">Fecha de publicación</label>
-						    <input type="datetime-local" class="form-control" id="fecha" placeholder="" name="fecha" required>
+						    <input type="datetime-local" class="form-control" id="fecha" placeholder="2016-01-01 12:00" name="fecha" required>
 						</div>
 						<input type="hidden" name="posteador" value="{{Auth::user()->dni}}">
 						<button type="submit" class="btn btn-colegio">Guardar</button>

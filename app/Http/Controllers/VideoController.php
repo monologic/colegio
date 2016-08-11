@@ -76,7 +76,17 @@ class VideoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $video = Video::find($id);
+        $video->nombre = $request->nombre;
+        $video->descripcion = $request->descripcion;
+        if ($request->url != $video->url) {
+            $es1 = $request->url;
+            $porciones = explode("=", $es1);
+            $fn ='https://www.youtube.com/embed/'.$porciones[1].'?autoplay=0';
+            $video->url = $fn ;
+        }
+        $video->save();
+        
     }
 
     /**
@@ -87,6 +97,6 @@ class VideoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Video::destroy($id);
     }
 }
