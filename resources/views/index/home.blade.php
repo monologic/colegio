@@ -1,24 +1,19 @@
 @extends('welcome')
 
-@section('title', 'Colegio Robert Gagne')
+@section('title', 'Colegio Rober Gagne')
 
 @section('content')
-	<div id="main">
+	<div id="main" style="margin-top: -30px">
 		<div class="row">
 			<div class="col-md-12" style="z-index: 1;margin-bottom: 50px">
-								<section class="slid" ng-controller="sliderController" ng-init="gets()">
-									<div id="owl-demo" class="owl-carousel">
-								        <div class="item" ng-repeat="f in slider" on-finish-render="ngRepeatFinished"><img class="elslider"  src="imagen/slider/@{{f.imagen}}" ></div>
-
-								    </div>
-								</section>
+								
 			</div>
 			<div class="col-md-4" style="z-index: 1;margin-bottom: 50px">
 							<section id="intro">
 								<a href="#" ><img src="images/logo.gif" alt="" class="insig" /></a>
 								<header class="text-center">
-									<h2>Robert Gagne</h2>
-									<p>Calidad y experiencia para la educación</a></p>
+									<h2><img src="images/txt.png" alt="" width="200" /></h2>
+									<p style="font-size: .7rem">Superación y disciplina</a></p>
 								</header>
 							</section>
 							<section ng-controller="comunicadoController" ng-init="getComuni()">
@@ -31,7 +26,7 @@
 													<h3><a href="/comunicado/@{{c.id}}">@{{c.asunto}}</a></h3>
 													<time class="published">@{{c.solofe}}</time>
 												</header>
-												
+												<a href="" class="image"><img src="images/New.png" alt="" /></a>
 											</article>
 										</li>
 									</ul>
@@ -53,20 +48,29 @@
 											<a href="/novedades">Ver todas la novedades</a>
 							</div>	
 			</div>	
-			<div class="col-md-8 col-xs-10"  style="z-index: 1;margin-bottom: 50px"  ng-controller="noticiaController" ng-init="firstNotice()">
-				<article class="noticia" ng-repeat="n in allnot">
-					<header>
-										<div class="title">
-											<h2><a href="noticias/@{{n.id}}">@{{n.titulo}}</a></h2>
-											<blockquote>@{{n.copete}}</blockquote>
-										</div>
-										<div class="meta">
-											<time class="published" datetime="2015-11-01">@{{n.solofe}}</time>
-											<a href="#" class="author"><span class="name">@{{n.autor}}</span><img src="images/avatar.jpg" alt="" /></a>
-										</div>
-					</header>
-					<a href="noticias/@{{n.id}}" class="image featured"><img src="imagen/noticia/@{{n.foto}}" alt="" /></a>
-				</article>	
+			<div class="col-md-8 col-xs-10"  style="z-index: 1;margin-bottom: 50px">
+				<section class="slid" ng-controller="sliderController" ng-init="gets()">
+					<div id="owl-demo" class="owl-carousel">
+						<div class="item" ng-repeat="f in slider" on-finish-render="ngRepeatFinished"><img class="elslider"  src="imagen/slider/@{{f.imagen}}" ></div>
+
+					</div>
+				</section>
+				<section  ng-controller="noticiaController" ng-init="firstNotice()">
+					<h2>Noticias</h2>
+					<article class="noticia" ng-repeat="n in allnot">
+						<header>
+											<div class="title">
+												<h2><a href="noticias/@{{n.id}}">@{{n.titulo}}</a></h2>
+												<blockquote>@{{n.copete}}</blockquote>
+											</div>
+											<div class="meta">
+												<time class="published" datetime="2015-11-01">@{{n.solofe}}</time>
+											</div>
+						</header>
+						<a href="noticias/@{{n.id}}" class="image featured"><img src="imagen/noticia/@{{n.foto}}" alt="" /></a>
+					</article>	
+				</section>
+				
 				<a href="/noticiasall">Ver todas la noticias</a>
 			</div>		
 
