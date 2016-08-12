@@ -58,7 +58,7 @@
                                     <label for="nombres">Estado</label>
                                     <select class="form-control" name="estado" ng-model="estado">
                                         <option value="Activo">Activo</option>
-                                        <option value="Inactico">Inactico</option>
+                                        <option value="Inactico">Inactivo</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -80,9 +80,9 @@
                         <div class="modal-body" style="padding: 20px">
                             
                             <h2 class="modal-title" id="myModalLabel" ng-bind="asuntom"></h2>
-                            <br><p>Remitente : <span ng-bind="nombrem"></span></p>
+                            <br><p>Remitente: <span ng-bind="nombrem"></span></p>
                             <blockquote class="bro">
-                                <div><b>Destinatario : </b><span ng-bind="destinatariom"></span></div>
+                                <div><b>Destinatario: </b><span ng-bind="destinatariom"></span></div>
                                 <div><b>Fecha de publicacion: </b><span ng-bind="solofe"></span></div>     
                             </blockquote>
                             <figure class="imgnot">

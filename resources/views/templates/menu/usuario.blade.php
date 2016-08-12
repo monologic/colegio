@@ -11,7 +11,7 @@
             </div>
             <div class="bodyuser">
                 <a href="{{ url('app/estudiantes') }}">Lista de estudiantes</a>
-                <a href="{{ url('app/estudiantes/create') }}">Agregar estudiantes</a>
+                <a href="{{ url('app/estudiantes/create') }}">Agregar estudiante</a>
             </div>
         </div>
         <div class="col-md-3 menux">
@@ -37,7 +37,7 @@
                 DIRECTIVOS
             </div>
             <div class="bodyuser">
-                <a href="{{ url('app/directivos') }}">Lista directivos</a>
+                <a href="{{ url('app/directivos') }}">Lista de directivos</a>
                 <a href="{{ url('app/directivos/create') }}">Agregar directivo</a>
             </div>
         </div>
@@ -46,8 +46,8 @@
                 PADRES
             </div>
             <div class="bodyuser">
-                <a href="{{ url('app/padres') }}">Lista padres</a>
-                <a href="{{ url('app/padres/create') }}">Agregar padres</a>
+                <a href="{{ url('app/padres') }}">Lista de padres</a>
+                <a href="{{ url('app/padres/create') }}">Agregar padre</a>
                 <a href="{{ url('app/asignarHijos') }}">Asignar hijos</a>
             </div>
         </div>

@@ -11,7 +11,7 @@
                 <header>
                     <div class="title">
                         <h2><a>{{ $comunicado->asunto }}</a></h2>
-                        <blockquote>Para : {{ $comunicado->destinatario }}</blockquote>                      
+                        <blockquote>Para: {{ $comunicado->destinatario }}</blockquote>                      
                     </div>
                     <div class="meta">
 

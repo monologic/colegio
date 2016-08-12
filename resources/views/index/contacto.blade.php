@@ -31,13 +31,13 @@
 				<div class="card" ng-controller="colegioController" ng-init="get()">
 					<div class="info" ng-repeat="o in colegio" >
 						<h3 class="tituloadd">Información</h3>
-						<h4 style="margin-top: 25px">Visitanos en:</h4>
+						<h4 style="margin-top: 25px">Visítanos en:</h4>
 						<p> <i class="fa fa-bookmark" aria-hidden="true"></i> Perú - @{{o.region}} - @{{o.ciudad}}</p>
-						<h4>Buscanos en:</h4>
+						<h4>Búscanos en:</h4>
 						<p> <i class="fa fa-map-marker" aria-hidden="true"></i> @{{o.direccion}}</p>
-						<h4>Escribenos a:</h4>
+						<h4>Escríbenos a:</h4>
 						<p> <i class="fa fa-envelope" aria-hidden="true"></i> @{{o.email}}</p>
-						<h4>Llamanos al:</h4>
+						<h4>Llámanos al:</h4>
 						<p> <i class="fa fa-volume-control-phone" aria-hidden="true"></i> @{{o.telefono}}</p>
 						
 					</div>

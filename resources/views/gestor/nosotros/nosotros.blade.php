@@ -106,7 +106,7 @@
                                         <input type="text" class="form-control" id="cargo"  name="cargo" ng-model="cargo"  required>
                                     </div>
                                     <div class="form-group">
-                                        <b for="mas">Mas</b>
+                                        <b for="mas">Más</b>
                                         <textarea  cols="50" rows="10" id="mas" name="mas" class="edit"></textarea>
                                     </div>
                                     <div class="form-group">

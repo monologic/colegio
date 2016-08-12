@@ -7,14 +7,14 @@
         <div class="contenidos">
             <div class="col-md-12">
                 <div class="cart">
-                    <h1 class="titulo">Adminstrador de enlaces</h1>
+                    <h1 class="titulo">Administrador de enlaces</h1>
                     <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Nombre</th>
                                 <th>Dirección</th>
-                                <th>Imgen</th> 
+                                <th>Imagen</th> 
                                 <th>Acción</th>       
                             </tr>
                         </thead>
@@ -51,7 +51,7 @@
                                     <input type="text" class="form-control" id="nombres" name="nombre" ng-model="nombre">
                                 </div>
                                 <div class="form-group">
-                                    <label for="asunto">Direcciñon</label>
+                                    <label for="asunto">Dirección</label>
                                     <input type="text" class="form-control" id="asunto" name="url" ng-model="direccion">
                                 </div>
                                 <div class="form-group">
@@ -73,9 +73,9 @@
                         <div class="modal-body" style="padding: 20px">
                             
                             <h2 class="modal-title" id="myModalLabel" ng-bind="asuntom"></h2>
-                            <br><p>Remitente : <span ng-bind="nombrem"></span></p>
+                            <br><p>Remitente: <span ng-bind="nombrem"></span></p>
                             <blockquote class="bro">
-                                <div><b>Destinatario : </b><span ng-bind="destinatariom"></span></div>
+                                <div><b>Destinatario: </b><span ng-bind="destinatariom"></span></div>
                                 <div><b>Fecha de publicacion: </b><span ng-bind="solofe"></span></div>     
                             </blockquote>
                             <figure class="imgnot">

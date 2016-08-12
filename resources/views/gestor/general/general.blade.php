@@ -24,7 +24,7 @@
 			    		<input type="text" id="email" name="email" class="form-control" value="{{$nosotro->email}}">
 			    	</div>
 			    	<div class="form-group">
-			    		<label for="telefono">Telefono</label>
+			    		<label for="telefono">Teléfono</label>
 			    		<input type="text" id="telefono" name="telefono" class="form-control" value="{{$nosotro->telefono}}">
 			    	</div>
 			    	<div class="form-group">

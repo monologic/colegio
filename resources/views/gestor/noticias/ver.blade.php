@@ -34,11 +34,11 @@
             </div>
             <div class="col-md-4">
                 <div class="cart">
-                    <h2 class="titulo">Todos las noticias</h2>
+                    <h2 class="titulo">Todas las noticias</h2>
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Titulo</th>
+                                <th>Título</th>
                                 <th>Autor</th>       
                             </tr>
                         </thead>
@@ -115,8 +115,8 @@
                             <h2 class="modal-title" id="myModalLabel" ng-bind="titulom"></h2>
                             <br><span ng-bind="epigrafem"></span>
                             <blockquote class="bro">
-                                <div><b>Autor : </b><span ng-bind="autorm"></span></div>
-                                <div><b>Fecha : </b><span ng-bind="fecham"></span></div>     
+                                <div><b>Autor: </b><span ng-bind="autorm"></span></div>
+                                <div><b>Fecha: </b><span ng-bind="fecham"></span></div>     
                             </blockquote>
                             <figure class="imgnot">
                                 <img ng-src="../imagen/noticia/@{{fotom}}" alt="noticia" class="imgn" />

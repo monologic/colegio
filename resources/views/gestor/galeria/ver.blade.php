@@ -7,7 +7,7 @@
         <div class="contenidos">
             <div class="col-md-12">
                 <div class="cart" style="max-width: 650px">
-                    <h1 class="titulo">Galeria de fotos</h1>
+                    <h1 class="titulo">Galería de fotos</h1>
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -47,7 +47,7 @@
                                 <form id="EditarForm" method="POST" action="@{{formUrl2}}" accept-charset="UTF-8" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <label for="nombre">Nombres</label>
+                                        <label for="nombre">Nombre</label>
                                         <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" ng-model="nombre" required>
                                     </div>
                                     <div class="form-group">
@@ -86,7 +86,7 @@
                                 <form  method="POST" action="{{ url('app/galeria') }}" accept-charset="UTF-8" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <label for="nombre">Nombres</label>
+                                        <label for="nombre">Nombre</label>
                                         <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" ng-model="nombre" required>
                                     </div>
                                     <div class="form-group">

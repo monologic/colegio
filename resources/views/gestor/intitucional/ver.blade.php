@@ -11,7 +11,7 @@
 				<tr>
 					<th>#</th>
 					<th>Nombre</th>
-					<th>Accion</th>
+					<th>Acción</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -45,7 +45,7 @@
                                         <input type="text" class="form-control" id="autor" name="autor" placeholder="" name="autor" ng-model="nombrem"  required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="titulo">Descripcion</label>
+                                        <label for="titulo">Descripción</label>
                                         <textarea class='edit' rows="100" cols="150" ng-model="descripcion" name="vision"  style="margin-top: 30px;width: 80%;height: 150px">
 										
 										</textarea>

@@ -21,9 +21,9 @@
                             <div class="ta">{{ $archivo->titulo }}</div>
                            <blockquote class="bro">
                                 
-                                <div> <b>Autor :</b>  {{ $archivo->autor }}</div>
-                                <div> <b>Publicacion :</b>  {{ $archivo->created_at }}</div>
-                                <div> <b>Tipo :</b>  {{ $archivo->archivotipo->tipo }}</div>
+                                <div> <b>Autor:</b>  {{ $archivo->autor }}</div>
+                                <div> <b>Publicación:</b>  {{ $archivo->created_at }}</div>
+                                <div> <b>Tipo :</b> {{ $archivo->archivotipo->tipo }}</div>
                            </blockquote>
                            <div> <b>Descripción :</b></div>
                             <div> {{ $archivo->decripcion }}</div>
@@ -40,9 +40,9 @@
                             <div class="ta">{{ $archivo->titulo }}</div>
                            <blockquote class="bro">
                                 
-                                <div> <b>Autor :</b>  {{ $archivo->autor }}</div>
-                                <div> <b>Publicacion :</b>  {{ $archivo->created_at }}</div>
-                                <div> <b>Tipo :</b>  {{ $archivo->archivotipo->tipo }}</div>
+                                <div> <b>Autor:</b>  {{ $archivo->autor }}</div>
+                                <div> <b>Publicación:</b>  {{ $archivo->created_at }}</div>
+                                <div> <b>Tipo:</b>  {{ $archivo->archivotipo->tipo }}</div>
                            </blockquote>
                            <div> <b>Descripción :</b></div>
                             <div> {{ $archivo->decripcion }}</div>
@@ -57,7 +57,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Titulo</th>
+                                <th>Título</th>
                                 <th>Autor</th>       
                             </tr>
                         </thead>
@@ -150,15 +150,15 @@
                             <h2 class="modal-title" id="myModalLabel" ng-bind="titulom"></h2>
                             <br>
                             <blockquote class="bro">
-                                <div><b>Título : </b><span ng-bind="titulom"></span></div>
-                                <div><b>Autor : </b><span ng-bind="autorm"></span></div>
-                                <div><b>Fecha : </b><span ng-bind="fecham"></span></div>
+                                <div><b>Título: </b><span ng-bind="titulom"></span></div>
+                                <div><b>Autor: </b><span ng-bind="autorm"></span></div>
+                                <div><b>Fecha: </b><span ng-bind="fecham"></span></div>
                                 
-                                <div><b>Lugar de publicación : </b><span ng-bind="pub_lugar"></span></div>
-                                <div><b>Editorial : </b><span ng-bind="pub_editorial"></span></div>
-                                <div><b>Año : </b><span ng-bind="pub_year"></span></div>
-                                <div><b>Fecha : </b><span ng-bind="fecham"></span></div>
-                                <div><b>Edición : </b><span ng-bind="edicion"></span></div>
+                                <div><b>Lugar de publicación: </b><span ng-bind="pub_lugar"></span></div>
+                                <div><b>Editorial: </b><span ng-bind="pub_editorial"></span></div>
+                                <div><b>Año: </b><span ng-bind="pub_year"></span></div>
+                                <div><b>Fecha: </b><span ng-bind="fecham"></span></div>
+                                <div><b>Edición: </b><span ng-bind="edicion"></span></div>
                             </blockquote>
                             
                             <div ng-bind="cuerpom"></div>

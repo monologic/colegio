@@ -29,7 +29,7 @@
             <div class="col-md-6">
                 <div class="actividades">
                     <div class="hed">
-                        <span id="fec">Lista de actividades </span>
+                        <span id="fec">Lista de actividades</span>
                     </div>
                     <section style="padding: 15px">
                         <div id="results"></div>

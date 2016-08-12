@@ -5,7 +5,7 @@
 @section('content')
 	<div class="contenidos">
 		<div class="cart" style="max-width: 600px">
-			<h1 class="titulo">Creando Album</h1>
+			<h1 class="titulo">Creando Álbum</h1>
 	    		<div class="formulariok">
 	    			<form  method="POST" action="{{ url('app/album') }}" accept-charset="UTF-8" enctype="multipart/form-data">
 	    				{{ csrf_field() }}

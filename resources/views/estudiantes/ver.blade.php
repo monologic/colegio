@@ -86,7 +86,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="nombres">Seccion</label>
+                                    <label for="nombres">Sección</label>
                                     <select class="form-control" ng-model="seccion">
                                         <option>1</option>
                                         <option>2</option>

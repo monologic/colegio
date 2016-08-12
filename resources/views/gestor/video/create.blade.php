@@ -5,7 +5,7 @@
 @section('content')
 	<div class="contenidos">
 		<div class="cart" style="max-width: 600px">
-			<h1 class="titulo">Añandiendo video</h1>
+			<h1 class="titulo">Añadiendo video</h1>
 	    		<div class="formulariok">
 	    			<form  method="POST" action="{{ url('app/video') }}" accept-charset="UTF-8" enctype="multipart/form-data">
 	    				{{ csrf_field() }}

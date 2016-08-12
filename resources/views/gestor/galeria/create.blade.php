@@ -1,16 +1,16 @@
 @extends('templates.main')
 
-@section('title', 'Crear Enlace')
+@section('title', 'Añadir Imagen')
 
 @section('content')
 	<div class="contenidos">
 		<div class="cart" style="max-width: 600px">
-			<h1 class="titulo">Añandiendo imagen</h1>
+			<h1 class="titulo">Añadiendo imagen</h1>
 	    		<div class="formulariok">
 	    			<form  method="POST" action="{{ url('app/galeria') }}" accept-charset="UTF-8" enctype="multipart/form-data">
 	    				{{ csrf_field() }}
 	    				<div class="form-group">
-						    <label for="nombre">Nombres</label>
+						    <label for="nombre">Nombre</label>
 						    <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" required>
 						</div>
 						<div class="form-group">
@@ -21,7 +21,7 @@
 						    <label for="estado">Estado</label>
 						    <select name="estado" class="form-control">
 						    	<option value="Activo">Activo</option>
-						    	<option value="Inactico">Inactico</option>
+						    	<option value="Inactico">Inactivo</option>
 						    </select>
 						</div>
 						<div class="form-group">
