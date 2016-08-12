@@ -248,8 +248,8 @@ blockquote{
 }
 @media (max-width: 674px) {
   .cart{
-  	width: 110%;
-  	margin-left: 0px auto -15px auto;
+  	width: 115%;
+  	margin-left:-15px;
   }
 }
 .cartA{
