@@ -10,7 +10,8 @@
 	}
 	.myTable thead{
 	width: 88%;
-}
+	}
+
  }
 .myTable{
 	
@@ -244,6 +245,12 @@ blockquote{
 	margin: 10px auto 10px auto;
 	padding: 30px;
 	box-shadow: 5px 5px 5px #888888;
+}
+@media (max-width: 674px) {
+  .cart{
+  	width: 110%;
+  	margin-left: 0px auto 0px auto;
+  }
 }
 .cartA{
 	display: block;
