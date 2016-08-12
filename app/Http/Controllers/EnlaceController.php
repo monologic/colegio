@@ -108,7 +108,7 @@ class EnlaceController extends Controller
     {
          Enlace::destroy($id);
 
-        $this->getNoticia();
+        $this->getEnlaces();
     }
     public function getEnlaces()
     {

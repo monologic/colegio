@@ -81,8 +81,8 @@ app.controller('enlaceController', function($scope,$http) {
                     "El registro se ha eliminado.", 
                     "success"); 
 
-                $http.delete( 'noticias/'+id ).then(function successCallback(response) {
-                    $scope.noticias = response.data;
+                $http.delete( 'enlaces/'+id ).then(function successCallback(response) {
+                    $scope.get();
                 }, function errorCallback(response) {
                     swal({   
                         title: "Ha ocurrido un error!",   
