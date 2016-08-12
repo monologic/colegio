@@ -1,3 +1,4 @@
+
 @extends('templates.main')
 
 @section('title', 'Novedades')
@@ -8,7 +9,7 @@
             <div class="col-md-8">
                 <div class="cart">
                     <h1 class="titulo">Mis Novedades</h1>
-                    <table class="table table-hover">
+                    <table class="myTable table-hover">
                         <thead>
                             <tr>
                                 <th>Fecha</th>
@@ -35,7 +36,7 @@
             <div class="col-md-4">
                 <div class="cart">
                     <h2 class="titulo">Todos las novedades</h2>
-                    <table class="table table-hover">
+                    <table class="myTable table-hover">
                         <thead>
                             <tr>
                                 <th>Título</th>

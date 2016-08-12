@@ -8,7 +8,7 @@
             <div class="col-md-12">
                 <div class="cart" style="max-width: 650px">
                     <h1 class="titulo">Galería de fotos</h1>
-                    <table class="table table-hover">
+                    <table class="myTable table-hover">
                         <thead>
                             <tr>
                                 <th>Nombre</th>

@@ -28,7 +28,7 @@
 		    				</tr>
 		    			</table>
 		    			<h1 class="titulo2"><strong>Hijos</strong></h1>
-		    			<table class="table table-hover">
+		    			<table class="myTable table-hover">
 				    		<thead>
 				    			<th>Nombre</th>
 				    			<th>DNI</th>
@@ -50,7 +50,7 @@
 							<button type="submit" class="btn btn-colegio">Buscar</button>
 			    		</form>
 			    		<br>
-			    		<table class="table table-hover">
+			    		<table class="myTable table-hover">
 				    		<thead>
 				    			<th>Nombre</th>
 				    			<th>DNI</th>

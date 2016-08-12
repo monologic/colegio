@@ -8,7 +8,7 @@
             <div class="cart">
                 <h1 class="titulo">Lista de Docentes</h1>
                 <a href="{{ url('app/docentes/create') }}" class="btn btn-colegio">Añadir Docente</a>
-                    <table class="table table-hover">
+                    <table class="myTable table-hover">
                         <thead>
                             
                                     <div style="width: 310px;float: right" id="bsq">

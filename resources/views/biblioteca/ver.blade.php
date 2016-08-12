@@ -1,3 +1,4 @@
+
 @extends('templates.main')
 
 @section('title', 'Biblioteca')
@@ -44,7 +45,7 @@
                                 <div> <b>Publicación:</b>  {{ $archivo->created_at }}</div>
                                 <div> <b>Tipo:</b>  {{ $archivo->archivotipo->tipo }}</div>
                            </blockquote>
-                           <div> <b>Descripción :</b></div>
+                           <div> <b>Descripción:</b></div>
                             <div> {{ $archivo->decripcion }}</div>
                             <button class="btn-colegio2" ng-click="plus({{ $archivo }});" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-eye-open"></i> Ver documento</button>
                         </div>
@@ -54,7 +55,7 @@
             <div class="col-md-4">
                 <div class="cart">
                     <h2 class="titulo">Mis Archivos</h2>
-                    <table class="table table-hover">
+                    <table class="myTable table-hover">
                         <thead>
                             <tr>
                                 <th>Título</th>

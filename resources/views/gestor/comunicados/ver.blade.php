@@ -8,7 +8,7 @@
             <div class="col-md-7">
                 <div class="cart">
                     <h1 class="titulo">Mis Comunicados</h1>
-                    <table class="table table-hover">
+                    <table class="myTable table-hover">
                         <thead>
                             <tr>
                                 <th>Fecha</th>
@@ -35,7 +35,7 @@
             <div class="col-md-5">
                 <div class="cart">
                     <h2 class="titulo">Todos los Comunicados</h2>
-                    <table class="table table-hover">
+                    <table class="myTable table-hover">
                         <thead>
                             <tr>
                                 <th>Fecha</th>

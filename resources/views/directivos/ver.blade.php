@@ -9,7 +9,7 @@
             <h1 class="titulo">Lista de Directivos</h1>
             <a href="{{ url('app/directivos/create') }}" class="btn btn-colegio">Añadir Directivo</a>
             <div style="margin-top: 20px">
-                <table class="table table-hover">
+                <table class="myTable table-hover">
                     <thead>
                         <tr>
                             <th>#</th>

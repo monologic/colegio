@@ -120,7 +120,7 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 		Route::get('getArchivos', 'ArchivoController@get');
 		Route::get('getArchivoTipos', 'ArchivoController@getArchivoTipos');
 	    Route::post('archivos/{id}', 'ArchivoController@update');
-	    Route::get('archivos/{id}', 'ArchivoController@visualizar');
+	    Route::get('archivo/{id}', 'ArchivoController@visualizar');
 		Route::resource('archivos', 'ArchivoController');
 
 		Route::get('getActividades', 'ActividadController@get');

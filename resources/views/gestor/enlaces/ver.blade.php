@@ -8,7 +8,7 @@
             <div class="col-md-12">
                 <div class="cart">
                     <h1 class="titulo">Administrador de enlaces</h1>
-                    <table class="table table-hover">
+                    <table class="myTable table-hover">
                         <thead>
                             <tr>
                                 <th>#</th>

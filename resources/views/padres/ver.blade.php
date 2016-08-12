@@ -9,7 +9,7 @@
                 <h1 class="titulo">Lista de Padres</h1>
                 <a href="{{ url('app/padres/create') }}" class="btn btn-colegio">Añadir Padre</a>
                 <div style="margin-top: 20px">
-                	<table class="table table-hover">
+                	<table class="myTable table-hover">
                 		<thead>
                             <div style="width: 310px;float: right" id="bsq">
                                 <input type="text" class="form-control" ng-model="buscar" style="width: 320px"><i class="glyphicon glyphicon-search" style="top:-25px;float: right;color: black"></i>
