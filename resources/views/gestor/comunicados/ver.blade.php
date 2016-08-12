@@ -17,7 +17,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="x in comunicados">
+                            <tr  ng-repeat="x in comunicados" ng-if="{{Auth::user()->dni}} ==  x.posteador ">
                                 <td>@{{ x.solofe }}</td>
                                 <td>@{{ x.asunto }}</td>
                                 <td>@{{ x.destinatario }}</td>

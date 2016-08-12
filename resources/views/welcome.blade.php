@@ -153,11 +153,7 @@
 			<script src="{{ asset('assets/js/ng-scripts/directivas/onFinishRender.js') }}"></script>  
 
    			<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
-   			<script>
-			   var cw = $('#owl-demo').width();
-			   var res= cw/2.4;
-			      $('.elslider').css({'height':res+'px'});
-			</script>  
+   			
 		<!-- Scripts -->
 			
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
