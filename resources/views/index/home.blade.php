@@ -41,7 +41,6 @@
 												<header>
 													<h3><a href="/novedad/@{{k.id}}">@{{k.titulo}}</a></h3>
 													<time class="published">@{{k.fecha}}</time>
-													<a href="" class="author"><img src="images/avatar.jpg" alt="" /></a>
 												</header>
 												<a href="/novedad/@{{k.id}}" class="image"><img src="imagen/novedades/@{{k.foto}}" alt="" /></a>
 											</article>
@@ -51,7 +50,7 @@
 			<div class="col-md-8 col-sm-8 col-xs-10"  style="z-index: 1;margin-bottom: 50px">
 				<section id="copy" class="slid"  ng-controller="sliderController" ng-init="gets()">
 					<div id="owl-demo" class="owl-carousel">
-						<div class="item" ng-repeat="f in slider" on-finish-render="ngRepeatFinished"><img class="elslider"  src="imagen/slider/@{{f.imagen}}" ></div>
+						<div class="item" ng-repeat="f in slider" on-finish-render="ngRepeatFinished"><img class="img-responsive"  src="imagen/slider/@{{f.imagen}}" ><p class="titulo-slider">@{{f.titulo}}</p></div>
 
 					</div>
 				</section>
@@ -65,6 +64,7 @@
 											</div>
 											<div class="meta">
 												<time class="published" datetime="2015-11-01">@{{n.solofe}}</time>
+												<p class="text-center"><p>@{{n.autor}}</p></p>
 											</div>
 						</header>
 						<a href="noticias/@{{n.id}}" class="image featured"><img src="imagen/noticia/@{{n.foto}}" alt="" /></a>
@@ -94,10 +94,6 @@
 		<script src="{{ asset('assets/js/ng-scripts/controllers/enlaceController.js') }}"></script> 
 		<script src="{{ asset('assets/js/ng-scripts/controllers/sliderController.js') }}"></script>
 		<script>
-			var cw = $('.child').width();
-			s = cw/1.7;
-			$('.child').css({'height':s+'px'});
-
 			$(window).resize(function(){
 			   // Código de respuesta
 			   		a=$( window ).width()

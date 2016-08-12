@@ -8,7 +8,16 @@
 	bottom: 0;
 	padding: 30px 0px 30px 0px;
 }
-
+.titulo-slider{
+	display: block;
+	position: absolute;
+	color: white;
+	bottom: 0px;
+	margin-left: 20px;
+	transition: all 3s;
+	font-size: 2rem;
+	font-weight:;
+}
 .ve{
 	width: 80%;
 	margin:40px auto 40px auto ;
@@ -68,7 +77,8 @@
 }
 .elslider{
 	width: 100%;
-	height: auto;
+	height: 100%;
+	
 }
 .me{
 	padding-top: 20px;

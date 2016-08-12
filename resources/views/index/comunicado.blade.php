@@ -16,7 +16,7 @@
 
                         <time class="published" datetime="2015-11-01">{{ $comunicado->fecha_pub }}</time>
                         <p class="text-center">{{ $comunicado->puesto_cargo }}</p>
-                        <a href="#" class="author"><span class="name">{{ $comunicado->nombre }}</span><img src="../images/avatar.jpg" alt="" /></a>
+                        <a href="#" class="author "><span class="text-center">{{ $comunicado->nombre }}</span></a>
 
                     </div>
                 </header>

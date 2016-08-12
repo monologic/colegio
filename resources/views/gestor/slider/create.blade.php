@@ -14,10 +14,6 @@
 						    <input type="text" class="form-control" id="titulo" placeholder="" name="titulo" required>
 						</div>
 						<div class="form-group">
-						    <label for="direccion">Descripción</label>
-						    <textarea class="form-control" id="direccion"  name="descripcion" required></textarea>
-						</div>
-						<div class="form-group">
 						    <label for="direccion">Orden</label>
 						    <input type="text" class="form-control" id="orden"name="orden" required>
 						</div>

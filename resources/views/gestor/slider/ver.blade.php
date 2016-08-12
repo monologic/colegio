@@ -50,11 +50,6 @@
                                     <label for="nombres">Nombres</label>
                                     <input type="text" class="form-control" id="nombres" name="titulo" ng-model="titulo">
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="asunto">Descripcion</label>
-                                    <textarea class="form-control" id="asunto" name="url" ng-model="descripcion"></textarea>
-                                </div>
                                 <div class="form-group">
                                     <label for="nombres">Orden</label>
                                     <input type="text" class="form-control" id="nombres" name="orden" ng-model="orden">

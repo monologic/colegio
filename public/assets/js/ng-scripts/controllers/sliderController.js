@@ -21,7 +21,8 @@ app.controller('sliderController', function($scope,$http) {
     $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
         $("#owl-demo").owlCarousel({
             singleItem : true,
-            transitionStyle : "fade"
+            transitionStyle : "fadeUp",
+            autoPlay : 5000
         });
     }); 
     $scope.firstEnalce = function () {
