@@ -13,17 +13,13 @@ app.controller('actividadController', function($scope,$http) {
     $scope.plus = function (data) {
 
         $scope.id = data.id;
-        $scope.formUrl = 'actividades/' + data.id;
+        $scope.responsable = data.responsable;
         $scope.titulo = data.titulo;
         $scope.fecha_inicio = data.fecha_inicio;
         $scope.fecha_fin = data.fecha_fin;
         $('.fr-element').html(data.descripcion);
         $scope.lugar = data.lugar;
-        $scope.nivel = data.nivel;
-        $scope.grado = data.grado;
-        $scope.seccion = data.seccion;
-        $scope.responsable = data.usuario.nombres + data.usuario.apellidos;
-
+        $scope.participantes = data.participantes;
     }
 
     $scope.eliminar = function (id) {
@@ -57,17 +53,17 @@ app.controller('actividadController', function($scope,$http) {
 
     $scope.editar = function () {
         $http.put('actividades/' + $scope.id,
-            {   'titulo':$scope.titulo,
+            {   'responsable':$scope.responsable,
+                'titulo':$scope.titulo,
                 'fecha_inicio':$scope.fecha_inicio,
                 'fecha_fin':$scope.fecha_fin,
                 'descripcion':$scope.descripcion,
                 'lugar':$scope.lugar,
-                'nivel':$scope.nivel,
-                'grado':$scope.grado,
-                'seccion':$scope.seccion,
+                'participantes':$scope.participantes,
+                
             }).then(function successCallback(response) {
                 $scope.actividades = response.data;
-                $('#editar').modal('toggle')
+                $('#editar').modal('toggle');
             }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.

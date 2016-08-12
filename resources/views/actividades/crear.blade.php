@@ -12,7 +12,7 @@
     				{{ csrf_field() }}
                     <div class="form-group">
                         <label for="responsable">Responsable, Nro contacto</label>
-                        <input type="text" class="form-control" id="responsable" ng-model="responsable" placeholder="Escriba su nombre , y su número" name="responsable" required>
+                        <input type="text" class="form-control" id="responsable" ng-model="responsable" placeholder="Escriba su nombre, y su número" name="responsable" required>
                     </div>
     				<div class="form-group">
 					    <label for="titulo">Título</label>

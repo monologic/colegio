@@ -76,8 +76,8 @@
                                 <form role="form" ng-submit='editar()'>
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                        <label for="responsable">Responsable , Nro contacto</label>
-                                        <input type="text" class="form-control" id="titulo" ng-model="responsable" placeholder="" name="responsable" required>
+                                        <label for="responsable">Responsable, Nro contacto</label>
+                                        <input type="text" class="form-control" id="responsable" ng-model="responsable" placeholder="Escriba su nombre, y su número" name="responsable" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="titulo">Título</label>
@@ -85,7 +85,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="fecha_inicio">Fecha y hora (Inicio)</label>
-                                        <input type="datetime-local" class="form-control" id="fecha_inicio" ng-model="fecha_inicio" placeholder="2016-01-01 12:002016-01-01 12:00" name="fecha_inicio" required>
+                                        <input type="datetime-local" class="form-control" id="fecha_inicio" ng-model="fecha_inicio" placeholder="2016-01-01 12:00" name="fecha_inicio" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="fecha_fin">Fecha y hora (Fin)</label>
@@ -93,38 +93,17 @@
                                     </div>
                                     <div class="form-group">
                                             <b for="descripcion">Descripción</b>
-                                            <textarea  id="" cols="50" rows="10" name="descripcion" ng-model="descripcion" class="edit"></textarea>
+                                            <textarea  id="" cols="50" rows="10" name="descripcion" class="edit" ng-model="descripcion"></textarea>
                                         </div>
                                     <div class="form-group">
                                         <label for="lugar">Lugar</label>
                                         <input type="text" class="form-control" id="lugar" ng-model="lugar" placeholder="" name="lugar" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="nombres">NIvel</label>
-                                        <select class="form-control" ng-model="nivel" name="nivel" required>
-                                            <option>Inicial</option>
-                                            <option>Primaria</option>
-                                            <option>Secundaria</option>
-                                        </select>
+                                        <label for="participantes">Participantes</label>
+                                        <input type="text" class="form-control" id="participantes" ng-model="participantes" placeholder="" name="participantes" required>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="nombres">Grado</label>
-                                        <select class="form-control" ng-model="grado" name="grado" required>
-                                            <option>1er</option>
-                                            <option>2do</option>
-                                            <option>3ro</option>
-                                            <option>4to</option>
-                                            <option>5to</option>
-                                            <option>6to</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nombres">Seccion</label>
-                                        <select class="form-control" ng-model="seccion" name="seccion" required>
-                                            <option>1</option>
-                                            <option>2</option>
-                                        </select>
-                                    </div>
+                                    
                                     <input type="hidden" name="usuario_id" value="{{Auth::user()->id}}">
                                     <button type="submit" class="btn btn-colegio">Guardar</button>
                                 </form>
