@@ -11,4 +11,10 @@
             <p>Biblioteca</p>
         </a>
     </li>
+    <li>
+        <a href="{{ url('app/actividades') }}">
+            <i class="pe-7s-science"></i>
+            <p>Actividades</p>
+        </a>
+    </li>
 </ul>

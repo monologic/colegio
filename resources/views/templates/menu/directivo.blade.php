@@ -23,7 +23,7 @@
             <p>Novedades</p>
         </a>
     </li>
-     <li>
+    <li>
         <a href="{{ url('app/actividades') }}">
             <i class="pe-7s-science"></i>
             <p>Actividades</p>
@@ -35,7 +35,7 @@
             <p>Biblioteca</p>
         </a>
     </li>
-   <li>
+    <li>
         <a href="{{ url('app/album') }}">
             <i class="pe-7s-science"></i>
             <p>Galería</p>
