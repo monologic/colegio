@@ -1,18 +1,28 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 /* style the card all */
+@media (max-width: 992px) {
+  .myTable{
+	margin-left: -25px;
+	font-family: 'Raleway', sans-serif;
+	margin-bottom: 30px;
+	width: 100%;
+	}
+	.myTable thead{
+	width: 88%;
+}
+ }
 .myTable{
 	
 	font-family: 'Raleway', sans-serif;
 	margin-bottom: 30px;
+	width: 100%;
 }
 .myTable thead{
 	border-bottom: solid;
 	border-width: 2px;
 	border-color: #BDC3C7;
-	width: 100%;
-
-
+	width: 
 }
 .myTable thead tr th{
 	text-align: center;
@@ -62,9 +72,7 @@
 	width: 100%;
 		left: 0;
 }
-@media (min-width: 992px) {
-  
- }
+
 .gr{
 	display: block;
 	position: absolute;
