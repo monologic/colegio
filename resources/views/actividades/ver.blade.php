@@ -39,11 +39,12 @@
             <div class="col-md-6">
                 <div class="cart">
                     <h2 class="titulo">Mis Actividades</h2>
-                    <table class="table table-hover">
+                    <table class="myTable">
                         <thead>
                             <tr>
                                 <th>Fecha</th>
-                                <th>Titulo</th>       
+                                <th>Titulo</th>
+                                <th>Acción</th>       
                             </tr>
                         </thead>
                         <tbody>

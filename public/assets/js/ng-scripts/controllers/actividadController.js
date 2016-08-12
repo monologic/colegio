@@ -3,6 +3,12 @@ app.controller('actividadController', function($scope,$http) {
     $scope.get = function () {
         $http.get('getActividades').then(function successCallback(response) {
                 data = response.data;
+                for(i in data){
+                    rs=data[i].fecha_inicio;
+                    $scope.fe = rs.split(' ');
+                    data[i].solofe = $scope.fe[0];
+                    data[i].soloho = $scope.fe[1];
+                }
                 $scope.actividades = data;
             }, function errorCallback(response) {
             // called asynchronously if an error occurs

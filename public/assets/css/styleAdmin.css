@@ -1,5 +1,46 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+/* style the card all */
+.myTable{
+	
+	font-family: 'Raleway', sans-serif;
+	margin-bottom: 30px;
+}
+.myTable thead{
+	border-bottom: solid;
+	border-width: 2px;
+	border-color: #BDC3C7;
+
+}
+.myTable thead tr th{
+	text-align: center;
+	padding-bottom: 10px;
+	padding-right: 15px;
+}
+.myTable tbody tr{
+	border-bottom: solid;
+	border-width: 1px;
+	border-color: #D2D7D3;
+	padding-top: 10px;
+	margin-top: 10px;
+	padding-bottom: 30px;
+}
+.myTable tbody tr td{
+	font-family: 'Raleway', sans-serif;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+.cardAll{
+	width: 90%;
+	
+	box-shadow: 1px 1px 1px #888888;
+	margin: 15px auto 15px auto;
+	padding: 8px;
+	font-family: 'Raleway', sans-serif;
+}
+/* end */
+
 .cinta{
 	display: block;
 	position: relative;
@@ -177,7 +218,7 @@ blockquote{
 	font-size: 1.6rem;
 }
 .contenidos{
-	width: 95%;
+	width: 98%;
 	margin: 30px auto 30px auto;
 }
 .contenidosa{
