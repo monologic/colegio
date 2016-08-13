@@ -15,11 +15,11 @@
 						    <input type="text" class="form-control" id="autor" name="autor" placeholder="" name="autor" required>
 						</div>
 	    				<div class="form-group">
-						    <label for="titulo">Título</label>
+						    <label for="titulo">Titular</label>
 						    <input type="text" class="form-control" id="nombre"  name="titulo" required>
 						</div>
 						<div class="form-group">
-						    <label for="copete">Copete</label>
+						    <label for="copete">Reseña</label>
 						    <input type="text" class="form-control" id="copete"  name="copete" required>
 						</div>
 						

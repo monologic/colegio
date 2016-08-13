@@ -6,15 +6,15 @@
 @section('content')
     <div ng-controller="novedadesController" ng-init="get()">
         <div class="contenidos">
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div class="cart">
                     <h1 class="titulo">Mis Novedades</h1>
                     <table class="myTable table-hover">
                         <thead>
                             <tr>
                                 <th>Fecha</th>
-                                <th>Titulo</th>
-                                <th>Copete</th>       
+                                <th>Titular</th>
+                                <th>Reseña</th>       
                             </tr>
                         </thead>
                         <tbody>
@@ -33,21 +33,22 @@
                     <a href="{{ url('app/novedades/create') }}" class="btn btn-colegio">Crear Novedad</a>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="cart">
-                    <h2 class="titulo">Todos las novedades</h2>
+                    <h2 class="titulo">Todas las novedades</h2>
                     <table class="myTable table-hover">
                         <thead>
                             <tr>
-                                <th>Título</th>
-                                <th>Autor</th>       
+                                <th>Fecha</th>
+                                <th>Titular</th>
+                                <th>Reseña</th>     
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="y in noticias">
-
+                                <td>@{{ y.fecha }}</td>
                                 <td>@{{ y.titulo }}</td>
-                                <td>@{{ y.autor }}</td>
+                                <td>@{{ y.copete }}</td>
                                 <td>
                                     <a ng-click="plus(y);" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-plus" style="color:black"></i></a>
                                 </td>

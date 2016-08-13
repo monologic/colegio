@@ -5,15 +5,15 @@
 @section('content')
     <div ng-controller="noticiaController" ng-init="getss()">
         <div class="contenidos">
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div class="cart">
                     <h1 class="titulo">Mis Noticias</h1>
                     <table class="myTable table-hover">
                         <thead>
                             <tr>
                                 <th>Fecha</th>
-                                <th>Titulo</th>
-                                <th>Copete</th>       
+                                <th>Titular</th>
+                                <th>Reseña</th>       
                             </tr>
                         </thead>
                         <tbody>
@@ -32,21 +32,22 @@
                     <a href="{{ url('app/noticias/create') }}" class="btn btn-colegio">Crear Noticia</a>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="cart">
                     <h2 class="titulo">Todas las noticias</h2>
                     <table class="myTable table-hover">
                         <thead>
                             <tr>
-                                <th>Título</th>
-                                <th>Autor</th>       
+                                <th>fecha</th>
+                                <th>Titular</th>
+                                <th>Reseña</th>       
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="y in noticias">
-
+                                <td>@{{ y.solofe }}</td>
                                 <td>@{{ y.titulo }}</td>
-                                <td>@{{ y.autor }}</td>
+                                <td>@{{ y.copete }}</td>
                                 <td>
                                     <a ng-click="plus(y);" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-plus" style="color:black"></i></a>
                                 </td>

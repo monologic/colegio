@@ -72,6 +72,7 @@ class ColegioController extends Controller
     public function update(Request $request, $id)
     {
         $noticia = Colegio::find($id);
+        //dd($request);
         $noticia->fill($request->all());
         $noticia->save();
         return redirect('app/general');

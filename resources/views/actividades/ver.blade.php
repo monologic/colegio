@@ -176,7 +176,7 @@
             $('.monthly-day-pick').removeClass("activs");
             var fecha2 = año +'-' + (mes) +'-'+dia;
             var fecha = dia +'-' + (mes) +'-'+año;
-            var titulo = "Actividades para el "+ fecha;
+            var titulo = "Actividades del día: "+ fecha;
             $('#fec').html(titulo);
             $('#'+fecha).addClass("activs");
             $.ajax({
@@ -195,7 +195,7 @@
         {   nm=m.length;
             c=1;
             if (nm==0) {
-                html="<h2 class='text-center nc'>No se encontro actividades</h2>"
+                html="<h2 class='text-center nc'>No se encontraron actividades</h2>"
             }
             else
             {
