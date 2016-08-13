@@ -3,5 +3,5 @@
 @section('title', 'Bienvenido')
 
 @section('content')
-    <p>This is my body content.</p>
+    <h1 class="titulo text-center" style="margin-top: 20%;">Bienvenido  {{Auth::user()->nombres}}</h1>
 @endsection

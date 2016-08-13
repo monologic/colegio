@@ -33,8 +33,8 @@
 			<div id="wrapper" style="" >
 
 				<!-- Header -->
-					<header id="header">
-						<h1><a href="/">Robert Gagne</a></h1>
+					<header id="header" style="height: 60px">
+						<h1><a href="/"><img src="images/txt.png" alt="" width="150" style="padding-top: 10px" /></a></h1>
 						<nav class="links">
 							<ul>
 								
