@@ -11,7 +11,7 @@
                 <header>
                     <div class="title">
                         <h2><a>{{ $noticia->titulo }}</a></h2>
-                        <blockquote>{{ $noticia->copete }}</blockquote>                      
+                        <blockquote style="text-align: left;">{{ $noticia->copete }}</blockquote>                      
                     </div>
                 </header>
                 <a href="#" class="image featured"><img src="../imagen/noticia/{{ $noticia->foto }}" alt="" /></a>

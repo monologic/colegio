@@ -15,7 +15,7 @@
                     </div>
                 </header>
                 <a href="#" class="image featured"><img src="imagen/noticia/{{ $noticia->foto }}" alt="" /></a>
-                <p class="text-center" style="margin-top: -45px">{{ $noticia->epigrafe }}</p>
+                <p class="text-center" style="margin-top: -45px;text-align: left;">{{ $noticia->epigrafe }}</p>
                 <footer>
                     <ul class="actions">
                         <li><a href="noticias/{{ $noticia->id }}"  class="button big">Noticia Completa</a></li>

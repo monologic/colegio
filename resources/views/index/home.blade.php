@@ -60,7 +60,7 @@
 						<header>
 							<div class="title">
 								<h2><a href="noticias/@{{n.id}}">@{{n.titulo}}</a></h2>
-								<blockquote>@{{n.copete}}</blockquote>
+								<blockquote style="text-align: left;">@{{n.copete}}</blockquote>
 							</div>
 						</header>
 						<figure>
@@ -83,8 +83,6 @@
 									<div class="cont-enlaces">
 										<img class="hijo" src="imagen/enlace/@{{en.imagen}}" style="width:100%;margin: 0px auto 0px auto" alt="" />
 									</div>
-									<figcaption class="text-center">@{{en.nombre}}</figcaption>
-									
 								</div>
 							</a>
 						</div>
