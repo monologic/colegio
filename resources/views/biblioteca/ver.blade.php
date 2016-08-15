@@ -17,7 +17,7 @@
                         <button type="submit" class="btn btn-colegio">Buscar</button>
                     </form>
                 </div>
-            @if ( Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 6)
+            @if ( Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 5)
                 
                     @foreach ($archivos as $archivo)
                         <div class="cartA">
