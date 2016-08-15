@@ -13,7 +13,7 @@
 								<a href="#" ><img src="images/logo.gif" alt="" class="insig" /></a>
 								<header class="text-center">
 									<h2><img src="images/txt.png" alt="" width="200" /></h2>
-									<p style="font-size: .7rem;margin-top: -60px">Superación y disciplina</a></p>
+									<p style="font-size: .7rem;margin-top: -47px">Superación y disciplina</a></p>
 								</header>
 							</section>
 							<section ng-controller="comunicadoController" ng-init="getComuni()">
@@ -74,20 +74,15 @@
 			</div>		
 
 			<section class="col-md-12 col-sm-12"  ng-controller="enlaceController" ng-init="getindexe()">
-				<div class="conten">
-					<h4 class="text-center">Enlaces</h4>
-					<div ng-repeat="en in enlaces" style="margin-top: 70px">
-						<div>
+				<h4 class="text-center">Enlaces</h4>
+				<div class="row">
+					<div ng-repeat="en in enlaces" class="col-md-3 col-sm-3 col-xs-6">
 							<a href="@{{en.url}}" target="_blank">
-								<div class="col-md-3 col-sm-4 col-xs-6">
-									<div class="cont-enlaces">
-										<img class="hijo" src="imagen/enlace/@{{en.imagen}}" style="width:100%;margin: 0px auto 0px auto" alt="" />
+									<div class="cont-enlaces" >
+										<img class="hijo" src="imagen/enlace/@{{en.imagen}}" style="width:80%;margin: 0px auto 0px auto" alt="" />
 									</div>
-								</div>
 							</a>
 						</div>
-						
-					</div>	
 				</div>
 			</section>
 		</div>

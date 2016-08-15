@@ -18,7 +18,7 @@
 						    <input type="text" class="form-control" id="direccion"  name="url" required>
 						</div>
 						<div class="form-group">
-						    <b><p for="imagen">Imagen</p></b>
+						    <b><p for="imagen">Imagen (Recomendación 16:9)</p></b>
 						    <input type="file" name="imagen" required>
 						</div>
 						
