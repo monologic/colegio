@@ -77,11 +77,18 @@
 				<div class="conten">
 					<h4 class="text-center">Enlaces</h4>
 					<div ng-repeat="en in enlaces" style="margin-top: 70px">
-						<a href="@{{en.url}}" target="_blank">
-							<div class="col-md-3 col-sm-4 col-xs-6">
-								<img class="child" src="imagen/enlace/@{{en.imagen}}" style="width:100%;margin: 0px auto 0px auto" alt="" /><figcaption class="text-center">@{{en.nombre}}</figcaption>
-							</div>
-						</a>
+						<div>
+							<a href="@{{en.url}}" target="_blank">
+								<div class="col-md-3 col-sm-4 col-xs-6 ">
+									<div class="cont-enlaces">
+										<img class="child" src="imagen/enlace/@{{en.imagen}}" style="width:100%;margin: 0px auto 0px auto" alt="" />
+									</div>
+									<figcaption class="text-center">@{{en.nombre}}</figcaption>
+									
+								</div>
+							</a>
+						</div>
+						
 					</div>	
 				</div>
 			</section>
@@ -93,15 +100,6 @@
 		<script src="{{ asset('assets/js/ng-scripts/controllers/enlaceController.js') }}"></script> 
 		<script src="{{ asset('assets/js/ng-scripts/controllers/sliderController.js') }}"></script>
 		<script>
-			$(window).resize(function(){
-			   // Código de respuesta
-			   		a=$( window ).width()
-					if( a <= 768 ){
-							//$('#copy').appendTo('#vf');
-					} else {
-						
-					}
-			});
 		</script>
 	</div>
 @endsection

@@ -67,13 +67,13 @@
 							<section>
 								<ul class="links">
 									<li>
-										<a href="{{ url('/') }}>
+										<a href="{{ url('/') }}">
 											<h3>Inicio</h3>
 											
 										</a>
 									</li>
 									<li>
-										<a href="{{ url('/institucional') }}>
+										<a href="{{ url('/institucional') }}">
 											<h3>Institucionail</h3>
 											
 										</a>
