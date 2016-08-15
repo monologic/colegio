@@ -7,13 +7,13 @@
     </li>
     <li>
         <a href="{{ url('app/archivos') }}">
-            <i class="pe-7s-science"></i>
+            <i class="pe-7s-notebook"></i>
             <p>Biblioteca</p>
         </a>
     </li>
     <li>
         <a href="{{ url('app/actividades') }}">
-            <i class="pe-7s-science"></i>
+            <i class="pe-7s-bicycle"></i>
             <p>Actividades</p>
         </a>
     </li>

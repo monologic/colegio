@@ -1,7 +1,7 @@
 <ul class="nav">
     <li class="">
         <a href="{{ url('app/comunicados') }}">
-            <i class="pe-7s-graph"></i>
+            <i class="pe-7s-note"></i>
             <p>Comunicados</p>
         </a>
     </li>
@@ -19,13 +19,13 @@
     </li>
     <li>
         <a href="{{ url('app/actividades') }}">
-            <i class="pe-7s-science"></i>
+            <i class="pe-7s-bicycle"></i>
             <p>Actividades</p>
         </a>
     </li>
     <li>
         <a href="{{ url('app/archivos') }}">
-            <i class="pe-7s-science"></i>
+            <i class="pe-7s-notebook"></i>
             <p>Biblioteca</p>
         </a>
     </li>

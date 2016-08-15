@@ -1,25 +1,25 @@
 <ul class="nav">
     <li class="">
         <a href="{{ url('app/slider') }}">
-            <i class="pe-7s-graph"></i>
+            <i class="pe-7s-photo"></i>
             <p>Sliders</p>
         </a>
     </li>
     <li>
         <a  href="{{ url('app/enlaces') }}">
-            <i class="pe-7s-user"></i>
+            <i class="pe-7s-cash"></i>
             <p>Enlaces</p>
         </a>
     </li>
    <li>
         <a href="{{ url('app/album') }}">
-            <i class="pe-7s-science"></i>
+            <i class="pe-7s-film"></i>
             <p>Galería</p>
         </a>
     </li>
     <li>
         <a  href="{{ url('app/usuarios') }}">
-            <i class="pe-7s-science"></i>
+            <i class="pe-7s-users"></i>
             <p>Usuarios</p>
         </a>
     </li>

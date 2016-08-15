@@ -5,9 +5,8 @@
 @section('content')
     <div ng-controller="actividadController" ng-init="get();">
         <div class="contenidos">
-        @if ( Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 5)
             <div class="col-md-6">
-                <div class="monthly" id="mycalendar" style="width: 80%;margin:20px auto 20px auto;max-width: 400px;box-shadow: 5px 5px 5px #888888;"></div>
+                <div class="monthly" id="mycalendar" style="width: 98%;margin:20px auto 20px auto;box-shadow: 5px 5px 5px #888888;"></div>
             </div>
             <div class="col-md-6">
                 <div class="actividades">
@@ -19,24 +18,8 @@
                     </section>
                 </div>
             </div>
-        @endif
-
-
          @if ( Auth::user()->usuariotipo_id == 2 || Auth::user()->usuariotipo_id == 3 || Auth::user()->usuariotipo_id == 4)
-            <div class="col-md-6">
-                <div class="monthly" id="mycalendar" style="width: 80%;margin:20px auto 20px auto;max-width: 400px;box-shadow: 5px 5px 5px #888888;"></div>
-            </div>
-            <div class="col-md-6">
-                <div class="actividades">
-                    <div class="hed">
-                        <span id="fec">Lista de actividades</span>
-                    </div>
-                    <section style="padding: 15px">
-                        <div id="results"></div>
-                    </section>
-                </div>
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="cart">
                     <h2 class="titulo">Mis Actividades</h2>
                     <table class="myTable table-hover">
