@@ -34,7 +34,7 @@
 
 				<!-- Header -->
 					<header id="header" style="height: 60px">
-						<h1><a href="/"><img src="images/txt.png" alt="" width="150" style="padding-top: 10px" /></a></h1>
+						<h1><a href="/"><img src="{{asset('images/txt.png')}}" alt="" width="150" style="padding-top: 10px" /></a></h1>
 						<nav class="links">
 							<ul>
 								

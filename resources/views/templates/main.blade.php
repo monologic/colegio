@@ -83,7 +83,7 @@
 		                        <span class="icon-bar"></span>
 		                        <span class="icon-bar"></span>
 		                    </button>
-		                    <a class="navbar-brand" href="#">Robert Gagne</a>
+		                    <h1 style="margin-top: 5px"><a href="/"><img src="{{asset('images/txt.png')}}" alt="" width="150"/></a></h1>
 		                </div>
 		                <div class="collapse navbar-collapse">
 							 <ul class="nav navbar-nav navbar-right">
