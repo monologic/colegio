@@ -4,7 +4,8 @@
 
 @section('content')
     <div style="width: 100%;margin: 10px auto 10px auto">
-    @foreach ($noticias as $noticia)
+    <div class="row">
+        @foreach ($noticias as $noticia)
         <div class="col-md-12">
              <article class="noticia ve" >
                 <header>
@@ -23,6 +24,8 @@
             </article>
         </div>
         @endforeach
+    </div>
+    
     </div>
     
 @endsection
