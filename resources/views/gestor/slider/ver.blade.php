@@ -11,7 +11,7 @@
                     <table class="myTable table-hover">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>Orden</th>
                                 <th>Nombre</th>
                                 <th>Estado</th>
                                 <th>Imagen</th> 
@@ -20,7 +20,7 @@
                         </thead>
                         <tbody>
                             <tr ng-repeat="x in slider">
-                               <td>@{{$index+1}}</td>
+                               <td>@{{x.orden}}</td>
                                 <td>@{{ x.titulo }}</td>
                                 <td>@{{ x.estado }}</td>
                                 <td><img src="../imagen/slider/@{{ x.imagen }}" width="80" height="50"></td>
