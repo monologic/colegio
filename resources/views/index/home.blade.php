@@ -50,7 +50,7 @@
 			<div class="col-md-8 col-sm-8 col-xs-10"  style="z-index: 1;margin-bottom: 50px">
 				<section id="copy" class="slid"  ng-controller="sliderController" ng-init="gets()">
 					<div id="owl-demo" class="owl-carousel">
-						<div class="item" ng-repeat="f in slider" on-finish-render="ngRepeatFinished"><img class="img-responsive"  src="imagen/slider/@{{f.imagen}}" ><p class="titulo-slider">@{{f.titulo}}</p></div>
+						<div class="item" ng-repeat="f in slider" on-finish-render="ngRepeatFinished"><img class="img-responsive" style="width: 100%"  src="imagen/slider/@{{f.imagen}}" ><p class="titulo-slider">@{{f.titulo}}</p></div>
 
 					</div>
 				</section>
@@ -79,9 +79,9 @@
 					<div ng-repeat="en in enlaces" style="margin-top: 70px">
 						<div>
 							<a href="@{{en.url}}" target="_blank">
-								<div class="col-md-3 col-sm-4 col-xs-6 ">
+								<div class="col-md-3 col-sm-4 col-xs-6">
 									<div class="cont-enlaces">
-										<img class="child" src="imagen/enlace/@{{en.imagen}}" style="width:100%;margin: 0px auto 0px auto" alt="" />
+										<img class="hijo" src="imagen/enlace/@{{en.imagen}}" style="width:100%;margin: 0px auto 0px auto" alt="" />
 									</div>
 									<figcaption class="text-center">@{{en.nombre}}</figcaption>
 									

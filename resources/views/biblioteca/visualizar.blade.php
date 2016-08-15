@@ -9,7 +9,7 @@
 		@else
 			<div class="cinta">	
 			</div>
-			<iframe id="frame" src="https://drive.google.com/viewerng/viewer?url=http://robert.runait.com/archivos/{{ $archivo->archivo }}?pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="90%" height="auto"></iframe>
+			<iframe id="frame" src="https://drive.google.com/viewerng/viewer?url=http://robert.runait.com/archivos/{{ $archivo->archivo }}?pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="90%" style="height: 600px"></iframe>
 		@endif
 	</div>
 @endsection

@@ -29,7 +29,8 @@
                            </blockquote>
                            <div> <b>Descripción :</b></div>
                             <div> {{ $archivo->decripcion }}</div>
-                            <button class="btn-colegio2" ng-click="plus({{ $archivo }});" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-eye-open"></i> Ver documento</button>
+                            <button class="btn btn-colegio" ng-click="plus({{ $archivo }});" data-toggle="modal" data-target="#mas"><i class="fa fa-plus"> </i> Información</button>
+                            <a href="archivo/{{ $archivo->id }}" alt="archivo" class="btn btn-colegio" /><i class="fa fa-eye" aria-hidden="true"></i> Ver Documento</a> 
                         </div>
                     @endforeach 
                     {!! $archivos->render() !!} 
