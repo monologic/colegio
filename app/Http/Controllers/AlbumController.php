@@ -46,6 +46,7 @@ class AlbumController extends Controller
     public function store(Request $request)
     {
         $galeria = new Albun($request->all());
+        $galeria->activo = 'Activo';
         $galeria->save();
         return redirect('app/album');
     }
@@ -100,7 +101,7 @@ class AlbumController extends Controller
         return view('gestor.galeria.ver')->with('galeria', $galerias)->with('idalbum',$id);
     }
     public function grid(){
-        $galerias = Albun::orderBy('id','DESC')->paginate(20);
+        $galerias = Albun::where('activo', 'Activo')->orderBy('id','DESC')->paginate(20);
         $galerias->each(function($galerias){
             $galerias->album;
         });
@@ -108,5 +109,17 @@ class AlbumController extends Controller
         $todo[]=$galerias ;
         $todo[]=$videos ;
         return view('index.galeria')->with('todo', $todo);
+    }
+    public function cambiarEstadoAlbum($id)
+    {
+        $album = Albun::find($id);
+        if ($album->activo == 'Activo') {
+            $album->activo = 'Inactivo';
+        }
+        else
+            $album->activo = 'Activo';
+
+        $album->save();
+        return redirect('app/album');
     }
 }

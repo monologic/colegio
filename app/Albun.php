@@ -8,7 +8,7 @@ class Albun extends Model
 {
     public $timestamps = false;
     
-    protected $fillable = ['nombre', 'nombre','descripcion', 'epigrafe'];
+    protected $fillable = ['nombre', 'nombre','descripcion', 'epigrafe', 'activo'];
 
     public function album()
     {

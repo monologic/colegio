@@ -123,7 +123,7 @@
                                 <img ng-src="../imagen/noticia/@{{fotom}}" alt="noticia" class="imgn" />
                                 <figcaption ng-bind="copetem"></figcaption> 
                             </figure>
-                            <div ng-bind="cuerpom"></div>
+                            <div id="cuerpo"></div>
                             
                             
                         </div>

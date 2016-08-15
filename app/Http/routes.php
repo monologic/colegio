@@ -76,6 +76,7 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 	    Route::post('album/{id}', 'AlbumController@update');
 		Route::resource('album', 'AlbumController');
 
+		Route::get('cambiarEstadoAlbum/{id}', 'AlbumController@cambiarEstadoAlbum');
 
 	    Route::post('album/{id}', 'AlbumController@update');
 		Route::resource('video', 'VideoController');

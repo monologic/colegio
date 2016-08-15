@@ -124,8 +124,7 @@
                                 <img ng-src="../imagen/novedades/@{{fotom}}" alt="novedades robert gagne" class="imgn" />
                                 <figcaption ng-bind="copetem"></figcaption> 
                             </figure>
-                            <div ng-bind="cuerpom"></div>
-                            
+                            <div id="cuerpo"></div>
                             
                         </div>
                     </div>

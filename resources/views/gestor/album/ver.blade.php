@@ -3,7 +3,8 @@
 @section('title', 'Album')
 
 @section('content')
-     <div class="cart" style="max-width: 600px">
+    <div ng-controller="videoController"> 
+    <div class="cart" style="max-width: 600px">
         <h1 class="titulo text-center">Álbumes de fotos</h1>
         <a href="{{ url('app/album/create') }}" class="btn-colegio2" style="display: block;position:relative;padding: 7px;max-width: 100px;right: 0"> Crear Álbum</a>
         <table class="table">
@@ -13,6 +14,7 @@
                     <th>Nombre</th>
                     <th>Descripción</th>
                     <th>Fotos</th>
+                    <th>Estado</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,13 +23,30 @@
                     <td>{{$albun->nombre}}</td>
                     <td>{{$albun->descripcion}}</td>
                     <td><a href="getAlbum/{{$albun->id}}" class="btn"><i class="glyphicon glyphicon-picture"></i></a></td>
+                    <td>{{$albun->activo}}<button class="btn" onclick="cambiarEstado({{$albun->id}});"><i class="glyphicon glyphicon-refresh"></i></button></td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
+        <script type="text/javascript">
+            function cambiarEstado(id) {
+                swal({   title: "",
+                    text: "Deseas cambiar el estado del álbum?",
+                    type: "warning",   
+                    showCancelButton: true,   
+                    confirmButtonColor: "#DD6B55",   
+                    confirmButtonText: "Sí",
+                    closeOnConfirm: false,
+                    cancelButtonText:"Cancelar", }, 
+                    function(){
+                        window.location.href = "cambiarEstadoAlbum/" + id;
+                    }
+                );
+            }
+        </script>
     </div>
     <!-- videos -->
-    <div ng-controller="videoController"> 
+    
     <div class="cart" style="max-width: 600px">
         <h1 class="titulo text-center">Videos</h1>
         <a href="{{ url('app/video/create') }}" class="btn-colegio2" style="display: block;position:relative;padding: 7px;max-width: 100px;right: 0"> Añadir Video</a>
