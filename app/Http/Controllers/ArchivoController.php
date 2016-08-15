@@ -55,15 +55,24 @@ class ArchivoController extends Controller
                 $name = 'archivo_'. time() . '.' .$file->getClientOriginalExtension();
                 $path=public_path() . "/archivos/";
                 $file -> move($path,$name);
+                $archivo = new Archivo($request->all());
+                $archivo->archivo = $name;
+                $archivo->save();
             }
             else
+            {
                 dd('Tipo de Archivo no permitido, Solo se permiten archivos PDF y audio en mp3');
-            
+            }
         }
-        $archivo = new Archivo($request->all());
-
-        $archivo->archivo = $name;
-        $archivo->save();
+        else
+        {
+            $es1 = $request->video;
+                $porciones = explode("=", $es1);
+                $fn ='https://www.youtube.com/embed/'.$porciones[1].'?autoplay=0';
+                $archivo = new Archivo($request->all());
+                $archivo->archivo = $fn;
+                $archivo->save();
+        }
         return redirect('app/archivos');
     }
 
