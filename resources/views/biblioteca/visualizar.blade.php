@@ -4,11 +4,12 @@
 
 @section('content')
 	<div>
-			<div class="cinta">
-				
+		@if ($archivo->archivotipo_id == 3)
+		    <iframe width="100%" src="{{ $archivo->archivo }}" frameborder="0" style="height:400px"></iframe>
+		@else
+			<div class="cinta">	
 			</div>
-		<iframe id="frame" src="https://drive.google.com/viewerng/viewer?url=http://robert.runait.com/archivos/{{ $archivo->archivo }}?pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="90%" height="700px"></iframe>
-			
-		</iframe>
+			<iframe id="frame" src="https://drive.google.com/viewerng/viewer?url=http://robert.runait.com/archivos/{{ $archivo->archivo }}?pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="90%" height="auto"></iframe>
+		@endif
 	</div>
 @endsection

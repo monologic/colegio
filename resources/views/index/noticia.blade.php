@@ -12,13 +12,13 @@
                         <h2><a>{{ $noticia->titulo }}</a></h2>
                         <blockquote>{{ $noticia->copete }}</blockquote>                      
                     </div>
-                    <div class="meta">
-                        <time class="published" datetime="2015-11-01">{{ $noticia->fecha }}</time>
-                        <span href="#" class="author"><span class="name">{{ $noticia->autor }}</span></span>
-                    </div>
                 </header>
                 <a href="#" class="image featured"><img src="../imagen/noticia/{{ $noticia->foto }}" alt="" /></a>
                 <p class="text-center" style="margin-top: -45px">{{ $noticia->epigrafe }}</p>
+                <div class="notautor">
+                        <time class="published" datetime="2015-11-01"><b>Fecha : </b> {{ $noticia->fecha }}</time><br>
+                        <span class="name"><b>Autor : </b> {{ $noticia->autor }}</span>
+                </div>
                 <p>{!! $noticia->cuerpo !!}</p>
             </article>
         </div>

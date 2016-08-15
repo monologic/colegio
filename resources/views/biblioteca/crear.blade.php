@@ -46,18 +46,22 @@
 						    <input type="text" class="form-control" id="edicion"  name="edicion" required>
 						</div>
 						<div class="form-group">
-							<br>
-						    <b for="archivo">Archivo</b>
-						    <br>
-						    <input type="file" name="archivo">
-						
-						<div class="form-group">
 							<label for="edicion">Tipo de Archivo</label>
-							<select class="form-control" name="archivotipo_id" required>
+							<select class="form-control" name="archivotipo_id" id="op" onchange="acc()" required>
 	  							@foreach ($archivoTipos as $at)
 	 						    	<option value="{{$at->id}}">{{ $at->tipo }}</option>
 	  							@endforeach
   							</select>
+						</div>
+						<div class="form-group" id="mfiles">
+							<br>
+						    <b for="archivo">Archivo</b>
+						    <br>
+						    <input type="file" name="archivo">
+						</div>
+						<div class="form-group" id="vfiles">
+						    <label for="edicion">Url del video</label>
+						    <input type="text" class="form-control" id="video"  name="video" required>
 						</div>
 						<div class="form-group">
 						    <label for="des">Descripción</label>
@@ -71,4 +75,19 @@
 	    	</div>
 		</div>
 	</div>
+	<script>
+		function acc(){
+			var qw = $('#op').val();
+			if (qw == 3) {
+				$('#mfiles').css('display','none');
+				$('#vfiles').css('display','block');
+			}
+			else
+			{
+				$('#mfiles').css('display','block');
+				$('#vfiles').css('display','none');
+			}
+			
+		}
+	</script>
 @endsection

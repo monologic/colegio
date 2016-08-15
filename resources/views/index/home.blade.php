@@ -58,16 +58,15 @@
 					<h2>Noticias</h2>
 					<article class="noticia" ng-repeat="n in allnot">
 						<header>
-											<div class="title">
-												<h2><a href="noticias/@{{n.id}}">@{{n.titulo}}</a></h2>
-												<blockquote>@{{n.copete}}</blockquote>
-											</div>
-											<div class="meta">
-												<time class="published" datetime="2015-11-01">@{{n.solofe}}</time>
-												<p class="text-center"><p>@{{n.autor}}</p></p>
-											</div>
+							<div class="title">
+								<h2><a href="noticias/@{{n.id}}">@{{n.titulo}}</a></h2>
+								<blockquote>@{{n.copete}}</blockquote>
+							</div>
 						</header>
+						<figure>
 						<a href="noticias/@{{n.id}}" class="image featured"><img src="imagen/noticia/@{{n.foto}}" alt="" /></a>
+						<figcaption class="text-center" style="margin-top: -40px">@{{n.epigrafe}}</figcaption>
+						</figure>
 					</article>	
 				</section>
 				

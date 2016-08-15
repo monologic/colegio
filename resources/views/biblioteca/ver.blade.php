@@ -4,10 +4,11 @@
 @section('title', 'Biblioteca')
 
 @section('content')
-    <div ng-controller="archivoController" ng-init="getTipos();">
-        <div class="contenidosa">
+    <div ng-controller="archivoController" ng-init="getTipos();" >
+        <div class="contenidosa" style="width: 98%">
             <div class="">
-                    <h1 class="titulo text-center">Biblioteca Virtual</h1>
+                <h1 class="titulo text-center">Biblioteca Virtual</h1>
+                <div style="margin-left: 20px">
                     <form class="form-inline" action="{{ url('app/archivos') }}" method="GET">
                         <label for="edicion">Tipo de archivo</label>
                         <select class="form-control" name="archivotipo_id" ng-model="archivotipo_id" ng-options="at.tipo for at in ats track by at.id">
@@ -15,13 +16,13 @@
                         <input type="text" class="form-control" id="valor" name="valor" >
                         <button type="submit" class="btn btn-colegio">Buscar</button>
                     </form>
+                </div>
             @if ( Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 6)
                 
                     @foreach ($archivos as $archivo)
                         <div class="cartA">
                             <div class="ta">{{ $archivo->titulo }}</div>
                            <blockquote class="bro">
-                                
                                 <div> <b>Autor:</b>  {{ $archivo->autor }}</div>
                                 <div> <b>Publicación:</b>  {{ $archivo->created_at }}</div>
                                 <div> <b>Tipo :</b> {{ $archivo->archivotipo->tipo }}</div>
@@ -47,14 +48,19 @@
                            </blockquote>
                            <div> <b>Descripción:</b></div>
                             <div> {{ $archivo->decripcion }}</div>
-                            <button class="btn-colegio2" ng-click="plus({{ $archivo }});" data-toggle="modal" data-target="#mas"><i class="glyphicon glyphicon-eye-open"></i> Ver documento</button>
+                            <div style="margin-top: 20px">
+                                <button class="btn btn-colegio" ng-click="plus({{ $archivo }});" data-toggle="modal" data-target="#mas"><i class="fa fa-plus"> </i> Información</button>
+
+                                <a href="archivo/{{ $archivo->id }}" alt="archivo" class="btn btn-colegio" /><i class="fa fa-eye" aria-hidden="true"></i> Ver Documento</a> 
+                            </div>
+                            
                         </div>
                     @endforeach 
                     {!! $archivos->render() !!} 
             </div>
             <div class="col-md-4">
                 <div class="cart">
-                    <h2 class="titulo">Mis Archivos</h2>
+                    <h2 class="titulo">Mis Publicaciones</h2>
                     <table class="myTable table-hover">
                         <thead>
                             <tr>
@@ -161,14 +167,8 @@
                                 <div><b>Fecha: </b><span ng-bind="fecham"></span></div>
                                 <div><b>Edición: </b><span ng-bind="edicion"></span></div>
                             </blockquote>
-                            
-                            <div ng-bind="cuerpom"></div>
-                            
-                            <figure class="imgnot">
-                                <a href="@{{formUrl}}" alt="archivo" class="imgn btn-colegio" /><i class="fa fa-eye" aria-hidden="true"></i> Ver archivo</a> 
-                            </figure>
-                            <div id='frameVer'></div>
-                            
+                            <p ng-bind="descrip"></p>
+                            <div id='frameVer'></div>  
                         </div>
                     </div>
             </div>

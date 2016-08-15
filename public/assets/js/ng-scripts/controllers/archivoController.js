@@ -23,6 +23,7 @@ app.controller('archivoController', function($scope,$http) {
 
         $scope.id = data.id;
         $scope.formUrl = 'archivo/' + data.id;
+        $scope.descrip = data.decripcion;
         $scope.titulom = data.titulo;
         $scope.autorm = data.autor;
         $scope.pub_lugar = data.pub_lugar;
