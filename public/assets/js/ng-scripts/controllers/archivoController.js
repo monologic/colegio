@@ -74,4 +74,8 @@ app.controller('archivoController', function($scope,$http) {
     $scope.editarArchivo = function () {
         $( "#formEdit" ).submit();
     }
+
+    $scope.guardarArchivo = function () {
+        $( "#formGuardar" ).submit();
+    }
 });

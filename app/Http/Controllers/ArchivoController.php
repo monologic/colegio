@@ -157,6 +157,7 @@ class ArchivoController extends Controller
     public function visualizar($id)
     {
         $archivo = Archivo::find($id);
+        //dd($archivo);
         return view('biblioteca.visualizar')->with('archivo', $archivo);
     }
 }
