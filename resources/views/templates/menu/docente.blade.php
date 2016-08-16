@@ -29,4 +29,10 @@
             <p>Biblioteca</p>
         </a>
     </li>
+    <li class="out-salir" style="display: none">
+        <a  href="{{ url('logout') }}">
+            <i class="pe-7s-back-2"></i>
+            <p>Salir</p>
+        </a>
+    </li> 
 </ul>

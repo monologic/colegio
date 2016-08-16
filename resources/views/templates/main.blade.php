@@ -121,6 +121,7 @@
 			$('.sidebar').addClass('moviles');
 			$('.main-panel').addClass('movilpanel');
 			$('.navbar-collapse').remove();
+			$('.out-salir').css('display','block');
 		} 
 		$(document).ready(function(){
 		   if( a < 768 ){
@@ -135,9 +136,11 @@
 				if( a < 768 ){
 					$('.sidebar').addClass('moviles');
 					$('.main-panel').addClass('movilpanel');
+					$('.out-salir').css('display','block');
 				} else {
 					$('.sidebar').removeClass('moviles');
 					$('.main-panel').removeClass('movilpanel');
+					$('.out-salir').css('display','none');
 				}
 		});
 		function menu()

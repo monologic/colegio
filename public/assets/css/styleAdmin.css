@@ -13,6 +13,7 @@
 	}
 
  }
+
 .myTable{
 	
 	font-family: 'Raleway', sans-serif;
@@ -326,5 +327,9 @@ blockquote{
  	float: right;
  }
  .btn-full{
+ 	margin-top: 5px;
  	color: black;	
+ }
+ #btn-n{
+ 	display: none;
  }

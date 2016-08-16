@@ -25,12 +25,17 @@
         {
     		$('.cont-archivo').addClass('fullScream');
     		$('#frame').css('height','100%');
+    		$( "#btn-f" ).css( 'display', 'none' );
     		$( "#btn-f" ).prop( "disabled", true );
+    		$( "#btn-n" ).css( 'display', 'block' );
     		$( "#btn-n" ).prop( "disabled", false );
+
         }
         function normal(){
         	$('.cont-archivo').removeClass('fullScream');
     		$('#frame').css('height','500px');
+    		$( "#btn-f" ).css( 'display', 'block' );
+    		$( "#btn-n" ).css( 'display', 'none' );
     		$( "#btn-f" ).prop( "disabled", false );
     		$( "#btn-n" ).prop( "disabled", true );
         }
