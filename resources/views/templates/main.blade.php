@@ -154,6 +154,7 @@
 					$('.main-panel').addClass('movilpanel');
 				} 
 		}
+		
 	</script>
 		
 	</body>
