@@ -114,9 +114,13 @@
 		</div>
 	<script>
 		a=$( window ).width()
+		if( a < 997 ){
+			$('.navbar-collapse').remove();
+		} 
 		if( a < 768 ){
 			$('.sidebar').addClass('moviles');
 			$('.main-panel').addClass('movilpanel');
+			$('.navbar-collapse').remove();
 		} 
 		$(document).ready(function(){
 		   if( a < 768 ){
