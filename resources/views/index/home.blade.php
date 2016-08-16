@@ -47,7 +47,7 @@
 											<a href="/novedades">Ver todas la novedades</a>
 							</div>	
 			</div>	
-			<div class="col-md-8 col-sm-8 col-xs-10"  style="z-index: 1;margin-bottom: 50px">
+			<div class="col-md-8 col-sm-8 col-xs-9"  style="z-index: 1;margin-bottom: 50px">
 				<section id="copy" class="slid"  ng-controller="sliderController" ng-init="gets()">
 					<div id="owl-demo" class="owl-carousel">
 						<div class="item" ng-repeat="f in slider" on-finish-render="ngRepeatFinished"><img class="img-responsive" style="width: 100%"  src="imagen/slider/@{{f.imagen}}" ><p class="titulo-slider">@{{f.titulo}}</p></div>
@@ -65,7 +65,7 @@
 						</header>
 						<figure>
 						<a href="noticias/@{{n.id}}" class="image featured"><img src="imagen/noticia/@{{n.foto}}" alt="" /></a>
-						<figcaption class="text-center" style="margin-top: -40px">@{{n.epigrafe}}</figcaption>
+						<figcaption class="text-center" >@{{n.epigrafe}}</figcaption>
 						</figure>
 					</article>	
 				</section>

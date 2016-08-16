@@ -114,10 +114,17 @@
 		</div>
 	<script>
 		a=$( window ).width()
-				if( a < 768 ){
-					$('.sidebar').addClass('moviles');
-					$('.main-panel').addClass('movilpanel');
-				} 
+		if( a < 768 ){
+			$('.sidebar').addClass('moviles');
+			$('.main-panel').addClass('movilpanel');
+		} 
+		$(document).ready(function(){
+		   if( a < 768 ){
+						$('.sidebar').addClass('moviles');
+						$('.main-panel').addClass('movilpanel');
+					}  
+		});
+		
 		$(window).resize(function(){
 		   // Código de respuesta
 		   		a=$( window ).width()

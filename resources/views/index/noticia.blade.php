@@ -6,7 +6,7 @@
     <div style="width: 100%;margin: 10px auto 10px auto">
     <div class="row">
         @foreach ($noticias as $noticia)
-        <div class="col-md-12">
+        <div class="col-md-12 col-xs-10">
              <article class="noticia ve" >
                 <header>
                     <div class="title">
