@@ -28,7 +28,7 @@
 								<li>
 									<figure>
 										<figcaption>
-											<h3>{{ $galeria->nombre }}</h3>
+											<h4 style="font-size:1.1em;">{{ $galeria->nombre }}</h4>
 											<p>{{ $galeria->descripcion }}</p>
 										</figcaption>
 										<img src="imagen/galeria/{{$galeria->imagen}}" alt="{{$galeria->nombre}} robert gagne"/>
@@ -58,9 +58,9 @@
 							<li>
 								<figure>
 									<div class="vdo">
-								    	<iframe width="100%" height="100%" src="{{ $video->url }}?autoplay=0" frameborder="0"></iframe>
+								    	<iframe width="100%" height="100%" src="{{ $video->url }}?autoplay=0" frameborder="0" allowfullscreen ></iframe>
 								    </div>
-									<figcaption><h3>{{ $video->nombre }}</h3></figcaption>
+									<figcaption><h4>{{ $video->nombre }}</h4></figcaption>
 								</figure>
 							</li>
 							@endforeach 
@@ -76,7 +76,7 @@
 										<p>{{ $video->descripcion }}</p>
 									</figcaption>
 									<div class="vdo">
-								    	<iframe width="100%" src="{{ $video->url }}" frameborder="0" style="height:400px"></iframe>
+								    	<iframe width="100%" src="{{ $video->url }}" frameborder="0" allowfullscreen style="height:400px"></iframe>
 								    </div>
 								</figure>
 							</li>
