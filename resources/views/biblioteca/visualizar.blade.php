@@ -5,7 +5,7 @@
 @section('content')
 	<div>
 		@if ($archivo->archivotipo_id == 3)
-		    <iframe width="100%" src="{{ $archivo->archivo }}" frameborder="0" style="height:400px"></iframe>
+		    <iframe width="100%" src="{{ $archivo->archivo }}" frameborder="0" style="height:400px" allowfullscreen></iframe>
 		@endif
 		@if ($archivo->archivotipo_id == 1)
 			<div class="cont-archivo">
