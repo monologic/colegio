@@ -1,6 +1,6 @@
 <ul class="nav">
     <li class="">
-        <a href="">
+        <a href="{{Auth::user()->url}}?est={{Auth::user()->dni. '-' .Auth::user()->id}}">
             <i class="pe-7s-graph"></i>
             <p>Calificaciones</p>
         </a>

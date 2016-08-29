@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Tutor;
+use App\Colegio;
 
 class PadreController extends Controller
 {
@@ -142,6 +143,19 @@ class PadreController extends Controller
 
         return response()->json( $hijos );
     }
+    public function getHijosPadreActual()
+    {
+
+        $hijos = \DB::table('tutors')
+            ->join('users', 'users.dni', '=', 'tutors.dni_hijo')
+            ->select('tutors.id as idTutor', 'users.*')
+            ->where('user_id', \Auth::user()->id)
+            ->get();
+
+        $col = Colegio::all();
+        return view('usuarios.notas', ['colegio' => $col[0] ])->with('hijos', $hijos);
+    }
+    
     public function eliminar($id)
     {
         $tut = Tutor::find($id);

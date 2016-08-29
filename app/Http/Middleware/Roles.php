@@ -39,7 +39,12 @@ class Roles
             }
         }
         if ($grupo == 'grupo5') {
-            if (Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 2 || Auth::user()->usuariotipo_id == 6 || Auth::user()->usuariotipo_id == 5) {
+            if (Auth::user()->usuariotipo_id == 1 || Auth::user()->usuariotipo_id == 2 || Auth::user()->usuariotipo_id == 5) {
+                dd("No estas autorizado");
+            }
+        }
+        if ($grupo == 'grupo6') {
+            if (Auth::user()->usuariotipo_id == 2 || Auth::user()->usuariotipo_id == 3 || Auth::user()->usuariotipo_id == 4 || Auth::user()->usuariotipo_id == 6) {
                 dd("No estas autorizado");
             }
         }

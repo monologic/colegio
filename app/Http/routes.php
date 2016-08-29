@@ -37,6 +37,8 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 
 	Route::get('/', 'HomeController@index');
 	Route::get('getPadre/{dni}', 'PadreController@getPadre');
+	Route::get('urlApp', 'ColegioController@urlApp');
+	Route::post('urlUpdate', 'ColegioController@urlUpdate');
 	Route::get('getEstudiante/{dni}', 'EstudianteController@getEstudiante');
 
 	Route::get('/usuarios', function () {
@@ -180,6 +182,10 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 		Route::get('getHijosPadre/{id}', 'PadreController@getHijosPadre');
 		Route::delete('deleteAsignacion/{id}', 'PadreController@eliminar');
 
+	});
+
+	Route::group(['middleware' => 'rol:grupo6'], function () {
+		Route::get('notas', 'PadreController@getHijosPadreActual');
 	});
 });
 

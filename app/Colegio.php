@@ -8,5 +8,5 @@ class Colegio extends Model
 {
     public $timestamps = false;
     
-    protected $fillable = ['nombre', 'direccion', 'email','facebook','twiter','youtube','telefono','region','ciudad'];
+    protected $fillable = ['nombre', 'direccion', 'email','facebook','twiter','youtube','telefono','region','ciudad','url'];
 }

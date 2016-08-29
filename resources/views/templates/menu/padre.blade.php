@@ -1,6 +1,6 @@
 <ul class="nav">
     <li class="">
-        <a href="">
+        <a href="{{ url('app/notas') }}">
             <i class="pe-7s-graph"></i>
             <p>Calificaciones</p>
         </a>

@@ -23,10 +23,17 @@
             <p>Usuarios</p>
         </a>
     </li>
+    <li>
+        <a  href="{{ url('app/urlApp') }}">
+            <i class="pe-7s-users"></i>
+            <p>Url App</p>
+        </a>
+    </li>
     <li class="out-salir" style="display: none">
         <a  href="{{ url('logout') }}">
             <i class="pe-7s-back-2"></i>
             <p>Salir</p>
         </a>
     </li> 
+
 </ul>

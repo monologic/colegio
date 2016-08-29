@@ -93,4 +93,18 @@ class ColegioController extends Controller
         $not = Colegio::all();
         return response()->json( $not );
     }
+    public function urlApp()
+    {
+        $col = Colegio::all();
+        return view('gestor.general.urlApp')->with('colegio', $col[0]);
+    }
+    public function urlUpdate(Request $request)
+    {   
+        $noticia = Colegio::find(1);
+        //dd($request);
+        $noticia->fill($request->all());
+        $noticia->save();
+
+        return redirect('app/urlApp');
+    }
 }
