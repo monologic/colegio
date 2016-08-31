@@ -6,15 +6,15 @@ app.controller('usuarioController', function($scope,$http) {
         }
         else{
             $http.post('perfil',
-            {   'usuario':$("#usuario").val(),
-                'password':$scope.pass1,
+            {   'password':$scope.pass,
+                'password1':$scope.pass1,
                 
             }).then(function successCallback(response) {
-                if (response.data.error == 0) {
-                    swal("", "Se ha modificado la información de Usuario", "success");
+                if (response.data.msg == 1) {
+                    swal("", "Se ha modificado la contraseña", "success");
                 }
-                else{
-                    swal("", "Este nombre de Usuario no está disponible", "warning");
+                if (response.data.msg == 0) {
+                    swal("", "La contraseña actual es incorrecta", "warning");
                 }
             }, function errorCallback(response) {
             // called asynchronously if an error occurs

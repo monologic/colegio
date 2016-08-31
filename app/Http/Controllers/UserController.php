@@ -24,27 +24,40 @@ class UserController extends Controller
 	}
 	public function editarUsuario(Request $request)
 	{
-		$ct = 0;
+		if (\Hash::check($request->password, \Auth::user()->password )) {
+			
+			$user = User::find(\Auth::user()->id);
+			$user->password = bcrypt($request->password1);
+			$user->save();
+
+			return response()->json([
+	            "msg" => '1'
+	        ]);
+
+		}
+		else {
+			return response()->json([
+	            "msg" => '0'
+	        ]);
+		}
+		/*
+
 		if(\Auth::user()->usuario != $request->usuario){
 			$ct = User::where('usuario', $request->usuario)->get();
 			$ct = count($ct);
 		}
 		if ($ct == 0) {
-			$user = User::find(\Auth::user()->id);
+			
 			$user->usuario = $request->usuario;
 			if ($request->password) {
-				$user->password = bcrypt($request->password);
+				
 			}    	
-			$user->save();
-			return response()->json([
-	            "error" => '0'
-	        ]);
+			
+			
 		}
 		else{
-			return response()->json([
-	            "error" => '1'
-	        ]);
-		}
+			
+		}*/
 	}
 	
 }
