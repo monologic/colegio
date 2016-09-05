@@ -108,7 +108,7 @@ class NoticiasController extends Controller
     {
         Noticia::destroy($id);
 
-        $this->getNoticia();
+        return $this->getNoticia();
     }
     public function getNoticia()
     {

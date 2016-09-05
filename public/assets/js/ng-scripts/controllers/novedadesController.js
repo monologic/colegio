@@ -83,8 +83,12 @@ app.controller('novedadesController', function($scope,$http) {
                     "El registro se ha eliminado.", 
                     "success"); 
 
-                $http.delete( 'noticias/'+id ).then(function successCallback(response) {
-                    $scope.noticias = response.data;
+                $http.delete( 'novedades/'+id ).then(function successCallback(response) {
+                    data = response.data;
+                    for(i in data){
+                        data[i].solofe = $scope.fecha;
+                    }
+                    $scope.noticias = data;
                 }, function errorCallback(response) {
                     swal({   
                         title: "Ha ocurrido un error!",   

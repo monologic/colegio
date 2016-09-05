@@ -58,7 +58,7 @@
                                         <label for="estado">Estado</label>
                                         <select name="estado" class="form-control" ng-model="estado">
                                             <option value="Activo">Activo</option>
-                                            <option value="Inactico">Inactivo</option>
+                                            <option value="Inactivo">Inactivo</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -97,7 +97,7 @@
                                         <label for="estado">Estado</label>
                                         <select name="estado" class="form-control" ng-model="estado">
                                             <option value="Activo">Activo</option>
-                                            <option value="Inactico">Inactivo</option>
+                                            <option value="Inactivo">Inactivo</option>
                                         </select>
                                     </div>
                                     <div class="form-group">

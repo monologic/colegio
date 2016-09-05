@@ -92,10 +92,7 @@
                                         <b for="cuerpo">Cuerpo</b>
                                         <textarea id="" cols="50" rows="10" name="cuerpo" class="edit" ng-model="cuerpom" ></textarea>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="fecha">Fecha de publicación</label>
-                                        <input type="date" class="form-control" id="fecha" placeholder="2016-01-01" name="fecha" ng-model="solofec"  required>
-                                    </div>
+                                    
                                     <input type="hidden" name="posteador" value="{{Auth::user()->dni}}">
                                     <a ng-click='editarNoticia()' class="btn btn-colegio">Guardar</a>
                                 </form>

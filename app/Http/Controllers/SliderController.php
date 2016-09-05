@@ -118,7 +118,7 @@ class SliderController extends Controller
     public function getSliderIndex()
     {
         
-        $not = Slider::orderBy('orden', 'asc')->get();
+        $not = Slider::where('estado','Activo')->orderBy('orden', 'asc')->get();
         return response()->json( $not );
     }
 }
