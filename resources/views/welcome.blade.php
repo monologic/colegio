@@ -33,10 +33,10 @@
 			<div id="wrapper" style="" >
 
 				<!-- Header -->
-					<header id="header" style="height: 60px">
-						<h1><a href="/"><img src="{{asset('images/txt.png')}}" alt="" width="150" style="padding-top: 10px" /></a></h1>
+					<header id="header" style="height: 60px;background-color:#710301">
+						<h1><a href="/"><img src="{{asset('images/txt2.png')}}" alt="" width="150" style="padding-top: 10px" /></a></h1>
 						<nav class="links">
-							<ul>
+							<ul style="color:white">
 								
 								<li><a href="{{ url('/institucional') }}">Institucional</a></li>
 								<li><a href="{{ url('/comunidad') }}">Comunidad</a></li>
@@ -48,10 +48,10 @@
 							<ul>
 								
 								<li class="me">
-									<a href="/app" class="fa fa-user">login</a>
+									<a href="/app" class="fa fa-user" style="color:white">login</a>
 								</li>
 								<li class="menu">
-									<a class="fa-bars" href="#menu">Menu</a>
+									<a class="fa-bars" href="#menu" style="color:white">Menu</a>
 								</li>
 							</ul>
 						</nav>
