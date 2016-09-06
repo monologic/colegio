@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>@yield('title')</title>
-		<meta charset="utf-8" />
+		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}" />
 		
@@ -128,10 +128,10 @@
 
 					</div>
 					<div class="col-md-6 ft" >
-						<h4 style="color: white;font-size: 1rem">Información</h4>
-						<stong>Dirección : @{{o.direccion}}</stong><br>
+						<h4 style="color: white;font-size: 1rem">Informaci&oacute;n</h4>
+						<stong>Direcci&oacute;n : @{{o.direccion}}</stong><br>
 						<stong>Email : @{{o.email}}</stong><br>
-						<stong>Teléfono : @{{o.telefono}}</stong><br>
+						<stong>Tel&eacute;fono : @{{o.telefono}}</stong><br>
 					</div>
 				</section>
 			</footer>

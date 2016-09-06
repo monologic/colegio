@@ -13,7 +13,7 @@
 								<a href="#" ><img src="images/logo.gif" alt="" class="insig" /></a>
 								<header class="text-center">
 									<h2><img src="images/txt.png" alt="" width="200" /></h2>
-									<p style="font-size: .7rem;margin-top: -47px">Superación y disciplina</a></p>
+									<p style="font-size: .7rem;margin-top: -47px">Superaci&oacute;n y disciplina</a></p>
 								</header>
 							</section>
 							<section ng-controller="comunicadoController" ng-init="getComuni()" style="background-color:#004D40;padding:20px;margin-bottom:30px;border:#795548 12px solid;color:white">
@@ -52,7 +52,7 @@
 					</div>
 				</section>
 				<section  ng-controller="noticiaController" ng-init="firstNotice()" style="padding-top: 20px">
-				<h2 class="text-center">NOTICIAS</h2>
+				<h1 class="text-center" style="font-size:1.6rem">NOTICIAS</h1>
 					<article class="noticia" ng-repeat="n in allnot">
 						<header>
 							<div class="title">

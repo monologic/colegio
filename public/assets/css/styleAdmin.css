@@ -75,6 +75,25 @@
 	margin-bottom: -70px;
 	box-shadow: 0px 5px 0px 0px #888888;
 }
+.cinta-video{
+	display: block;
+	position: absolute;
+	top: 0;
+	height: 35px;
+	background-color: black;
+	width: 100%;
+}
+.cinta-video2{
+	display: block;
+	position: absolute;
+	bottom:6px;
+	right: 0;
+	height: 30px;
+	padding-right: 10px;
+	padding-top: 0px;
+	background-color: black;
+	width: 130px;
+}
 #frame{
 
 	min-height: 500px;
@@ -334,6 +353,21 @@ blockquote{
  	margin-top: 5px;
  	color: black;	
  }
+ .btn-full2{
+ 	color: white;
+ 	border:none;
+ 	background-color: transparent;
+ 	margin-top: 5px;
+ 	color: black;
+ 	font-size: 2.3rem;	
+ }
+ .btn-full2 i{
+ 	color: white;
+ 	top:-3px;
+ }
  #btn-n{
+ 	display: none;
+ }
+ #btn-vn{
  	display: none;
  }
