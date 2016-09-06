@@ -50,17 +50,17 @@
 		                      <h1 class="text-center" style="font-size:1.4em;color:#96281B;margin-top: 30px">Directorio</h1>
 		                  	@foreach ($nosotros[1] as $n)
 
-		                  	<section style="max-width: 300px;margin-bottom: 20px">
+		                  	<section style="width: 100%;margin-bottom: 20px">
 		                  	<div class="row">
 		                  		<div class="col-md-4" style="max-width: 70px">
 		                  			<img src="../imagen/docentes/{{$n->foto}}" style="width: 60px;height: 60px;border-radius: 50%" alt="">
 		                  		</div>
 		                  		<div class="col-md-8">
 		                  			<span>{{$n->titulo}} {{$n->nombre}} </span><br>
-		                  			<span>Cargo : {{$n->cargo}}</span>
+		                  			<span>Cargo : {{$n->cargo}}</span><br>
+		                  			<span>Email : {{$n->email}}</span>
 		                  		</div>
 		                  	</div>
-		                  		
 		                  	</section>
 		                  	@endforeach 
 		                </div>

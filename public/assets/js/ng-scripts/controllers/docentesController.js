@@ -34,13 +34,15 @@ app.controller('docentesController', function($scope,$http) {
     $scope.send = function (){
         document.getElementById("ed").submit();
     }
-     $scope.plus = function (data) {
+    $scope.mtitulo = 'data.titulo';
+    $scope.plus = function (data) {
+
         $scope.id = data.id;
         $scope.formUrl = 'directorio/' + data.id;
-         $('.fr-element').html(data.mas);
-         $scope.titulo = data.titulo;
+        $scope.mtitulo = data.titulo;
         $scope.nombre = data.nombre;
         $scope.cargo = data.cargo;
+        $scope.email = data.email;
     }
     $scope.dataEditar = function (data) {
 

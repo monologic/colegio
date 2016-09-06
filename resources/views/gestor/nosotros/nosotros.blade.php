@@ -14,10 +14,10 @@
 			<li><a href="#2" data-toggle="tab">Visión</a></li>
 			<li><a href="#3" data-toggle="tab">Misión</a></li>
 			<li><a href="#4" data-toggle="tab">Historia</a></li>
-			<li><a href="#5" data-toggle="tab">Directivos</a></li>
+			<li><a href="#5" data-toggle="tab">Directorio</a></li>
 		</ul>
 		@foreach ($nosotros[0] as $nosotro)
-		<div class="tab-content ">
+		<div class="tab-content">
 			<div class="tab-pane active" id="1">
 			        <div id="editor">
 					      <textarea class='edit'  name="bienvenida" style="margin-top: 30px;width: 80%">
@@ -57,30 +57,28 @@
 								<th>Cargo</th>
 								<th>Nombre</th>
 								<th>Foto</th>
+								<th>Email</th>
 								<th>Acción</th>
 							</tr>
 						</thead>
 						<tbody>
-						
 							<tr ng-repeat="x in doc">
 								<td>@{{x.titulo}} </td>
 								<td>@{{x.cargo}}</td>
 								<td>@{{x.nombre}}</td>
 								<td><img src="../imagen/docentes/@{{x.foto}}" width="60" height="60" alt="" style="border-radius: 50%"></td>
+								<td>@{{x.email}}</td>
 								<td>
 								<a ng-click="plus(x);" data-toggle="modal" data-target="#editar" class="btn"><i class="glyphicon glyphicon-pencil" style="color:black"></i></a>
 								 <a ng-click="eliminarD(x.id);" class="btn"> <i class="glyphicon glyphicon-trash" style="color:black"></i></a>
 								</td>
 							</tr>
-						</tbody>
-						
+						</tbody>						
 					</table>
-				</div>
-			    
+				</div>			    
 			</div>
 		</div>
 	</form>
-	</div>
 	<div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -92,35 +90,37 @@
                             <div class="formulariok">
                                 <form role="form" action="@{{formUrl}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" id="ed">
                                     {{ csrf_field() }}
-                                    
                                     <div class="form-group">
                                         <label for="titulo">Título</label>
-                                        <input type="text" class="form-control" id="titulo"  name="titulo" ng-model="titulo"  required>
+                                        <input type="text" class="form-control" name="titulo" ng-model="mtitulo" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="nombre">Nombre</label>
-                                        <input type="text" class="form-control" id="nombre" name="nombre" ng-model="nombre"  required>
+                                        <input type="text" class="form-control"  name="nombre" ng-model="nombre" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="cargo">Cargo</label>
-                                        <input type="text" class="form-control" id="cargo"  name="cargo" ng-model="cargo"  required>
-                                    </div>
-                                    <div class="form-group">
-                                        <b for="mas">Más</b>
-                                        <textarea  cols="50" rows="10" id="mas" name="mas" class="edit"></textarea>
+                                        <input type="text" class="form-control"  name="cargo" ng-model="cargo" required>
                                     </div>
                                     <div class="form-group">
                                         <b for="archivo">Foto</b>
                                         <input type="file" name="foto">
                                     </div>
+                                    <div class="form-group">
+						                <label for="email">Email</label>
+						                <input type="email" class="form-control" placeholder="" name="email" ng-model="email" required>
+						            </div>
                                     <button ng-click="send()" class="btn btn-colegio">Guardar</button>
                                 </form>
                             </div>
                         </div>
                     </div>
             </div>
-     </div>
-      <script src="{{ asset('assets/js/ng-scripts/controllers/docentesController.js') }}"></script>
+    </div>
+	</div>
+	
+
+    <script src="{{ asset('assets/js/ng-scripts/controllers/docentesController.js') }}"></script>
 
 	<script type="text/javascript" src="../assets/froala/js/froala_editor.min.js"></script>
   	<script type="text/javascript" src="../assets/froala/js/plugins/align.min.js"></script>

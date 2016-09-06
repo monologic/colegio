@@ -8,5 +8,5 @@ class Directorio extends Model
 {
     public $timestamps = false;
     
-    protected $fillable = ['titulo', 'nombre', 'cargo','foto'];
+    protected $fillable = ['titulo', 'nombre', 'cargo','foto','email'];
 }

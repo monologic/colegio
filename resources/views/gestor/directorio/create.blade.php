@@ -23,7 +23,11 @@
 						</div>
 						<div class="form-group">
                 <b for="archivo">Foto</b>
-                <input type="file" name="foto">
+                <input type="file" name="foto" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="" name="email" required>
             </div>
 						<button type="submit" class="btn btn-colegio">Guardar</button>
 	    			</form>

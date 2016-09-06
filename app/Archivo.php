@@ -16,7 +16,7 @@ class Archivo extends Model
   	public function scopeSearch($query, $titulo, $tipo)
   	{
   		if ($tipo == "?")
-  			return $query->where('titulo', 'LIKE', "%$titulo%");
+  			return $query->where('titulo', 'LIKE', "%$titulo%")->orWhere('autor', 'LIKE', "%$titulo%")->orWhere('pub_lugar', 'LIKE', "%$titulo%")->orWhere('pub_editorial', 'LIKE', "%$titulo%")->orWhere('decripcion', 'LIKE', "%$titulo%");
   		else{
         if ($titulo != null) {
           return $query->where([
