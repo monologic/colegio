@@ -33,6 +33,8 @@
 					<div class="form-group">
 					    <label for="nombres">Grado</label>
 					    <select class="form-control" ng-model="grado" name="grado" required>
+					    	<option>4 Años</option>
+					    	<option>5 Años</option>
 					    	<option>1er</option>
 					    	<option>2do</option>
 					    	<option>3ro</option>
@@ -46,6 +48,8 @@
 					    <select class="form-control" ng-model="seccion" name="seccion" required>
 					    	<option>1</option>
 					    	<option>2</option>
+					    	<option>Los Geniales</option>
+					    	<option>Los Exploradores</option>
 					    </select>
 					</div>
 					<button type="submit" class="btn btn-colegio">Guardar</button>
