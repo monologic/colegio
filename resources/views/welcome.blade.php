@@ -74,7 +74,7 @@
 									</li>
 									<li>
 										<a href="{{ url('/institucional') }}">
-											<h3>Institucionail</h3>
+											<h3>Institucional</h3>
 											
 										</a>
 									</li>
@@ -121,7 +121,7 @@
 			<footer class="foot" ng-controller="colegioController" ng-init="get2()">
 				<section class="cont-foot row" ng-repeat="o in colegio">
 					<div class="col-md-6 rs">
-						<h4 style="color: white;font-size: 1rem">Redes Socales</h4>
+						<h4 style="color: white;font-size: 1rem">Redes Sociales</h4>
 						<a href="@{{o.facebook}}" target="_bank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 						<a href="@{{o.twiter}}" target="_bank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 						<a href="@{{o.youtube}}" target="_bank"><i class="fa fa-youtube" aria-hidden="true"></i></a>

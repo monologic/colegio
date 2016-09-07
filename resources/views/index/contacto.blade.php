@@ -6,21 +6,21 @@
 	<div id="main">
 		<section class="row">
 			<div class="ctn col-md-6">
-				<div class="card">
-					<h3 class="tituloadd">Contáctenos</h3>
+				<div class="card" style="background-color:#004D40;padding:20px;margin-bottom:30px;border:#795548 12px solid;color:white">
+					<h3 class="tituloadd" style="color:white">Contáctenos</h3>
 					<form  method="POST" action="{{ url('send') }}" enctype="multipart/form-data">
 						{{ csrf_field() }}
-						<div class="form-group">
-							<label for="nombre">Nombre</label>
-							<input type="text" id="nombre" name="nombre" class="form-control">
+						<div class="form-group" >
+							<label for="nombre" style="color:white">Nombre</label>
+							<input type="text" id="nombre" name="nombre" class="form-control" style="color:white;border-color:white">
 						</div>
 						<div class="form-group">
-							<label for="email">Email</label>
-							<input type="email" id="email" name="email" class="form-control">
+							<label for="email" style="color:white">Email</label>
+							<input type="email" id="email" name="email" class="form-control" style="color:white;border-color:white">
 						</div>
 						<div class="form-group">
-							<label for="contenido">Mensaje</label>
-							<textarea name="contenido" id="" cols="30" rows="4" ></textarea>
+							<label for="contenido" style="color:white">Mensaje</label>
+							<textarea name="contenido" id="" cols="30" rows="4" style="color:white;border-color:white"></textarea>
 						</div>
 						<input type="submit" value="Enviar">
 					</form>
@@ -28,7 +28,7 @@
 			</div>
 			
 			<div class="ctn col-md-6">
-				<div class="card" ng-controller="colegioController" ng-init="get()">
+				<div class="card" ng-controller="colegioController" ng-init="get()" style="background-color:white;padding:20px;box-shadow: 4px 4px 2px #888888;">
 					<div class="info" ng-repeat="o in colegio" >
 						<h3 class="tituloadd">Información</h3>
 						<h4 style="margin-top: 25px">Visítanos en:</h4>

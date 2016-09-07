@@ -29,7 +29,7 @@
 											</article>
 										</li>
 									</ul>
-									<a href="/comunicados">Ver todos los comunciados</a>
+									<a href="/comunicados">Ver todos los comunicados</a>
 							</section>
 							<div class="mini-posts" ng-controller="novedadesController" ng-init="firstNovedades()" style="background-color:white;padding:20px;box-shadow: 4px 4px 2px #888888;">
 								<h2 align="center">Novedades</h2><br>
