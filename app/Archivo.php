@@ -19,10 +19,9 @@ class Archivo extends Model
   			return $query->where('titulo', 'LIKE', "%$titulo%")->orWhere('autor', 'LIKE', "%$titulo%")->orWhere('pub_lugar', 'LIKE', "%$titulo%")->orWhere('pub_editorial', 'LIKE', "%$titulo%")->orWhere('decripcion', 'LIKE', "%$titulo%");
   		else{
         if ($titulo != null) {
-          return $query->where([
-              ['titulo', 'LIKE', "%$titulo%"],
-              ['archivotipo_id', '=', $tipo]
-          ]);
+          return $query->where(function ($q)use($titulo) {
+                $q->where('titulo', 'LIKE', "%$titulo%")->orWhere('autor', 'LIKE', "%$titulo%")->orWhere('pub_lugar', 'LIKE', "%$titulo%")->orWhere('pub_editorial', 'LIKE', "%$titulo%")->orWhere('decripcion', 'LIKE', "%$titulo%");
+            })->where('archivotipo_id', '=', $tipo);
         }
   		}
   	}

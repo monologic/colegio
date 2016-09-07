@@ -21,8 +21,8 @@ app.controller('actividadController', function($scope,$http) {
         $scope.id = data.id;
         $scope.responsable = data.responsable;
         $scope.titulo = data.titulo;
-        $scope.fecha_inicio = data.fecha_inicio;
-        $scope.fecha_fin = data.fecha_fin;
+        $scope.fecha_inicio = (data.fecha_inicio).replace(" ","T");
+        $scope.fecha_fin = (data.fecha_fin).replace(" ","T");
         $('.fr-element').html(data.descripcion);
         $scope.lugar = data.lugar;
         $scope.participantes = data.participantes;

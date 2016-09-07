@@ -37,6 +37,7 @@ app.controller('comunicadoController', function($scope,$http) {
         $scope.destinatario = data.destinatario;
         $scope.asunto = data.asunto;
         $scope.cuerpo = data.cuerpo;
+        $scope.fecha_pub = (data.fecha_pub).replace(" ","T");
     }
     $scope.editar = function () {
         $http.put('comunicados/' + $scope.id,

@@ -90,7 +90,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fecha_pub">Fecha de publicación</label>
-                                    <input type="date" class="form-control" id="fecha_pub" placeholder="2016-01-01" name="fecha_pub" ng-model="fecha_pub" required>
+                                    <input type="datetime-local" class="form-control" id="fecha_pub" placeholder="" name="fecha_pub" ng-model="fecha_pub" required>
                                 </div>
                                 <button type="submit" class="btn btn-colegio">Guardar Cambios</button>
                                 

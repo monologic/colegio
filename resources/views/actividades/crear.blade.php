@@ -45,7 +45,15 @@
     		</div>
     	</div>
 	</div>
-    
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            var hoy = new Date();
+            a = hoy.getFullYear() + "-" + ( (hoy.getMonth()+1) < 10 ? '0' + (hoy.getMonth()+1) : (hoy.getMonth()+1) ) + "-" + (hoy.getDate() < 10 ?  '0' + hoy.getDate() : hoy.getDate()) + "T12:00";
+            $('#fecha_inicio').val(a);
+            $('#fecha_fin').val(a);
+        });
+    </script>
+
     <script src="{{ asset('assets/js/ng-scripts/controllers/actividadesController.js') }}"></script>
 	
 	<script type="text/javascript" src="{{ asset('assets/froala/js/froala_editor.min.js') }}"></script>

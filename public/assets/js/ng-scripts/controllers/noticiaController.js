@@ -67,6 +67,7 @@ app.controller('noticiaController', function($scope,$http) {
         $scope.fecham = data.fecha.split(" ");
         $scope.solofec =  $scope.fecham[0];
         $scope.fotom = data.foto;
+        $scope.fecha = (data.fecha).replace(" ","T");
 
     }
     $scope.editar = function () {
