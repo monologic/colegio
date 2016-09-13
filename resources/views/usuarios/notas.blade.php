@@ -19,8 +19,8 @@
     					@foreach ($hijos as $hijo)
 						    <tr>
 	    						<td>{{$hijo->nombres . " " . $hijo->apellidos}}</td>
-	    						<td><a href="{{$colegio->url}}?est={{$hijo->dni. '-' .$hijo->id}}" class="btn"><i class="pe-7s-graph" style="font-size:20px;"></i></a></td>
-	    					</tr>
+	    						<td><a ng-click="ruteoNotas('{{$hijo->dni}}|{{$colegio->url}}')" class="btn"><i class="pe-7s-graph" style="font-size:20px;"></i></a></td>
+	    					</tr>                    
 						@endforeach
     				</tbody>
     			</table>

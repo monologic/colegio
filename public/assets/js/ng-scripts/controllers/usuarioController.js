@@ -23,5 +23,14 @@ app.controller('usuarioController', function($scope,$http) {
         }
 
     }
+    $scope.ruteoNotas = function (a) {
+        var fieldId = a;
+        f = fieldId.split("|");
+        var encodedData = window.btoa(f[0]);
+
+        window.location.href=f[1] + "?est=" + encodedData;
+    
+    }
+    
 
 });

@@ -1,6 +1,6 @@
 <ul class="nav">
     <li class="">
-        <a href="{{Auth::user()->url}}?est={{Auth::user()->dni. '-' .Auth::user()->id}}">
+        <a id="notas">
             <i class="pe-7s-graph"></i>
             <p>Calificaciones</p>
         </a>
@@ -24,3 +24,19 @@
         </a>
     </li> 
 </ul>
+
+<div id="field" data-field-id="{{Auth::user()->dni.'|'.Auth::user()->url}}" ></div>
+<script>
+// Asumning you are using JQuery
+$( document ).ready(function() {
+
+    var fieldId = $('#field').data("field-id");
+    f = fieldId.split("|");
+    var encodedData = window.btoa(f[0]);
+
+    $("#notas").attr("href", f[1] + "?est=" + encodedData);
+    console.log(fieldId);
+});
+
+
+</script>
