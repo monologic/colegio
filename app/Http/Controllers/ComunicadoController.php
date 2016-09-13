@@ -120,7 +120,7 @@ class ComunicadoController extends Controller
     {
         $not = DB::table('comunicados')
                 ->orderBy('fecha_pub', 'desc')
-                ->take(5)
+                ->take(10)
                 ->get();
         return response()->json( $not );
     }

@@ -129,7 +129,7 @@ class NoticiasController extends Controller
     
     public function getNoticiaIndexAll()
     {
-        $noticias = Noticia::orderBy('fecha','DESC')->paginate(5);
+        $noticias = Noticia::orderBy('fecha','DESC')->paginate(10);
         return view('gestor.noticias.all')->with('noticias', $noticias);
     }
     public function detalle($id)

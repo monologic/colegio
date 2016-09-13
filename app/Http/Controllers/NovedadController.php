@@ -135,7 +135,7 @@ class NovedadController extends Controller
     }
     public function getNovedadesIndexAll()
     {
-        $noticias = Novedad::orderBy('fecha','DESC')->paginate(2);
+        $noticias = Novedad::orderBy('fecha','DESC')->paginate(10);
         return view('gestor.novedades.all')->with('novedades', $noticias);
     }
 
