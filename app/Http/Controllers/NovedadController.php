@@ -121,7 +121,7 @@ class NovedadController extends Controller
         
         $not = DB::table('novedads')
                 ->orderBy('fecha', 'desc')
-                ->take(5)
+                ->take(3)
                 ->get();
         return response()->json( $not );
 

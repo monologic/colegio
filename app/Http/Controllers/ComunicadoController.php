@@ -120,7 +120,7 @@ class ComunicadoController extends Controller
     {
         $not = DB::table('comunicados')
                 ->orderBy('fecha_pub', 'desc')
-                ->take(10)
+                ->take(5)
                 ->get();
         return response()->json( $not );
     }
@@ -132,7 +132,7 @@ class ComunicadoController extends Controller
     }
     public function getComunicadoIndexAll()
     {
-        $noticias = Comunicado::orderBy('fecha_pub','DESC')->paginate(5);
+        $noticias = Comunicado::orderBy('fecha_pub','DESC')->paginate(10);
         return view('gestor.comunicados.all')->with('comunicados', $noticias);
     }
 
