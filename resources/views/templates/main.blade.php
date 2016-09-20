@@ -37,7 +37,7 @@
 	</head>
 	<body class="body">
 		<div class="wrapper">
-		    <div class="sidebar" data-color="blue" data-image="{{asset('assets/img/sidebar-5.jpg')}}">
+		    <div class="sidebar" data-color="robert" data-image="{{asset('assets/img/sidebar-5.jpg')}}">
 
 		    <!--
 
@@ -74,7 +74,7 @@
 		    </div>
 
 		    <div class="main-panel">
-		        <nav class="navbar navbar-default navbar-fixed" style="background-color:white">
+		        <nav class="navbar navbar-default navbar-fixed">
 		            <div class="container-fluid">
 		                <div class="navbar-header">
 		                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2" onclick="menu()">
@@ -83,7 +83,7 @@
 		                        <span class="icon-bar"></span>
 		                        <span class="icon-bar"></span>
 		                    </button>
-		                    <h1 style="margin-top: 5px"><a href="/"><img src="{{asset('images/txt3.png')}}" alt="" width="120" height="50" /></a></h1>
+		                    <h1 style="margin-top: 5px"><a href="/"><img src="{{asset('images/txt.png')}}" alt="" width="150"/></a></h1>
 		                </div>
 		                <div class="collapse navbar-collapse">
 							 <ul class="nav navbar-nav navbar-right">

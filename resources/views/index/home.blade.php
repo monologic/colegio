@@ -10,15 +10,14 @@
 			</div>
 			<div class="col-md-4 col-sm-4" style="z-index: 1;margin-bottom: 50px">
 							<section id="intro" style="">
-								<a href="#" ><img src="images/lg.png" alt="" class="insig" /></a>
+								<a href="#" ><img src="images/logo.gif" alt="" class="insig" /></a>
 								<header class="text-center">
-									
-									<p style="font-size: .7rem;margin-top: 10px">Superaci&oacute;n y disciplina</a></p>
+									<h2><img src="images/txt.png" alt="" width="200" /></h2>
+									<p style="font-size: .7rem;margin-top: -47px">Superaci&oacute;n y disciplina</a></p>
 								</header>
 							</section>
-							<hr>
-							<h2 align="center">Comunicados</h2><br>
 							<section ng-controller="comunicadoController" ng-init="getComuni()" style="background-color:#004D40;padding:20px;margin-bottom:30px;border:#795548 12px solid;color:white">
+								<h2 align="center" style="color:white">Comunicados</h2><br>
 									<ul class="posts">
 										<li ng-repeat="c in comun">
 											<article>
@@ -32,8 +31,7 @@
 									</ul>
 									<a href="/comunicados">Ver todos los comunicados</a>
 							</section>
-							<hr>
-							<div class="mini-posts" ng-controller="novedadesController" ng-init="firstNovedades()" style="padding:20px">
+							<div class="mini-posts" ng-controller="novedadesController" ng-init="firstNovedades()" style="background-color:white;padding:20px;box-shadow: 4px 4px 2px #888888;">
 								<h2 align="center">Novedades</h2><br>
 										<!-- Mini Post -->
 											<article class="mini-post" ng-repeat="k in allnovedades">
@@ -53,7 +51,6 @@
 
 					</div>
 				</section>
-				<hr>
 				<section  ng-controller="noticiaController" ng-init="firstNotice()" style="padding-top: 20px">
 				<h1 class="text-center" style="font-size:1.6rem">NOTICIAS</h1>
 					<article class="noticia" ng-repeat="n in allnot">
@@ -72,7 +69,7 @@
 				
 				<a href="/noticiasall">Ver todas las noticias</a>
 			</div>		
-			
+
 			<section class="col-md-12 col-sm-12"  ng-controller="enlaceController" ng-init="getindexe()">
 				<h3 class="text-center">Enlaces</h3>
 				<div class="row">
