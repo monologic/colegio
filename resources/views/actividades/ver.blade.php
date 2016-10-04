@@ -9,6 +9,15 @@
                 <div class="monthly" id="mycalendar" style="width: 98%;margin:20px auto 20px auto;box-shadow: 5px 5px 5px #888888;"></div>
             </div>
             <div class="col-md-6">
+                <div class="form-group">
+                    <label for="tipo">Tipo de Actividad</label>
+                    <select class="form-control" id="tipoActi" onchange="tablaBusqueda()">
+                        <option value="">Todas</option>
+                        <option value="Curricular">Curricular</option>
+                        <option value="Extracurricular">Extracurricular</option>
+                        <option value="Cocurricular">Cocurricular</option>
+                    </select>
+                </div>
                 <div class="actividades">
                     <div class="hed">
                         <span id="fec">Lista de actividades</span>
@@ -31,7 +40,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="y in actividades" ng-if="{{Auth::user()->id}} ==  y.usuario_id ">
+                            <tr ng-repeat="y in actividades | filter : tipoAc " ng-if="{{Auth::user()->id}} ==  y.usuario_id ">
 
                                 <td>@{{ y.fecha_inicio }}</td>
                                 <td>@{{ y.titulo }}</td>
@@ -153,7 +162,8 @@
         });
     </script>
     <script>
-        var m=new Array();
+        var m = new Array();
+        var dt = new Array();
         function buscar(dia,mes,año)
         {
             $('.monthly-day-pick').removeClass("activs");
@@ -168,32 +178,60 @@
                 dataType:'json',
                 success:function(ht)
                 {   
-                    m=ht;
+                    dt = ht;
                     tablaBusqueda();
                 }
             });
             
         }
         function tablaBusqueda()
-        {   nm=m.length;
+        {   
+            m = [];
+            $('#results').html('');
+            nm=dt.length;
             c=1;
             if (nm==0) {
                 html="<h2 class='text-center nc'>No se encontraron actividades</h2>"
             }
             else
             {
-              html="<div class='ac'>"
-                for(i=0;i<nm;i++)
-                {   
-                    var hora= m[i]['fecha_inicio'].split(" ");
-
-                    html+="<button class='activity cla' type='button' data-toggle='collapse' data-target='#cont"+i+"' aria-expanded='false' aria-controls='collapseExample'><div class='col-md-6'><i class='fa fa-clock-o'></i> "+hora[1]+"</div> <div class='col-md-6'><i class='fa fa-flag' aria-hidden='true'></i> "+m[i]['titulo']+"</div>    </button><div class='collapse' id='cont"+i+"'><div class='well'><ul class='listas'><li><i class='fa fa-user' aria-hidden='true'></i> &nbsp <b>Responsable :</b> "+m[i]['responsable']+"</li><li><i class='fa fa-clock-o' aria-hidden='true'></i> &nbsp <b>Fecha inicio :</b> "+m[i]['fecha_inicio']+"</li><li><i class='fa fa-clock-o' aria-hidden='true'></i> &nbsp <b>Fecha término :</b> "+m[i]['fecha_fin']+"</li><li><i class='fa fa-map-marker' aria-hidden='true'></i> &nbsp <b>Lugar :</b> "+m[i]['lugar']+"</li><li><i class='fa fa-users' aria-hidden='true'></i> &nbsp <b>Participantes :</b> "+m[i]['participantes']+"</li></ul><p class='pes'>"+m[i]['descripcion']+"</p></div></div>";
-                    c++;
+                inp = $('#tipoActi').val();
+                if(inp == ''){
+                    //alert('con todo');
+                    m = dt;
+                    imprimir(nm,m); 
                 }
-                html+="</div>"   
+                else{
+
+                    for (var i = 0; i < nm; i++) {
+                        if(dt[i]['tipo'] == inp){
+                            m.push(dt[i]);
+                        }
+                    }
+                    console.log(m);
+                    imprimir(nm,m); 
+                }   
             }
            
             $('#results').html(html);
+        }
+        function imprimir(nm,m){
+            c=m.length
+            html="<div class='ac'>"
+                if(c == 0){
+                    html="<h2 class='text-center nc'>No se encontraron actividades</h2>"
+                }
+                else{
+                    for(i=0;i<nm;i++)
+                    {   
+                        var hora= m[i]['fecha_inicio'].split(" ");
+
+                        html+="<button class='activity cla' type='button' data-toggle='collapse' data-target='#cont"+i+"' aria-expanded='false' aria-controls='collapseExample'><div class='col-md-6'><i class='fa fa-clock-o'></i> "+hora[1]+"</div> <div class='col-md-6'><i class='fa fa-flag' aria-hidden='true'></i> "+m[i]['titulo']+"</div>    </button><div class='collapse' id='cont"+i+"'><div class='well'><ul class='listas'><li><i class='fa fa-user' aria-hidden='true'></i> &nbsp <b>Responsable :</b> "+m[i]['responsable']+"</li><li><i class='fa fa-clock-o' aria-hidden='true'></i> &nbsp <b>Fecha inicio :</b> "+m[i]['fecha_inicio']+"</li><li><i class='fa fa-clock-o' aria-hidden='true'></i> &nbsp <b>Fecha término :</b> "+m[i]['fecha_fin']+"</li><li><i class='fa fa-map-marker' aria-hidden='true'></i> &nbsp <b>Lugar :</b> "+m[i]['lugar']+"</li><li><i class='fa fa-users' aria-hidden='true'></i> &nbsp <b>Participantes :</b> "+m[i]['participantes']+"</li></ul><p class='pes'>"+m[i]['descripcion']+"</p></div></div>";
+                        c++;
+                    }
+                    html+="</div>" 
+                }
+                $('#results').html(html); 
         }
     </script>
 
