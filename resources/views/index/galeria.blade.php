@@ -13,10 +13,10 @@
 						<section class="grid-wrap">
 							<ul class="grid">
 							 @foreach ($info->album as $galeria)
-								<li>
+								<li style="margin:10px">
 									<figure>
-										<img src="imagen/galeria/{{$galeria->imagen}}" alt="{{$galeria->nombre}} robert gagne"/>
-										<figcaption><h3>{{ $galeria->nombre }}</h3></figcaption>
+										<div class="img-gal" style=" background-image: url('imagen/galeria/{{ $galeria->imagen }}'); width: 100%; height: 150px; background-size: 100%"></div>
+										<p class="text-center">{{ $galeria->nombre }}</p>
 									</figure>
 								</li>
 								@endforeach 
@@ -60,7 +60,7 @@
 									<div class="vdo">
 								    	<iframe width="100%" height="100%" src="{{ $video->url }}?autoplay=0" frameborder="0" allowfullscreen ></iframe>
 								    </div>
-									<figcaption><h4>{{ $video->nombre }}</h4></figcaption>
+								<p class="text-center">{{ $video->nombre }}</p>
 								</figure>
 							</li>
 							@endforeach 
