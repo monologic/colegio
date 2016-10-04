@@ -13,7 +13,7 @@
 						<section class="grid-wrap">
 							<ul class="grid">
 							 @foreach ($info->album as $galeria)
-								<li style="margin:10px">
+								<li>
 									<figure>
 										<div class="img-gal" style=" background-image: url('imagen/galeria/{{ $galeria->imagen }}'); width: 100%; height: 150px; background-size: 100%"></div>
 										<p class="text-center">{{ $galeria->nombre }}</p>
