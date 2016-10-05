@@ -131,6 +131,8 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 		Route::resource('actividades', 'ActividadController');
 		Route::get('acti/{id}', 'ActividadController@getdia');
 
+		Route::resource('agenda', 'AgendaController');
+
 	});
 
 	Route::group(['middleware' => 'rol:grupo4'], function () {
