@@ -46,7 +46,7 @@ class VideoController extends Controller
             $arg = explode("/", $es1);
             $fn ='https://www.youtube.com/embed/'.$arg[3].'?autoplay=0';
         }
-       
+        $video->fecha = date("Y-m-d");
         $video->url = $fn ;
         $video->save();
         return redirect('app/album');
