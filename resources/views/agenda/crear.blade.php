@@ -6,7 +6,7 @@
 	<div class="contenidos">
 		<div class="cart" style="max-width: 600px">
 			<h1 class="titulo">Crear entrada a Agenda</h1>
-	    	<div>
+	    	<div ng-controller='menuController'>
 	    		<div class="formulariok">
 	    			<form role="form" method="POST" action="{{ url('app/agenda') }}" accept-charset="UTF-8" enctype="multipart/form-data">
 	    				{{ csrf_field() }}
@@ -20,32 +20,26 @@
 						</div>
 						<div class="form-group">
 					    	<label for="nombres">Nivel</label>
-						    <select class="form-control" ng-model="nivel" name="nivel" required>
-						    	<option>Inicial</option>
-						    	<option>Primaria</option>
-						    	<option>Secundaria</option>
-						    </select>
+					    	<select class="form-control" id="nivel" ng-model="grados" name="nivel" ng-options="nivel for (nivel, grados) in data" required>
+					        </select>
 						</div>
 						<div class="form-group">
 						    <label for="nombres">Grado</label>
-						    <select class="form-control" ng-model="grado" name="grado" required>
-						    	<option>4 Años</option>
-						    	<option>5 Años</option>
-						    	<option>1er</option>
-						    	<option>2do</option>
-						    	<option>3ro</option>
-						    	<option>4to</option>
-						    	<option>5to</option>
-						    	<option>6to</option>
+						    <select class="form-control" id="grado" ng-disabled="!grados" ng-model="secciones" name="grado" ng-options="grado for (grado, secciones) in grados">
 						    </select>
 						</div>
 						<div class="form-group">
 						    <label for="nombres">Sección</label>
-						    <select class="form-control" ng-model="seccion" name="seccion" required>
-						    	<option>1</option>
-						    	<option>2</option>
-						    	<option>Los Geniales</option>
-						    	<option>Los Exploradores</option>
+						    <select class="form-control" id="seccion" ng-disabled="!secciones" ng-model="seccion" name="seccion" ng-options="seccion for seccion in secciones track by seccion">
+						    </select>
+						</div>
+						<div class="form-group">
+						    <label for="nombres">Asignatura</label>
+						    <select class="form-control" ng-model="asignatura" name="asignatura" required>
+						    	<option>Comunicación</option>
+						    	<option>Matemática</option>
+						    	<option>Ciencia Tecnología y Ambiente</option>
+						    	<option>Ciencias Sociales</option>
 						    </select>
 						</div>
 						<div class="form-group">
@@ -70,6 +64,31 @@
 	    	</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		app.controller('menuController', function($scope) {
+			$scope.data = {
+		        'Inicial': {
+		            '4 años': ['Los Geniales'],
+		            '5 años': ['Los Exploradores']
+		        },
+		        'Primaria': {
+		            '1er': ['1', '2'],
+		            '2do': ['1', '2'],
+		            '3er': ['1', '2'],
+		            '4to': ['1', '2'],
+		            '5to': ['1', '2'],
+		            '6to': ['1', '2']
+		        },
+		        'Secundaria': {
+		            '1er': ['1', '2'],
+		            '2do': ['1', '2'],
+		            '3er': ['1', '2'],
+		            '4to': ['1', '2'],
+		            '5to': ['1', '2']
+		        }
+		    };
+		});
+	</script>
 	<script type="text/javascript">
 		$( document ).ready(function() {
 			var hoy = new Date();
