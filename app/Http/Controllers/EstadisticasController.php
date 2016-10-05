@@ -35,7 +35,7 @@ class EstadisticasController extends Controller
 	public function getActividades($id)
 	{
 		$r = \DB::table('actividads')
-    	          ->select(DB::raw('fecha_creacion, COUNT(id) as cantidad'))
+    	          ->select(DB::raw('fecha_creacion as x, COUNT(id) as y'))
     	          ->where('usuario_id',$id)
     	          ->whereRaw("MONTH(fecha_creacion)<=MONTH (NOW()) and YEAR(fecha_creacion)<=YEAR(NOW())")
     	          ->groupBy(DB::raw('MONTH(fecha_creacion)'))
@@ -47,7 +47,7 @@ class EstadisticasController extends Controller
 	public function getVideos($id)
 	{
 		$r = \DB::table('videos')
-    	          ->select(DB::raw('fecha, COUNT(id) as cantidad'))
+    	          ->select(DB::raw('fecha as x, COUNT(id) as y'))
     	          ->where('posteador',$id)
     	          ->whereRaw("MONTH(fecha)<=MONTH (NOW()) and YEAR(fecha)<=YEAR(NOW())")
     	          ->groupBy(DB::raw('MONTH(fecha)'))
@@ -58,7 +58,7 @@ class EstadisticasController extends Controller
 	public function getNoticias($id)
 	{
 		$r = \DB::table('noticias')
-    	          ->select(DB::raw('fecha, COUNT(id) as cantidad'))
+    	          ->select(DB::raw('fecha as x, COUNT(id) as y'))
     	          ->where('posteador',$id)
     	          ->whereRaw("MONTH(fecha)<=MONTH (NOW()) and YEAR(fecha)<=YEAR(NOW())")
     	          ->groupBy(DB::raw('MONTH(fecha)'))
@@ -69,7 +69,7 @@ class EstadisticasController extends Controller
 	public function getNovedad($id)
 	{
 		$r = \DB::table('novedads')
-    	          ->select(DB::raw('fecha, COUNT(id) as cantidad'))
+    	          ->select(DB::raw('fecha as x, COUNT(id) as y'))
     	          ->where('posteador',$id)
     	          ->whereRaw("MONTH(fecha)<=MONTH (NOW()) and YEAR(fecha)<=YEAR(NOW())")
     	          ->groupBy(DB::raw('MONTH(fecha)'))
@@ -80,7 +80,7 @@ class EstadisticasController extends Controller
 	public function getComunicado($id)
 	{
 		$r = \DB::table('comunicados')
-    	          ->select(DB::raw('fecha_pub, COUNT(id) as cantidad'))
+    	          ->select(DB::raw('fecha_pub as x, COUNT(id) as y'))
     	          ->where('posteador',$id)
     	          ->whereRaw("MONTH(fecha_pub)<=MONTH (NOW()) and YEAR(fecha_pub)<=YEAR(NOW())")
     	          ->groupBy(DB::raw('MONTH(fecha_pub)'))

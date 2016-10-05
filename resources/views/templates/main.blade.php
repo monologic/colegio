@@ -33,6 +33,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
 
 		<link rel="stylesheet" href="{{ asset('assets/calendar/css/monthly.css')}}">
+		<link rel="stylesheet" href="{{ asset('assets/morris/morris.css')}}">
 		
 	</head>
 	<body class="body">
@@ -107,6 +108,7 @@
 						<script src="{{ asset('assets/angular/angular.min.js') }}"></script>
 						<script src="{{ asset('assets/js/ng-scripts/app.js') }}"></script>
 						<script src="{{ asset('assets/js/dashboard.js') }}"></script>
+						<script src="{{ asset('assets/morris/morris.js') }}"></script>
 		            	@yield('content')
 		        	</div>
 				</div><!-- /container -->

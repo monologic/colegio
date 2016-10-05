@@ -14,12 +14,36 @@
 
  }
  /*estadistica*/
+ .afg{
+ 	font-family: 'Poiret One', cursive;
+ 	padding-top: 20px;
+ 	height: 250px;
+ }
+.tit-est{
+	font-family: 'Poiret One', cursive;
+	padding: 10px;
+ }
+ .tit-est p{
+ 	font-family: 'Poiret One', cursive;
+ 	padding-left: 10px;
+ 	color: black;
+	font-size: 2rem;
+	font-weight: bold;
+ }
 .cont-est{
 	background-color: white;
-	width: 90%;
+	width: 80%;
 	max-width: 500px;
 	padding: 20px;
 	margin: 20px auto 20px auto;
+}
+.cont-vid{
+	width: 90%;
+	margin: 0px auto 10px auto;
+	background-color: white;
+}
+#canti{
+	font-size: 7rem;
 }
 /*end estadisticas*/
 #vfiles{
