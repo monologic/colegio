@@ -53,6 +53,12 @@
             <p>Comunidad</p>
         </a>
     </li>
+     <li>
+        <a href="{{ url('app/estadistica') }}">
+            <i class="pe-7s-graph2"></i>
+            <p>Estadísticas</p>
+        </a>
+    </li>
     <li class="out-salir" style="display: none">
         <a  href="{{ url('logout') }}">
             <i class="pe-7s-back-2"></i>
