@@ -12,11 +12,19 @@
 	    				{{ csrf_field() }}
 	    				<div class="form-group">
 						    <label for="nombre">Emisor</label>
-						    <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" required>
+						    <input type="text" class="form-control" id="nombre" placeholder="" name="nombre">
 						</div>
 						<div class="form-group">
 						    <label for="puesto_cargo">Cargo</label>
-						    <input type="text" class="form-control" id="puesto_cargo"  name="puesto_cargo" required>
+						    <input type="text" class="form-control" id="puesto_cargo"  name="puesto_cargo">
+						</div>
+						<div class="form-group">
+						    <label for="asunto">Asunto</label>
+						    <input type="text" class="form-control" id="asunto" name="asunto" placeholder="" name="asunto" required>
+						</div>
+						<div class="form-group">
+						    <b><p for="cuerpo">Cuerpo</p></b>
+						    <textarea name="cuerpo" id="cuerpo" class="form-control" cols="70" rows="10" required></textarea>
 						</div>
 						<div class="form-group">
 					    	<label for="nombres">Nivel</label>
@@ -43,17 +51,12 @@
 						    </select>
 						</div>
 						<div class="form-group">
-						    <label for="asunto">Asunto</label>
-						    <input type="text" class="form-control" id="asunto" name="asunto" placeholder="" name="asunto" required>
-						</div>
-						
-						<div class="form-group">
-						    <b><p for="cuerpo">Cuerpo</p></b>
-						    <textarea name="cuerpo" id="cuerpo" class="form-control" cols="70" rows="10" required></textarea>
-						</div>
-						<div class="form-group">
 						    <label for="fecha_pub">Fecha de publicación</label>
 						    <input type="datetime-local" class="form-control" id="fecha_pub" placeholder="" name="fecha_pub" required>
+						</div>
+						<div class="form-group">
+						    <b for="archivo">Imagen</b>
+						    <input type="file" name="imagen">
 						</div>
 						<input type="hidden" name="posteador" value="{{Auth::user()->dni}}">
 						

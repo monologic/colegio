@@ -87,7 +87,16 @@ class AgendaController extends Controller
     public function store(Request $request)
     {
         $agenda = new Agenda($request->all());
-       
+        
+        if($request->file('imagen'))
+        {
+            $file = $request -> file('imagen');
+            $name = 'imagen_'. time() . '.' .$file->getClientOriginalExtension();
+            $path=public_path() . "/imagen/agenda/";
+            $file -> move($path,$name);
+            $agenda->imagen = $name;
+        }
+
         $agenda->save();
         return redirect('app/agenda');
     }
@@ -123,7 +132,19 @@ class AgendaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $agenda = Agenda::find($id);
+        $agenda->fill($request->all());
+
+        if($request->file('imagen'))
+        {
+            $file = $request -> file('imagen');
+            $name = 'imagen_'. time() . '.' .$file->getClientOriginalExtension();
+            $path=public_path() . "/imagen/agenda/";
+            $file -> move($path,$name);
+            $agenda->imagen = $name;
+        }
+        $agenda->save();
+        return redirect('app/agenda');
     }
 
     /**
@@ -134,6 +155,8 @@ class AgendaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Agenda::destroy($id);
+
+        return $this->getEntradas();
     }
 }

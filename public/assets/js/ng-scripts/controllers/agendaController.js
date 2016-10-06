@@ -15,7 +15,11 @@ app.controller('agendaController', function($scope,$http) {
 
     $scope.dataEditar = function (data) {
         $scope.id = data.id;
-        $scope.fecha_pub = data.fecha_pub.replace(" ","T");;
+        $scope.formUrl = 'agenda/' + data.id;
+        $scope.fecha_pub = data.fecha_pub.replace(" ","T");
+        $scope.fecha = data.fecha_pub;
+        $scope.nombres = data.nombres;
+        $scope.apellidos = data.apellidos;
         $scope.nombre = data.nombre;
         $scope.puesto_cargo = data.puesto_cargo;
         $scope.asunto = data.asunto;
@@ -23,7 +27,43 @@ app.controller('agendaController', function($scope,$http) {
         $scope.nivel = data.nivel;
         $scope.grado = data.grado;
         $scope.seccion = data.seccion;
+        $scope.imagen = data.imagen;
         $scope.asignatura = data.asignatura;
+    }
+
+    $scope.editarNoticia = function () {
+        $( "#formEdit" ).submit();
+    }
+
+    $scope.eliminar = function (id) {
+        swal({   title: "",
+            text: "Está seguro que desea eliminar este registro?",
+            type: "warning",   
+            showCancelButton: true,   
+            confirmButtonColor: "#DD6B55",   
+            confirmButtonText: "Sí, estoy seguro!",
+            closeOnConfirm: false,
+            cancelButtonText:"Cancelar", }, 
+            function(){
+                $http.delete( 'agenda/'+id ).then(function successCallback(response) {
+                    swal("Eliminado!", 
+                        "La entrada se ha eliminado.", 
+                        "success"); 
+
+                    if (!response.data[0].hasOwnProperty('agenda'))
+                        $scope.entradas = response.data;
+                    else
+                        $scope.hijos = response.data;
+                }, function errorCallback(response) {
+                    swal({   
+                        title: "Ha ocurrido un error!",   
+                        text: "No se puede borrar datos utilizados para otros registros.",   
+                        timer: 3000,   
+                        showConfirmButton: false 
+                    });
+                });
+            }
+        );
     }
 
     $scope.data = {

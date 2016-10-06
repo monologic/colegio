@@ -69,7 +69,7 @@
                                 <td>@{{ x.nombres  }} @{{ x.apellidos  }}</td>
                                 <td>@{{ x.asignatura }}</td>
                                 <td>
-                                    <a href="" ng-click="dataEditar(x);" data-toggle="modal" data-target="#editar" class="btn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ver</a>
+                                    <a href="" ng-click="dataEditar(x);" data-toggle="modal" data-target="#view" class="btn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ver</a>
                                     @if (Auth::user()->usuariotipo_id == 2)
                                         <a href="" ng-click="dataEditar(x);" data-toggle="modal" data-target="#editar" class="btn"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                                         <button ng-click="eliminar(x.id);" class="btn"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
@@ -90,12 +90,19 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Editar Administrativo</h4>
+                        <h4 class="modal-title" id="myModalLabel">Editar Entrada</h4>
                     </div>
                     <div class="modal-body">
-                        <form role="form" method="POST" action="{{ url('app/agenda') }}" accept-charset="UTF-8" enctype="multipart/form-data">
+                        <form role="form" action="@{{formUrl}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" id="formEdit">
                             {{ csrf_field() }}
-                            
+                            <div class="form-group">
+                                <label for="nombre">Emisor</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="" name="nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="puesto_cargo">Cargo</label>
+                                <input type="text" class="form-control" id="puesto_cargo"  name="puesto_cargo">
+                            </div>
                             <div class="form-group">
                                 <label for="asunto">Asunto</label>
                                 <input type="text" class="form-control" id="asunto" ng-model="asunto" placeholder="" name="asunto" required>
@@ -132,12 +139,38 @@
                                     <option>Ciencias Sociales</option>
                                 </select>
                             </div>
-                            
+                            <div class="form-group">
+                                <b for="archivo">Imagen</b>
+                                <input type="file" name="imagen">
+                            </div>
                             <input type="hidden" name="posteador" value="{{Auth::user()->dni}}">
+    
                             
-                            
-                            <button type="submit" class="btn btn-colegio">Guardar</button>
+                            <button ng-click='editarNoticia()' class="btn btn-colegio">Guardar</button>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal de Vista -->
+        <div class="modal fade" id="view" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel" ng-bind="asunto"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <blockquote class="bro">
+                            <div><b>Fecha de Publicación: </b><span ng-bind="fecha"></span></div>
+                            <div><b>Docente: </b><span>@{{nombres + " " + apellidos}}</span></div>
+                            <div ng-if="nombre!=''"><b>Emisor: </b><span ng-bind="nombre"></span></div>
+                            <div ng-if="puesto_cargo!=''"><b>Puesto o Cargo: </b><span ng-bind="puesto_cargo"></span></div>
+                            <div><b>Asignatura: </b><span ng-bind="asignatura"></span></div>
+                            
+                        </blockquote>
+                        <p ng-bind="cuerpo"></p>
+                        <div ng-if="imagen!=null" style="display:block;width:90%;margin:20px auto 20px auto"><img ng-src="../imagen/agenda/@{{imagen}}" class="img-responsive"></div>  
                     </div>
                 </div>
             </div>
