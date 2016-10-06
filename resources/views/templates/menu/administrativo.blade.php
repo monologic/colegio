@@ -36,6 +36,12 @@
         </a>
     </li>
     <li>
+        <a href="{{ url('app/agenda') }}">
+            <i class="pe-7s-note"></i>
+            <p>Agenda</p>
+        </a>
+    </li>
+    <li>
         <a href="{{ url('app/album') }}">
             <i class="pe-7s-film"></i>
             <p>Galería</p>
