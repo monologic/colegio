@@ -122,12 +122,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="nombres">Grado</label>
-                                <select class="form-control" id="grado" ng-disabled="!grados" ng-model="secciones" name="grado" ng-options="grado for (grado, secciones) in grados">
+                                <select class="form-control" id="grado" ng-disabled="!grados" ng-model="secciones" name="grado" ng-options="grado for (grado, secciones) in grados" required>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="nombres">Sección</label>
-                                <select class="form-control" id="seccion" ng-disabled="!secciones" ng-model="seccion" name="seccion" ng-options="seccion for seccion in secciones track by seccion">
+                                <select class="form-control" id="seccion" ng-disabled="!secciones" ng-model="seccion" name="seccion" ng-options="seccion for seccion in secciones track by seccion" required>
                                 </select>
                             </div>
                             <div class="form-group">

@@ -12,11 +12,11 @@
 	    				{{ csrf_field() }}
 	    				<div class="form-group">
 						    <label for="nombre">Docente</label>
-						    <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" value="{{Auth::user()->nombres}} {{Auth::user()->apellidos}}">
+						    <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" value="{{Auth::user()->nombres}} {{Auth::user()->apellidos}}" required>
 						</div>
 						<div class="form-group">
 						    <label for="puesto_cargo">Cargo</label>
-						    <input type="text" class="form-control" id="puesto_cargo"  name="puesto_cargo" value="Docente">
+						    <input type="text" class="form-control" id="puesto_cargo"  name="puesto_cargo" value="Docente" required>
 						</div>
 						<div class="form-group">
 						    <label for="asunto">Asunto</label>
@@ -33,12 +33,12 @@
 						</div>
 						<div class="form-group">
 						    <label for="nombres">Grado</label>
-						    <select class="form-control" id="grado" ng-disabled="!grados" ng-model="secciones" name="grado" ng-options="grado for (grado, secciones) in grados">
+						    <select class="form-control" id="grado" ng-disabled="!grados" ng-model="secciones" name="grado" ng-options="grado for (grado, secciones) in grados" required>
 						    </select>
 						</div>
 						<div class="form-group">
 						    <label for="nombres">Sección</label>
-						    <select class="form-control" id="seccion" ng-disabled="!secciones" ng-model="seccion" name="seccion" ng-options="seccion for seccion in secciones track by seccion">
+						    <select class="form-control" id="seccion" ng-disabled="!secciones" ng-model="seccion" name="seccion" ng-options="seccion for seccion in secciones track by seccion" required>
 						    </select>
 						</div>
 						<div class="form-group">
