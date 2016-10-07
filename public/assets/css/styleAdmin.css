@@ -13,6 +13,13 @@
 	}
 
  }
+ .ac{
+ 	font-size: 1.3rem;
+ }
+ .mid{
+ 	border-left: 1px solid #BDC3C7;
+ 	border-right: 1px solid #BDC3C7;
+ }
  /*estadistica*/
  .afg{
  	font-family: 'Poiret One', cursive;
