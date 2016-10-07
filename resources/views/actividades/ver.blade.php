@@ -188,9 +188,9 @@
         {   
             m = [];
             $('#results').html('');
-            nm=dt.length;
+            nm = dt.length;
             c=1;
-            if (nm==0) {
+            if (nm == 0) {
                 html="<h2 class='text-center nc'>No se encontraron actividades</h2>"
             }
             else
@@ -201,7 +201,8 @@
                     m = dt;
                     imprimir(nm,m); 
                 }
-                else{
+                else
+                {
 
                     for (var i = 0; i < nm; i++) {
                         if(dt[i]['tipo'] == inp){
@@ -209,17 +210,17 @@
                         }
                     }
                     console.log(m);
-                    imprimir(nm,m); 
+                    imprimir(m.length,m); 
                 }   
             }
            
             $('#results').html(html);
         }
         function imprimir(nm,m){
-            c=m.length
-            html="<div class='ac'>"
+            c=m.length;
+            html="<div class='ac'>";
                 if(c == 0){
-                    html="<h2 class='text-center nc'>No se encontraron actividades</h2>"
+                    html="<h2 class='text-center nc'>No se encontraron actividades.. pero si busque</h2>"
                 }
                 else{
                     for(i=0;i<nm;i++)
