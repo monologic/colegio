@@ -103,7 +103,9 @@
 	<script>
 
 		for (var i = 1; i < 100; i++) {
-			new CBPGridGallery( document.getElementById( 'grid-gallery'+i ) );
+			if(document.getElementById( 'grid-gallery'+i )!=null){
+                           new CBPGridGallery( document.getElementById( 'grid-gallery'+i ) );
+                        }  
 		}
 		
 	</script>
