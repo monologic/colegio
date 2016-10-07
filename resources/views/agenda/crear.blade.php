@@ -11,12 +11,12 @@
 	    			<form role="form" method="POST" action="{{ url('app/agenda') }}" accept-charset="UTF-8" enctype="multipart/form-data">
 	    				{{ csrf_field() }}
 	    				<div class="form-group">
-						    <label for="nombre">Emisor</label>
-						    <input type="text" class="form-control" id="nombre" placeholder="" name="nombre">
+						    <label for="nombre">Docente</label>
+						    <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" value="{{Auth::user()->nombres}} {{Auth::user()->apellidos}}">
 						</div>
 						<div class="form-group">
 						    <label for="puesto_cargo">Cargo</label>
-						    <input type="text" class="form-control" id="puesto_cargo"  name="puesto_cargo">
+						    <input type="text" class="form-control" id="puesto_cargo"  name="puesto_cargo" value="Docente">
 						</div>
 						<div class="form-group">
 						    <label for="asunto">Asunto</label>
@@ -44,6 +44,7 @@
 						<div class="form-group">
 						    <label for="nombres">Asignatura</label>
 						    <select class="form-control" ng-model="asignatura" name="asignatura" required>
+						    	<option>*</option>
 						    	<option>Comunicación</option>
 						    	<option>Matemática</option>
 						    	<option>Ciencia Tecnología y Ambiente</option>
@@ -52,7 +53,7 @@
 						</div>
 						<div class="form-group">
 						    <label for="fecha_pub">Fecha de publicación</label>
-						    <input type="datetime-local" class="form-control" id="fecha_pub" placeholder="" name="fecha_pub" required>
+						    <input type="date" class="form-control" id="fecha_pub" placeholder="" name="fecha_pub" required>
 						</div>
 						<div class="form-group">
 						    <b for="archivo">Imagen</b>
@@ -95,7 +96,7 @@
 	<script type="text/javascript">
 		$( document ).ready(function() {
 			var hoy = new Date();
-			a = hoy.getFullYear() + "-" + ( (hoy.getMonth()+1) < 10 ? '0' + (hoy.getMonth()+1) : (hoy.getMonth()+1) ) + "-" + (hoy.getDate() < 10 ?  '0' + hoy.getDate() : hoy.getDate()) + "T12:00";
+			a = hoy.getFullYear() + "-" + ( (hoy.getMonth()+1) < 10 ? '0' + (hoy.getMonth()+1) : (hoy.getMonth()+1) ) + "-" + (hoy.getDate() < 10 ?  '0' + hoy.getDate() : hoy.getDate());
 			$('#fecha_pub').val(a);
 		});
 	</script>

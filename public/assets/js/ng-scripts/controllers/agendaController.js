@@ -16,7 +16,7 @@ app.controller('agendaController', function($scope,$http) {
     $scope.dataEditar = function (data) {
         $scope.id = data.id;
         $scope.formUrl = 'agenda/' + data.id;
-        $scope.fecha_pub = data.fecha_pub.replace(" ","T");
+        $scope.fecha_pub = data.fecha_pub;
         $scope.fecha = data.fecha_pub;
         $scope.nombres = data.nombres;
         $scope.apellidos = data.apellidos;

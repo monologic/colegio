@@ -35,10 +35,10 @@
                                     <td>@{{ $index+1 }}</td>
                                     <td>@{{ x.fecha_pub }}</td>
                                     <td>@{{ x.asunto }}</td>
-                                    <td>@{{ x.nombres  }} @{{ x.apellidos  }}</td>
+                                    <td>@{{ x.nombre }}</td>
                                     <td>@{{ x.asignatura  }}</td>
                                     <td>
-                                        <a href="" ng-click="dataEditar(x);" data-toggle="modal" data-target="#editar" class="btn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ver</a>
+                                        <a href="" ng-click="dataEditar(x);" data-toggle="modal" data-target="#view" class="btn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ver</a>
                                         @if (Auth::user()->usuariotipo_id == 2)
                                             <a href="" ng-click="dataEditar(x);" data-toggle="modal" data-target="#editar" class="btn"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                                             <button ng-click="eliminar(x.id);" class="btn"> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
@@ -66,7 +66,7 @@
                                 <td>@{{ $index+1 }}</td>
                                 <td>@{{ x.fecha_pub }}</td>
                                 <td>@{{ x.asunto }}</td>
-                                <td>@{{ x.nombres  }} @{{ x.apellidos  }}</td>
+                                <td>@{{ x.nombre }}</td>
                                 <td>@{{ x.asignatura }}</td>
                                 <td>
                                     <a href="" ng-click="dataEditar(x);" data-toggle="modal" data-target="#view" class="btn"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Ver</a>
@@ -97,11 +97,11 @@
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="nombre">Emisor</label>
-                                <input type="text" class="form-control" id="nombre" placeholder="" name="nombre">
+                                <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" ng-model='nombre' required>
                             </div>
                             <div class="form-group">
                                 <label for="puesto_cargo">Cargo</label>
-                                <input type="text" class="form-control" id="puesto_cargo"  name="puesto_cargo">
+                                <input type="text" class="form-control" id="puesto_cargo"  name="puesto_cargo" ng-model='puesto_cargo' required>
                             </div>
                             <div class="form-group">
                                 <label for="asunto">Asunto</label>
@@ -113,7 +113,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="fecha_pub">Fecha de publicación</label>
-                                <input type="datetime-local" class="form-control" id="fecha_pub" ng-model="fecha_pub" placeholder="" name="fecha_pub" required>
+                                <input type="date" class="form-control" id="fecha_pub" ng-model="fecha_pub" placeholder="" name="fecha_pub" required>
                             </div>
                             <div class="form-group">
                                 <label for="nombres">Nivel</label>
@@ -163,9 +163,9 @@
                     <div class="modal-body">
                         <blockquote class="bro">
                             <div><b>Fecha de Publicación: </b><span ng-bind="fecha"></span></div>
-                            <div><b>Docente: </b><span>@{{nombres + " " + apellidos}}</span></div>
-                            <div ng-if="nombre!=''"><b>Emisor: </b><span ng-bind="nombre"></span></div>
-                            <div ng-if="puesto_cargo!=''"><b>Puesto o Cargo: </b><span ng-bind="puesto_cargo"></span></div>
+                            <div><b>Publicó: </b><span>@{{nombres + " " + apellidos}}</span></div>
+                            <div ng-if="nombre!=''"><b>Docente: </b><span ng-bind="nombre"></span></div>
+                            <div ng-if="puesto_cargo!=''"><b>Cargo: </b><span ng-bind="puesto_cargo"></span></div>
                             <div><b>Asignatura: </b><span ng-bind="asignatura"></span></div>
                             
                         </blockquote>
