@@ -18,7 +18,7 @@
 		@endif
 		@if ($archivo->archivotipo_id == 1)
 			<div class="cont-archivo">
-				<div class="cinta"> 
+				<div class="cinta">
 					<div class="cont-btns">
 						<button  class="btn btn-full" id="btn-n" onclick="normal()" disabled="true"><i class="glyphicon glyphicon-resize-small"></i></button>
 						<button  class="btn btn-full" id="btn-f" onclick="full()"><i class="glyphicon glyphicon-fullscreen"></i></button>

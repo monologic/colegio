@@ -18,17 +18,29 @@ class ArchivoController extends Controller
      */
     public function index(Request $request)
     {
-        //dd($request);
-        if (count($request->all()) > 0) {
-            dd("Estas buscando");
-            session(['busqueda' => [$request->valor, $request->archivotipo_id]]);
+        $valor = null;
+        $tipo = null;
+        
+        if (count($request->all()) > 1) {
+            if ($request->valor != null || $request->valor == "")
+                session(['busqueda' => [$request->valor, $request->archivotipo_id]]);
         }
+
+        $busqueda = session('busqueda');
+        if ($busqueda != null) {
+            $valor = $busqueda[0];
+            $tipo = $busqueda[1];
+        }
+
         $ordenar = ($request->ordenar) ? $request->ordenar : 'titulo' ;
-        $archivos = Archivo::search($request->valor, $request->archivotipo_id)->orderBy($ordenar ,'ASC')->paginate(10);
+        $archivos = Archivo::search($valor, $tipo)->orderBy($ordenar ,'ASC')->paginate(100);
         $archivos->each(function($archivos){
             $archivos->archivotipo;
         });
-        return view('biblioteca.ver')->with('archivos', $archivos);
+        
+        return view('biblioteca.ver')->with('archivos', $archivos)->with('valor', $valor)->with('tipo', $tipo);
+       
+        
     }
 
     /**

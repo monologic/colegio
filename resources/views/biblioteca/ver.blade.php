@@ -4,7 +4,7 @@
 @section('title', 'Biblioteca')
 
 @section('content')
-    <div ng-controller="archivoController" ng-init="getTipos();" >
+    <div ng-controller="archivoController" ng-init="getTipos(); setSelect();" >
         <div class="contenidosa" style="width: 98%">
             <div class="row">
                 <h1 class="titulo text-center">Biblioteca Virtual</h1>
@@ -12,20 +12,28 @@
                 <div style="margin-left: 15px">
                     <form class="form-inline" action="{{ url('app/archivos') }}" method="GET">
                         <label for="edicion">Tipo de archivo</label>
-                        <select class="form-control" name="archivotipo_id" ng-model="archivotipo_id" ng-options="at.tipo for at in ats track by at.id">
+                        <select class="form-control" name="archivotipo_id" id="tipoArchivo" ng-model="archivotipo_id" ng-options="at.tipo for at in ats track by at.id">
                         </select>
-                        <input type="text" class="form-control" id="valor" name="valor" >
+                        <input type="text" class="form-control" id="valor" name="valor" value="{{$valor}}" >
                         <button type="submit" class="btn btn-colegio">Buscar</button>
                     </form>
+                    <div id="field" data-field-id="{{$tipo}}" ></div>
+                        <script>
+                        // Asumning you are using JQuery
+                        $( window ).load(function() {
+                            var fieldId = $('#field').data("field-id");
+                            $("#tipoArchivo").val(fieldId);
+                        });
+                        </script>
                 </div><br>
                 <div class="col-md-8"> 
-                    <form class="form-inline">
+                    <form class="form-inline" id="ordenarForm" action="{{ url('app/archivos') }}" method="GET">
                             <label for="">Ordenar Por</label>
-                            <select class="form-control" name="ordenar_por" ng-model="ordenar_por">
-                                <option>Título</option>
-                                <option>Autor</option>
-                                <option>Tipo de Documento</option>
-                                <option>Fecha</option>
+                            <select class="form-control" name="ordenar" ng-model="ordenar_por" ng-change="ordenar()">
+                                <option value="titulo">Título</option>
+                                <option value="autor">Autor</option>
+                                <option value="archivotipo_id">Tipo de Documento</option>
+                                <option value="created_at">Fecha</option>
                             </select>
                     </form>     
                 </div>

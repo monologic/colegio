@@ -87,4 +87,20 @@ app.controller('archivoController', function($scope,$http) {
     $scope.guardarArchivo = function () {
         $( "#formGuardar" ).submit();
     }
+
+    $scope.ordenar = function () {
+        $( "#ordenarForm" ).submit();
+    }
+
+    $scope.setSelect = function () {
+        var URLactual = window.location + '';
+        a = URLactual.split("?");
+        if(a[1] != undefined){
+            b = a[1].split("=");
+            $scope.ordenar_por = b[1];
+        }
+
+        
+
+    }
 });
