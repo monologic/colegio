@@ -33,7 +33,6 @@
                                 <option value="titulo">Título</option>
                                 <option value="autor">Autor</option>
                                 <option value="archivotipo_id">Tipo de Documento</option>
-                                <option value="created_at">Fecha</option>
                             </select>
                     </form>     
                 </div>
