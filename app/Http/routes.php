@@ -54,6 +54,10 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 	    return view('templates.menu.usuario');
 	});
 	Route::get('getEstadisticas/{dni}','EstadisticasController@getDatos');
+
+	Route::get('perfil', function () {
+		return view('usuarios.perfil');
+	});
 	Route::post('perfil', 'UserController@editarUsuario');
 	
 	Route::group(['middleware' => 'rol:grupo1'], function () {

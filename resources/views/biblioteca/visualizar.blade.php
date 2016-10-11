@@ -25,11 +25,11 @@
 					</div>
 						
 				</div>
-				<iframe id="frame" src="https://drive.google.com/viewerng/viewer?url=http://robert.runait.com/archivos/{{ $archivo->archivo }}?pid=explorer&efh=false&a=v&chrome=false&embedded=true"  width="100%"></iframe>
+				<iframe id="frame" src="https://drive.google.com/viewerng/viewer?url=http://localhost:8000/archivos/{{ $archivo->archivo }}?pid=explorer&efh=false&a=v&chrome=false&embedded=true"  width="100%"></iframe>
 			</div>
 		@endif
 		@if ($archivo->archivotipo_id == 2)
-		    <iframe width="100%" src="http://robert.runait.com/archivos/{{ $archivo->archivo }}" frameborder="0" style="height:400px"></iframe>
+		    <iframe width="100%" src="http://localhost:8000/archivos/{{ $archivo->archivo }}" frameborder="0" style="height:400px"></iframe>
 		@endif
 	</div>
 	 <script>

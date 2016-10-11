@@ -25,7 +25,7 @@
                                     <th>Fecha publicación</th>
                                     <th>Asunto</th>
                                     <th>Docente</th>
-                                    <th>Asignatura</th>
+                                    <th>Área</th>
                                     <th>Acción</th>
                                     
                                 </tr>
@@ -57,7 +57,7 @@
                                 <th>Fecha publicación</th>
                                 <th>Asunto</th>
                                 <th>Docente</th>
-                                <th>Asignatura</th>
+                                <th>Área</th>
                                 <th>Acción</th>
                             </tr>
                         </thead>
@@ -122,7 +122,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="nombres">Grado</label>
-                                <select class="form-control" id="grado" ng-disabled="!grados" ng-model="secciones" name="grado" ng-options="grado for (grado, secciones) in grados" required>
+                                <select class="form-control" id="grado" ng-disabled="!grados" ng-model="secciones" name="grado" ng-options="grado for (grado, secciones) in grados.grados" required>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -131,13 +131,10 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="nombres">Asignatura</label>
-                                <select class="form-control" ng-model="asignatura" name="asignatura" required>
-                                    <option>Comunicación</option>
-                                    <option>Matemática</option>
-                                    <option>Ciencia Tecnología y Ambiente</option>
-                                    <option>Ciencias Sociales</option>
-                                </select>
+                                <label for="nombres">Área</label>
+                                <select class="form-control" ng-model="asignatura" name="asignatura" ng-options="asignatura for asignatura in grados.asignaturas | orderBy:'toString()' track by asignatura" required>
+						   	
+						    </select>
                             </div>
                             <div class="form-group">
                                 <b for="archivo">Imagen</b>
@@ -166,7 +163,7 @@
                             <div><b>Publicó: </b><span>@{{nombres + " " + apellidos}}</span></div>
                             <div ng-if="nombre!=''"><b>Docente: </b><span ng-bind="nombre"></span></div>
                             <div ng-if="puesto_cargo!=''"><b>Cargo: </b><span ng-bind="puesto_cargo"></span></div>
-                            <div><b>Asignatura: </b><span ng-bind="asignatura"></span></div>
+                            <div><b>Área: </b><span ng-bind="asignatura"></span></div>
                             
                         </blockquote>
                         <p ng-bind="cuerpo"></p>

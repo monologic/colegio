@@ -336,9 +336,9 @@ blockquote{
 	width: 100%;
 	background-color: white;
 	margin: 30px auto 30px auto;
-	padding: 30px;
+	padding: 20px;
 	box-shadow: 5px 5px 5px #888888;
-	padding-bottom: 50px
+	
 }
 .pagination > li > a:focus,
 .pagination > li > a:hover,

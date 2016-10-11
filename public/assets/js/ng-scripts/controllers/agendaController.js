@@ -67,25 +67,73 @@ app.controller('agendaController', function($scope,$http) {
     }
 
     $scope.data = {
-        'Inicial': {
-            '4 años': ['Los Geniales'],
-            '5 años': ['Los Exploradores']
-        },
-        'Primaria': {
-            '1er': ['1', '2'],
-            '2do': ['1', '2'],
-            '3er': ['1', '2'],
-            '4to': ['1', '2'],
-            '5to': ['1', '2'],
-            '6to': ['1', '2']
-        },
-        'Secundaria': {
-            '1er': ['1', '2'],
-            '2do': ['1', '2'],
-            '3er': ['1', '2'],
-            '4to': ['1', '2'],
-            '5to': ['1', '2']
-        }
-    };
+		        "Inicial": {
+		            "asignaturas":[
+                  "*",
+		            	"COMUNICACIÓN",
+						      "MATEMÁTICA",
+						      "PERSONAL SOCIAL",
+						      "CIENCIA Y AMBIENTE",
+						      "TALLER DE INGLES",
+						      "TALLER DE COMPUTO",
+						      "TUTORIA"
+		            ],
+		            "grados":{
+		            	"4 años": ["Los Geniales"],
+		            	"5 años": ["Los Exploradores"]
+		            }
+		        },
+		        "Primaria": {
+		          "asignaturas":[
+		            	"COMUNICACIÓN",
+                  "MATEMÁTICA",
+                  "PERSONAL SOCIAL",
+                  "CIENCIA Y AMBIENTE",
+                  "TALLER DE INGLES",
+                  "TALLER DE COMPUTO",
+                  "ED. RELIGIOSA",
+                  "ED. FÍSICA",
+                  "ARTE",
+                  "TUTORIA",
+                  "PLAN LECTOR"
+		            ],
+		            "grados":{
+		          
+		            "1er": ["1", "2"],
+		            "2do": ["1", "2"],
+		            "3er": ["1", "2"],
+		            "4to": ["1", "2"],
+		            "5to": ["1", "2"],
+		            "6to": ["1", "2"]
+		            }
+		        },
+		        "Secundaria": {
+		          "asignaturas":[
+		            	"COMUNICACIÓN",
+                  "MATEMÁTICA",
+                  "PERSONA FAMILIA Y RELACIONES HUMANAS",
+                  "CIENCIA TECNOLOGÍA Y AMBIENTE",
+                  "INGLÉS",
+                  "ED. PARA EL TRABAJO",
+                  "ED. RELIGIOSA",
+                  "ED. FÍSICA",
+                  "ARTE",
+                  "TUTORIA",
+                  "FORMACIÓN CIUDADANA Y CÍVICA",
+                  "HISTORIA, GEOGRAFÍA Y ECONOMÍA",
+                  "QUÍMICA",
+                  "FÍSICA",
+                  "BIOLOGÍA",
+                  "PLAN LECTOR"
+		            ],
+		            "grados":{
+		            "1er": ["1", "2"],
+		            "2do": ["1", "2"],
+		            "3er": ["1", "2"],
+		            "4to": ["1", "2"],
+		            "5to": ["1", "2"]
+		            }
+		        }
+		    };
     
 });

@@ -19,8 +19,12 @@ class ArchivoController extends Controller
     public function index(Request $request)
     {
         //dd($request);
-        
-        $archivos = Archivo::search($request->valor, $request->archivotipo_id)->orderBy('created_at','DESC')->paginate(10);
+        if (count($request->all()) > 0) {
+            dd("Estas buscando");
+            session(['busqueda' => [$request->valor, $request->archivotipo_id]]);
+        }
+        $ordenar = ($request->ordenar) ? $request->ordenar : 'titulo' ;
+        $archivos = Archivo::search($request->valor, $request->archivotipo_id)->orderBy($ordenar ,'ASC')->paginate(10);
         $archivos->each(function($archivos){
             $archivos->archivotipo;
         });
@@ -108,21 +112,23 @@ class ArchivoController extends Controller
     public function update(Request $request, $id)
     {
         $archivo = Archivo::find($id);
+        $archivo->fill($request->all());
         if($request->file('archivo'))
         {
 
             $file = $request -> file('archivo');
             $tipo = $file->getClientOriginalExtension();
             if ($tipo == 'pdf' || $tipo == 'mp3') {
-                $name = 'noticia_'. time() . '.' .$file->getClientOriginalExtension();
+                $name = 'archivo_'. time() . '.' .$file->getClientOriginalExtension();
                 $path=public_path() . "/archivos/";
                 $file -> move($path,$name);
+                $archivo->archivo = $name;
             }
             else
                 dd('Tipo de Archivo no permitido, Solo se permiten archivos PDF y audio en mp3');
             
         }
-        $archivo->fill($request->all());
+        
         $archivo->save();
         return redirect('app/archivos');
     }
