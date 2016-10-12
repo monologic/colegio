@@ -16,6 +16,16 @@
  .ac{
  	font-size: 1.3rem;
  }
+ .alert-num{
+ 	width: 20px;
+ 	height: 20px;
+ 	background-color: #96281B;
+ 	border-radius: 50%;
+ 	color: white;
+ 	font-size: 11px;
+ 	margin: 0px auto 0px auto;
+ 	padding-top: 2px;
+ }
  .mid{
  	border-left: 1px solid #BDC3C7;
  	border-right: 1px solid #BDC3C7;

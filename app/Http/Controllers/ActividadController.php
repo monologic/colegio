@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 use App\Http\Requests;
 use App\Actividad;
 
@@ -106,7 +106,6 @@ class ActividadController extends Controller
     }
      public function getdia($fecha)
     {  
-
         $ats = Actividad::whereBetween('fecha_inicio', array($fecha .' 00:00:00', $fecha .' 23:59:59'))
                         ->get();
         $ats->each(function($ats){
@@ -116,9 +115,13 @@ class ActividadController extends Controller
     }
     public function getmes($fecha)
     {  
-
+        $pr = explode("-", $fecha);
+        $mes = $pr[1];
+        $aho = $pr[0];
         $ats = \DB::table('actividads')
-                  ->whereRaw("MONTH(fecha_inicio)=MONTH ($fecha) and YEAR(fecha_inicio)=YEAR($fecha)")
+                  ->select(DB::raw('fecha_inicio as fecha, COUNT(id) as cantidad'))
+                  ->whereRaw("MONTH(fecha_inicio)=$mes and YEAR(fecha_inicio)=$aho")
+                  ->groupBy(DB::raw('DAY(fecha_inicio)'))
                   ->get();
 
         return response()->json( $ats );

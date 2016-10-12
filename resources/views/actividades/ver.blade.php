@@ -3,7 +3,7 @@
 @section('title', 'Actividades')
 
 @section('content')
-    <div ng-controller="actividadController" ng-init="get();">
+    <div ng-controller="actividadController" ng-init="get();getmes();" onload="getdata()">
         <div class="contenidos">
             <div class="col-md-6">
                 <div class="monthly" id="mycalendar" style="width: 98%;margin:20px auto 20px auto;box-shadow: 5px 5px 5px #888888;"></div>
@@ -150,16 +150,38 @@
                 disablePast: true
             });
 
-        switch(window.location.protocol) {
-        case 'http:':
-        case 'https:':
-        // running on a server, should be good.
-        break;
-        case 'file:':
-        alert('Just a heads-up, events will not work when run locally.');
-        }
+            switch(window.location.protocol) {
+            case 'http:':
+            case 'https:':
+            // running on a server, should be good.
+            break;
+            case 'file:':
+            alert('Just a heads-up, events will not work when run locally.');
+            }
+            var f = new Date();
+                fe = f.getFullYear() + "-" + (f.getMonth() +1) + "-" + f.getDate();
+                $.ajax({
+                    type:'get',
+                    url:'../app/ac/'+fe,
+                    dataType:'json',
+                    success:function(ht)
+                    {   
+                        impr(data);
+                    }
+            });
 
-        });
+            function impr(data){
+                for (var i = 0; i < data.length; i++) {
+                    rd = data[i].fecha.split(' ');
+                    a = rd[0].split('-');
+                    dia = a[2]+'-'+ a[1] + '-' + a[0];
+                    $("#"+dia).append( "<p><div class='alert-num'>"+ data[i].cantidad +"</div class='alert-num'></p>" );
+                }
+                    
+            }
+
+    });
+
     </script>
     <script>
         var m = new Array();
@@ -234,6 +256,7 @@
                 }
                 $('#results').html(html); 
         }
+        
     </script>
 
     <script type="text/javascript" src="{{ asset('assets/froala/js/froala_editor.min.js') }}"></script>

@@ -15,7 +15,28 @@ app.controller('actividadController', function($scope,$http) {
             // or server returns response with an error status.
             });
     }
+    $scope.getmes = function () {
 
+        var f = new Date();
+        fe = f.getFullYear() + "-" + (f.getMonth() +1) + "-" + f.getDate();
+
+        $http.get('ac/'+fe).then(function successCallback(response) {
+            data = response.data;
+            $scope.imprimir(data);
+        }, function errorCallback(response) {
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+        });
+    }
+    $scope.imprimir = function (data){
+        for (var i = 0; i < data.length; i++) {
+            rd = data[i].fecha.split(' ');
+            a = rd[0].split('-');
+            dia = a[2]+'-'+ a[1] + '-' + a[0];
+            $("#"+dia).append( "<p>T</p>" );
+        }
+        
+    }
     $scope.plus = function (data) {
 
         $scope.id = data.id;
