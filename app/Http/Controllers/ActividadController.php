@@ -114,4 +114,13 @@ class ActividadController extends Controller
         });
         return response()->json( $ats );
     }
+    public function getmes($fecha)
+    {  
+
+        $ats = \DB::table('actividads')
+                  ->whereRaw("MONTH(fecha_inicio)=MONTH ($fecha) and YEAR(fecha_inicio)=YEAR($fecha)")
+                  ->get();
+
+        return response()->json( $ats );
+    }
 }
