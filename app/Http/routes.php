@@ -140,6 +140,7 @@ Route::group(['prefix'=> 'app', 'middleware' => [ 'auth', 'web' ]], function(){
 	    Route::get('getActividad/{id}', 'ActividadController@getActividad');
 		Route::resource('actividades', 'ActividadController');
 		Route::get('acti/{id}', 'ActividadController@getdia');
+		Route::get('ac/{fecha}', 'ActividadController@getmes');
 		
 		Route::post('agenda/{id}', 'AgendaController@update');
 		Route::resource('agenda', 'AgendaController');
