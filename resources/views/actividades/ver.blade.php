@@ -135,6 +135,8 @@
     <script src="{{ asset('assets/js/ng-scripts/controllers/actividadController.js') }}"></script>
     <script src="{{ asset('assets/calendar/js/monthly.js') }}"></script>
     <script type="text/javascript">
+    var f = new Date();
+        fe = f.getFullYear() + "-" + (f.getMonth() +1) + "-" + f.getDate();
     $(window).load( function() {
             $('#mycalendar').monthly({
                 
@@ -158,16 +160,14 @@
             case 'file:':
             alert('Just a heads-up, events will not work when run locally.');
             }
-            var f = new Date();
-                fe = f.getFullYear() + "-" + (f.getMonth() +1) + "-" + f.getDate();
-                $.ajax({
-                    type:'get',
-                    url:'../app/ac/'+fe,
-                    dataType:'json',
-                    success:function(ht)
-                    {   
-                        impr(data);
-                    }
+            $.ajax({
+                type:'get',
+                url:'../app/ac/'+fe,
+                dataType:'json',
+                success:function(ht)
+                {   
+                    impr(data);
+                }
             });
 
             function impr(data){
@@ -181,9 +181,30 @@
             }
 
     });
+            function impr2(data){
+                for (var i = 0; i < data.length; i++) {
+                    rd = data[i].fecha.split(' ');
+                    a = rd[0].split('-');
+                    dia = a[2]+'-'+ a[1] + '-' + a[0];
+                    $("#"+dia).append( "<p><div class='alert-num'>"+ data[i].cantidad +"</div class='alert-num'></p>" );
+                }
+                    
+            }
+        function cambiarm(){
+            nf = fe.split('-');
+            fe = f.getFullYear() + "-" + (parseInt(nf[1]) + 1) + "-01" ;
+            alert(fe);
+            $.ajax({
+                type:'get',
+                url:'../app/ac/'+fe,
+                dataType:'json',
+                success:function(ht)
+                {   
+                    impr2(data);
+                }
+            });
 
-    </script>
-    <script>
+        }
         var m = new Array();
         var dt = new Array();
         function buscar(dia,mes,año)
