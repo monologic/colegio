@@ -174,33 +174,47 @@
                 for (var i = 0; i < data.length; i++) {
                     rd = data[i].fecha.split(' ');
                     a = rd[0].split('-');
-                    dia = a[2]+'-'+ a[1] + '-' + a[0];
+
+                    dia = parseInt(a[2])+'-'+ a[1] + '-' + a[0];
                     $("#"+dia).append( "<p><div class='alert-num'>"+ data[i].cantidad +"</div class='alert-num'></p>" );
                 }
                     
             }
-
     });
             function impr2(data){
                 for (var i = 0; i < data.length; i++) {
                     rd = data[i].fecha.split(' ');
                     a = rd[0].split('-');
-                    dia = a[2]+'-'+ a[1] + '-' + a[0];
-                    $("#"+dia).append( "<p><div class='alert-num'>"+ data[i].cantidad +"</div class='alert-num'></p>" );
+                    dia = parseInt(a[2])+'-'+ parseInt(a[1]) + '-' + a[0];
+                    $("#"+dia).prepend( "<p><div class='alert-num'>"+ data[i].cantidad +"</div class='alert-num'></p>" );
                 }
                     
             }
+        nx = 1;
+        function antes() {
+            setTimeout('cambiarm()',500);
+            nx = 1;
+        }
+        function despues() {
+            setTimeout('cambiarm()',500);
+            nx = 0;
+        }
         function cambiarm(){
             nf = fe.split('-');
-            fe = f.getFullYear() + "-" + (parseInt(nf[1]) + 1) + "-01" ;
-            alert(fe);
+            if (nx == 1) {
+                fe = f.getFullYear() + "-" + (parseInt(nf[1]) + 1) + "-01" ;
+            }
+            else{
+                fe = f.getFullYear() + "-" + (parseInt(nf[1]) - 1) + "-01" ;
+            }
             $.ajax({
                 type:'get',
                 url:'../app/ac/'+fe,
                 dataType:'json',
                 success:function(ht)
                 {   
-                    impr2(data);
+                    impr2(ht);
+                    console.log(ht);
                 }
             });
 
@@ -277,6 +291,9 @@
                 }
                 $('#results').html(html); 
         }
+        $( ".monthly-event-list" ).change(function() {
+          alert( "Handler for .change() called." );
+        });
         
     </script>
 
