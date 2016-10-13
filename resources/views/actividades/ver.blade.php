@@ -3,7 +3,7 @@
 @section('title', 'Actividades')
 
 @section('content')
-    <div ng-controller="actividadController" ng-init="get();getmes();" onload="getdata()">
+    <div ng-controller="actividadController" ng-init="getmes();" onload="getdata()">
         <div class="contenidos">
             <div class="col-md-6">
                 <div class="monthly" id="mycalendar" style="width: 98%;margin:20px auto 20px auto;box-shadow: 5px 5px 5px #888888;"></div>
@@ -186,7 +186,7 @@
                     rd = data[i].fecha.split(' ');
                     a = rd[0].split('-');
                     dia = parseInt(a[2])+'-'+ parseInt(a[1]) + '-' + a[0];
-                    $("#"+dia).prepend( "<p><div class='alert-num'>"+ data[i].cantidad +"</div class='alert-num'></p>" );
+                    $("#"+dia).append( "<p><div class='alert-num'>"+ data[i].cantidad +"</div class='alert-num'></p>" );
                 }
                     
             }
