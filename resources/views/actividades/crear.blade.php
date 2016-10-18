@@ -35,7 +35,7 @@
                         <select class="form-control" name="tipo" id="tipo" ng-model="tipo" required>
                             <option value="Curricular">Curricular</option>
                             <option value="Extracurricular">Extracurricular</option>
-                            <option value="Cocurricular">Cocurricular</option>
+                            <option value="Cocurricular">Co-curricular</option>
                         </select>
                     </div>
 					<div class="form-group">

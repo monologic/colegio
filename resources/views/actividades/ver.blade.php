@@ -3,7 +3,7 @@
 @section('title', 'Actividades')
 
 @section('content')
-    <div ng-controller="actividadController" ng-init="getmes();" onload="getdata()">
+    <div ng-controller="actividadController" ng-init="get();getmes()" onload="getdata()">
         <div class="contenidos">
             <div class="col-md-6">
                 <div class="monthly" id="mycalendar" style="width: 98%;margin:20px auto 20px auto;box-shadow: 5px 5px 5px #888888;"></div>
@@ -15,7 +15,7 @@
                         <option value="">Todas</option>
                         <option value="Curricular">Curricular</option>
                         <option value="Extracurricular">Extracurricular</option>
-                        <option value="Cocurricular">Cocurricular</option>
+                        <option value="Cocurricular">Co-curricular</option>
                     </select>
                 </div>
                 <div class="actividades">
@@ -87,7 +87,15 @@
                                     <div class="form-group">
                                             <b for="descripcion">Descripción</b>
                                             <textarea  id="" cols="50" rows="10" name="descripcion" class="edit" ng-model="descripcion"></textarea>
-                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tipo">Tipo</label>
+                                        <select class="form-control" name="tipo" id="tipo" ng-model="tipo" required>
+                                            <option value="Curricular">Curricular</option>
+                                            <option value="Extracurricular">Extracurricular</option>
+                                            <option value="Cocurricular">Co-curricular</option>
+                                        </select>
+                                    </div>
                                     <div class="form-group">
                                         <label for="lugar">Lugar</label>
                                         <input type="text" class="form-control" id="lugar" ng-model="lugar" placeholder="" name="lugar" required>
