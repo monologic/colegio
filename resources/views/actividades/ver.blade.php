@@ -149,46 +149,30 @@
             $('#mycalendar').monthly({
                 
             });
-
-            $('#mycalendar2').monthly({
-                mode: 'picker',
-                target: '#mytarget',
-                setWidth: '250px',
-                startHidden: true,
-                showTrigger: '#mytarget',
-                stylePast: true,
-                disablePast: true
-            });
-
             switch(window.location.protocol) {
             case 'http:':
             case 'https:':
             // running on a server, should be good.
             break;
             case 'file:':
-            alert('Just a heads-up, events will not work when run locally.');
+                alert('Just a heads-up, events will not work when run locally.');
             }
-            $.ajax({
-                type:'get',
-                url:'../app/ac/'+fe,
-                dataType:'json',
-                success:function(ht)
-                {   
-                    impr(data);
-                }
-            });
-
-            function impr(data){
-                for (var i = 0; i < data.length; i++) {
-                    rd = data[i].fecha.split(' ');
-                    a = rd[0].split('-');
-
-                    dia = parseInt(a[2])+'-'+ a[1] + '-' + a[0];
-                    $("#"+dia).append( "<p><div class='alert-num'>"+ data[i].cantidad +"</div class='alert-num'></p>" );
-                }
-                    
-            }
+            ds();
     });
+            function ds(){
+                setTimeout('traerD()',500);
+            }
+            function traerD(){
+                $.ajax({
+                    type:'get',
+                    url:'../app/ac/'+fe,
+                    dataType:'json',
+                    success:function(ht)
+                    {   
+                        impr2(ht);
+                    }
+                });
+            }
             function impr2(data){
                 for (var i = 0; i < data.length; i++) {
                     rd = data[i].fecha.split(' ');
