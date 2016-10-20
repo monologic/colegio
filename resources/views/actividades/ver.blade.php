@@ -86,7 +86,7 @@
                                     </div>
                                     <div class="form-group">
                                             <b for="descripcion">Descripción</b>
-                                            <textarea  id="" cols="50" rows="10" name="descripcion" class="edit" ng-model="descripcion"></textarea>
+                                            <textarea  cols="50" id="act-des" rows="10" class="edit"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="tipo">Tipo</label>

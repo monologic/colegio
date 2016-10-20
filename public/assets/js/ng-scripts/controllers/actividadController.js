@@ -34,6 +34,7 @@ app.controller('actividadController', function($scope,$http) {
         $scope.id = data.id;
         $scope.responsable = data.responsable;
         $scope.titulo = data.titulo;
+        $scope.tipo = data.tipo;
         $scope.fecha_inicio = (data.fecha_inicio).replace(" ","T");
         $scope.fecha_fin = (data.fecha_fin).replace(" ","T");
         $('.fr-element').html(data.descripcion);
@@ -71,12 +72,14 @@ app.controller('actividadController', function($scope,$http) {
     }
 
     $scope.editar = function () {
+        def = $('#act-des').val();
         $http.put('actividades/' + $scope.id,
             {   'responsable':$scope.responsable,
                 'titulo':$scope.titulo,
                 'fecha_inicio':$scope.fecha_inicio,
                 'fecha_fin':$scope.fecha_fin,
-                'descripcion':$scope.descripcion,
+                'descripcion':def,
+                'tipo':$scope.tipo,
                 'lugar':$scope.lugar,
                 'participantes':$scope.participantes,
                 
