@@ -140,7 +140,7 @@
                                 <b for="archivo">Imagen</b>
                                 <input type="file" name="imagen">
                             </div>
-                            <input type="hidden" name="posteador" value="{{Auth::user()->dni}}">
+                            <input type="hidden" name="posteador" value="{{Auth::user()->id}}">
     
                             
                             <button ng-click='editarNoticia()' class="btn btn-colegio">Guardar</button>

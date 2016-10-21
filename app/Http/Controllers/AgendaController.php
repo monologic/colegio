@@ -22,7 +22,7 @@ class AgendaController extends Controller
     public function getEntradasEstudiante($nivel, $grado, $seccion)
     {
         $entradas = \DB::table('agendas')
-                       ->join('users', 'agendas.posteador', '=', 'users.dni')
+                       ->join('users', 'agendas.posteador', '=', 'users.id')
                        ->select('agendas.*', 'users.nombres', 'users.apellidos')
                        ->where([
                             ['agendas.nivel', '=', $nivel],
@@ -37,9 +37,9 @@ class AgendaController extends Controller
     {
         if ( \Auth::user()->usuariotipo_id == 2 ) {
             $entradas = \DB::table('agendas')
-                           ->join('users', 'agendas.posteador', '=', 'users.dni')
+                           ->join('users', 'agendas.posteador', '=', 'users.id')
                            ->select('agendas.*', 'users.nombres', 'users.apellidos')
-                           ->where('posteador', \Auth::user()->dni)->orderBy('fecha_pub', 'desc')->get();
+                           ->where('posteador', \Auth::user()->id)->orderBy('fecha_pub', 'desc')->get();
         }
         if ( \Auth::user()->usuariotipo_id == 1 ) {
             $entradas = $this->getEntradasEstudiante(\Auth::user()->nivel, \Auth::user()->grado, \Auth::user()->seccion);
@@ -60,7 +60,7 @@ class AgendaController extends Controller
         }
         if ( \Auth::user()->usuariotipo_id == 3 || \Auth::user()->usuariotipo_id == 4 ) {
             $entradas = \DB::table('agendas')
-                           ->join('users', 'agendas.posteador', '=', 'users.dni')
+                           ->join('users', 'agendas.posteador', '=', 'users.id')
                            ->select('agendas.*', 'users.nombres', 'users.apellidos')            
                            ->orderBy('fecha_pub', 'desc')->get();
         }
