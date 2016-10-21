@@ -269,7 +269,8 @@
             c=m.length;
             html="<div class='ac'>";
                 if(c == 0){
-                    html="<h2 class='text-center nc'>No se encontraron actividades.. pero si busque</h2>"
+                    t =$('#tipoActi').val();
+                    html="<h2 class='text-center nc'>No se encontraron actividade "+t+" </h2>"
                 }
                 else{
                     for(i=0;i<nm;i++)
