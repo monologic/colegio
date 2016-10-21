@@ -21,10 +21,10 @@ class EstadisticasController extends Controller
 		$idp = $users[0]->id;
 		//return response()->json( $idp );
 		$Ractividad = $this->getActividades($idp);
-		$Rvideo = $this->getVideos($dni);
-		$Rnoticia = $this->getNoticias($dni);
-		$Rnovedad = $this->getNovedad($dni);
-		$Rcomicado = $this->getComunicado($dni);
+		$Rvideo = $this->getVideos($idp);
+		$Rnoticia = $this->getNoticias($idp);
+		$Rnovedad = $this->getNovedad($idp);
+		$Rcomicado = $this->getComunicado($idp);
 		$all[] = $Ractividad;
 		$all[] = $Rvideo;
 		$all[] = $Rnoticia;
