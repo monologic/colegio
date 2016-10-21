@@ -86,7 +86,7 @@
                         <tbody>
                         
                             @foreach ($archivos as $y)
-                            @if ($y->posteador == Auth::user()->dni)
+                            @if ($y->posteador == Auth::user()->id)
                             <tr>
 
                                 <td>{{ $y->titulo }}</td>
@@ -152,7 +152,7 @@
                                         </select>
                                     </div>
 
-                                    <input type="hidden" name="posteador" value="{{Auth::user()->dni}}">
+                                    <input type="hidden" name="posteador" value="{{Auth::user()->id}}">
                                     <a ng-click='editarArchivo()' class="btn btn-colegio">Guardar</a>
                                 </form>
                             </div>
