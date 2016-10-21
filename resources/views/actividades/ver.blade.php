@@ -270,7 +270,11 @@
             html="<div class='ac'>";
                 if(c == 0){
                     t =$('#tipoActi').val();
-                    html="<h2 class='text-center nc'>No se encontraron actividade "+t+" </h2>"
+                    if(t == 'Cocurricular'){
+                        e = t.split('o');
+                        t = "Co-"+e[1];
+                    }
+                    html="<h2 class='text-center nc'>No se encontraron actividades "+t+" </h2>"
                 }
                 else{
                     for(i=0;i<nm;i++)
