@@ -274,7 +274,7 @@
                         e = t.split('o');
                         t = "Co-"+e[1];
                     }
-                    html="<h2 class='text-center nc'>No se encontraron actividades "+t+" </h2>"
+                    html="<h2 class='text-center nc'>No se encontraron actividades "+t+"es </h2>"
                 }
                 else{
                     for(i=0;i<nm;i++)
